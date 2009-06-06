@@ -1,0 +1,18 @@
+Database Benchmarking: Practical Methods for Oracle & SQL Server
+Escrito por Dr. Bert Scalzo, Claudia Fernandez, Donald K. Burleson, Mike Ault, Kevin Kline
+Edición: ilustrada
+Publicado por Rampant TechPress, 2007
+ISBN 0977671534, 9780977671533
+200 páginas
+
+---
+
+Java cookbook
+Escrito por Ian F. Darwin
+Edición: ilustrada
+Publicado por O'Reilly, 2001
+ISBN 0596001703, 9780596001704
+850 páginas
+
+---
+

@@ -1,0 +1,1 @@
+http://wiki.github.com/francisoud/log4j-1.2.15-ssl-patch

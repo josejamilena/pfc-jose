@@ -1,0 +1,2430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>SQLite Application C-langauge Interface Requirements</title>
+<style type="text/css">
+body {
+    margin: auto;
+    font-family: "Verdana" "sans-serif";
+    padding: 8px 1%;
+}
+
+a { color: #45735f }
+a:visited { color: #734559 }
+
+.logo { position:absolute; margin:3px; }
+.tagline {
+  float:right;
+  text-align:right;
+  font-style:italic;
+  width:240px;
+  margin:12px;
+  margin-top:58px;
+}
+
+.toolbar {
+  font-variant: small-caps;
+  text-align: center;
+  line-height: 1.6em;
+  margin: 0;
+  padding:1px 8px;
+}
+.toolbar a { color: white; text-decoration: none; padding: 6px 12px; }
+.toolbar a:visited { color: white; }
+.toolbar a:hover { color: #80a796; background: white; }
+
+.content    { margin: 5%; }
+.content dt { font-weight:bold; }
+.content dd { margin-bottom: 25px; margin-left:20%; }
+.content ul { padding:0px; padding-left: 15px; margin:0px; }
+
+/* rounded corners */
+.se  { background: url(images/se.png) 100% 100% no-repeat #80a796}
+.sw  { background: url(images/sw.png) 0% 100% no-repeat }
+.ne  { background: url(images/ne.png) 100% 0% no-repeat }
+.nw  { background: url(images/nw.png) 0% 0% no-repeat }
+
+</style>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+</head>
+<body>
+<div><!-- container div to satisfy validator -->
+
+<a href="index.html">
+<img class="logo" src="images/SQLite.gif" alt="SQLite Logo"
+ border="0"></a>
+<div><!-- IE hack to prevent disappearing logo--></div>
+<div class="tagline">Small. Fast. Reliable.<br>Choose any three.</div>
+
+<table width=100% style="clear:both"><tr><td>
+  <div class="se"><div class="sw"><div class="ne"><div class="nw">
+  <div class="toolbar">
+    <a href="about.html">About</a>
+    <a href="sitemap.html">Sitemap</a>
+    <a href="docs.html">Documentation</a>
+    <a href="download.html">Download</a>
+    <a href="copyright.html">License</a>
+    <a href="news.html">News</a>
+    <a href="http://www.sqlite.org/cvstrac/index">Developers</a>
+    <a href="support.html">Support</a>
+  </div></div></div></div></div>
+</td></tr></table>
+  
+
+
+<h1 align="center">
+Requirements for the SQLite C-language Application Interface
+</h1>
+
+<p>This document details <a href="requirements.html">requirements</a> for the primary C-language interface
+to SQLite.</p>
+
+<a name="H10011"></a>
+<p><b>H10011:</b>
+The <a href="c3ref/c_version.html">SQLITE_VERSION</a> #define in the sqlite3.h header file shall
+evaluate to a string literal that is the SQLite version
+with which the header file is associated.
+
+<a name="H10014"></a>
+<p><b>H10014:</b>
+The <a href="c3ref/c_version.html">SQLITE_VERSION_NUMBER</a> #define shall resolve to an integer
+with the value (X*1000000 + Y*1000 + Z) where X, Y, and Z
+are the major version, minor version, and release number.
+
+<a name="H10021"></a>
+<p><b>H10021:</b>
+The <a href="c3ref/libversion.html">sqlite3_libversion_number()</a> interface shall return
+an integer equal to <a href="c3ref/c_version.html">SQLITE_VERSION_NUMBER</a>.
+
+<a name="H10022"></a>
+<p><b>H10022:</b>
+The <a href="c3ref/libversion.html">sqlite3_version</a> string constant shall contain
+the text of the <a href="c3ref/c_version.html">SQLITE_VERSION</a> string.
+
+<a name="H10023"></a>
+<p><b>H10023:</b>
+The <a href="c3ref/libversion.html">sqlite3_libversion()</a> function shall return
+a pointer to the <a href="c3ref/libversion.html">sqlite3_version</a> string constant.
+
+<a name="H10101"></a>
+<p><b>H10101:</b>
+The <a href="c3ref/threadsafe.html">sqlite3_threadsafe()</a> function shall return zero if
+and only if SQLite was compiled with mutexing code omitted.
+
+<a name="H10102"></a>
+<p><b>H10102:</b>
+The value returned by <a href="c3ref/threadsafe.html">sqlite3_threadsafe()</a> shall remain the same
+across calls to <a href="c3ref/config.html">sqlite3_config()</a>.
+
+<a name="H10201"></a>
+<p><b>H10201:</b>
+The <a href="c3ref/int64.html">sqlite_int64</a> and <a href="c3ref/int64.html">sqlite3_int64</a> types shall specify
+a 64-bit signed integer.
+
+<a name="H10202"></a>
+<p><b>H10202:</b>
+The <a href="c3ref/int64.html">sqlite_uint64</a> and <a href="c3ref/int64.html">sqlite3_uint64</a> types shall specify
+a 64-bit unsigned integer.
+
+<a name="H10331"></a>
+<p><b>H10331:</b>
+A successful invocation of <a href="c3ref/enable_shared_cache.html">sqlite3_enable_shared_cache(B)</a>
+will enable or disable shared cache mode for subsequently
+created <a href="c3ref/sqlite3.html">database connection</a> in the same process.
+
+<a name="H10336"></a>
+<p><b>H10336:</b>
+When shared cache is enabled, the <a href="c3ref/create_module.html">sqlite3_create_module()</a>
+interface will always return an error.
+
+<a name="H10337"></a>
+<p><b>H10337:</b>
+The <a href="c3ref/enable_shared_cache.html">sqlite3_enable_shared_cache(B)</a> interface returns
+<a href="c3ref/c_abort.html">SQLITE_OK</a> if shared cache was enabled or disabled successfully.
+
+<a name="H10339"></a>
+<p><b>H10339:</b>
+Shared cache is disabled by default.
+
+<a name="H10511"></a>
+<p><b>H10511:</b>
+A successful evaluation of <a href="c3ref/complete.html">sqlite3_complete()</a> or
+<a href="c3ref/complete.html">sqlite3_complete16()</a> functions shall
+return a numeric 1 if and only if the input string contains
+one or more non-whitespace tokens and the last non-whitespace
+token in is a semicolon that is not in the middle of
+a <a href="lang_createtrigger.html">CREATE TRIGGER</a> statement.
+
+<a name="H10512"></a>
+<p><b>H10512:</b>
+If a memory allocation error occurs during an invocation
+of <a href="c3ref/complete.html">sqlite3_complete()</a> or <a href="c3ref/complete.html">sqlite3_complete16()</a> then the
+routine shall return <a href="c3ref/c_abort.html">SQLITE_NOMEM</a>.
+
+<a name="H10533"></a>
+<p><b>H10533:</b>
+The <a href="c3ref/sleep.html">sqlite3_sleep(M)</a> interface invokes the xSleep
+method of the default <a href="c3ref/vfs.html">VFS</a> in order to
+suspend execution of the current thread for at least
+M milliseconds.
+
+<a name="H10536"></a>
+<p><b>H10536:</b>
+The <a href="c3ref/sleep.html">sqlite3_sleep(M)</a> interface returns the number of
+milliseconds of sleep actually requested of the operating
+system, which might be larger than the parameter M.
+
+<a name="H11203"></a>
+<p><b>H11203:</b>
+The <a href="c3ref/vfs_find.html">sqlite3_vfs_find(N)</a> interface returns a pointer to the
+registered <a href="c3ref/vfs.html">sqlite3_vfs</a> object whose name exactly matches
+the zero-terminated UTF-8 string N, or it returns NULL if
+there is no match.
+
+<a name="H11206"></a>
+<p><b>H11206:</b>
+If the N parameter to <a href="c3ref/vfs_find.html">sqlite3_vfs_find(N)</a> is NULL then
+the function returns a pointer to the default <a href="c3ref/vfs.html">sqlite3_vfs</a>
+object if there is one, or NULL if there is no default
+<a href="c3ref/vfs.html">sqlite3_vfs</a> object.
+
+<a name="H11209"></a>
+<p><b>H11209:</b>
+The <a href="c3ref/vfs_find.html">sqlite3_vfs_register(P,F)</a> interface registers the
+well-formed <a href="c3ref/vfs.html">sqlite3_vfs</a> object P using the name given
+by the zName field of the object P.
+
+<a name="H11212"></a>
+<p><b>H11212:</b>
+Using the <a href="c3ref/vfs_find.html">sqlite3_vfs_register(P,F)</a> interface to register
+the same <a href="c3ref/vfs.html">sqlite3_vfs</a> object multiple times is a harmless no-op.
+
+<a name="H11215"></a>
+<p><b>H11215:</b>
+The <a href="c3ref/vfs_find.html">sqlite3_vfs_register(P,F)</a> interface makes the <a href="c3ref/vfs.html">sqlite3_vfs</a>
+object P the default <a href="c3ref/vfs.html">sqlite3_vfs</a> object if F is non-zero.
+
+<a name="H11218"></a>
+<p><b>H11218:</b>
+The <a href="c3ref/vfs_find.html">sqlite3_vfs_unregister(P)</a> interface unregisters the
+<a href="c3ref/vfs.html">sqlite3_vfs</a> object P so that it is no longer returned by
+subsequent calls to <a href="c3ref/vfs_find.html">sqlite3_vfs_find()</a>.
+
+<a name="H11302"></a>
+<p><b>H11302:</b>
+The <a href="c3ref/finalize.html">sqlite3_finalize(S)</a> interface destroys the
+<a href="c3ref/stmt.html">prepared statement</a> S and releases all
+memory and file resources held by that object.
+
+<a name="H11304"></a>
+<p><b>H11304:</b>
+If the most recent call to <a href="c3ref/step.html">sqlite3_step(S)</a> for the
+<a href="c3ref/stmt.html">prepared statement</a> S returned an error,
+then <a href="c3ref/finalize.html">sqlite3_finalize(S)</a> returns that same error.
+
+<a name="H12011"></a>
+<p><b>H12011:</b>
+A successful call to <a href="c3ref/close.html">sqlite3_close(C)</a> shall destroy the
+<a href="c3ref/sqlite3.html">database connection</a> object C.
+
+<a name="H12012"></a>
+<p><b>H12012:</b>
+A successful call to <a href="c3ref/close.html">sqlite3_close(C)</a> shall return SQLITE_OK.
+
+<a name="H12013"></a>
+<p><b>H12013:</b>
+A successful call to <a href="c3ref/close.html">sqlite3_close(C)</a> shall release all
+memory and system resources associated with <a href="c3ref/sqlite3.html">database connection</a> C.
+
+<a name="H12014"></a>
+<p><b>H12014:</b>
+A call to <a href="c3ref/close.html">sqlite3_close(C)</a> on a <a href="c3ref/sqlite3.html">database connection</a> C that
+has one or more open <a href="c3ref/stmt.html">prepared statements</a> shall fail with
+an <a href="c3ref/c_abort.html">SQLITE_BUSY</a> error code.
+
+<a name="H12015"></a>
+<p><b>H12015:</b>
+A call to <a href="c3ref/close.html">sqlite3_close(C)</a> where C is a NULL pointer shall
+be a harmless no-op returning SQLITE_OK.
+
+<a name="H12019"></a>
+<p><b>H12019:</b>
+When <a href="c3ref/close.html">sqlite3_close(C)</a> is invoked on a <a href="c3ref/sqlite3.html">database connection</a> C
+that has a pending transaction, the transaction shall be
+rolled back.
+
+<a name="H12101"></a>
+<p><b>H12101:</b>
+A successful invocation of <a href="c3ref/exec.html">sqlite3_exec(D,S,C,A,E)</a>
+shall sequentially evaluate all of the UTF-8 encoded,
+semicolon-separated SQL statements in the zero-terminated
+string S within the context of the <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H12102"></a>
+<p><b>H12102:</b>
+If the S parameter to <a href="c3ref/exec.html">sqlite3_exec(D,S,C,A,E)</a> is NULL then
+the actions of the interface shall be the same as if the
+S parameter were an empty string.
+
+<a name="H12104"></a>
+<p><b>H12104:</b>
+The return value of <a href="c3ref/exec.html">sqlite3_exec()</a> shall be <a href="c3ref/c_abort.html">SQLITE_OK</a> if all
+SQL statements run successfully and to completion.
+
+<a name="H12105"></a>
+<p><b>H12105:</b>
+The return value of <a href="c3ref/exec.html">sqlite3_exec()</a> shall be an appropriate
+non-zero <a href="c3ref/c_abort.html">error code</a> if any SQL statement fails.
+
+<a name="H12107"></a>
+<p><b>H12107:</b>
+If one or more of the SQL statements handed to <a href="c3ref/exec.html">sqlite3_exec()</a>
+return results and the 3rd parameter is not NULL, then
+the callback function specified by the 3rd parameter shall be
+invoked once for each row of result.
+
+<a name="H12110"></a>
+<p><b>H12110:</b>
+If the callback returns a non-zero value then <a href="c3ref/exec.html">sqlite3_exec()</a>
+shall abort the SQL statement it is currently evaluating,
+skip all subsequent SQL statements, and return <a href="c3ref/c_abort.html">SQLITE_ABORT</a>.
+
+<a name="H12113"></a>
+<p><b>H12113:</b>
+The <a href="c3ref/exec.html">sqlite3_exec()</a> routine shall pass its 4th parameter through
+as the 1st parameter of the callback.
+
+<a name="H12116"></a>
+<p><b>H12116:</b>
+The <a href="c3ref/exec.html">sqlite3_exec()</a> routine shall set the 2nd parameter of its
+callback to be the number of columns in the current row of
+result.
+
+<a name="H12119"></a>
+<p><b>H12119:</b>
+The <a href="c3ref/exec.html">sqlite3_exec()</a> routine shall set the 3rd parameter of its
+callback to be an array of pointers to strings holding the
+values for each column in the current result set row as
+obtained from <a href="c3ref/column_blob.html">sqlite3_column_text()</a>.
+
+<a name="H12122"></a>
+<p><b>H12122:</b>
+The <a href="c3ref/exec.html">sqlite3_exec()</a> routine shall set the 4th parameter of its
+callback to be an array of pointers to strings holding the
+names of result columns as obtained from <a href="c3ref/column_name.html">sqlite3_column_name()</a>.
+
+<a name="H12125"></a>
+<p><b>H12125:</b>
+If the 3rd parameter to <a href="c3ref/exec.html">sqlite3_exec()</a> is NULL then
+<a href="c3ref/exec.html">sqlite3_exec()</a> shall silently discard query results.
+
+<a name="H12131"></a>
+<p><b>H12131:</b>
+If an error occurs while parsing or evaluating any of the SQL
+statements in the S parameter of <a href="c3ref/exec.html">sqlite3_exec(D,S,C,A,E)</a> and if
+the E parameter is not NULL, then <a href="c3ref/exec.html">sqlite3_exec()</a> shall store
+in *E an appropriate error message written into memory obtained
+from <a href="c3ref/free.html">sqlite3_malloc()</a>.
+
+<a name="H12134"></a>
+<p><b>H12134:</b>
+The <a href="c3ref/exec.html">sqlite3_exec(D,S,C,A,E)</a> routine shall set the value of
+*E to NULL if E is not NULL and there are no errors.
+
+<a name="H12137"></a>
+<p><b>H12137:</b>
+The <a href="c3ref/exec.html">sqlite3_exec(D,S,C,A,E)</a> function shall set the <a href="c3ref/c_abort.html">error code</a>
+and message accessible via <a href="c3ref/errcode.html">sqlite3_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_extended_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_errmsg()</a>, and <a href="c3ref/errcode.html">sqlite3_errmsg16()</a>.
+
+<a name="H12138"></a>
+<p><b>H12138:</b>
+If the S parameter to <a href="c3ref/exec.html">sqlite3_exec(D,S,C,A,E)</a> is NULL or an
+empty string or contains nothing other than whitespace, comments,
+and/or semicolons, then results of <a href="c3ref/errcode.html">sqlite3_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_extended_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_errmsg()</a>, and <a href="c3ref/errcode.html">sqlite3_errmsg16()</a>
+shall reset to indicate no errors.
+
+<a name="H12201"></a>
+<p><b>H12201:</b>
+Each new <a href="c3ref/sqlite3.html">database connection</a> shall have the
+<a href="c3ref/c_ioerr_access.html">extended result codes</a> feature disabled by default.
+
+<a name="H12202"></a>
+<p><b>H12202:</b>
+The <a href="c3ref/extended_result_codes.html">sqlite3_extended_result_codes(D,F)</a> interface shall enable
+<a href="c3ref/c_ioerr_access.html">extended result codes</a> for the  <a href="c3ref/sqlite3.html">database connection</a> D
+if the F parameter is true, or disable them if F is false.
+
+<a name="H12221"></a>
+<p><b>H12221:</b>
+The <a href="c3ref/last_insert_rowid.html">sqlite3_last_insert_rowid()</a> function shall return the rowid
+of the most recent successful <a href="lang_insert.html">INSERT</a> performed on the same
+<a href="c3ref/sqlite3.html">database connection</a> and within the same or higher level
+trigger context, or zero if there have been no qualifying
+<a href="lang_insert.html">INSERT</a> statements.
+
+<a name="H12223"></a>
+<p><b>H12223:</b>
+The <a href="c3ref/last_insert_rowid.html">sqlite3_last_insert_rowid()</a> function shall return the
+same value when called from the same trigger context
+immediately before and after a <a href="lang_transaction.html">ROLLBACK</a>.
+
+<a name="H12241"></a>
+<p><b>H12241:</b>
+The <a href="c3ref/changes.html">sqlite3_changes()</a> function shall return the number of
+row changes caused by the most recent INSERT, UPDATE,
+or DELETE statement on the same database connection and
+within the same or higher trigger context, or zero if there have
+not been any qualifying row changes.
+
+<a name="H12243"></a>
+<p><b>H12243:</b>
+Statements of the form "DELETE FROM tablename" with no
+WHERE clause shall cause subsequent calls to
+<a href="c3ref/changes.html">sqlite3_changes()</a> to return zero, regardless of the
+number of rows originally in the table.
+
+<a name="H12261"></a>
+<p><b>H12261:</b>
+The <a href="c3ref/total_changes.html">sqlite3_total_changes()</a> returns the total number
+of row changes caused by INSERT, UPDATE, and/or DELETE
+statements on the same <a href="c3ref/sqlite3.html">database connection</a>, in any
+trigger context, since the database connection was created.
+
+<a name="H12263"></a>
+<p><b>H12263:</b>
+Statements of the form "DELETE FROM tablename" with no
+WHERE clause shall not change the value returned
+by <a href="c3ref/total_changes.html">sqlite3_total_changes()</a>.
+
+<a name="H12271"></a>
+<p><b>H12271:</b>
+The <a href="c3ref/interrupt.html">sqlite3_interrupt()</a> interface will force all running
+SQL statements associated with the same database connection
+to halt after processing at most one additional row of data.
+
+<a name="H12272"></a>
+<p><b>H12272:</b>
+Any SQL statement that is interrupted by <a href="c3ref/interrupt.html">sqlite3_interrupt()</a>
+will return <a href="c3ref/c_abort.html">SQLITE_INTERRUPT</a>.
+
+<a name="H12281"></a>
+<p><b>H12281:</b>
+The callback function registered by <a href="c3ref/profile.html">sqlite3_trace()</a>
+shall be invoked
+whenever an SQL statement first begins to execute and
+whenever a trigger subprogram first begins to run.
+
+<a name="H12282"></a>
+<p><b>H12282:</b>
+Each call to <a href="c3ref/profile.html">sqlite3_trace()</a> shall override the previously
+registered trace callback.
+
+<a name="H12283"></a>
+<p><b>H12283:</b>
+A NULL trace callback shall disable tracing.
+
+<a name="H12284"></a>
+<p><b>H12284:</b>
+The first argument to the trace callback shall be a copy of
+the pointer which was the 3rd argument to <a href="c3ref/profile.html">sqlite3_trace()</a>.
+
+<a name="H12285"></a>
+<p><b>H12285:</b>
+The second argument to the trace callback is a
+zero-terminated UTF-8 string containing the original text
+of the SQL statement as it was passed into <a href="c3ref/prepare.html">sqlite3_prepare_v2()</a>
+or the equivalent, or an SQL comment indicating the beginning
+of a trigger subprogram.
+
+<a name="H12287"></a>
+<p><b>H12287:</b>
+The callback function registered by <a href="c3ref/profile.html">sqlite3_profile()</a> is invoked
+as each SQL statement finishes.
+
+<a name="H12288"></a>
+<p><b>H12288:</b>
+The first parameter to the profile callback is a copy of
+the 3rd parameter to <a href="c3ref/profile.html">sqlite3_profile()</a>.
+
+<a name="H12289"></a>
+<p><b>H12289:</b>
+The second parameter to the profile callback is a
+zero-terminated UTF-8 string that contains the complete text of
+the SQL statement as it was processed by <a href="c3ref/prepare.html">sqlite3_prepare_v2()</a>
+or the equivalent.
+
+<a name="H12290"></a>
+<p><b>H12290:</b>
+The third parameter to the profile callback is an estimate
+of the number of nanoseconds of wall-clock time required to
+run the SQL statement from start to finish.
+
+<a name="H12311"></a>
+<p><b>H12311:</b>
+The <a href="c3ref/busy_handler.html">sqlite3_busy_handler(D,C,A)</a> function shall replace
+busy callback in the <a href="c3ref/sqlite3.html">database connection</a> D with a new
+a new busy handler C and application data pointer A.
+
+<a name="H12312"></a>
+<p><b>H12312:</b>
+Newly created <a href="c3ref/sqlite3.html">database connections</a> shall have a busy
+handler of NULL.
+
+<a name="H12314"></a>
+<p><b>H12314:</b>
+When two or more <a href="c3ref/sqlite3.html">database connections</a> share a
+<a href="c3ref/enable_shared_cache.html">common cache</a>,
+the busy handler for the database connection currently using
+the cache shall be invoked when the cache encounters a lock.
+
+<a name="H12316"></a>
+<p><b>H12316:</b>
+If a busy handler callback returns zero, then the SQLite interface
+that provoked the locking event shall return <a href="c3ref/c_abort.html">SQLITE_BUSY</a>.
+
+<a name="H12318"></a>
+<p><b>H12318:</b>
+SQLite shall invokes the busy handler with two arguments which
+are a copy of the pointer supplied by the 3rd parameter to
+<a href="c3ref/busy_handler.html">sqlite3_busy_handler()</a> and a count of the number of prior
+invocations of the busy handler for the same locking event.
+
+<a name="H12341"></a>
+<p><b>H12341:</b>
+The <a href="c3ref/busy_timeout.html">sqlite3_busy_timeout()</a> function shall override any prior
+<a href="c3ref/busy_timeout.html">sqlite3_busy_timeout()</a> or <a href="c3ref/busy_handler.html">sqlite3_busy_handler()</a> setting
+on the same <a href="c3ref/sqlite3.html">database connection</a>.
+
+<a name="H12343"></a>
+<p><b>H12343:</b>
+If the 2nd parameter to <a href="c3ref/busy_timeout.html">sqlite3_busy_timeout()</a> is less than
+or equal to zero, then the busy handler shall be cleared so that
+all subsequent locking events immediately return <a href="c3ref/c_abort.html">SQLITE_BUSY</a>.
+
+<a name="H12344"></a>
+<p><b>H12344:</b>
+If the 2nd parameter to <a href="c3ref/busy_timeout.html">sqlite3_busy_timeout()</a> is a positive
+number N, then a busy handler shall be set that repeatedly calls
+the xSleep() method in the <a href="c3ref/vfs.html">VFS interface</a> until
+either the lock clears or until the cumulative sleep time
+reported back by xSleep() exceeds N milliseconds.
+
+<a name="H12371"></a>
+<p><b>H12371:</b>
+If a <a href="c3ref/free_table.html">sqlite3_get_table()</a> fails a memory allocation, then
+it shall free the result table under construction, abort the
+query in process, skip any subsequent queries, set the
+*pazResult output pointer to NULL and return <a href="c3ref/c_abort.html">SQLITE_NOMEM</a>.
+
+<a name="H12373"></a>
+<p><b>H12373:</b>
+If the pnColumn parameter to <a href="c3ref/free_table.html">sqlite3_get_table()</a> is not NULL
+then a successful invocation of <a href="c3ref/free_table.html">sqlite3_get_table()</a> shall
+write the number of columns in the
+result set of the query into *pnColumn.
+
+<a name="H12374"></a>
+<p><b>H12374:</b>
+If the pnRow parameter to <a href="c3ref/free_table.html">sqlite3_get_table()</a> is not NULL
+then a successful invocation of <a href="c3ref/free_table.html">sqlite3_get_table()</a> shall
+writes the number of rows in the
+result set of the query into *pnRow.
+
+<a name="H12376"></a>
+<p><b>H12376:</b>
+A successful invocation of <a href="c3ref/free_table.html">sqlite3_get_table()</a> that computes
+N rows of result with C columns per row shall make *pazResult
+point to an array of pointers to (N+1)*C strings where the first
+C strings are column names as obtained from
+<a href="c3ref/column_name.html">sqlite3_column_name()</a> and the rest are column result values
+obtained from <a href="c3ref/column_blob.html">sqlite3_column_text()</a>.
+
+<a name="H12379"></a>
+<p><b>H12379:</b>
+The values in the pazResult array returned by <a href="c3ref/free_table.html">sqlite3_get_table()</a>
+shall remain valid until cleared by <a href="c3ref/free_table.html">sqlite3_free_table()</a>.
+
+<a name="H12382"></a>
+<p><b>H12382:</b>
+When an error other than SQLITE_NOMEM occurs during evaluation 
+of <a href="c3ref/free_table.html">sqlite3_get_table()</a> the function shall set *pazResult to NULL,
+write an error message into memory obtained from <a href="c3ref/free.html">sqlite3_malloc()</a>, make
+**pzErrmsg point to that error message, and return a
+appropriate <a href="c3ref/c_abort.html">error code</a>.
+
+<a name="H12501"></a>
+<p><b>H12501:</b>
+The <a href="c3ref/set_authorizer.html">sqlite3_set_authorizer(D,...)</a> interface registers a
+authorizer callback with database connection D.
+
+<a name="H12502"></a>
+<p><b>H12502:</b>
+The authorizer callback is invoked as SQL statements are
+being parseed and compiled.
+
+<a name="H12503"></a>
+<p><b>H12503:</b>
+If the authorizer callback returns any value other than
+<a href="c3ref/c_deny.html">SQLITE_IGNORE</a>, <a href="c3ref/c_abort.html">SQLITE_OK</a>, or <a href="c3ref/c_deny.html">SQLITE_DENY</a>, then
+the application interface call that caused
+the authorizer callback to run shall fail with an
+<a href="c3ref/c_abort.html">SQLITE_ERROR</a> error code and an appropriate error message.
+
+<a name="H12504"></a>
+<p><b>H12504:</b>
+When the authorizer callback returns <a href="c3ref/c_abort.html">SQLITE_OK</a>, the operation
+described is processed normally.
+
+<a name="H12505"></a>
+<p><b>H12505:</b>
+When the authorizer callback returns <a href="c3ref/c_deny.html">SQLITE_DENY</a>, the
+application interface call that caused the
+authorizer callback to run shall fail
+with an <a href="c3ref/c_abort.html">SQLITE_ERROR</a> error code and an error message
+explaining that access is denied.
+
+<a name="H12506"></a>
+<p><b>H12506:</b>
+If the authorizer code (the 2nd parameter to the authorizer
+callback) is <a href="c3ref/c_alter_table.html">SQLITE_READ</a> and the authorizer callback returns
+<a href="c3ref/c_deny.html">SQLITE_IGNORE</a>, then the prepared statement is constructed to
+insert a NULL value in place of the table column that would have
+been read if <a href="c3ref/c_abort.html">SQLITE_OK</a> had been returned.
+
+<a name="H12507"></a>
+<p><b>H12507:</b>
+If the authorizer code (the 2nd parameter to the authorizer
+callback) is anything other than <a href="c3ref/c_alter_table.html">SQLITE_READ</a>, then
+a return of <a href="c3ref/c_deny.html">SQLITE_IGNORE</a> has the same effect as <a href="c3ref/c_deny.html">SQLITE_DENY</a>.
+
+<a name="H12510"></a>
+<p><b>H12510:</b>
+The first parameter to the authorizer callback is a copy of
+the third parameter to the <a href="c3ref/set_authorizer.html">sqlite3_set_authorizer()</a> interface.
+
+<a name="H12511"></a>
+<p><b>H12511:</b>
+The second parameter to the callback is an integer
+<a href="c3ref/c_alter_table.html">action code</a> that specifies the particular action
+to be authorized.
+
+<a name="H12512"></a>
+<p><b>H12512:</b>
+The third through sixth parameters to the callback are
+zero-terminated strings that contain
+additional details about the action to be authorized.
+
+<a name="H12520"></a>
+<p><b>H12520:</b>
+Each call to <a href="c3ref/set_authorizer.html">sqlite3_set_authorizer()</a> overrides
+any previously installed authorizer.
+
+<a name="H12521"></a>
+<p><b>H12521:</b>
+A NULL authorizer means that no authorization
+callback is invoked.
+
+<a name="H12522"></a>
+<p><b>H12522:</b>
+The default authorizer is NULL.
+
+<a name="H12551"></a>
+<p><b>H12551:</b>
+The second parameter to an
+<a href="c3ref/set_authorizer.html">authorizer callback</a> shall be an integer
+<a href="c3ref/c_alter_table.html">authorizer code</a> that specifies what action
+is being authorized.
+
+<a name="H12552"></a>
+<p><b>H12552:</b>
+The 3rd and 4th parameters to the
+<a href="c3ref/set_authorizer.html">authorization callback</a>
+shall be parameters or NULL depending on which
+<a href="c3ref/c_alter_table.html">authorizer code</a> is used as the second parameter.
+
+<a name="H12553"></a>
+<p><b>H12553:</b>
+The 5th parameter to the
+<a href="c3ref/set_authorizer.html">authorizer callback</a> shall be the name
+of the database (example: "main", "temp", etc.) if applicable.
+
+<a name="H12554"></a>
+<p><b>H12554:</b>
+The 6th parameter to the
+<a href="c3ref/set_authorizer.html">authorizer callback</a> shall be the name
+of the inner-most trigger or view that is responsible for
+the access attempt or NULL if this access attempt is directly from
+top-level SQL code.
+
+<a name="H12701"></a>
+<p><b>H12701:</b>
+The <a href="c3ref/open.html">sqlite3_open()</a>, <a href="c3ref/open.html">sqlite3_open16()</a>, and
+<a href="c3ref/open.html">sqlite3_open_v2()</a> interfaces create a new
+<a href="c3ref/sqlite3.html">database connection</a> associated with
+the database file given in their first parameter.
+
+<a name="H12702"></a>
+<p><b>H12702:</b>
+The filename argument is interpreted as UTF-8
+for <a href="c3ref/open.html">sqlite3_open()</a> and <a href="c3ref/open.html">sqlite3_open_v2()</a> and as UTF-16
+in the native byte order for <a href="c3ref/open.html">sqlite3_open16()</a>.
+
+<a name="H12703"></a>
+<p><b>H12703:</b>
+A successful invocation of <a href="c3ref/open.html">sqlite3_open()</a>, <a href="c3ref/open.html">sqlite3_open16()</a>,
+or <a href="c3ref/open.html">sqlite3_open_v2()</a> writes a pointer to a new
+<a href="c3ref/sqlite3.html">database connection</a> into *ppDb.
+
+<a name="H12704"></a>
+<p><b>H12704:</b>
+The <a href="c3ref/open.html">sqlite3_open()</a>, <a href="c3ref/open.html">sqlite3_open16()</a>, and
+<a href="c3ref/open.html">sqlite3_open_v2()</a> interfaces return <a href="c3ref/c_abort.html">SQLITE_OK</a> upon success,
+or an appropriate <a href="c3ref/c_abort.html">error code</a> on failure.
+
+<a name="H12706"></a>
+<p><b>H12706:</b>
+The default text encoding for a new database created using
+<a href="c3ref/open.html">sqlite3_open()</a> or <a href="c3ref/open.html">sqlite3_open_v2()</a> will be UTF-8.
+
+<a name="H12707"></a>
+<p><b>H12707:</b>
+The default text encoding for a new database created using
+<a href="c3ref/open.html">sqlite3_open16()</a> will be UTF-16.
+
+<a name="H12709"></a>
+<p><b>H12709:</b>
+The <a href="c3ref/open.html">sqlite3_open(F,D)</a> interface is equivalent to
+<a href="c3ref/open.html">sqlite3_open_v2(F,D,G,0)</a> where the G parameter is
+<a href="c3ref/c_open_create.html">SQLITE_OPEN_READWRITE</a>|<a href="c3ref/c_open_create.html">SQLITE_OPEN_CREATE</a>.
+
+<a name="H12711"></a>
+<p><b>H12711:</b>
+If the G parameter to <a href="c3ref/open.html">sqlite3_open_v2(F,D,G,V)</a> contains the
+bit value <a href="c3ref/c_open_create.html">SQLITE_OPEN_READONLY</a> then the database is opened
+for reading only.
+
+<a name="H12712"></a>
+<p><b>H12712:</b>
+If the G parameter to <a href="c3ref/open.html">sqlite3_open_v2(F,D,G,V)</a> contains the
+bit value <a href="c3ref/c_open_create.html">SQLITE_OPEN_READWRITE</a> then the database is opened
+reading and writing if possible, or for reading only if the
+file is write protected by the operating system.
+
+<a name="H12713"></a>
+<p><b>H12713:</b>
+If the G parameter to <a href="c3ref/open.html">sqlite3_open_v2(F,D,G,V)</a> omits the
+bit value <a href="c3ref/c_open_create.html">SQLITE_OPEN_CREATE</a> and the database does not
+previously exist, an error is returned.
+
+<a name="H12714"></a>
+<p><b>H12714:</b>
+If the G parameter to <a href="c3ref/open.html">sqlite3_open_v2(F,D,G,V)</a> contains the
+bit value <a href="c3ref/c_open_create.html">SQLITE_OPEN_CREATE</a> and the database does not
+previously exist, then an attempt is made to create and
+initialize the database.
+
+<a name="H12717"></a>
+<p><b>H12717:</b>
+If the filename argument to <a href="c3ref/open.html">sqlite3_open()</a>, <a href="c3ref/open.html">sqlite3_open16()</a>,
+or <a href="c3ref/open.html">sqlite3_open_v2()</a> is ":memory:", then an private,
+ephemeral, in-memory database is created for the connection.
+<todo>Is SQLITE_OPEN_CREATE|SQLITE_OPEN_READWRITE required
+in sqlite3_open_v2()?</todo>
+
+<a name="H12719"></a>
+<p><b>H12719:</b>
+If the filename is NULL or an empty string, then a private,
+ephemeral on-disk database will be created.
+<todo>Is SQLITE_OPEN_CREATE|SQLITE_OPEN_READWRITE required
+in sqlite3_open_v2()?</todo>
+
+<a name="H12721"></a>
+<p><b>H12721:</b>
+The <a href="c3ref/sqlite3.html">database connection</a> created by <a href="c3ref/open.html">sqlite3_open_v2(F,D,G,V)</a>
+will use the <a href="c3ref/vfs.html">sqlite3_vfs</a> object identified by the V parameter,
+or the default <a href="c3ref/vfs.html">sqlite3_vfs</a> object if V is a NULL pointer.
+
+<a name="H12723"></a>
+<p><b>H12723:</b>
+Two <a href="c3ref/sqlite3.html">database connections</a> will share a common cache if both were
+opened with the same VFS while <a href="c3ref/enable_shared_cache.html">shared cache mode</a> was enabled and
+if both filenames compare equal using memcmp() after having been
+processed by the <a href="c3ref/vfs.html">xFullPathname</a> method of the VFS.
+
+<a name="H12762"></a>
+<p><b>H12762:</b>
+A successful call to <a href="c3ref/limit.html">sqlite3_limit(D,C,V)</a> where V is
+positive changes the limit on the size of construct C in the
+<a href="c3ref/sqlite3.html">database connection</a> D to the lesser of V and the hard upper
+bound on the size of C that is set at compile-time.
+
+<a name="H12766"></a>
+<p><b>H12766:</b>
+A successful call to <a href="c3ref/limit.html">sqlite3_limit(D,C,V)</a> where V is negative
+leaves the state of the <a href="c3ref/sqlite3.html">database connection</a> D unchanged.
+
+<a name="H12769"></a>
+<p><b>H12769:</b>
+A successful call to <a href="c3ref/limit.html">sqlite3_limit(D,C,V)</a> returns the
+value of the limit on the size of construct C in the
+<a href="c3ref/sqlite3.html">database connection</a> D as it was prior to the call.
+
+<a name="H12801"></a>
+<p><b>H12801:</b>
+The <a href="c3ref/errcode.html">sqlite3_errcode(D)</a> interface returns the numeric
+<a href="c3ref/c_abort.html">result code</a> or <a href="c3ref/c_ioerr_access.html">extended result code</a> for the most recently
+failed interface call associated with the <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H12802"></a>
+<p><b>H12802:</b>
+The <a href="c3ref/errcode.html">sqlite3_extended_errcode(D)</a> interface returns the numeric
+<a href="c3ref/c_ioerr_access.html">extended result code</a> for the most recently
+failed interface call associated with the <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H12803"></a>
+<p><b>H12803:</b>
+The <a href="c3ref/errcode.html">sqlite3_errmsg(D)</a> and <a href="c3ref/errcode.html">sqlite3_errmsg16(D)</a>
+interfaces return English-language text that describes
+the error in the mostly recently failed interface call,
+encoded as either UTF-8 or UTF-16 respectively.
+
+<a name="H12807"></a>
+<p><b>H12807:</b>
+The strings returned by <a href="c3ref/errcode.html">sqlite3_errmsg()</a> and <a href="c3ref/errcode.html">sqlite3_errmsg16()</a>
+are valid until the next SQLite interface call.
+
+<a name="H12808"></a>
+<p><b>H12808:</b>
+Calls to API routines that do not return an error code
+(example: <a href="c3ref/data_count.html">sqlite3_data_count()</a>) do not
+change the error code or message returned by
+<a href="c3ref/errcode.html">sqlite3_errcode()</a>, <a href="c3ref/errcode.html">sqlite3_extended_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_errmsg()</a>, or <a href="c3ref/errcode.html">sqlite3_errmsg16()</a>.
+
+<a name="H12809"></a>
+<p><b>H12809:</b>
+Interfaces that are not associated with a specific
+<a href="c3ref/sqlite3.html">database connection</a> (examples:
+<a href="c3ref/mprintf.html">sqlite3_mprintf()</a> or <a href="c3ref/enable_shared_cache.html">sqlite3_enable_shared_cache()</a>
+do not change the values returned by
+<a href="c3ref/errcode.html">sqlite3_errcode()</a>, <a href="c3ref/errcode.html">sqlite3_extended_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_errmsg()</a>, or <a href="c3ref/errcode.html">sqlite3_errmsg16()</a>.
+
+<a name="H12911"></a>
+<p><b>H12911:</b>
+The callback function registered by sqlite3_progress_handler()
+is invoked periodically during long running calls to
+<a href="c3ref/step.html">sqlite3_step()</a>.
+
+<a name="H12912"></a>
+<p><b>H12912:</b>
+The progress callback is invoked once for every N virtual
+machine opcodes, where N is the second argument to
+the <a href="c3ref/progress_handler.html">sqlite3_progress_handler()</a> call that registered
+the callback.  If N is less than 1, sqlite3_progress_handler()
+acts as if a NULL progress handler had been specified.
+
+<a name="H12913"></a>
+<p><b>H12913:</b>
+The progress callback itself is identified by the third
+argument to sqlite3_progress_handler().
+
+<a name="H12914"></a>
+<p><b>H12914:</b>
+The fourth argument to sqlite3_progress_handler() is a
+void pointer passed to the progress callback
+function each time it is invoked.
+
+<a name="H12915"></a>
+<p><b>H12915:</b>
+If a call to <a href="c3ref/step.html">sqlite3_step()</a> results in fewer than N opcodes
+being executed, then the progress callback is never invoked.
+
+<a name="H12916"></a>
+<p><b>H12916:</b>
+Every call to <a href="c3ref/progress_handler.html">sqlite3_progress_handler()</a>
+overwrites any previously registered progress handler.
+
+<a name="H12917"></a>
+<p><b>H12917:</b>
+If the progress handler callback is NULL then no progress
+handler is invoked.
+
+<a name="H12918"></a>
+<p><b>H12918:</b>
+If the progress callback returns a result other than 0, then
+the behavior is a if <a href="c3ref/interrupt.html">sqlite3_interrupt()</a> had been called.
+
+<a name="H12931"></a>
+<p><b>H12931:</b>
+The <a href="c3ref/get_autocommit.html">sqlite3_get_autocommit(D)</a> interface returns non-zero or
+zero if the <a href="c3ref/sqlite3.html">database connection</a> D is or is not in autocommit
+mode, respectively.
+
+<a name="H12932"></a>
+<p><b>H12932:</b>
+Autocommit mode is on by default.
+
+<a name="H12933"></a>
+<p><b>H12933:</b>
+Autocommit mode is disabled by a successful <a href="lang_transaction.html">BEGIN</a> statement.
+
+<a name="H12934"></a>
+<p><b>H12934:</b>
+Autocommit mode is enabled by a successful <a href="lang_transaction.html">COMMIT</a> or <a href="lang_transaction.html">ROLLBACK</a>
+statement.
+
+<a name="H12951"></a>
+<p><b>H12951:</b>
+The <a href="c3ref/commit_hook.html">sqlite3_commit_hook(D,F,P)</a> interface registers the
+callback function F to be invoked with argument P whenever
+a transaction commits on the <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H12952"></a>
+<p><b>H12952:</b>
+The <a href="c3ref/commit_hook.html">sqlite3_commit_hook(D,F,P)</a> interface returns the P argument
+from the previous call with the same <a href="c3ref/sqlite3.html">database connection</a> D,
+or NULL on the first call for a particular database connection D.
+
+<a name="H12953"></a>
+<p><b>H12953:</b>
+Each call to <a href="c3ref/commit_hook.html">sqlite3_commit_hook()</a> overwrites the callback
+registered by prior calls.
+
+<a name="H12954"></a>
+<p><b>H12954:</b>
+If the F argument to <a href="c3ref/commit_hook.html">sqlite3_commit_hook(D,F,P)</a> is NULL
+then the commit hook callback is canceled and no callback
+is invoked when a transaction commits.
+
+<a name="H12955"></a>
+<p><b>H12955:</b>
+If the commit callback returns non-zero then the commit is
+converted into a rollback.
+
+<a name="H12961"></a>
+<p><b>H12961:</b>
+The <a href="c3ref/commit_hook.html">sqlite3_rollback_hook(D,F,P)</a> interface registers the
+callback function F to be invoked with argument P whenever
+a transaction rolls back on the <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H12962"></a>
+<p><b>H12962:</b>
+The <a href="c3ref/commit_hook.html">sqlite3_rollback_hook(D,F,P)</a> interface returns the P
+argument from the previous call with the same
+<a href="c3ref/sqlite3.html">database connection</a> D, or NULL on the first call
+for a particular database connection D.
+
+<a name="H12963"></a>
+<p><b>H12963:</b>
+Each call to <a href="c3ref/commit_hook.html">sqlite3_rollback_hook()</a> overwrites the callback
+registered by prior calls.
+
+<a name="H12964"></a>
+<p><b>H12964:</b>
+If the F argument to <a href="c3ref/commit_hook.html">sqlite3_rollback_hook(D,F,P)</a> is NULL
+then the rollback hook callback is canceled and no callback
+is invoked when a transaction rolls back.
+
+<a name="H12971"></a>
+<p><b>H12971:</b>
+The <a href="c3ref/update_hook.html">sqlite3_update_hook(D,F,P)</a> interface causes the callback
+function F to be invoked with first parameter P whenever
+a table row is modified, inserted, or deleted on
+the <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H12973"></a>
+<p><b>H12973:</b>
+The <a href="c3ref/update_hook.html">sqlite3_update_hook(D,F,P)</a> interface returns the value
+of P for the previous call on the same <a href="c3ref/sqlite3.html">database connection</a> D,
+or NULL for the first call.
+
+<a name="H12975"></a>
+<p><b>H12975:</b>
+If the update hook callback F in <a href="c3ref/update_hook.html">sqlite3_update_hook(D,F,P)</a>
+is NULL then the no update callbacks are made.
+
+<a name="H12977"></a>
+<p><b>H12977:</b>
+Each call to <a href="c3ref/update_hook.html">sqlite3_update_hook(D,F,P)</a> overrides prior calls
+to the same interface on the same <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H12979"></a>
+<p><b>H12979:</b>
+The update hook callback is not invoked when internal system
+tables such as sqlite_master and sqlite_sequence are modified.
+
+<a name="H12981"></a>
+<p><b>H12981:</b>
+The second parameter to the update callback
+is one of <a href="c3ref/c_alter_table.html">SQLITE_INSERT</a>, <a href="c3ref/c_alter_table.html">SQLITE_DELETE</a> or <a href="c3ref/c_alter_table.html">SQLITE_UPDATE</a>,
+depending on the operation that caused the callback to be invoked.
+
+<a name="H12983"></a>
+<p><b>H12983:</b>
+The third and fourth arguments to the callback contain pointers
+to zero-terminated UTF-8 strings which are the names of the
+database and table that is being updated.
+
+<a name="H12986"></a>
+<p><b>H12986:</b>
+The final callback parameter is the rowid of the row after
+the change occurs.
+
+<a name="H13011"></a>
+<p><b>H13011:</b>
+The <a href="c3ref/prepare.html">sqlite3_prepare(db,zSql,...)</a> and
+<a href="c3ref/prepare.html">sqlite3_prepare_v2(db,zSql,...)</a> interfaces interpret the
+text in their zSql parameter as UTF-8.
+
+<a name="H13012"></a>
+<p><b>H13012:</b>
+The <a href="c3ref/prepare.html">sqlite3_prepare16(db,zSql,...)</a> and
+<a href="c3ref/prepare.html">sqlite3_prepare16_v2(db,zSql,...)</a> interfaces interpret the
+text in their zSql parameter as UTF-16 in the native byte order.
+
+<a name="H13013"></a>
+<p><b>H13013:</b>
+If the nByte argument to <a href="c3ref/prepare.html">sqlite3_prepare_v2(db,zSql,nByte,...)</a>
+and its variants is less than zero, the SQL text is
+read from zSql is read up to the first zero terminator.
+
+<a name="H13014"></a>
+<p><b>H13014:</b>
+If the nByte argument to <a href="c3ref/prepare.html">sqlite3_prepare_v2(db,zSql,nByte,...)</a>
+and its variants is non-negative, then at most nBytes bytes of
+SQL text is read from zSql.
+
+<a name="H13015"></a>
+<p><b>H13015:</b>
+In <a href="c3ref/prepare.html">sqlite3_prepare_v2(db,zSql,N,P,pzTail)</a> and its variants
+if the zSql input text contains more than one SQL statement
+and pzTail is not NULL, then *pzTail is made to point to the
+first byte past the end of the first SQL statement in zSql.
+<todo>What does *pzTail point to if there is one statement?</todo>
+
+<a name="H13016"></a>
+<p><b>H13016:</b>
+A successful call to <a href="c3ref/prepare.html">sqlite3_prepare_v2(db,zSql,N,ppStmt,...)</a>
+or one of its variants writes into *ppStmt a pointer to a new
+<a href="c3ref/stmt.html">prepared statement</a> or a pointer to NULL if zSql contains
+nothing other than whitespace or comments.
+
+<a name="H13019"></a>
+<p><b>H13019:</b>
+The <a href="c3ref/prepare.html">sqlite3_prepare_v2()</a> interface and its variants return
+<a href="c3ref/c_abort.html">SQLITE_OK</a> or an appropriate <a href="c3ref/c_abort.html">error code</a> upon failure.
+
+<a name="H13021"></a>
+<p><b>H13021:</b>
+Before <a href="c3ref/prepare.html">sqlite3_prepare(db,zSql,nByte,ppStmt,pzTail)</a> or its
+variants returns an error (any value other than <a href="c3ref/c_abort.html">SQLITE_OK</a>),
+they first set *ppStmt to NULL.
+
+<a name="H13101"></a>
+<p><b>H13101:</b>
+If the <a href="c3ref/stmt.html">prepared statement</a> passed as the argument to
+<a href="c3ref/sql.html">sqlite3_sql()</a> was compiled using either <a href="c3ref/prepare.html">sqlite3_prepare_v2()</a> or
+<a href="c3ref/prepare.html">sqlite3_prepare16_v2()</a>, then <a href="c3ref/sql.html">sqlite3_sql()</a> returns
+a pointer to a zero-terminated string containing a UTF-8 rendering
+of the original SQL statement.
+
+<a name="H13102"></a>
+<p><b>H13102:</b>
+If the <a href="c3ref/stmt.html">prepared statement</a> passed as the argument to
+<a href="c3ref/sql.html">sqlite3_sql()</a> was compiled using either <a href="c3ref/prepare.html">sqlite3_prepare()</a> or
+<a href="c3ref/prepare.html">sqlite3_prepare16()</a>, then <a href="c3ref/sql.html">sqlite3_sql()</a> returns a NULL pointer.
+
+<a name="H13103"></a>
+<p><b>H13103:</b>
+The string returned by <a href="c3ref/sql.html">sqlite3_sql(S)</a> is valid until the
+<a href="c3ref/stmt.html">prepared statement</a> S is deleted using <a href="c3ref/finalize.html">sqlite3_finalize(S)</a>.
+
+<a name="H13123"></a>
+<p><b>H13123:</b>
+The <a href="c3ref/db_handle.html">sqlite3_db_handle(S)</a> interface returns a pointer
+to the <a href="c3ref/sqlite3.html">database connection</a> associated with the
+<a href="c3ref/stmt.html">prepared statement</a> S.
+
+<a name="H13143"></a>
+<p><b>H13143:</b>
+If D is a <a href="c3ref/sqlite3.html">database connection</a> that holds one or more
+unfinalized <a href="c3ref/stmt.html">prepared statements</a> and S is a NULL pointer,
+then <a href="c3ref/next_stmt.html">sqlite3_next_stmt(D, S)</a> routine shall return a pointer
+to one of the prepared statements associated with D.
+
+<a name="H13146"></a>
+<p><b>H13146:</b>
+If D is a <a href="c3ref/sqlite3.html">database connection</a> that holds no unfinalized
+<a href="c3ref/stmt.html">prepared statements</a> and S is a NULL pointer, then
+<a href="c3ref/next_stmt.html">sqlite3_next_stmt(D, S)</a> routine shall return a NULL pointer.
+
+<a name="H13149"></a>
+<p><b>H13149:</b>
+If S is a <a href="c3ref/stmt.html">prepared statement</a> in the <a href="c3ref/sqlite3.html">database connection</a> D
+and S is not the last prepared statement in D, then
+<a href="c3ref/next_stmt.html">sqlite3_next_stmt(D, S)</a> routine shall return a pointer
+to the next prepared statement in D after S.
+
+<a name="H13152"></a>
+<p><b>H13152:</b>
+If S is the last <a href="c3ref/stmt.html">prepared statement</a> in the
+<a href="c3ref/sqlite3.html">database connection</a> D then the <a href="c3ref/next_stmt.html">sqlite3_next_stmt(D, S)</a>
+routine shall return a NULL pointer.
+
+<a name="H13202"></a>
+<p><b>H13202:</b>
+If the <a href="c3ref/stmt.html">prepared statement</a> S is ready to be run, then
+<a href="c3ref/step.html">sqlite3_step(S)</a> advances that prepared statement until
+completion or until it is ready to return another row of the
+result set, or until an <a href="c3ref/interrupt.html">interrupt</a>
+or a run-time error occurs.
+
+<a name="H13506"></a>
+<p><b>H13506:</b>
+The <a href="c3ref/prepare.html">SQL statement compiler</a> recognizes tokens of the forms
+"?", "?NNN", "$VVV", ":VVV", and "@VVV" as SQL parameters,
+where NNN is any sequence of one or more digits
+and where VVV is any sequence of one or more alphanumeric
+characters or "::" optionally followed by a string containing
+no spaces and contained within parentheses.
+
+<a name="H13509"></a>
+<p><b>H13509:</b>
+The initial value of an SQL parameter is NULL.
+
+<a name="H13512"></a>
+<p><b>H13512:</b>
+The index of an "?" SQL parameter is one larger than the
+largest index of SQL parameter to the left, or 1 if
+the "?" is the leftmost SQL parameter.
+
+<a name="H13515"></a>
+<p><b>H13515:</b>
+The index of an "?NNN" SQL parameter is the integer NNN.
+
+<a name="H13518"></a>
+<p><b>H13518:</b>
+The index of an ":VVV", "$VVV", or "@VVV" SQL parameter is
+the same as the index of leftmost occurrences of the same
+parameter, or one more than the largest index over all
+parameters to the left if this is the first occurrence
+of this parameter, or 1 if this is the leftmost parameter.
+
+<a name="H13521"></a>
+<p><b>H13521:</b>
+The <a href="c3ref/prepare.html">SQL statement compiler</a> fails with an <a href="c3ref/c_abort.html">SQLITE_RANGE</a>
+error if the index of an SQL parameter is less than 1
+or greater than the compile-time SQLITE_MAX_VARIABLE_NUMBER
+parameter.
+
+<a name="H13524"></a>
+<p><b>H13524:</b>
+Calls to <a href="c3ref/bind_blob.html">sqlite3_bind(S,N,V,...)</a>
+associate the value V with all SQL parameters having an
+index of N in the <a href="c3ref/stmt.html">prepared statement</a> S.
+
+<a name="H13527"></a>
+<p><b>H13527:</b>
+Calls to <a href="c3ref/bind_blob.html">sqlite3_bind(S,N,...)</a>
+override prior calls with the same values of S and N.
+
+<a name="H13530"></a>
+<p><b>H13530:</b>
+Bindings established by <a href="c3ref/bind_blob.html">sqlite3_bind(S,...)</a>
+persist across calls to <a href="c3ref/reset.html">sqlite3_reset(S)</a>.
+
+<a name="H13533"></a>
+<p><b>H13533:</b>
+In calls to <a href="c3ref/bind_blob.html">sqlite3_bind_blob(S,N,V,L,D)</a>,
+<a href="c3ref/bind_blob.html">sqlite3_bind_text(S,N,V,L,D)</a>, or
+<a href="c3ref/bind_blob.html">sqlite3_bind_text16(S,N,V,L,D)</a> SQLite binds the first L
+bytes of the BLOB or string pointed to by V, when L
+is non-negative.
+
+<a name="H13536"></a>
+<p><b>H13536:</b>
+In calls to <a href="c3ref/bind_blob.html">sqlite3_bind_text(S,N,V,L,D)</a> or
+<a href="c3ref/bind_blob.html">sqlite3_bind_text16(S,N,V,L,D)</a> SQLite binds characters
+from V through the first zero character when L is negative.
+
+<a name="H13539"></a>
+<p><b>H13539:</b>
+In calls to <a href="c3ref/bind_blob.html">sqlite3_bind_blob(S,N,V,L,D)</a>,
+<a href="c3ref/bind_blob.html">sqlite3_bind_text(S,N,V,L,D)</a>, or
+<a href="c3ref/bind_blob.html">sqlite3_bind_text16(S,N,V,L,D)</a> when D is the special
+constant <a href="c3ref/c_static.html">SQLITE_STATIC</a>, SQLite assumes that the value V
+is held in static unmanaged space that will not change
+during the lifetime of the binding.
+
+<a name="H13542"></a>
+<p><b>H13542:</b>
+In calls to <a href="c3ref/bind_blob.html">sqlite3_bind_blob(S,N,V,L,D)</a>,
+<a href="c3ref/bind_blob.html">sqlite3_bind_text(S,N,V,L,D)</a>, or
+<a href="c3ref/bind_blob.html">sqlite3_bind_text16(S,N,V,L,D)</a> when D is the special
+constant <a href="c3ref/c_static.html">SQLITE_TRANSIENT</a>, the routine makes a
+private copy of the value V before it returns.
+
+<a name="H13545"></a>
+<p><b>H13545:</b>
+In calls to <a href="c3ref/bind_blob.html">sqlite3_bind_blob(S,N,V,L,D)</a>,
+<a href="c3ref/bind_blob.html">sqlite3_bind_text(S,N,V,L,D)</a>, or
+<a href="c3ref/bind_blob.html">sqlite3_bind_text16(S,N,V,L,D)</a> when D is a pointer to
+a function, SQLite invokes that function to destroy the
+value V after it has finished using the value V.
+
+<a name="H13548"></a>
+<p><b>H13548:</b>
+In calls to <a href="c3ref/bind_blob.html">sqlite3_bind_zeroblob(S,N,V,L)</a> the value bound
+is a BLOB of L bytes, or a zero-length BLOB if L is negative.
+
+<a name="H13551"></a>
+<p><b>H13551:</b>
+In calls to <a href="c3ref/bind_blob.html">sqlite3_bind_value(S,N,V)</a> the V argument may
+be either a <a href="c3ref/value.html">protected sqlite3_value</a> object or an
+<a href="c3ref/value.html">unprotected sqlite3_value</a> object.
+
+<a name="H13601"></a>
+<p><b>H13601:</b>
+The <a href="c3ref/bind_parameter_count.html">sqlite3_bind_parameter_count(S)</a> interface returns
+the largest index of all SQL parameters in the
+<a href="c3ref/stmt.html">prepared statement</a> S, or 0 if S contains no SQL parameters.
+
+<a name="H13621"></a>
+<p><b>H13621:</b>
+The <a href="c3ref/bind_parameter_name.html">sqlite3_bind_parameter_name(S,N)</a> interface returns
+a UTF-8 rendering of the name of the SQL parameter in
+the <a href="c3ref/stmt.html">prepared statement</a> S having index N, or
+NULL if there is no SQL parameter with index N or if the
+parameter with index N is an anonymous parameter "?".
+
+<a name="H13641"></a>
+<p><b>H13641:</b>
+The <a href="c3ref/bind_parameter_index.html">sqlite3_bind_parameter_index(S,N)</a> interface returns
+the index of SQL parameter in the <a href="c3ref/stmt.html">prepared statement</a>
+S whose name matches the UTF-8 string N, or 0 if there is
+no match.
+
+<a name="H13661"></a>
+<p><b>H13661:</b>
+The <a href="c3ref/clear_bindings.html">sqlite3_clear_bindings(S)</a> interface resets all SQL
+parameter bindings in the <a href="c3ref/stmt.html">prepared statement</a> S back to NULL.
+
+<a name="H13711"></a>
+<p><b>H13711:</b>
+The <a href="c3ref/column_count.html">sqlite3_column_count(S)</a> interface returns the number of
+columns in the result set generated by the <a href="c3ref/stmt.html">prepared statement</a> S,
+or 0 if S does not generate a result set.
+
+<a name="H13721"></a>
+<p><b>H13721:</b>
+A successful invocation of the <a href="c3ref/column_name.html">sqlite3_column_name(S,N)</a>
+interface returns the name of the Nth column (where 0 is
+the leftmost column) for the result set of the
+<a href="c3ref/stmt.html">prepared statement</a> S as a zero-terminated UTF-8 string.
+
+<a name="H13723"></a>
+<p><b>H13723:</b>
+A successful invocation of the <a href="c3ref/column_name.html">sqlite3_column_name16(S,N)</a>
+interface returns the name of the Nth column (where 0 is
+the leftmost column) for the result set of the
+<a href="c3ref/stmt.html">prepared statement</a> S as a zero-terminated UTF-16 string
+in the native byte order.
+
+<a name="H13724"></a>
+<p><b>H13724:</b>
+The <a href="c3ref/column_name.html">sqlite3_column_name()</a> and <a href="c3ref/column_name.html">sqlite3_column_name16()</a>
+interfaces return a NULL pointer if they are unable to
+allocate memory to hold their normal return strings.
+
+<a name="H13725"></a>
+<p><b>H13725:</b>
+If the N parameter to <a href="c3ref/column_name.html">sqlite3_column_name(S,N)</a> or
+<a href="c3ref/column_name.html">sqlite3_column_name16(S,N)</a> is out of range, then the
+interfaces return a NULL pointer.
+
+<a name="H13726"></a>
+<p><b>H13726:</b>
+The strings returned by <a href="c3ref/column_name.html">sqlite3_column_name(S,N)</a> and
+<a href="c3ref/column_name.html">sqlite3_column_name16(S,N)</a> are valid until the next
+call to either routine with the same S and N parameters
+or until <a href="c3ref/finalize.html">sqlite3_finalize(S)</a> is called.
+
+<a name="H13727"></a>
+<p><b>H13727:</b>
+When a result column of a <a href="lang_select.html">SELECT</a> statement contains
+an AS clause, the name of that column is the identifier
+to the right of the AS keyword.
+
+<a name="H13741"></a>
+<p><b>H13741:</b>
+The <a href="c3ref/column_database_name.html">sqlite3_column_database_name(S,N)</a> interface returns either
+the UTF-8 zero-terminated name of the database from which the
+Nth result column of the <a href="c3ref/stmt.html">prepared statement</a> S is extracted,
+or NULL if the Nth column of S is a general expression
+or if unable to allocate memory to store the name.
+
+<a name="H13742"></a>
+<p><b>H13742:</b>
+The <a href="c3ref/column_database_name.html">sqlite3_column_database_name16(S,N)</a> interface returns either
+the UTF-16 native byte order zero-terminated name of the database
+from which the Nth result column of the <a href="c3ref/stmt.html">prepared statement</a> S is
+extracted, or NULL if the Nth column of S is a general expression
+or if unable to allocate memory to store the name.
+
+<a name="H13743"></a>
+<p><b>H13743:</b>
+The <a href="c3ref/column_database_name.html">sqlite3_column_table_name(S,N)</a> interface returns either
+the UTF-8 zero-terminated name of the table from which the
+Nth result column of the <a href="c3ref/stmt.html">prepared statement</a> S is extracted,
+or NULL if the Nth column of S is a general expression
+or if unable to allocate memory to store the name.
+
+<a name="H13744"></a>
+<p><b>H13744:</b>
+The <a href="c3ref/column_database_name.html">sqlite3_column_table_name16(S,N)</a> interface returns either
+the UTF-16 native byte order zero-terminated name of the table
+from which the Nth result column of the <a href="c3ref/stmt.html">prepared statement</a> S is
+extracted, or NULL if the Nth column of S is a general expression
+or if unable to allocate memory to store the name.
+
+<a name="H13745"></a>
+<p><b>H13745:</b>
+The <a href="c3ref/column_database_name.html">sqlite3_column_origin_name(S,N)</a> interface returns either
+the UTF-8 zero-terminated name of the table column from which the
+Nth result column of the <a href="c3ref/stmt.html">prepared statement</a> S is extracted,
+or NULL if the Nth column of S is a general expression
+or if unable to allocate memory to store the name.
+
+<a name="H13746"></a>
+<p><b>H13746:</b>
+The <a href="c3ref/column_database_name.html">sqlite3_column_origin_name16(S,N)</a> interface returns either
+the UTF-16 native byte order zero-terminated name of the table
+column from which the Nth result column of the
+<a href="c3ref/stmt.html">prepared statement</a> S is extracted, or NULL if the Nth column
+of S is a general expression or if unable to allocate memory
+to store the name.
+
+<a name="H13748"></a>
+<p><b>H13748:</b>
+The return values from
+<a href="c3ref/column_database_name.html">column metadata interfaces</a>
+are valid for the lifetime of the <a href="c3ref/stmt.html">prepared statement</a>
+or until the encoding is changed by another metadata
+interface call for the same prepared statement and column.
+
+<a name="H13761"></a>
+<p><b>H13761:</b>
+A successful call to <a href="c3ref/column_decltype.html">sqlite3_column_decltype(S,N)</a> returns a
+zero-terminated UTF-8 string containing the declared datatype
+of the table column that appears as the Nth column (numbered
+from 0) of the result set to the <a href="c3ref/stmt.html">prepared statement</a> S.
+
+<a name="H13762"></a>
+<p><b>H13762:</b>
+A successful call to <a href="c3ref/column_decltype.html">sqlite3_column_decltype16(S,N)</a>
+returns a zero-terminated UTF-16 native byte order string
+containing the declared datatype of the table column that appears
+as the Nth column (numbered from 0) of the result set to the
+<a href="c3ref/stmt.html">prepared statement</a> S.
+
+<a name="H13763"></a>
+<p><b>H13763:</b>
+If N is less than 0 or N is greater than or equal to
+the number of columns in the <a href="c3ref/stmt.html">prepared statement</a> S,
+or if the Nth column of S is an expression or subquery rather
+than a table column, or if a memory allocation failure
+occurs during encoding conversions, then
+calls to <a href="c3ref/column_decltype.html">sqlite3_column_decltype(S,N)</a> or
+<a href="c3ref/column_decltype.html">sqlite3_column_decltype16(S,N)</a> return NULL.
+
+<a name="H13771"></a>
+<p><b>H13771:</b>
+After a call to <a href="c3ref/step.html">sqlite3_step(S)</a> that returns <a href="c3ref/c_abort.html">SQLITE_ROW</a>,
+the <a href="c3ref/data_count.html">sqlite3_data_count(S)</a> routine will return the same value
+as the <a href="c3ref/column_count.html">sqlite3_column_count(S)</a> function.
+
+<a name="H13772"></a>
+<p><b>H13772:</b>
+After <a href="c3ref/step.html">sqlite3_step(S)</a> has returned any value other than
+<a href="c3ref/c_abort.html">SQLITE_ROW</a> or before <a href="c3ref/step.html">sqlite3_step(S)</a> has been called on the
+<a href="c3ref/stmt.html">prepared statement</a> for the first time since it was
+<a href="c3ref/prepare.html">prepared</a> or <a href="c3ref/reset.html">reset</a>,
+the <a href="c3ref/data_count.html">sqlite3_data_count(S)</a> routine returns zero.
+
+<a name="H13803"></a>
+<p><b>H13803:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_blob(S,N)</a> interface converts the
+Nth column in the current row of the result set for
+the <a href="c3ref/stmt.html">prepared statement</a> S into a BLOB and then returns a
+pointer to the converted value.
+
+<a name="H13806"></a>
+<p><b>H13806:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_bytes(S,N)</a> interface returns the
+number of bytes in the BLOB or string (exclusive of the
+zero terminator on the string) that was returned by the
+most recent call to <a href="c3ref/column_blob.html">sqlite3_column_blob(S,N)</a> or
+<a href="c3ref/column_blob.html">sqlite3_column_text(S,N)</a>.
+
+<a name="H13809"></a>
+<p><b>H13809:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_bytes16(S,N)</a> interface returns the
+number of bytes in the string (exclusive of the
+zero terminator on the string) that was returned by the
+most recent call to <a href="c3ref/column_blob.html">sqlite3_column_text16(S,N)</a>.
+
+<a name="H13812"></a>
+<p><b>H13812:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_double(S,N)</a> interface converts the
+Nth column in the current row of the result set for the
+<a href="c3ref/stmt.html">prepared statement</a> S into a floating point value and
+returns a copy of that value.
+
+<a name="H13815"></a>
+<p><b>H13815:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_int(S,N)</a> interface converts the
+Nth column in the current row of the result set for the
+<a href="c3ref/stmt.html">prepared statement</a> S into a 64-bit signed integer and
+returns the lower 32 bits of that integer.
+
+<a name="H13818"></a>
+<p><b>H13818:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_int64(S,N)</a> interface converts the
+Nth column in the current row of the result set for the
+<a href="c3ref/stmt.html">prepared statement</a> S into a 64-bit signed integer and
+returns a copy of that integer.
+
+<a name="H13821"></a>
+<p><b>H13821:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_text(S,N)</a> interface converts the
+Nth column in the current row of the result set for
+the <a href="c3ref/stmt.html">prepared statement</a> S into a zero-terminated UTF-8
+string and returns a pointer to that string.
+
+<a name="H13824"></a>
+<p><b>H13824:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_text16(S,N)</a> interface converts the
+Nth column in the current row of the result set for the
+<a href="c3ref/stmt.html">prepared statement</a> S into a zero-terminated 2-byte
+aligned UTF-16 native byte order string and returns
+a pointer to that string.
+
+<a name="H13827"></a>
+<p><b>H13827:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_type(S,N)</a> interface returns
+one of <a href="c3ref/c_blob.html">SQLITE_NULL</a>, <a href="c3ref/c_blob.html">SQLITE_INTEGER</a>, <a href="c3ref/c_blob.html">SQLITE_FLOAT</a>,
+<a href="c3ref/c_blob.html">SQLITE_TEXT</a>, or <a href="c3ref/c_blob.html">SQLITE_BLOB</a> as appropriate for
+the Nth column in the current row of the result set for
+the <a href="c3ref/stmt.html">prepared statement</a> S.
+
+<a name="H13830"></a>
+<p><b>H13830:</b>
+The <a href="c3ref/column_blob.html">sqlite3_column_value(S,N)</a> interface returns a
+pointer to an <a href="c3ref/value.html">unprotected sqlite3_value</a> object for the
+Nth column in the current row of the result set for
+the <a href="c3ref/stmt.html">prepared statement</a> S.
+
+<a name="H14103"></a>
+<p><b>H14103:</b>
+A successful invocation of <a href="c3ref/config.html">sqlite3_config()</a> shall return
+<a href="c3ref/c_abort.html">SQLITE_OK</a>.
+
+<a name="H14106"></a>
+<p><b>H14106:</b>
+The <a href="c3ref/config.html">sqlite3_config()</a> interface shall return <a href="c3ref/c_abort.html">SQLITE_MISUSE</a>
+if it is invoked in between calls to <a href="c3ref/initialize.html">sqlite3_initialize()</a> and
+<a href="c3ref/initialize.html">sqlite3_shutdown()</a>.
+
+<a name="H14120"></a>
+<p><b>H14120:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_SINGLETHREAD</a>)
+shall set the default <a href="threadsafe.html">threading mode</a> to Single-thread.
+
+<a name="H14123"></a>
+<p><b>H14123:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_MULTITHREAD</a>)
+shall set the default <a href="threadsafe.html">threading mode</a> to Multi-thread.
+
+<a name="H14126"></a>
+<p><b>H14126:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_SERIALIZED</a>)
+shall set the default <a href="threadsafe.html">threading mode</a> to Serialized.
+
+<a name="H14129"></a>
+<p><b>H14129:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_MUTEX</a>,X)
+where X is a pointer to an initialized <a href="c3ref/mutex_methods.html">sqlite3_mutex_methods</a>
+object shall cause all subsequent mutex operations performed
+by SQLite to use the mutex methods that were present in X
+during the call to <a href="c3ref/config.html">sqlite3_config()</a>.
+
+<a name="H14132"></a>
+<p><b>H14132:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_GETMUTEX</a>,X)
+where X is a pointer to an <a href="c3ref/mutex_methods.html">sqlite3_mutex_methods</a> object
+shall overwrite the content of <a href="c3ref/mutex_methods.html">sqlite3_mutex_methods</a> object
+with the mutex methods currently in use by SQLite.
+
+<a name="H14135"></a>
+<p><b>H14135:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_MALLOC</a>,M)
+where M is a pointer to an initialized <a href="c3ref/mem_methods.html">sqlite3_mem_methods</a>
+object shall cause all subsequent memory allocation operations
+performed by SQLite to use the methods that were present in
+M during the call to <a href="c3ref/config.html">sqlite3_config()</a>.
+
+<a name="H14138"></a>
+<p><b>H14138:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_GETMALLOC</a>,M)
+where M is a pointer to an <a href="c3ref/mem_methods.html">sqlite3_mem_methods</a> object shall
+overwrite the content of <a href="c3ref/mem_methods.html">sqlite3_mem_methods</a> object with
+the memory allocation methods currently in use by
+SQLite.
+
+<a name="H14141"></a>
+<p><b>H14141:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_MEMSTATUS</a>,1)
+shall enable the memory allocation status collection logic.
+
+<a name="H14144"></a>
+<p><b>H14144:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_MEMSTATUS</a>,0)
+shall disable the memory allocation status collection logic.
+
+<a name="H14147"></a>
+<p><b>H14147:</b>
+The memory allocation status collection logic shall be
+enabled by default.
+
+<a name="H14150"></a>
+<p><b>H14150:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_SCRATCH</a>,S,Z,N)
+where Z and N are non-negative integers and
+S is a pointer to an aligned memory buffer not less than
+Z*N bytes in size shall cause S to be used by the
+<a href="malloc.html#scratch">scratch memory allocator</a> for as many as N simulataneous
+allocations each of size Z.
+
+<a name="H14153"></a>
+<p><b>H14153:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_SCRATCH</a>,S,Z,N)
+where S is a NULL pointer shall disable the
+<a href="malloc.html#scratch">scratch memory allocator</a>.
+
+<a name="H14156"></a>
+<p><b>H14156:</b>
+A successful call to
+<a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_PAGECACHE</a>,S,Z,N)
+where Z and N are non-negative integers and
+S is a pointer to an aligned memory buffer not less than
+Z*N bytes in size shall cause S to be used by the
+<a href="malloc.html#pagecache">pagecache memory allocator</a> for as many as N simulataneous
+allocations each of size Z.
+
+<a name="H14159"></a>
+<p><b>H14159:</b>
+A successful call to
+<a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_PAGECACHE</a>,S,Z,N)
+where S is a NULL pointer shall disable the
+<a href="malloc.html#pagecache">pagecache memory allocator</a>.
+
+<a name="H14162"></a>
+<p><b>H14162:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_HEAP</a>,H,Z,N)
+where Z and N are non-negative integers and
+H is a pointer to an aligned memory buffer not less than
+Z bytes in size shall enable the <a href="malloc.html#memsys5">memsys5</a> memory allocator
+and cause it to use buffer S as its memory source and to use
+a minimum allocation size of N.
+
+<a name="H14165"></a>
+<p><b>H14165:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_HEAP</a>,H,Z,N)
+where H is a NULL pointer shall disable the
+<a href="malloc.html#memsys5">memsys5</a> memory allocator.
+
+<a name="H14168"></a>
+<p><b>H14168:</b>
+A successful call to <a href="c3ref/config.html">sqlite3_config</a>(<a href="c3ref/c_config_getmalloc.html">SQLITE_CONFIG_LOOKASIDE</a>,Z,N)
+shall cause the default <a href="malloc.html#lookaside">lookaside memory allocator</a> configuration
+for new <a href="c3ref/sqlite3.html">database connections</a> to be N slots of Z bytes each.
+
+<a name="H14203"></a>
+<p><b>H14203:</b>
+A call to <a href="c3ref/db_config.html">sqlite3_db_config(D,V,...)</a> shall return <a href="c3ref/c_abort.html">SQLITE_OK</a>
+if and only if the call is successful.
+
+<a name="H14206"></a>
+<p><b>H14206:</b>
+If one or more slots of the <a href="malloc.html#lookaside">lookaside memory allocator</a> for
+<a href="c3ref/sqlite3.html">database connection</a> D are in use, then a call to
+<a href="c3ref/db_config.html">sqlite3_db_config</a>(D,<a href="c3ref/c_dbconfig_lookaside.html">SQLITE_DBCONFIG_LOOKASIDE</a>,...) shall
+fail with an <a href="c3ref/c_abort.html">SQLITE_BUSY</a> return code.
+
+<a name="H14209"></a>
+<p><b>H14209:</b>
+A successful call to
+<a href="c3ref/db_config.html">sqlite3_db_config</a>(D,<a href="c3ref/c_dbconfig_lookaside.html">SQLITE_DBCONFIG_LOOKASIDE</a>,B,Z,N) where
+D is an open <a href="c3ref/sqlite3.html">database connection</a> and Z and N are positive
+integers and B is an aligned buffer at least Z*N bytes in size
+shall cause the <a href="malloc.html#lookaside">lookaside memory allocator</a> for D to use buffer B
+with N slots of Z bytes each.
+
+<a name="H14212"></a>
+<p><b>H14212:</b>
+A successful call to
+<a href="c3ref/db_config.html">sqlite3_db_config</a>(D,<a href="c3ref/c_dbconfig_lookaside.html">SQLITE_DBCONFIG_LOOKASIDE</a>,B,Z,N) where
+D is an open <a href="c3ref/sqlite3.html">database connection</a> and Z and N are positive
+integers and B is NULL pointer shall cause the
+<a href="malloc.html#lookaside">lookaside memory allocator</a> for D to a obtain Z*N byte buffer
+from the primary memory allocator and use that buffer
+with N lookaside slots of Z bytes each.
+
+<a name="H14215"></a>
+<p><b>H14215:</b>
+A successful call to
+<a href="c3ref/db_config.html">sqlite3_db_config</a>(D,<a href="c3ref/c_dbconfig_lookaside.html">SQLITE_DBCONFIG_LOOKASIDE</a>,B,Z,N) where
+D is an open <a href="c3ref/sqlite3.html">database connection</a> and Z and N are zero shall
+disable the <a href="malloc.html#lookaside">lookaside memory allocator</a> for D.
+
+<a name="H15103"></a>
+<p><b>H15103:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_blob(V)</a> interface converts the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V into a BLOB and then
+returns a pointer to the converted value.
+
+<a name="H15106"></a>
+<p><b>H15106:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_bytes(V)</a> interface returns the
+number of bytes in the BLOB or string (exclusive of the
+zero terminator on the string) that was returned by the
+most recent call to <a href="c3ref/value_blob.html">sqlite3_value_blob(V)</a> or
+<a href="c3ref/value_blob.html">sqlite3_value_text(V)</a>.
+
+<a name="H15109"></a>
+<p><b>H15109:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_bytes16(V)</a> interface returns the
+number of bytes in the string (exclusive of the
+zero terminator on the string) that was returned by the
+most recent call to <a href="c3ref/value_blob.html">sqlite3_value_text16(V)</a>,
+<a href="c3ref/value_blob.html">sqlite3_value_text16be(V)</a>, or <a href="c3ref/value_blob.html">sqlite3_value_text16le(V)</a>.
+
+<a name="H15112"></a>
+<p><b>H15112:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_double(V)</a> interface converts the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V into a floating point value and
+returns a copy of that value.
+
+<a name="H15115"></a>
+<p><b>H15115:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_int(V)</a> interface converts the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V into a 64-bit signed integer and
+returns the lower 32 bits of that integer.
+
+<a name="H15118"></a>
+<p><b>H15118:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_int64(V)</a> interface converts the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V into a 64-bit signed integer and
+returns a copy of that integer.
+
+<a name="H15121"></a>
+<p><b>H15121:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_text(V)</a> interface converts the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V into a zero-terminated UTF-8
+string and returns a pointer to that string.
+
+<a name="H15124"></a>
+<p><b>H15124:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_text16(V)</a> interface converts the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V into a zero-terminated 2-byte
+aligned UTF-16 native byte order
+string and returns a pointer to that string.
+
+<a name="H15127"></a>
+<p><b>H15127:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_text16be(V)</a> interface converts the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V into a zero-terminated 2-byte
+aligned UTF-16 big-endian
+string and returns a pointer to that string.
+
+<a name="H15130"></a>
+<p><b>H15130:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_text16le(V)</a> interface converts the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V into a zero-terminated 2-byte
+aligned UTF-16 little-endian
+string and returns a pointer to that string.
+
+<a name="H15133"></a>
+<p><b>H15133:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_type(V)</a> interface returns
+one of <a href="c3ref/c_blob.html">SQLITE_NULL</a>, <a href="c3ref/c_blob.html">SQLITE_INTEGER</a>, <a href="c3ref/c_blob.html">SQLITE_FLOAT</a>,
+<a href="c3ref/c_blob.html">SQLITE_TEXT</a>, or <a href="c3ref/c_blob.html">SQLITE_BLOB</a> as appropriate for
+the <a href="c3ref/value.html">sqlite3_value</a> object V.
+
+<a name="H15136"></a>
+<p><b>H15136:</b>
+The <a href="c3ref/value_blob.html">sqlite3_value_numeric_type(V)</a> interface converts
+the <a href="c3ref/value.html">protected sqlite3_value</a> object V into either an integer or
+a floating point value if it can do so without loss of
+information, and returns one of <a href="c3ref/c_blob.html">SQLITE_NULL</a>,
+<a href="c3ref/c_blob.html">SQLITE_INTEGER</a>, <a href="c3ref/c_blob.html">SQLITE_FLOAT</a>, <a href="c3ref/c_blob.html">SQLITE_TEXT</a>, or
+<a href="c3ref/c_blob.html">SQLITE_BLOB</a> as appropriate for the
+<a href="c3ref/value.html">protected sqlite3_value</a> object V after the conversion attempt.
+
+<a name="H15304"></a>
+<p><b>H15304:</b>
+When a call to <a href="c3ref/step.html">sqlite3_step(S)</a> causes the <a href="c3ref/stmt.html">prepared statement</a>
+S to run to completion, the function returns <a href="c3ref/c_abort.html">SQLITE_DONE</a>.
+
+<a name="H15306"></a>
+<p><b>H15306:</b>
+When a call to <a href="c3ref/step.html">sqlite3_step(S)</a> stops because it is ready to
+return another row of the result set, it returns <a href="c3ref/c_abort.html">SQLITE_ROW</a>.
+
+<a name="H15308"></a>
+<p><b>H15308:</b>
+If a call to <a href="c3ref/step.html">sqlite3_step(S)</a> encounters an
+<a href="c3ref/interrupt.html">interrupt</a> or a run-time error,
+it returns an appropriate error code that is not one of
+<a href="c3ref/c_abort.html">SQLITE_OK</a>, <a href="c3ref/c_abort.html">SQLITE_ROW</a>, or <a href="c3ref/c_abort.html">SQLITE_DONE</a>.
+
+<a name="H15310"></a>
+<p><b>H15310:</b>
+If an <a href="c3ref/interrupt.html">interrupt</a> or a run-time error
+occurs during a call to <a href="c3ref/step.html">sqlite3_step(S)</a>
+for a <a href="c3ref/stmt.html">prepared statement</a> S created using
+legacy interfaces <a href="c3ref/prepare.html">sqlite3_prepare()</a> or
+<a href="c3ref/prepare.html">sqlite3_prepare16()</a>, then the function returns either
+<a href="c3ref/c_abort.html">SQLITE_ERROR</a>, <a href="c3ref/c_abort.html">SQLITE_BUSY</a>, or <a href="c3ref/c_abort.html">SQLITE_MISUSE</a>.
+
+<a name="H16103"></a>
+<p><b>H16103:</b>
+The <a href="c3ref/create_function.html">sqlite3_create_function16(D,X,...)</a> interface shall behave
+as <a href="c3ref/create_function.html">sqlite3_create_function(D,X,...)</a> in every way except that it
+interprets the X argument as zero-terminated UTF-16
+native byte order instead of as zero-terminated UTF-8.
+
+<a name="H16106"></a>
+<p><b>H16106:</b>
+A successful invocation of the
+<a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,E,...)</a> interface shall register
+or replaces callback functions in the <a href="c3ref/sqlite3.html">database connection</a> D
+used to implement the SQL function named X with N parameters
+and having a preferred text encoding of E.
+
+<a name="H16109"></a>
+<p><b>H16109:</b>
+A successful call to <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,E,P,F,S,L)</a>
+shall replace the P, F, S, and L values from any prior calls with
+the same D, X, N, and E values.
+
+<a name="H16112"></a>
+<p><b>H16112:</b>
+The <a href="c3ref/create_function.html">sqlite3_create_function(D,X,...)</a> interface shall fail
+if the SQL function name X is
+longer than 255 bytes exclusive of the zero terminator.
+
+<a name="H16118"></a>
+<p><b>H16118:</b>
+The <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,E,P,F,S,L)</a> interface
+shall fail unless either F is NULL and S and L are non-NULL or
+F is non-NULL and S and L are NULL.
+
+<a name="H16121"></a>
+<p><b>H16121:</b>
+The <a href="c3ref/create_function.html">sqlite3_create_function(D,...)</a> interface shall fails with an
+error code of <a href="c3ref/c_abort.html">SQLITE_BUSY</a> if there exist <a href="c3ref/stmt.html">prepared statements</a>
+associated with the <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H16124"></a>
+<p><b>H16124:</b>
+The <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,...)</a> interface shall fail with
+an error code of <a href="c3ref/c_abort.html">SQLITE_ERROR</a> if parameter N is less
+than -1 or greater than 127.
+
+<a name="H16127"></a>
+<p><b>H16127:</b>
+When N is non-negative, the <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,...)</a>
+interface shall register callbacks to be invoked for the
+SQL function
+named X when the number of arguments to the SQL function is
+exactly N.
+
+<a name="H16130"></a>
+<p><b>H16130:</b>
+When N is -1, the <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,...)</a>
+interface shall register callbacks to be invoked for the SQL
+function named X with any number of arguments.
+
+<a name="H16133"></a>
+<p><b>H16133:</b>
+When calls to <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,...)</a>
+specify multiple implementations of the same function X
+and when one implementation has N>=0 and the other has N=(-1)
+the implementation with a non-zero N shall be preferred.
+
+<a name="H16136"></a>
+<p><b>H16136:</b>
+When calls to <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,E,...)</a>
+specify multiple implementations of the same function X with
+the same number of arguments N but with different
+encodings E, then the implementation where E matches the
+database encoding shall preferred.
+
+<a name="H16139"></a>
+<p><b>H16139:</b>
+For an aggregate SQL function created using
+<a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,E,P,0,S,L)</a> the finalizer
+function L shall always be invoked exactly once if the
+step function S is called one or more times.
+
+<a name="H16142"></a>
+<p><b>H16142:</b>
+When SQLite invokes either the xFunc or xStep function of
+an application-defined SQL function or aggregate created
+by <a href="c3ref/create_function.html">sqlite3_create_function()</a> or <a href="c3ref/create_function.html">sqlite3_create_function16()</a>,
+then the array of <a href="c3ref/value.html">sqlite3_value</a> objects passed as the
+third parameter shall be <a href="c3ref/value.html">protected sqlite3_value</a> objects.
+
+<a name="H16211"></a>
+<p><b>H16211:</b>
+The first invocation of <a href="c3ref/aggregate_context.html">sqlite3_aggregate_context(C,N)</a> for
+a particular instance of an aggregate function (for a particular
+context C) causes SQLite to allocate N bytes of memory,
+zero that memory, and return a pointer to the allocated memory.
+
+<a name="H16213"></a>
+<p><b>H16213:</b>
+If a memory allocation error occurs during
+<a href="c3ref/aggregate_context.html">sqlite3_aggregate_context(C,N)</a> then the function returns 0.
+
+<a name="H16215"></a>
+<p><b>H16215:</b>
+Second and subsequent invocations of
+<a href="c3ref/aggregate_context.html">sqlite3_aggregate_context(C,N)</a> for the same context pointer C
+ignore the N parameter and return a pointer to the same
+block of memory returned by the first invocation.
+
+<a name="H16217"></a>
+<p><b>H16217:</b>
+The memory allocated by <a href="c3ref/aggregate_context.html">sqlite3_aggregate_context(C,N)</a> is
+automatically freed on the next call to <a href="c3ref/reset.html">sqlite3_reset()</a>
+or <a href="c3ref/finalize.html">sqlite3_finalize()</a> for the <a href="c3ref/stmt.html">prepared statement</a> containing
+the aggregate function associated with context C.
+
+<a name="H16243"></a>
+<p><b>H16243:</b>
+The <a href="c3ref/user_data.html">sqlite3_user_data(C)</a> interface returns a copy of the
+P pointer from the <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,E,P,F,S,L)</a>
+or <a href="c3ref/create_function.html">sqlite3_create_function16(D,X,N,E,P,F,S,L)</a> call that
+registered the SQL function associated with <a href="c3ref/context.html">sqlite3_context</a> C.
+
+<a name="H16253"></a>
+<p><b>H16253:</b>
+The <a href="c3ref/context_db_handle.html">sqlite3_context_db_handle(C)</a> interface returns a copy of the
+D pointer from the <a href="c3ref/create_function.html">sqlite3_create_function(D,X,N,E,P,F,S,L)</a>
+or <a href="c3ref/create_function.html">sqlite3_create_function16(D,X,N,E,P,F,S,L)</a> call that
+registered the SQL function associated with <a href="c3ref/context.html">sqlite3_context</a> C.
+
+<a name="H16272"></a>
+<p><b>H16272:</b>
+The <a href="c3ref/get_auxdata.html">sqlite3_get_auxdata(C,N)</a> interface returns a pointer
+to metadata associated with the Nth parameter of the SQL function
+whose context is C, or NULL if there is no metadata associated
+with that parameter.
+
+<a name="H16274"></a>
+<p><b>H16274:</b>
+The <a href="c3ref/get_auxdata.html">sqlite3_set_auxdata(C,N,P,D)</a> interface assigns a metadata
+pointer P to the Nth parameter of the SQL function with context C.
+
+<a name="H16276"></a>
+<p><b>H16276:</b>
+SQLite will invoke the destructor D with a single argument
+which is the metadata pointer P following a call to
+<a href="c3ref/get_auxdata.html">sqlite3_set_auxdata(C,N,P,D)</a> when SQLite ceases to hold
+the metadata.
+
+<a name="H16277"></a>
+<p><b>H16277:</b>
+SQLite ceases to hold metadata for an SQL function parameter
+when the value of that parameter changes.
+
+<a name="H16278"></a>
+<p><b>H16278:</b>
+When <a href="c3ref/get_auxdata.html">sqlite3_set_auxdata(C,N,P,D)</a> is invoked, the destructor
+is called for any prior metadata associated with the same function
+context C and parameter N.
+
+<a name="H16279"></a>
+<p><b>H16279:</b>
+SQLite will call destructors for any metadata it is holding
+in a particular <a href="c3ref/stmt.html">prepared statement</a> S when either
+<a href="c3ref/reset.html">sqlite3_reset(S)</a> or <a href="c3ref/finalize.html">sqlite3_finalize(S)</a> is called.
+
+<a name="H16351"></a>
+<p><b>H16351:</b>
+The <a href="c3ref/soft_heap_limit.html">sqlite3_soft_heap_limit(N)</a> interface places a soft limit
+of N bytes on the amount of heap memory that may be allocated
+using <a href="c3ref/free.html">sqlite3_malloc()</a> or <a href="c3ref/free.html">sqlite3_realloc()</a> at any point
+in time.
+
+<a name="H16352"></a>
+<p><b>H16352:</b>
+If a call to <a href="c3ref/free.html">sqlite3_malloc()</a> or <a href="c3ref/free.html">sqlite3_realloc()</a> would
+cause the total amount of allocated memory to exceed the
+soft heap limit, then <a href="c3ref/release_memory.html">sqlite3_release_memory()</a> is invoked
+in an attempt to reduce the memory usage prior to proceeding
+with the memory allocation attempt.
+
+<a name="H16353"></a>
+<p><b>H16353:</b>
+Calls to <a href="c3ref/free.html">sqlite3_malloc()</a> or <a href="c3ref/free.html">sqlite3_realloc()</a> that trigger
+attempts to reduce memory usage through the soft heap limit
+mechanism continue even if the attempt to reduce memory
+usage is unsuccessful.
+
+<a name="H16354"></a>
+<p><b>H16354:</b>
+A negative or zero value for N in a call to
+<a href="c3ref/soft_heap_limit.html">sqlite3_soft_heap_limit(N)</a> means that there is no soft
+heap limit and <a href="c3ref/release_memory.html">sqlite3_release_memory()</a> will only be
+called when memory is completely exhausted.
+
+<a name="H16355"></a>
+<p><b>H16355:</b>
+The default value for the soft heap limit is zero.
+
+<a name="H16358"></a>
+<p><b>H16358:</b>
+Each call to <a href="c3ref/soft_heap_limit.html">sqlite3_soft_heap_limit(N)</a> overrides the
+values set by all prior calls.
+
+<a name="H16403"></a>
+<p><b>H16403:</b>
+The default return value from any SQL function is NULL.
+
+<a name="H16406"></a>
+<p><b>H16406:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_blob(C,V,N,D)</a> interface changes the
+return value of function C to be a BLOB that is N bytes
+in length and with content pointed to by V.
+
+<a name="H16409"></a>
+<p><b>H16409:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_double(C,V)</a> interface changes the
+return value of function C to be the floating point value V.
+
+<a name="H16412"></a>
+<p><b>H16412:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_error(C,V,N)</a> interface changes the return
+value of function C to be an exception with error code
+<a href="c3ref/c_abort.html">SQLITE_ERROR</a> and a UTF-8 error message copied from V up to the
+first zero byte or until N bytes are read if N is positive.
+
+<a name="H16415"></a>
+<p><b>H16415:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_error16(C,V,N)</a> interface changes the return
+value of function C to be an exception with error code
+<a href="c3ref/c_abort.html">SQLITE_ERROR</a> and a UTF-16 native byte order error message
+copied from V up to the first zero terminator or until N bytes
+are read if N is positive.
+
+<a name="H16418"></a>
+<p><b>H16418:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_error_toobig(C)</a> interface changes the return
+value of the function C to be an exception with error code
+<a href="c3ref/c_abort.html">SQLITE_TOOBIG</a> and an appropriate error message.
+
+<a name="H16421"></a>
+<p><b>H16421:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_error_nomem(C)</a> interface changes the return
+value of the function C to be an exception with error code
+<a href="c3ref/c_abort.html">SQLITE_NOMEM</a> and an appropriate error message.
+
+<a name="H16424"></a>
+<p><b>H16424:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_error_code(C,E)</a> interface changes the return
+value of the function C to be an exception with error code E.
+The error message text is unchanged.
+
+<a name="H16427"></a>
+<p><b>H16427:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_int(C,V)</a> interface changes the
+return value of function C to be the 32-bit integer value V.
+
+<a name="H16430"></a>
+<p><b>H16430:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_int64(C,V)</a> interface changes the
+return value of function C to be the 64-bit integer value V.
+
+<a name="H16433"></a>
+<p><b>H16433:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_null(C)</a> interface changes the
+return value of function C to be NULL.
+
+<a name="H16436"></a>
+<p><b>H16436:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_text(C,V,N,D)</a> interface changes the
+return value of function C to be the UTF-8 string
+V up to the first zero if N is negative
+or the first N bytes of V if N is non-negative.
+
+<a name="H16439"></a>
+<p><b>H16439:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_text16(C,V,N,D)</a> interface changes the
+return value of function C to be the UTF-16 native byte order
+string V up to the first zero if N is negative
+or the first N bytes of V if N is non-negative.
+
+<a name="H16442"></a>
+<p><b>H16442:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_text16be(C,V,N,D)</a> interface changes the
+return value of function C to be the UTF-16 big-endian
+string V up to the first zero if N is negative
+or the first N bytes or V if N is non-negative.
+
+<a name="H16445"></a>
+<p><b>H16445:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_text16le(C,V,N,D)</a> interface changes the
+return value of function C to be the UTF-16 little-endian
+string V up to the first zero if N is negative
+or the first N bytes of V if N is non-negative.
+
+<a name="H16448"></a>
+<p><b>H16448:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_value(C,V)</a> interface changes the
+return value of function C to be the <a href="c3ref/value.html">unprotected sqlite3_value</a>
+object V.
+
+<a name="H16451"></a>
+<p><b>H16451:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_zeroblob(C,N)</a> interface changes the
+return value of function C to be an N-byte BLOB of all zeros.
+
+<a name="H16454"></a>
+<p><b>H16454:</b>
+The <a href="c3ref/result_blob.html">sqlite3_result_error()</a> and <a href="c3ref/result_blob.html">sqlite3_result_error16()</a>
+interfaces make a copy of their error message strings before
+returning.
+
+<a name="H16457"></a>
+<p><b>H16457:</b>
+If the D destructor parameter to <a href="c3ref/result_blob.html">sqlite3_result_blob(C,V,N,D)</a>,
+<a href="c3ref/result_blob.html">sqlite3_result_text(C,V,N,D)</a>, <a href="c3ref/result_blob.html">sqlite3_result_text16(C,V,N,D)</a>,
+<a href="c3ref/result_blob.html">sqlite3_result_text16be(C,V,N,D)</a>, or
+<a href="c3ref/result_blob.html">sqlite3_result_text16le(C,V,N,D)</a> is the constant <a href="c3ref/c_static.html">SQLITE_STATIC</a>
+then no destructor is ever called on the pointer V and SQLite
+assumes that V is immutable.
+
+<a name="H16460"></a>
+<p><b>H16460:</b>
+If the D destructor parameter to <a href="c3ref/result_blob.html">sqlite3_result_blob(C,V,N,D)</a>,
+<a href="c3ref/result_blob.html">sqlite3_result_text(C,V,N,D)</a>, <a href="c3ref/result_blob.html">sqlite3_result_text16(C,V,N,D)</a>,
+<a href="c3ref/result_blob.html">sqlite3_result_text16be(C,V,N,D)</a>, or
+<a href="c3ref/result_blob.html">sqlite3_result_text16le(C,V,N,D)</a> is the constant
+<a href="c3ref/c_static.html">SQLITE_TRANSIENT</a> then the interfaces makes a copy of the
+content of V and retains the copy.
+
+<a name="H16463"></a>
+<p><b>H16463:</b>
+If the D destructor parameter to <a href="c3ref/result_blob.html">sqlite3_result_blob(C,V,N,D)</a>,
+<a href="c3ref/result_blob.html">sqlite3_result_text(C,V,N,D)</a>, <a href="c3ref/result_blob.html">sqlite3_result_text16(C,V,N,D)</a>,
+<a href="c3ref/result_blob.html">sqlite3_result_text16be(C,V,N,D)</a>, or
+<a href="c3ref/result_blob.html">sqlite3_result_text16le(C,V,N,D)</a> is some value other than
+the constants <a href="c3ref/c_static.html">SQLITE_STATIC</a> and <a href="c3ref/c_static.html">SQLITE_TRANSIENT</a> then
+SQLite will invoke the destructor D with V as its only argument
+when it has finished with the V value.
+
+<a name="H16603"></a>
+<p><b>H16603:</b>
+A successful call to the
+<a href="c3ref/create_collation.html">sqlite3_create_collation_v2(B,X,E,P,F,D)</a> interface
+registers function F as the comparison function used to
+implement collation X on the <a href="c3ref/sqlite3.html">database connection</a> B for
+databases having encoding E.
+
+<a name="H16604"></a>
+<p><b>H16604:</b>
+SQLite understands the X parameter to
+<a href="c3ref/create_collation.html">sqlite3_create_collation_v2(B,X,E,P,F,D)</a> as a zero-terminated
+UTF-8 string in which case is ignored for ASCII characters and
+is significant for non-ASCII characters.
+
+<a name="H16606"></a>
+<p><b>H16606:</b>
+Successive calls to <a href="c3ref/create_collation.html">sqlite3_create_collation_v2(B,X,E,P,F,D)</a>
+with the same values for B, X, and E, override prior values
+of P, F, and D.
+
+<a name="H16609"></a>
+<p><b>H16609:</b>
+If the destructor D in <a href="c3ref/create_collation.html">sqlite3_create_collation_v2(B,X,E,P,F,D)</a>
+is not NULL then it is called with argument P when the
+collating function is dropped by SQLite.
+
+<a name="H16612"></a>
+<p><b>H16612:</b>
+A collating function is dropped when it is overloaded.
+
+<a name="H16615"></a>
+<p><b>H16615:</b>
+A collating function is dropped when the database connection
+is closed using <a href="c3ref/close.html">sqlite3_close()</a>.
+
+<a name="H16618"></a>
+<p><b>H16618:</b>
+The pointer P in <a href="c3ref/create_collation.html">sqlite3_create_collation_v2(B,X,E,P,F,D)</a>
+is passed through as the first parameter to the comparison
+function F for all subsequent invocations of F.
+
+<a name="H16621"></a>
+<p><b>H16621:</b>
+A call to <a href="c3ref/create_collation.html">sqlite3_create_collation(B,X,E,P,F)</a> is exactly
+the same as a call to <a href="c3ref/create_collation.html">sqlite3_create_collation_v2()</a> with
+the same parameters and a NULL destructor.
+
+<a name="H16624"></a>
+<p><b>H16624:</b>
+Following a <a href="c3ref/create_collation.html">sqlite3_create_collation_v2(B,X,E,P,F,D)</a>,
+SQLite uses the comparison function F for all text comparison
+operations on the <a href="c3ref/sqlite3.html">database connection</a> B on text values that
+use the collating sequence named X.
+
+<a name="H16627"></a>
+<p><b>H16627:</b>
+The <a href="c3ref/create_collation.html">sqlite3_create_collation16(B,X,E,P,F)</a> works the same
+as <a href="c3ref/create_collation.html">sqlite3_create_collation(B,X,E,P,F)</a> except that the
+collation name X is understood as UTF-16 in native byte order
+instead of UTF-8.
+
+<a name="H16630"></a>
+<p><b>H16630:</b>
+When multiple comparison functions are available for the same
+collating sequence, SQLite chooses the one whose text encoding
+requires the least amount of conversion from the default
+text encoding of the database.
+
+<a name="H16702"></a>
+<p><b>H16702:</b>
+A successful call to <a href="c3ref/collation_needed.html">sqlite3_collation_needed(D,P,F)</a>
+or <a href="c3ref/collation_needed.html">sqlite3_collation_needed16(D,P,F)</a> causes
+the <a href="c3ref/sqlite3.html">database connection</a> D to invoke callback F with first
+parameter P whenever it needs a comparison function for a
+collating sequence that it does not know about.
+
+<a name="H16704"></a>
+<p><b>H16704:</b>
+Each successful call to <a href="c3ref/collation_needed.html">sqlite3_collation_needed()</a> or
+<a href="c3ref/collation_needed.html">sqlite3_collation_needed16()</a> overrides the callback registered
+on the same <a href="c3ref/sqlite3.html">database connection</a> by prior calls to either
+interface.
+
+<a name="H16706"></a>
+<p><b>H16706:</b>
+The name of the requested collating function passed in the
+4th parameter to the callback is in UTF-8 if the callback
+was registered using <a href="c3ref/collation_needed.html">sqlite3_collation_needed()</a> and
+is in UTF-16 native byte order if the callback was
+registered using <a href="c3ref/collation_needed.html">sqlite3_collation_needed16()</a>.
+
+<a name="H17303"></a>
+<p><b>H17303:</b>
+The <a href="c3ref/free.html">sqlite3_malloc(N)</a> interface returns either a pointer to
+a newly checked-out block of at least N bytes of memory
+that is 8-byte aligned, or it returns NULL if it is unable
+to fulfill the request.
+
+<a name="H17304"></a>
+<p><b>H17304:</b>
+The <a href="c3ref/free.html">sqlite3_malloc(N)</a> interface returns a NULL pointer if
+N is less than or equal to zero.
+
+<a name="H17305"></a>
+<p><b>H17305:</b>
+The <a href="c3ref/free.html">sqlite3_free(P)</a> interface releases memory previously
+returned from <a href="c3ref/free.html">sqlite3_malloc()</a> or <a href="c3ref/free.html">sqlite3_realloc()</a>,
+making it available for reuse.
+
+<a name="H17306"></a>
+<p><b>H17306:</b>
+A call to <a href="c3ref/free.html">sqlite3_free(NULL)</a> is a harmless no-op.
+
+<a name="H17310"></a>
+<p><b>H17310:</b>
+A call to <a href="c3ref/free.html">sqlite3_realloc(0,N)</a> is equivalent to a call
+to <a href="c3ref/free.html">sqlite3_malloc(N)</a>.
+
+<a name="H17312"></a>
+<p><b>H17312:</b>
+A call to <a href="c3ref/free.html">sqlite3_realloc(P,0)</a> is equivalent to a call
+to <a href="c3ref/free.html">sqlite3_free(P)</a>.
+
+<a name="H17315"></a>
+<p><b>H17315:</b>
+The SQLite core uses <a href="c3ref/free.html">sqlite3_malloc()</a>, <a href="c3ref/free.html">sqlite3_realloc()</a>,
+and <a href="c3ref/free.html">sqlite3_free()</a> for all of its memory allocation and
+deallocation needs.
+
+<a name="H17318"></a>
+<p><b>H17318:</b>
+The <a href="c3ref/free.html">sqlite3_realloc(P,N)</a> interface returns either a pointer
+to a block of checked-out memory of at least N bytes in size
+that is 8-byte aligned, or a NULL pointer.
+
+<a name="H17321"></a>
+<p><b>H17321:</b>
+When <a href="c3ref/free.html">sqlite3_realloc(P,N)</a> returns a non-NULL pointer, it first
+copies the first K bytes of content from P into the newly
+allocated block, where K is the lesser of N and the size of
+the buffer P.
+
+<a name="H17322"></a>
+<p><b>H17322:</b>
+When <a href="c3ref/free.html">sqlite3_realloc(P,N)</a> returns a non-NULL pointer, it first
+releases the buffer P.
+
+<a name="H17323"></a>
+<p><b>H17323:</b>
+When <a href="c3ref/free.html">sqlite3_realloc(P,N)</a> returns NULL, the buffer P is
+not modified or released.
+
+<a name="H17341"></a>
+<p><b>H17341:</b>
+The <a href="c3ref/release_memory.html">sqlite3_release_memory(N)</a> interface attempts to
+free N bytes of heap memory by deallocating non-essential
+memory allocations held by the database library.
+
+<a name="H17342"></a>
+<p><b>H17342:</b>
+The <a href="c3ref/release_memory.html">sqlite3_release_memory(N)</a> returns the number
+of bytes actually freed, which might be more or less
+than the amount requested.
+
+<a name="H17371"></a>
+<p><b>H17371:</b>
+The <a href="c3ref/memory_highwater.html">sqlite3_memory_used()</a> routine returns the number of bytes
+of memory currently outstanding (malloced but not freed).
+
+<a name="H17373"></a>
+<p><b>H17373:</b>
+The <a href="c3ref/memory_highwater.html">sqlite3_memory_highwater()</a> routine returns the maximum
+value of <a href="c3ref/memory_highwater.html">sqlite3_memory_used()</a> since the high-water mark
+was last reset.
+
+<a name="H17374"></a>
+<p><b>H17374:</b>
+The values returned by <a href="c3ref/memory_highwater.html">sqlite3_memory_used()</a> and
+<a href="c3ref/memory_highwater.html">sqlite3_memory_highwater()</a> include any overhead
+added by SQLite in its implementation of <a href="c3ref/free.html">sqlite3_malloc()</a>,
+but not overhead added by the any underlying system library
+routines that <a href="c3ref/free.html">sqlite3_malloc()</a> may call.
+
+<a name="H17375"></a>
+<p><b>H17375:</b>
+The memory high-water mark is reset to the current value of
+<a href="c3ref/memory_highwater.html">sqlite3_memory_used()</a> if and only if the parameter to
+<a href="c3ref/memory_highwater.html">sqlite3_memory_highwater()</a> is true.  The value returned
+by <a href="c3ref/memory_highwater.html">sqlite3_memory_highwater(1)</a> is the high-water mark
+prior to the reset.
+
+<a name="H17392"></a>
+<p><b>H17392:</b>
+The <a href="c3ref/randomness.html">sqlite3_randomness(N,P)</a> interface writes N bytes of
+high-quality pseudo-randomness into buffer P.
+
+<a name="H17403"></a>
+<p><b>H17403:</b>
+The <a href="c3ref/mprintf.html">sqlite3_mprintf()</a> and <a href="c3ref/mprintf.html">sqlite3_vmprintf()</a> interfaces
+return either pointers to zero-terminated UTF-8 strings held in
+memory obtained from <a href="c3ref/free.html">sqlite3_malloc()</a> or NULL pointers if
+a call to <a href="c3ref/free.html">sqlite3_malloc()</a> fails.
+
+<a name="H17406"></a>
+<p><b>H17406:</b>
+The <a href="c3ref/mprintf.html">sqlite3_snprintf()</a> interface writes a zero-terminated
+UTF-8 string into the buffer pointed to by the second parameter
+provided that the first parameter is greater than zero.
+
+<a name="H17407"></a>
+<p><b>H17407:</b>
+The <a href="c3ref/mprintf.html">sqlite3_snprintf()</a> interface does not write slots of
+its output buffer (the second parameter) outside the range
+of 0 through N-1 (where N is the first parameter)
+regardless of the length of the string
+requested by the format specification.
+
+<a name="H17813"></a>
+<p><b>H17813:</b>
+A successful invocation of the <a href="c3ref/blob_open.html">sqlite3_blob_open(D,B,T,C,R,F,P)</a>
+interface shall open an <a href="c3ref/blob.html">sqlite3_blob</a> object P on the BLOB
+in column C of the table T in the database B on
+the <a href="c3ref/sqlite3.html">database connection</a> D.
+
+<a name="H17814"></a>
+<p><b>H17814:</b>
+A successful invocation of <a href="c3ref/blob_open.html">sqlite3_blob_open(D,...)</a> shall start
+a new transaction on the <a href="c3ref/sqlite3.html">database connection</a> D if that
+connection is not already in a transaction.
+
+<a name="H17816"></a>
+<p><b>H17816:</b>
+The <a href="c3ref/blob_open.html">sqlite3_blob_open(D,B,T,C,R,F,P)</a> interface shall open
+the BLOB for read and write access if and only if the F
+parameter is non-zero.
+
+<a name="H17819"></a>
+<p><b>H17819:</b>
+The <a href="c3ref/blob_open.html">sqlite3_blob_open()</a> interface shall return <a href="c3ref/c_abort.html">SQLITE_OK</a> on
+success and an appropriate <a href="c3ref/c_abort.html">error code</a> on failure.
+
+<a name="H17821"></a>
+<p><b>H17821:</b>
+If an error occurs during evaluation of <a href="c3ref/blob_open.html">sqlite3_blob_open(D,...)</a>
+then subsequent calls to <a href="c3ref/errcode.html">sqlite3_errcode(D)</a>,
+<a href="c3ref/errcode.html">sqlite3_extended_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_errmsg(D)</a>, and <a href="c3ref/errcode.html">sqlite3_errmsg16(D)</a> shall return
+information appropriate for that error.
+
+<a name="H17824"></a>
+<p><b>H17824:</b>
+If any column in the row that a <a href="c3ref/blob.html">sqlite3_blob</a> has open is
+changed by a separate <a href="lang_update.html">UPDATE</a> or <a href="lang_delete.html">DELETE</a> statement or by
+an <a href="lang_conflict.html">ON CONFLICT</a> side effect, then the <a href="c3ref/blob.html">sqlite3_blob</a> shall
+be marked as invalid.
+
+<a name="H17833"></a>
+<p><b>H17833:</b>
+The <a href="c3ref/blob_close.html">sqlite3_blob_close(P)</a> interface closes an <a href="c3ref/blob.html">sqlite3_blob</a>
+object P previously opened using <a href="c3ref/blob_open.html">sqlite3_blob_open()</a>.
+
+<a name="H17836"></a>
+<p><b>H17836:</b>
+Closing an <a href="c3ref/blob.html">sqlite3_blob</a> object using
+<a href="c3ref/blob_close.html">sqlite3_blob_close()</a> shall cause the current transaction to
+commit if there are no other open <a href="c3ref/blob.html">sqlite3_blob</a> objects
+or <a href="c3ref/stmt.html">prepared statements</a> on the same <a href="c3ref/sqlite3.html">database connection</a> and
+the database connection is in <a href="c3ref/get_autocommit.html">autocommit mode</a>.
+
+<a name="H17839"></a>
+<p><b>H17839:</b>
+The <a href="c3ref/blob_close.html">sqlite3_blob_close(P)</a> interfaces shall close the
+<a href="c3ref/blob.html">sqlite3_blob</a> object P unconditionally, even if
+<a href="c3ref/blob_close.html">sqlite3_blob_close(P)</a> returns something other than <a href="c3ref/c_abort.html">SQLITE_OK</a>.
+
+<a name="H17843"></a>
+<p><b>H17843:</b>
+The <a href="c3ref/blob_bytes.html">sqlite3_blob_bytes(P)</a> interface returns the size
+in bytes of the BLOB that the <a href="c3ref/blob.html">sqlite3_blob</a> object P
+refers to.
+
+<a name="H17853"></a>
+<p><b>H17853:</b>
+A successful invocation of <a href="c3ref/blob_read.html">sqlite3_blob_read(P,Z,N,X)</a>
+shall reads N bytes of data out of the BLOB referenced by
+<a href="c3ref/blob.html">BLOB handle</a> P beginning at offset X and store those bytes
+into buffer Z.
+
+<a name="H17856"></a>
+<p><b>H17856:</b>
+In <a href="c3ref/blob_read.html">sqlite3_blob_read(P,Z,N,X)</a> if the size of the BLOB
+is less than N+X bytes, then the function shall leave the
+Z buffer unchanged and return <a href="c3ref/c_abort.html">SQLITE_ERROR</a>.
+
+<a name="H17859"></a>
+<p><b>H17859:</b>
+In <a href="c3ref/blob_read.html">sqlite3_blob_read(P,Z,N,X)</a> if X or N is less than zero
+then the function shall leave the Z buffer unchanged
+and return <a href="c3ref/c_abort.html">SQLITE_ERROR</a>.
+
+<a name="H17862"></a>
+<p><b>H17862:</b>
+The <a href="c3ref/blob_read.html">sqlite3_blob_read(P,Z,N,X)</a> interface shall return <a href="c3ref/c_abort.html">SQLITE_OK</a>
+if N bytes are successfully read into buffer Z.
+
+<a name="H17863"></a>
+<p><b>H17863:</b>
+If the <a href="c3ref/blob.html">BLOB handle</a> P is expired and X and N are within bounds
+then <a href="c3ref/blob_read.html">sqlite3_blob_read(P,Z,N,X)</a> shall leave the Z buffer
+unchanged and return <a href="c3ref/c_abort.html">SQLITE_ABORT</a>.
+
+<a name="H17865"></a>
+<p><b>H17865:</b>
+If the requested read could not be completed,
+the <a href="c3ref/blob_read.html">sqlite3_blob_read(P,Z,N,X)</a> interface shall return an
+appropriate <a href="c3ref/c_abort.html">error code</a> or <a href="c3ref/c_ioerr_access.html">extended error code</a>.
+
+<a name="H17868"></a>
+<p><b>H17868:</b>
+If an error occurs during evaluation of <a href="c3ref/blob_read.html">sqlite3_blob_read(P,...)</a>
+then subsequent calls to <a href="c3ref/errcode.html">sqlite3_errcode(D)</a>,
+<a href="c3ref/errcode.html">sqlite3_extended_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_errmsg(D)</a>, and <a href="c3ref/errcode.html">sqlite3_errmsg16(D)</a> shall return
+information appropriate for that error, where D is the
+<a href="c3ref/sqlite3.html">database connection</a> that was used to open the <a href="c3ref/blob.html">BLOB handle</a> P.
+
+<a name="H17873"></a>
+<p><b>H17873:</b>
+A successful invocation of <a href="c3ref/blob_write.html">sqlite3_blob_write(P,Z,N,X)</a>
+shall write N bytes of data from buffer Z into the BLOB
+referenced by <a href="c3ref/blob.html">BLOB handle</a> P beginning at offset X into
+the BLOB.
+
+<a name="H17874"></a>
+<p><b>H17874:</b>
+In the absence of other overridding changes, the changes
+written to a BLOB by <a href="c3ref/blob_write.html">sqlite3_blob_write()</a> shall
+remain in effect after the associated <a href="c3ref/blob.html">BLOB handle</a> expires.
+
+<a name="H17875"></a>
+<p><b>H17875:</b>
+If the <a href="c3ref/blob.html">BLOB handle</a> P was opened for reading only then
+an invocation of <a href="c3ref/blob_write.html">sqlite3_blob_write(P,Z,N,X)</a> shall leave
+the referenced BLOB unchanged and return <a href="c3ref/c_abort.html">SQLITE_READONLY</a>.
+
+<a name="H17876"></a>
+<p><b>H17876:</b>
+If the size of the BLOB referenced by <a href="c3ref/blob.html">BLOB handle</a> P is
+less than N+X bytes then <a href="c3ref/blob_write.html">sqlite3_blob_write(P,Z,N,X)</a> shall
+leave the BLOB unchanged and return <a href="c3ref/c_abort.html">SQLITE_ERROR</a>.
+
+<a name="H17877"></a>
+<p><b>H17877:</b>
+If the <a href="c3ref/blob.html">BLOB handle</a> P is expired and X and N are within bounds
+then <a href="c3ref/blob_read.html">sqlite3_blob_read(P,Z,N,X)</a> shall leave the BLOB
+unchanged and return <a href="c3ref/c_abort.html">SQLITE_ABORT</a>.
+
+<a name="H17879"></a>
+<p><b>H17879:</b>
+If X or N are less than zero then <a href="c3ref/blob_write.html">sqlite3_blob_write(P,Z,N,X)</a>
+shall leave the BLOB referenced by <a href="c3ref/blob.html">BLOB handle</a> P unchanged
+and return <a href="c3ref/c_abort.html">SQLITE_ERROR</a>.
+
+<a name="H17882"></a>
+<p><b>H17882:</b>
+The <a href="c3ref/blob_write.html">sqlite3_blob_write(P,Z,N,X)</a> interface shall return
+<a href="c3ref/c_abort.html">SQLITE_OK</a> if N bytes where successfully written into the BLOB.
+
+<a name="H17885"></a>
+<p><b>H17885:</b>
+If the requested write could not be completed,
+the <a href="c3ref/blob_write.html">sqlite3_blob_write(P,Z,N,X)</a> interface shall return an
+appropriate <a href="c3ref/c_abort.html">error code</a> or <a href="c3ref/c_ioerr_access.html">extended error code</a>.
+
+<a name="H17888"></a>
+<p><b>H17888:</b>
+If an error occurs during evaluation of <a href="c3ref/blob_write.html">sqlite3_blob_write(D,...)</a>
+then subsequent calls to <a href="c3ref/errcode.html">sqlite3_errcode(D)</a>,
+<a href="c3ref/errcode.html">sqlite3_extended_errcode()</a>,
+<a href="c3ref/errcode.html">sqlite3_errmsg(D)</a>, and <a href="c3ref/errcode.html">sqlite3_errmsg16(D)</a> shall return
+information appropriate for that error.
+
+
+<hr><small><i>
+This page last modified 2009/02/19 14:27:55 UTC
+</i></small></div></body></html>
