@@ -1,0 +1,3205 @@
+From: "Guardado por Windows Internet Explorer 8"
+Subject: SQLite en Java
+Date: Thu, 4 Jun 2009 15:54:01 +0200
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C9E52C.ADD0BDF0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.0.6001.18049
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://luauf.com/2008/05/09/sqlite-en-java/
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns=3D"http://www.w3.org/1999/xhtml"><HEAD=20
+profile=3D"http://gmpg.org/xfn/11"><TITLE>SQLite en Java</TITLE><LINK=20
+rel=3D"shortcut icon" type=3Dimage/x-icon href=3D"/favicon.ico">
+<META content=3D"text/html; charset=3Dutf-8" http-equiv=3DContent-Type>
+<META content=3Dno-cache http-equiv=3Dpragma>
+<META content=3Dno-cache http-equiv=3Dcache-control><LINK =
+rel=3Dstylesheet=20
+type=3Dtext/css =
+href=3D"http://luauf.com/wp-content/themes/illuauf/style.css">
+<SCRIPT type=3Dtext/javascript src=3D""> </SCRIPT>
+<LINK title=3D"RSS 2.0" rel=3Dalternate type=3Dapplication/rss+xml=20
+href=3D"http://luauf.com/feed/"><LINK title=3D"RSS .92" rel=3Dalternate =
+type=3Dtext/xml=20
+href=3D"http://luauf.com/feed/rss/"><LINK title=3D"Atom 0.3" =
+rel=3Dalternate=20
+type=3Dapplication/atom+xml href=3D"http://luauf.com/feed/atom/"><LINK=20
+rel=3D"shortcut icon" type=3Dimage/x-icon=20
+href=3D"http://luauf.com/wp-content/themes/illuauf/favicon.ico"><LINK =
+rel=3Dpingback=20
+href=3D"http://luauf.com/xmlrpc.php"><LINK title=3DRSD rel=3DEditURI=20
+type=3Dapplication/rsd+xml =
+href=3D"http://luauf.com/xmlrpc.php?rsd"><LINK=20
+rel=3Dwlwmanifest type=3Dapplication/wlwmanifest+xml=20
+href=3D"http://luauf.com/wp-includes/wlwmanifest.xml">
+<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.18702"><LINK =
+rel=3Dstylesheet=20
+type=3Dtext/css=20
+href=3D"http://luauf.com/wp-content/plugins/ig_syntax_hilite/css/syntax_h=
+ilite_css.css"=20
+media=3Dall>
+<STYLE type=3Dtext/css media=3Dscreen>.contactform {
+	POSITION: static; OVERFLOW: hidden
+}
+.contactleft {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 4px; MARGIN: 5px 0px; PADDING-LEFT: =
+4px; WIDTH: 25%; PADDING-RIGHT: 4px; DISPLAY: inline; FLOAT: left; =
+CLEAR: both; FONT-WEIGHT: bold; PADDING-TOP: 4px
+}
+.contactright {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; MARGIN: 5px 0px; PADDING-LEFT: =
+4px; WIDTH: 70%; PADDING-RIGHT: 4px; DISPLAY: inline; FLOAT: right; =
+PADDING-TOP: 4px
+}
+.contacterror {
+	BORDER-BOTTOM: #ff0000 2px solid; BORDER-LEFT: #ff0000 2px solid; =
+BORDER-TOP: #ff0000 2px solid; BORDER-RIGHT: #ff0000 2px solid
+}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV class=3DBGC><!-- start header -->
+<DIV class=3DHeader>
+<DIV class=3DLS></DIV>
+<H1><A href=3D"http://luauf.com/"></A></H1>
+<P class=3DDesc></P></DIV>
+<DIV class=3DMenu>
+<DIV class=3DMTL></DIV>
+<DIV class=3DMTR></DIV>
+<UL>
+  <LI><A href=3D"http://luauf.com/"><SPAN>Home</SPAN></A></LI>
+  <LI class=3D"page_item page-item-3"><A title=3DContacto=20
+  href=3D"http://luauf.com/contacto/"><SPAN>Contacto</SPAN></A></LI>
+  <LI class=3D"page_item page-item-8"><A title=3D"Acerca de=E2=80=A6"=20
+  href=3D"http://luauf.com/acerca-de/"><SPAN>Acerca =
+de=E2=80=A6</SPAN></A></LI>
+  <LI class=3D"page_item page-item-22"><A title=3DPrivacidad=20
+  =
+href=3D"http://luauf.com/privacidad/"><SPAN>Privacidad</SPAN></A></LI></U=
+L></DIV><!-- start content items -->
+<DIV class=3DCON><!-- start center -->
+<DIV class=3DSC>
+<DIV id=3Dpost-252 class=3DPost>
+<DIV class=3DPostHead>
+<H1>SQLite en Java</H1></DIV>
+<DIV id=3DAdSenseCuadrado>
+<SCRIPT type=3Dtext/javascript><!--=0A=
+google_ad_client =3D "pub-5573650978867919";=0A=
+/* 336x280, creado 19/04/08 */=0A=
+google_ad_slot =3D "4179393242";=0A=
+google_ad_width =3D 336;=0A=
+google_ad_height =3D 280;=0A=
+//-->=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript=20
+src=3D"http://pagead2.googlesyndication.com/pagead/show_ads.js">=0A=
+</SCRIPT>
+</DIV><BR><SMALL class=3DPostAuthor>Autor: Luciano | Categor=C3=ADa: <A=20
+title=3D"Ver todas las entradas en Bases de Datos"=20
+href=3D"http://luauf.com/category/bases-de-datos/" rel=3D"category =
+tag">Bases de=20
+Datos</A>, <A title=3D"Ver todas las entradas en Java"=20
+href=3D"http://luauf.com/category/programacion/java/" rel=3D"category =
+tag">Java</A>,=20
+<A title=3D"Ver todas las entradas en Programaci=C3=B3n"=20
+href=3D"http://luauf.com/category/programacion/"=20
+rel=3D"category tag">Programaci=C3=B3n</A>, <A title=3D"Ver todas las =
+entradas en SQLite"=20
+href=3D"http://luauf.com/category/bases-de-datos/sqlite-bases-de-datos/" =
+
+rel=3D"category tag">SQLite</A> </SMALL>
+<DIV class=3DPostContent>
+<P>Acceder a una base de datos SQLite desde Java es muy sencillo (tan =
+sencillo=20
+como <A href=3D"http://luauf.com/2008/04/18/sqlite-con-c/" =
+target=3D_self>SQLite con=20
+C#</A>), siempre y cuando dispongamos del driver para hacerlo. A =
+continuaci=C3=B3n,=20
+veremos un peque=C3=B1o ejemplo de como acceder y trabajar con una base =
+de datos=20
+SQLite con el <A href=3D"http://www.zentus.com/sqlitejdbc/"=20
+target=3D_blank>SQLiteJDBC </A>de <A href=3D"http://www.zentus.com/"=20
+target=3D_blank>Zentus</A> desde Java.</P>
+<P>Estos son los pasos a seguir, para desarrollar un ejemplo simple y =
+llegar a=20
+buen puerto:</P>
+<P><SPAN id=3Dmore-252></SPAN></P>
+<OL>
+  <LI>Descargar el driver <A href=3D"http://www.zentus.com/sqlitejdbc/"=20
+  target=3D_blank>SQLiteJDBC</A> y copiarlo al directorio (o carpeta)=20
+  JAVA_HOME\lib\ext, donde JAVA_HOME es el directorio de =
+instalaci=C3=B3n del=20
+  JRE.</LI>
+  <LI>Crear un nuevo proyecto de Java en tu IDE favorito (Eclipse, =
+NetBeans,=20
+  jDeveloper, etc) o bien en un editor de texto (bloc de notas, gedit, =
+<A=20
+  href=3D"http://luauf.com/2008/03/22/pspad-editor-de-codigo-gratuito/"=20
+  target=3D_self>PSPad</A>, etc) si no quieres utilizar un IDE. Nuestro =
+ejemplo,=20
+  se basa en la misma base de datos creada tiempo atr=C3=A1s <A=20
+  =
+href=3D"http://luauf.com/2008/04/13/administracion-de-bases-de-datos-sqli=
+te/"=20
+  target=3D_self>aqu=C3=AD</A>.</LI>
+  <LI>Correr el programa y observar los resultados.</LI></OL>
+<P>El c=C3=B3digo:<BR><CODE></P>
+<DIV class=3Dsyntax_hilite>
+<DIV id=3Djava-1>
+<DIV class=3Djava>package sqlite;
+<P></P>
+<P><SPAN style=3D"COLOR: #a1a100">import java.sql.*;</SPAN></P>
+<P><SPAN style=3D"COLOR: #000000; FONT-WEIGHT: bold">public</SPAN> <SPAN =
+
+style=3D"COLOR: #000000; FONT-WEIGHT: bold">class</SPAN> Main <SPAN=20
+style=3D"COLOR: #66cc66">{</SPAN></P>
+<P>&nbsp; &nbsp; <SPAN style=3D"COLOR: #000000; FONT-WEIGHT: =
+bold">public</SPAN>=20
+<SPAN style=3D"COLOR: #993333">static</SPAN> <SPAN=20
+style=3D"COLOR: #993333">void</SPAN> main<SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3AString+java.sun.com&a=
+mp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">String</SPAN></A><SPAN=20
+style=3D"COLOR: #66cc66">[</SPAN><SPAN style=3D"COLOR: #66cc66">]</SPAN> =
+args<SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN> <SPAN style=3D"COLOR: =
+#66cc66">{</SPAN><BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; <SPAN style=3D"COLOR: #000000; FONT-WEIGHT: =
+bold">try</SPAN>=20
+<SPAN style=3D"COLOR: #66cc66">{</SPAN><BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+&nbsp; <SPAN style=3D"COLOR: #000000; FONT-WEIGHT: =
+bold">Class</SPAN>.<SPAN=20
+style=3D"COLOR: #006600">forName</SPAN><SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #ff0000">"org.sqlite.JDBC"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3AConnection+java.sun.c=
+om&amp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">Connection</SPAN></A> conn =
+=3D <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3ADriverManager+java.su=
+n.com&amp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: =
+bold">DriverManager</SPAN></A>.<SPAN=20
+style=3D"COLOR: #006600">getConnection</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#ff0000">"jdbc:sqlite:C:<SPAN=20
+style=3D"COLOR: #000099; FONT-WEIGHT: bold">\\</SPAN>sqlite<SPAN=20
+style=3D"COLOR: #000099; FONT-WEIGHT: =
+bold">\\</SPAN>libreria.sqlite"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>; <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3AStatement+java.sun.co=
+m&amp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">Statement</SPAN></A> stat =
+=3D conn.<SPAN=20
+style=3D"COLOR: #006600">createStatement</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>; <BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; stat.<SPAN=20
+style=3D"COLOR: #006600">execute</SPAN><SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #ff0000">"DELETE FROM autores"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3APreparedStatement+jav=
+a.sun.com&amp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">PreparedStatement</SPAN></A> =
+prep =3D=20
+conn.<SPAN style=3D"COLOR: #006600">prepareStatement</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: #ff0000">"INSERT =
+INTO autores=20
+(id_autor,nombre) VALUES (?, ?);"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+prep.<SPAN style=3D"COLOR: #006600">setInt</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#cc66cc">1</SPAN>,<SPAN=20
+style=3D"COLOR: #cc66cc">1</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>;<BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; prep.<SPAN=20
+style=3D"COLOR: #006600">setString</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#cc66cc">2</SPAN>,<SPAN=20
+style=3D"COLOR: #ff0000">"Deitel"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+prep.<SPAN style=3D"COLOR: #006600">addBatch</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>;<BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; prep.<SPAN=20
+style=3D"COLOR: #006600">setInt</SPAN><SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #cc66cc">1</SPAN>,<SPAN style=3D"COLOR: =
+#cc66cc">2</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+prep.<SPAN style=3D"COLOR: #006600">setString</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#cc66cc">2</SPAN>,<SPAN=20
+style=3D"COLOR: #ff0000">"Ceballos"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+prep.<SPAN style=3D"COLOR: #006600">addBatch</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>;<BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; prep.<SPAN=20
+style=3D"COLOR: #006600">setInt</SPAN><SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #cc66cc">1</SPAN>,<SPAN style=3D"COLOR: =
+#cc66cc">3</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+prep.<SPAN style=3D"COLOR: #006600">setString</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#cc66cc">2</SPAN>,<SPAN=20
+style=3D"COLOR: #ff0000">"Joyanes Aguilar"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+prep.<SPAN style=3D"COLOR: #006600">addBatch</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>;<BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp;=20
+conn.<SPAN style=3D"COLOR: #006600">setAutoCommit</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #000000; FONT-WEIGHT: bold">false</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+prep.<SPAN style=3D"COLOR: #006600">executeBatch</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>;<BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; conn.<SPAN=20
+style=3D"COLOR: #006600">setAutoCommit</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #000000; FONT-WEIGHT: bold">true</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>; </P>
+<P>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3AResultSet+java.sun.co=
+m&amp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">ResultSet</SPAN></A> rs =3D =
+stat.<SPAN=20
+style=3D"COLOR: #006600">executeQuery</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: #ff0000">"select =
+* from=20
+autores;"</SPAN><SPAN style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; =
+&nbsp; &nbsp;=20
+&nbsp; &nbsp; &nbsp; <SPAN style=3D"COLOR: #b1b100">while</SPAN> <SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN>rs.<SPAN style=3D"COLOR: =
+#006600">next</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN> <SPAN style=3D"COLOR: =
+#66cc66">{</SPAN><BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3ASystem+java.sun.com&a=
+mp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">System</SPAN></A>.<SPAN=20
+style=3D"COLOR: #006600">out</SPAN>.<SPAN=20
+style=3D"COLOR: #006600">println</SPAN><SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #ff0000">"ID_AUTOR...: "</SPAN> + rs.<SPAN=20
+style=3D"COLOR: #006600">getString</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #ff0000">"id_autor"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>;<BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3ASystem+java.sun.com&a=
+mp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">System</SPAN></A>.<SPAN=20
+style=3D"COLOR: #006600">out</SPAN>.<SPAN=20
+style=3D"COLOR: #006600">println</SPAN><SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #ff0000">"NOMBRE.....: "</SPAN> + rs.<SPAN=20
+style=3D"COLOR: #006600">getString</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#ff0000">"nombre"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>;<BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3ASystem+java.sun.com&a=
+mp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">System</SPAN></A>.<SPAN=20
+style=3D"COLOR: #006600">out</SPAN>.<SPAN=20
+style=3D"COLOR: #006600">println</SPAN><SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: =
+#ff0000">"-----------------------------------"</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+<SPAN style=3D"COLOR: #66cc66">}</SPAN><BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+&nbsp; rs.<SPAN style=3D"COLOR: #006600">close</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>;<BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; stat.<SPAN=20
+style=3D"COLOR: #006600">close</SPAN><SPAN style=3D"COLOR: =
+#66cc66">(</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp;=20
+conn.<SPAN style=3D"COLOR: #006600">close</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN>; <BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<BR>&nbsp; &nbsp; &nbsp; &nbsp; =
+<SPAN=20
+style=3D"COLOR: #66cc66">}</SPAN> <SPAN=20
+style=3D"COLOR: #000000; FONT-WEIGHT: bold">catch</SPAN> <SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3ASQLException+java.sun=
+.com&amp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">SQLException</SPAN></A> =
+ex<SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN> <SPAN style=3D"COLOR: =
+#66cc66">{</SPAN><BR>&nbsp;=20
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3ASystem+java.sun.com&a=
+mp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">System</SPAN></A>.<SPAN=20
+style=3D"COLOR: #006600">out</SPAN>.<SPAN=20
+style=3D"COLOR: #006600">println</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN>ex.<SPAN=20
+style=3D"COLOR: #006600">getMessage</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; <SPAN=20
+style=3D"COLOR: #66cc66">}</SPAN> <SPAN=20
+style=3D"COLOR: #000000; FONT-WEIGHT: bold">catch</SPAN> <SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3AClassNotFoundExceptio=
+n+java.sun.com&amp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: =
+bold">ClassNotFoundException</SPAN></A>=20
+ex<SPAN style=3D"COLOR: #66cc66">)</SPAN> <SPAN=20
+style=3D"COLOR: #66cc66">{</SPAN><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; <A=20
+href=3D"http://www.google.com/search?q=3Dallinurl%3ASystem+java.sun.com&a=
+mp;bntl=3D1"><SPAN=20
+style=3D"COLOR: #aaaadd; FONT-WEIGHT: bold">System</SPAN></A>.<SPAN=20
+style=3D"COLOR: #006600">out</SPAN>.<SPAN=20
+style=3D"COLOR: #006600">println</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN>ex.<SPAN=20
+style=3D"COLOR: #006600">getMessage</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">(</SPAN><SPAN style=3D"COLOR: =
+#66cc66">)</SPAN><SPAN=20
+style=3D"COLOR: #66cc66">)</SPAN>;<BR>&nbsp; &nbsp; &nbsp; &nbsp; <SPAN=20
+style=3D"COLOR: #66cc66">}</SPAN><BR>&nbsp; &nbsp; &nbsp; <BR>&nbsp; =
+&nbsp; <SPAN=20
+style=3D"COLOR: #66cc66">}</SPAN><BR><SPAN=20
+style=3D"COLOR: #66cc66">}</SPAN></P></DIV></DIV></DIV>
+<P></CODE><BR>Los resultados:</P>
+<P style=3D"TEXT-ALIGN: center"><A=20
+href=3D"http://luauf.com/wp-content/uploads/2008/05/sqjava.png"><IMG=20
+class=3D"alignnone size-medium wp-image-255" title=3Dsqjava alt=3D""=20
+src=3D"http://luauf.com/wp-content/uploads/2008/05/sqjava-300x80.png" =
+width=3D300=20
+height=3D80></A></P></DIV></DIV>
+<UL class=3DNote><!-- <li class=3D"NoteTrackBack"></li> --><!-- <li =
+class=3D"NoteRss"><a href=3D"" rel=3D"trackback"></a></li> --></UL>
+<DIV id=3DAdSenseHorizontal>
+<SCRIPT type=3Dtext/javascript><!--=0A=
+google_ad_client =3D "pub-5573650978867919";=0A=
+/* 468x60, creado 19/04/08 */=0A=
+google_ad_slot =3D "0055015125";=0A=
+google_ad_width =3D 468;=0A=
+google_ad_height =3D 60;=0A=
+//-->=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript=20
+src=3D"http://pagead2.googlesyndication.com/pagead/show_ads.js">=0A=
+</SCRIPT>
+</DIV><!--=0A=
+<h3>Suscripci&oacute;n:</h3>=0A=
+<div class=3D"SuscribeMail">=0A=
+  <form style=3D"" action=3D"http://www.feedburner.com/fb/a/emailverify" =
+method=3D"post" target=3D"popupwindow" =
+onsubmit=3D"window.open('http://www.feedburner.com/fb/a/emailverifySubmit=
+?feedId=3D1781407', 'popupwindow', =
+'scrollbars=3Dyes,width=3D550,height=3D520');return true"><p>Recibe =
+novedades por e-mail:&nbsp;<input type=3D"text" style=3D"width:120px" =
+name=3D"email"/>&nbsp;<input type=3D"hidden" =
+value=3D"http://feeds.feedburner.com/~e?ffid=3D1781407" =
+name=3D"url"/><input type=3D"hidden" value=3D"LuAuF" =
+name=3D"title"/><input type=3D"hidden" name=3D"loc" =
+value=3D"es_ES"/><input type=3D"submit" value=3D"Suscribir" /></p></form>=0A=
+</div>=0A=
+=0A=
+<div class=3D"SuscribeFeed">=0A=
+  <p>Suscribete al feed <a href=3D"http://feeds.feedburner.com/luauf"> =
+aqu&iacute;</a></p>=0A=
+</div>=0A=
+=0A=
+<br clear=3D"all" />=0A=
+-->
+<DIV class=3DPostRel>
+<UL>
+  <H3>Enlaces relacionados</H3>
+  <UL class=3Drelated_post>
+    <LI><A=20
+    title=3D"sqlite.org > To: sqlite-users@sqlite.org > ReplyTo: General =
+Discussion of SQLite Database > Sent: Mar 23, 2009 19:09 > Subject: =
+[sqlite] pure Java SQLite browser/client? > > Anyone know of a pure Java =
+client that can be used to browse ..."=20
+    =
+href=3D"http://www.mail-archive.com/sqlite-users@sqlite.org/msg41425.html=
+">Re:=20
+    [sqlite] pure Java SQLite browser/client?</A>
+    <LI><A=20
+    =
+title=3D"log4cpp=E6=98=AF=E4=B8=AA=E5=9F=BA=E4=BA=8ELGPL=E7=9A=84=E5=BC=80=
+=E6=BA=90=E9=A1=B9=E7=9B=AE=EF=BC=8C=E6=98=AF=E5=9F=BA=E4=BA=8E=E4=BC=98=E7=
+=A7=80=E7=9A=84=E6=97=A5=E5=BF=97=E5=A4=84=E7=90=86=E8=B7=9F=E8=B8=AA=E9=A1=
+=B9=E7=9B=AEJava=E8=AF=AD=E8=A8=80=E7=9A=84log4j=E7=A7=BB=E6=A4=8D=E8=BF=87=
+=E6=9D=A5=E7=9A=84=E3=80=82log4j=E4=BB=8B=E7=BB=8D=E7=9A=84=E6=96=87=E6=A1=
+=A3=E5=BE=88=E5=A4=9A=EF=BC=8C=E5=9C=A8java=E9=A2=86=E5=9F=9F=E4=BD=BF=E7=
+=94=A8=E7=9A=84=E4=B9=9F=E6=AF=94=E8=BE=83=E5=B9=BF=E6=B3=9B=EF=BC=8C=E8=80=
+=8C=E8=BF=99=E4=B8=AA=E5=8A=9F=E8=83=BD=E5=BC=BA=E5=A4=A7=E7=9A=84=E5=BA=93=
+=E5=AF=B9=E5=9B=BD=E5=86=85=E7=9A=84C++=E8=AF=AD=E8=A8=80=E5=BC=80=E5=8F=91=
+=E4=BA=BA=E5=91=98=E5=8D=B4=E4=BD=BF=E7=94=A8=E7=9A=84=E4=B8=8D=E5=A4=9A=E3=
+=80=82=E8=BF=99=E9=87=8C=E4=BB=8E=E5=BC=80=E5=8F=91=E4=BA=BA=E5=91=98=E4=BD=
+=BF=E7=94=A8=E7=9A=84=E8=A7=92=E5=BA=A6=E4=BB=8B=E7=BB=8D=E8=BF=99=E4=B8=AA=
+=E5=BA=93=EF=BC=8C=E4=BD=BF=E5=BC=80=E5=8F=91=E4=BA=BA=E5=91=98 ..."=20
+    =
+href=3D"http://hi.baidu.com/haibin_gl/blog/item/1f9e75b74d0fdcfc31add1b7.=
+html">=E4=BE=BF=E5=88=A9=E7=9A=84=E5=BC=80=E5=8F=91=E5=B7=A5=E5=85=B7-log=
+4cpp=E5=BF=AB=E9=80=9F=E4=BD=BF=E7=94=A8=E6=8C=87=E5=8D=97_SQLite=E4=B8=8E=
+java</A>
+    <LI><A=20
+    =
+title=3D"=E5=AE=9E=E4=BE=8B=E6=9C=89=E4=BB=A5=E4=B8=8B=E5=86=85=E5=AE=B9=EF=
+=BC=881=EF=BC=89=E5=A6=82=E4=BD=95=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA=E7=
+=AE=80=E5=8D=95=E7=9A=84=E7=8A=B6=E6=80=81=E6=A0=8F=EF=BC=88=E5=9F=BA=E4=BA=
+=8ERCP=E5=B9=B3=E5=8F=B0=E8=83=BD=E5=A4=9F=E7=9B=B4=E6=8E=A5=E4=BD=BF=E7=94=
+=A8=E5=AE=83=E7=9A=84=E8=BF=9B=E5=BA=A6=E6=9D=A1=E6=9C=8D=E5=8A=A1=EF=BC=89=
+ =
+=EF=BC=882=EF=BC=89=E5=A6=82=E4=BD=95=E5=9C=A8=E7=8A=B6=E6=80=81=E6=A0=8F=
+=E4=B8=AD=E5=8A=A8=E6=80=81=E5=88=9B=E5=BB=BA=E8=BF=9B=E5=BA=A6=E6=9D=A1=EF=
+=BC=8C=E5=90=8C=E6=97=B6=E5=A6=82=E4=BD=95=E7=94=A8=E5=AE=8C=E5=90=8E=E9=94=
+=80=E6=AF=81=E5=AE=83=E3=80=82 =
+=EF=BC=883=EF=BC=89=E5=A6=82=E4=BD=95=E7=94=A8exclude=E5=B1=9E=E6=80=A7=E3=
+=80=81setVisible=E5=92=8Clayout=E6=96=B9=E6=B3=95=E6=9D=A5=E5=8A=A8=E6=80=
+=81=E6=98=BE=E7=A4=BA/=E9=9A=90=E8=97=8F=E9=9D=A2=E6=9D=BF=E6=88=96=E7=BB=
+=84=E4=BB=B6=E3=80=82 ..."=20
+    =
+href=3D"http://hi.baidu.com/haibin_gl/blog/item/53d2f1d3455271083af3cff5.=
+html">SWT=E7=9A=84=E7=8A=B6=E6=80=81=E6=A0=8F=E5=92=8C=E8=BF=9B=E5=BA=A6=E6=
+=9D=A1=E7=9A=84=E5=AE=9E=E4=BE=8B_SQLite=E4=B8=8Ejava</A>
+    <LI><A=20
+    title=3D"1 =
+=E4=B8=8B=E8=BD=BDlog4cpp=E5=B9=B6=E8=A7=A3=E5=8E=8B=E3=80=82 2 =
+=E6=89=93=E5=BC=80\log4cpp-0.3.4b\msvc6\msvc6.dsw =
+=E7=BC=96=E8=AF=91log4cpp=E5=B7=A5=E7=A8=8BRelease=E7=89=88=E3=80=82 3 =
+=E5=B0=86=E7=BC=96=E8=AF=91=E5=90=8E=E7=9A=84log4cpp.lib=E5=A4=8D=E5=88=B6=
+=E5=88=B0VC=E7=9A=84Lib=E7=9B=AE=E5=BD=95=E4=B8=AD=E3=80=82 4 =
+=E5=B0=86=E5=A4=B4=E6=96=87=E4=BB=B6=E7=9A=84=E7=9B=AE=E5=BD=95log4cpp-0.=
+3.4b\include\log4cpp\ =
+=E5=A4=8D=E5=88=B6=E5=88=B0VC=E7=9A=84Include=E7=9B=AE=E5=BD=95. =
+(=E6=88=96=E8=80=85=E6=B7=BB=E5=8A=A0log4cpp-0.3.4b\include ..."=20
+    =
+href=3D"http://hi.baidu.com/haibin_gl/blog/item/493885a7cf9e189dd14358b6.=
+html">log4cpp=E5=BA=94=E7=94=A8=E6=89=8B=E5=86=8C_SQLite=E4=B8=8Ejava</A>=
+
+    <LI><A =
+title=3D'=E4=BD=86=E6=98=AF=E5=BD=93=E4=BD=A0=E8=AF=B4"help"=E6=97=B6=EF=BC=
+=8C=E5=AE=83=E4=BC=9A=E8=AF=B4=EF=BC=9A'=20
+    =
+href=3D"http://hi.baidu.com/haibin_gl/blog/item/add8704577c3452ecffca3f4.=
+html"=20
+    ...? =E6=96=87=E4=BB=B6=EF=BC=9AGoogleTalkTest.java=20
+    =
+=E6=82=A8=E5=A5=BD=EF=BC=8C=E6=84=9F=E8=B0=A2=E4=BD=BF=E7=94=A8GoogleTalk=
+=E6=9C=BA=E5=99=A8=E4=BA=BA=EF=BC=8C=E6=88=91=E7=9A=84=E5=88=B6=E4=BD=9C=E8=
+=80=85=E6=98=AFJoy=EF=BC=81?=EF=BC=8C=E5=BD=93=E4=BD=A0=E8=AF=B4&#34;bye&=
+#34;=E6=97=B6=EF=BC=8C=E5=AE=83=E4=BC=9A=E5=AF=B9=E4=BD=A0=E8=AF=B4&#34;=E5=
+=86=8D=E8=A7=81=EF=BC=8C=E7=A5=9D=E4=BD=A0=E5=A5=BD=E8=BF=90=EF=BC=81&#34=
+;=EF=BC=8C=E4=BD=86=E6=98=AF=E8=AF=B4=E5=AE=8C=E5=86=8D=E8=A7=81=E5=90=8E=
+=E5=AE=83=E5=B9=B6=E6=B2=A1=E6=9C=89=E4=B8=8B=E7=BA=BF=EF=BC=8C=E5=9B=A0=E4=
+=B8=BA=E6=88=91=E5=9C=A8=E9=A1=B9=E7=9B=AE=E7=9A=84=E5=BA=94=E7=94=A8=E4=B8=
+=AD=E6=98=AF=E8=A6=81=E6=B1=82=E6=9C=BA=E5=99=A8=E4=BA=BA=E4=B8=80=E7=9B=B4=
+=E5=9C=A8=E7=BA=BF=E7=9A=84=E3=80=82>=E5=9F=BA=E4=BA=8Esmack3.0.4=E7=9A=84=
+GoogleTalk=E6=9C=BA=E5=99=A8=E4=BA=BA=EF=BC=88=E8=BD=AC=EF=BC=89_SQLite=E4=
+=B8=8Ejava</A></LI></UL></UL></DIV>
+<DIV class=3DComments>
+<DIV class=3DList><!-- Start CommentsList--><!-- You can start editing =
+here. -->
+<H3 id=3Dcomments>4 Respuestas para "SQLite en Java"</H3>
+<OL>
+  <LI id=3Dcomment-160 class=3DComListLi>
+  <DIV class=3DComListLiTop></DIV><SPAN class=3DListGrav><IMG=20
+  alt=3D"Rommel Anatoli Quintanillla Cruz"=20
+  =
+src=3D"http://www.gravatar.com/avatar.php?gravatar_id=3D8db0951e0b11fae9e=
+69f9ade6db050f1&amp;rating=3DR&amp;size=3D25">=20
+  </SPAN><BIG><A class=3Durl href=3D"http://esperanto.ya.st/"=20
+  rel=3D"external nofollow">Rommel Anatoli Quintanillla Cruz</A></BIG> =
+<SMALL><A=20
+  title=3D"" =
+href=3D"http://luauf.com/2008/05/09/sqlite-en-java/#comment-160">Junio=20
+  19th, 2008 at 7:17 pm</A></SMALL> <SPAN class=3DListNr></SPAN><SPAN=20
+  class=3DListContent>
+  <P>
+  <P>Hola, ten=C3=ADa una preguntilla, =C2=BFD=C3=B3nde es que se pone =
+la base de datos dentro=20
+  de la carpeta de un proyecto por ejemplo de Netbeans, para que no haya =
+que=20
+  ponerle una ubicaci=C3=B3n fija, estilo:<BR>Connection conn =3D=20
+  =
+DriverManager.getConnection(=E2=80=9Djdbc:sqlite:C:\\sqlite\\libreria.sql=
+ite=E2=80=9D);<BR>?,=20
+  gracias de antemano <IMG class=3Dwp-smiley alt=3D:)=20
+  src=3D"http://luauf.com/wp-includes/images/smilies/icon_smile.gif"> =
+</P>
+  <P></P></SPAN>
+  <LI id=3Dcomment-161 class=3DComListLi>
+  <DIV class=3DComListLiTop></DIV><SPAN class=3DListGrav><IMG =
+alt=3DLuciano=20
+  =
+src=3D"http://www.gravatar.com/avatar.php?gravatar_id=3D23cf3028e711c2a5e=
+584790e9bfbfb56&amp;rating=3DR&amp;size=3D25">=20
+  </SPAN><BIG><A class=3Durl href=3D"http://luauf.com/"=20
+  rel=3D"external nofollow">Luciano</A></BIG> <SMALL><A title=3D""=20
+  href=3D"http://luauf.com/2008/05/09/sqlite-en-java/#comment-161">Junio =
+19th,=20
+  2008 at 9:54 pm</A></SMALL> <SPAN class=3DListNr></SPAN><SPAN =
+class=3DListContent>
+  <P>
+  <P>Se me ocurre lo siguiente, puedes utilizar el m=C3=A9todo =
+getProperty de la=20
+  clase System =
+as=C3=AD:<BR>System.getProperty(=E2=80=9Duser.dir=E2=80=9D)<BR>Esto te =
+devolver=C3=A1 el=20
+  directorio de trabajo donde te encuentras, y en funci=C3=B3n del mismo =
+armar el=20
+  path de donde quieres leer el archivo de sqlite.<BR>Por ejemplo, si me =
+
+  encuentro en NetBeansProjects\SQLite\build\classes y corro java =
+sqlite.Main,=20
+  System.getProperty(=E2=80=9Duser.dir=E2=80=9D) me=20
+  duvuelve:<BR>NetBeansProjects\SQLite\build\classes&gt;<BR>En =
+funci=C3=B3n de ese=20
+  path puedo armar un nuevo path donde deseas dejar la BD. En =
+definitiva, no=20
+  pasa a depender de NetBeans sino de como hagas el deployment de tu=20
+  aplicaci=C3=B3n.</P>
+  <P></P></SPAN>
+  <LI id=3Dcomment-162 class=3DComListLi>
+  <DIV class=3DComListLiTop></DIV><SPAN class=3DListGrav><IMG=20
+  alt=3D"Rommel Anatoli Quintanillla Cruz"=20
+  =
+src=3D"http://www.gravatar.com/avatar.php?gravatar_id=3D8db0951e0b11fae9e=
+69f9ade6db050f1&amp;rating=3DR&amp;size=3D25">=20
+  </SPAN><BIG><A class=3Durl href=3D"http://esperanto.ya.st/"=20
+  rel=3D"external nofollow">Rommel Anatoli Quintanillla Cruz</A></BIG> =
+<SMALL><A=20
+  title=3D"" =
+href=3D"http://luauf.com/2008/05/09/sqlite-en-java/#comment-162">Junio=20
+  19th, 2008 at 10:24 pm</A></SMALL> <SPAN class=3DListNr></SPAN><SPAN=20
+  class=3DListContent>
+  <P>
+  <P>S=C3=AD, con eso ya lo tengo, gracias por la respuesta.</P>
+  <P></P></SPAN>
+  <LI id=3Dcomment-666 class=3DComListLi>
+  <DIV class=3DComListLiTop></DIV><SPAN class=3DListGrav><IMG =
+alt=3DGerardo=20
+  =
+src=3D"http://www.gravatar.com/avatar.php?gravatar_id=3D86770101ad7b66ed4=
+6c9e334143f921a&amp;rating=3DR&amp;size=3D25">=20
+  </SPAN><BIG><A class=3Durl href=3D"http://ocelotl.jdinside.com/"=20
+  rel=3D"external nofollow">Gerardo</A></BIG> <SMALL><A title=3D""=20
+  =
+href=3D"http://luauf.com/2008/05/09/sqlite-en-java/#comment-666">Diciembr=
+e 29th,=20
+  2008 at 6:05 pm</A></SMALL> <SPAN class=3DListNr></SPAN><SPAN =
+class=3DListContent>
+  <P>
+  <P>Buen Articulo, Saludos desde M=C3=A9xico, Si a alguien le interesa =
+hice un=20
+  tutorial en mi Nuevo Blog. Muestra el uso de SQLite con Java. =
+Mostrando los=20
+  datos en un JTable tambien realiza modificaciones sobre los registros =
+y los=20
+  guarda dejo el link para el que lo desee consultar; <A=20
+  href=3D"http://ocelotl.jdinside.com/node/13" =
+rel=3Dnofollow>Articulo</A> Bye.</P>
+  <P></P></SPAN></LI></OL><BR><!-- Ends CommentsList--></DIV><!-- Start =
+Comments Form-->
+<H3 style=3D"LETTER-SPACING: -1px; COLOR: #000" =
+id=3Drespond>Comentarios:</H3>
+<DIV class=3DForm>
+<DIV class=3DFormTop></DIV>
+<FORM id=3Dcommentform method=3Dpost =
+action=3Dhttp://luauf.com/wp-comments-post.php>
+<P><LABEL for=3Dauthor><SMALL>Nombre (<STRONG>*</STRONG>)</SMALL> <INPUT =
+
+style=3D"WIDTH: 445px" id=3Dauthor class=3DTextField tabIndex=3D1 =
+type=3Dtext name=3Dauthor>=20
+</LABEL></P>
+<P><LABEL for=3Demail><SMALL>Email (<STRONG>*</STRONG>)</SMALL> <INPUT=20
+style=3D"WIDTH: 445px" id=3Demail class=3DTextField tabIndex=3D2 =
+type=3Dtext name=3Demail>=20
+</LABEL></P>
+<P><LABEL for=3Durl><SMALL><ABBR=20
+title=3D"Uniform Resource Identifier">URL</ABBR></SMALL> <INPUT=20
+style=3D"WIDTH: 445px" id=3Durl class=3DTextField tabIndex=3D3 =
+type=3Dtext name=3Durl>=20
+</LABEL></P><BR clear=3Dall>
+<P><TEXTAREA style=3D"WIDTH: 625px" id=3Dcomment class=3DTextArea =
+tabIndex=3D4 rows=3D10 name=3Dcomment></TEXTAREA></P>
+<P><INPUT style=3D"WIDTH: 204px" class=3DSubmitComment=20
+onmouseover=3D"javascript:changeSty('SubmitCommentIE');"=20
+title=3D"Deje su comentario" =
+onmouseout=3D"javascript:changeSty('SubmitComment');"=20
+alt=3D"Deje su comentario"=20
+src=3D"http://luauf.com/wp-content/themes/illuauf/images/ButtonTransparen=
+t.png"=20
+type=3Dimage name=3DSubmitComment> <INPUT value=3D252 type=3Dhidden=20
+name=3Dcomment_post_ID></P></FORM></DIV></DIV></DIV><!-- end center =
+--><!-- start content left -->
+<DIV class=3DSR>
+<DIV class=3DSR>
+<DIV class=3DSRL>
+<DIV class=3DGoo>
+<DIV class=3DGooTop></DIV><BR><!-- SiteSearch Google -->
+<STYLE type=3Dtext/css>@import url( =
+http://www.google.com/cse/api/branding.css );
+</STYLE>
+
+<DIV style=3D"BACKGROUND-COLOR: #09182a; COLOR: #ffffff"=20
+class=3Dcse-branding-bottom>
+<DIV class=3Dcse-branding-form>
+<FORM id=3Dcse-search-box action=3Dhttp://www.google.com.ar/cse>
+<DIV><INPUT value=3Dpartner-pub-5573650978867919:a3u19s-1hvx =
+type=3Dhidden name=3Dcx>=20
+<INPUT value=3DISO-8859-1 type=3Dhidden name=3Die> <INPUT size=3D16 =
+type=3Dtext name=3Dq> <INPUT value=3DBuscar type=3Dsubmit name=3Dsa> =
+</DIV></FORM></DIV>
+<DIV class=3Dcse-branding-logo><IMG alt=3DGoogle=20
+src=3D"http://www.google.com/images/poweredby_transparent/poweredby_00000=
+0.gif">=20
+</DIV>
+<DIV class=3Dcse-branding-text>B=C3=BAsqueda personalizada =
+</DIV></DIV><!-- SiteSearch Google --><BR></DIV><BR>
+<DIV class=3DSyn>
+<DIV class=3DSynTop></DIV>
+<UL>
+  <LI><A =
+href=3D"http://feeds.feedburner.com/luauf">Entradas</A>(RSS)</LI>
+  <LI><A href=3D"http://luauf.com/2008/05/09/sqlite-en-java/#">Novedades =
+v=C3=ADa=20
+  email:</A></LI>
+  <FORM=20
+  style=3D"TEXT-ALIGN: left; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; =
+PADDING-RIGHT: 3px; PADDING-TOP: 3px"=20
+  =
+onsubmit=3D"window.open('http://www.feedburner.com/fb/a/emailverifySubmit=
+?feedId=3D1781407', 'popupwindow', =
+'scrollbars=3Dyes,width=3D550,height=3D520');return true"=20
+  method=3Dpost action=3Dhttp://www.feedburner.com/fb/a/emailverify=20
+  target=3Dpopupwindow><INPUT=20
+  onblur=3D"if (value =3D=3D '') {value =3D 'Ingrese su email';}" =
+style=3D"WIDTH: 120px"=20
+  onfocus=3D"if (value =3D=3D 'Ingrese su email') {value =3D '';}"=20
+  value=3D"Ingrese su email" type=3Dtext name=3Demail> <INPUT=20
+  value=3Dhttp://feeds.feedburner.com/~e?ffid=3D1781407 type=3Dhidden =
+name=3Durl> <INPUT=20
+  value=3DLuAuF type=3Dhidden name=3Dtitle> <INPUT value=3Des_ES =
+type=3Dhidden name=3Dloc> <INPUT value=3DEnviar type=3Dsubmit>=20
+  <P style=3D"FONT-SIZE: 8px">Delivered by <A style=3D"FONT-SIZE: 8px"=20
+  href=3D"http://www.feedburner.com/" =
+target=3D_blank>FeedBurner</A></P></FORM><A=20
+  style=3D"PADDING-LEFT: 3px" =
+href=3D"http://feeds.feedburner.com/luauf"><IMG=20
+  style=3D"BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px"=20
+  alt=3D""=20
+  =
+src=3D"http://feeds.feedburner.com/~fc/luauf?bg=3D99CCFF&amp;fg=3D444444&=
+amp;anim=3D1"=20
+  width=3D88 height=3D26></A> </UL></DIV>
+<DIV id=3Dtag_cloud class=3D"widget widget_tag_cloud">
+<DIV class=3DwidgetTop></DIV>
+<H2 class=3Dwidgettitle>Nube de Tags</H2><A style=3D"FONT-SIZE: 8.266pt" =
+
+class=3Dtag-link-175 title=3D"6 temas" =
+href=3D"http://luauf.com/tag/net/"=20
+rel=3Dtag>.NET</A> <A style=3D"FONT-SIZE: 8.4pt" class=3Dtag-link-333 =
+title=3D"7 temas"=20
+href=3D"http://luauf.com/tag/asus/" rel=3Dtag>ASUS</A> <A =
+style=3D"FONT-SIZE: 11.6pt"=20
+class=3Dtag-link-3 title=3D"31 temas" =
+href=3D"http://luauf.com/tag/bases-de-datos/"=20
+rel=3Dtag>Bases de Datos</A> <A style=3D"FONT-SIZE: 8.533pt" =
+class=3Dtag-link-217=20
+title=3D"8 temas" href=3D"http://luauf.com/tag/bash/" rel=3Dtag>bash</A> =
+<A=20
+style=3D"FONT-SIZE: 8.266pt" class=3Dtag-link-157 title=3D"6 temas"=20
+href=3D"http://luauf.com/tag/bsd/" rel=3Dtag>BSD</A> <A =
+style=3D"FONT-SIZE: 11.066pt"=20
+class=3Dtag-link-55 title=3D"27 temas" href=3D"http://luauf.com/tag/c/"=20
+rel=3Dtag>C++</A> <A style=3D"FONT-SIZE: 8.4pt" class=3Dtag-link-124 =
+title=3D"7 temas"=20
+href=3D"http://luauf.com/tag/comandos/" rel=3Dtag>Comandos</A> <A=20
+style=3D"FONT-SIZE: 8.4pt" class=3Dtag-link-265 title=3D"7 temas"=20
+href=3D"http://luauf.com/tag/consola/" rel=3Dtag>Consola</A> <A=20
+style=3D"FONT-SIZE: 8pt" class=3Dtag-link-95 title=3D"4 temas"=20
+href=3D"http://luauf.com/tag/consultas/" rel=3Dtag>Consultas</A> <A=20
+style=3D"FONT-SIZE: 8.666pt" class=3Dtag-link-287 title=3D"9 temas"=20
+href=3D"http://luauf.com/tag/debian/" rel=3Dtag>Debian</A> <A=20
+style=3D"FONT-SIZE: 8.533pt" class=3Dtag-link-203 title=3D"8 temas"=20
+href=3D"http://luauf.com/tag/eclipse/" rel=3Dtag>Eclipse</A> <A=20
+style=3D"FONT-SIZE: 8.133pt" class=3Dtag-link-145 title=3D"5 temas"=20
+href=3D"http://luauf.com/tag/freebsd/" rel=3Dtag>FreeBSD</A> <A=20
+style=3D"FONT-SIZE: 8.4pt" class=3Dtag-link-183 title=3D"7 temas"=20
+href=3D"http://luauf.com/tag/gnu/" rel=3Dtag>GNU</A> <A =
+style=3D"FONT-SIZE: 8.4pt"=20
+class=3Dtag-link-29 title=3D"7 temas" =
+href=3D"http://luauf.com/tag/google/"=20
+rel=3Dtag>Google</A> <A style=3D"FONT-SIZE: 8.533pt" =
+class=3Dtag-link-118=20
+title=3D"8 temas" href=3D"http://luauf.com/tag/humor/" =
+rel=3Dtag>Humor</A> <A=20
+style=3D"FONT-SIZE: 8.933pt" class=3Dtag-link-42 title=3D"11 temas"=20
+href=3D"http://luauf.com/tag/ide/" rel=3Dtag>IDE</A> <A =
+style=3D"FONT-SIZE: 8pt"=20
+class=3Dtag-link-38 title=3D"4 temas" =
+href=3D"http://luauf.com/tag/internet/"=20
+rel=3Dtag>Internet</A> <A style=3D"FONT-SIZE: 16.4pt" class=3Dtag-link-6 =
+
+title=3D"67 temas" href=3D"http://luauf.com/tag/java/" =
+rel=3Dtag>Java</A> <A=20
+style=3D"FONT-SIZE: 8.133pt" class=3Dtag-link-63 title=3D"5 temas"=20
+href=3D"http://luauf.com/tag/javascript/" rel=3Dtag>JavaScript</A> <A=20
+style=3D"FONT-SIZE: 8pt" class=3Dtag-link-66 title=3D"4 temas"=20
+href=3D"http://luauf.com/tag/laf/" rel=3Dtag>LAF</A> <A =
+style=3D"FONT-SIZE: 22pt"=20
+class=3Dtag-link-32 title=3D"109 temas" =
+href=3D"http://luauf.com/tag/linux/"=20
+rel=3Dtag>Linux</A> <A style=3D"FONT-SIZE: 8.133pt" class=3Dtag-link-210 =
+
+title=3D"5 temas" href=3D"http://luauf.com/tag/liveusb/" =
+rel=3Dtag>LiveUSB</A> <A=20
+style=3D"FONT-SIZE: 14.8pt" class=3Dtag-link-4 title=3D"55 temas"=20
+href=3D"http://luauf.com/tag/mysql/" rel=3Dtag>MySQL</A> <A=20
+style=3D"FONT-SIZE: 9.733pt" class=3Dtag-link-22 title=3D"17 temas"=20
+href=3D"http://luauf.com/tag/netbeans/" rel=3Dtag>Netbeans</A> <A=20
+style=3D"FONT-SIZE: 8.266pt" class=3Dtag-link-367 title=3D"6 temas"=20
+href=3D"http://luauf.com/tag/netbook/" rel=3Dtag>netbook</A> <A=20
+style=3D"FONT-SIZE: 8pt" class=3Dtag-link-79 title=3D"4 temas"=20
+href=3D"http://luauf.com/tag/optimizacion/" =
+rel=3Dtag>Optimizaci=C3=B3n</A> <A=20
+style=3D"FONT-SIZE: 8.133pt" class=3Dtag-link-138 title=3D"5 temas"=20
+href=3D"http://luauf.com/tag/oracle/" rel=3Dtag>Oracle</A> <A=20
+style=3D"FONT-SIZE: 8.266pt" class=3Dtag-link-59 title=3D"6 temas"=20
+href=3D"http://luauf.com/tag/php/" rel=3Dtag>PHP</A> <A =
+style=3D"FONT-SIZE: 8pt"=20
+class=3Dtag-link-13 title=3D"4 temas" =
+href=3D"http://luauf.com/tag/phyton/"=20
+rel=3Dtag>Phyton</A> <A style=3D"FONT-SIZE: 12.4pt" class=3Dtag-link-5=20
+title=3D"37 temas" href=3D"http://luauf.com/tag/programacion/"=20
+rel=3Dtag>Programaci=C3=B3n</A> <A style=3D"FONT-SIZE: 8.933pt" =
+class=3Dtag-link-12=20
+title=3D"11 temas" href=3D"http://luauf.com/tag/python/" =
+rel=3Dtag>Python</A> <A=20
+style=3D"FONT-SIZE: 8.266pt" class=3Dtag-link-88 title=3D"6 temas"=20
+href=3D"http://luauf.com/tag/redes/" rel=3Dtag>Redes</A> <A =
+style=3D"FONT-SIZE: 8.4pt"=20
+class=3Dtag-link-61 title=3D"7 temas" =
+href=3D"http://luauf.com/tag/ruby/"=20
+rel=3Dtag>Ruby</A> <A style=3D"FONT-SIZE: 8.266pt" class=3Dtag-link-218=20
+title=3D"6 temas" href=3D"http://luauf.com/tag/shell-script/" =
+rel=3Dtag>shell=20
+script</A> <A style=3D"FONT-SIZE: 11.333pt" class=3Dtag-link-7 =
+title=3D"29 temas"=20
+href=3D"http://luauf.com/tag/sistemas-operativos/" rel=3Dtag>Sistemas =
+Operativos</A>=20
+<A style=3D"FONT-SIZE: 8.133pt" class=3Dtag-link-93 title=3D"5 temas"=20
+href=3D"http://luauf.com/tag/sockets/" rel=3Dtag>sockets</A> <A=20
+style=3D"FONT-SIZE: 9.6pt" class=3Dtag-link-78 title=3D"16 temas"=20
+href=3D"http://luauf.com/tag/sql/" rel=3Dtag>SQL</A> <A =
+style=3D"FONT-SIZE: 8pt"=20
+class=3Dtag-link-36 title=3D"4 temas" =
+href=3D"http://luauf.com/tag/sql-server/"=20
+rel=3Dtag>SQL Server</A> <A style=3D"FONT-SIZE: 8pt" class=3Dtag-link-89 =
+
+title=3D"4 temas" href=3D"http://luauf.com/tag/tcpip/" =
+rel=3Dtag>TCP/IP</A> <A=20
+style=3D"FONT-SIZE: 8.133pt" class=3Dtag-link-291 title=3D"5 temas"=20
+href=3D"http://luauf.com/tag/terminal/" rel=3Dtag>Terminal</A> <A=20
+style=3D"FONT-SIZE: 13.466pt" class=3Dtag-link-69 title=3D"45 temas"=20
+href=3D"http://luauf.com/tag/ubuntu/" rel=3Dtag>Ubuntu</A> <A=20
+style=3D"FONT-SIZE: 9.066pt" class=3Dtag-link-37 title=3D"12 temas"=20
+href=3D"http://luauf.com/tag/unix/" rel=3Dtag>UNIX</A> <A =
+style=3D"FONT-SIZE: 8.266pt"=20
+class=3Dtag-link-208 title=3D"6 temas" =
+href=3D"http://luauf.com/tag/usb/"=20
+rel=3Dtag>USB</A> <A style=3D"FONT-SIZE: 11.466pt" class=3Dtag-link-8 =
+title=3D"30 temas"=20
+href=3D"http://luauf.com/tag/windows/" rel=3Dtag>Windows</A> <A=20
+style=3D"FONT-SIZE: 8.4pt" class=3Dtag-link-67 title=3D"7 temas"=20
+href=3D"http://luauf.com/tag/wordpress/" rel=3Dtag>Wordpress</A></DIV>
+<DIV id=3Dcategories-317061151 class=3D"widget widget_categories">
+<DIV class=3DwidgetTop></DIV>
+<H2 class=3Dwidgettitle>Categor=C3=ADas</H2>
+<UL>
+  <LI class=3D"cat-item cat-item-3"><A=20
+  title=3D"Ver todas las entradas de Bases de Datos"=20
+  href=3D"http://luauf.com/category/bases-de-datos/">Bases de Datos</A> =
+(77)=20
+  <UL class=3Dchildren>
+    <LI class=3D"cat-item cat-item-4"><A title=3D"Ver todas las entradas =
+de MySQL"=20
+    href=3D"http://luauf.com/category/bases-de-datos/mysql/">MySQL</A> =
+(60) </LI>
+    <LI class=3D"cat-item cat-item-138"><A=20
+    title=3D"Ver todas las entradas de Oracle"=20
+    href=3D"http://luauf.com/category/bases-de-datos/oracle/">Oracle</A> =
+(3) </LI>
+    <LI class=3D"cat-item cat-item-235"><A=20
+    title=3D"Ver todas las entradas de PostgreSQL"=20
+    =
+href=3D"http://luauf.com/category/bases-de-datos/postgresql/">PostgreSQL<=
+/A>=20
+    (2) </LI>
+    <LI class=3D"cat-item cat-item-117"><A title=3D"Ver todas las =
+entradas de SQL"=20
+    =
+href=3D"http://luauf.com/category/bases-de-datos/sql-bases-de-datos/">SQL=
+</A>=20
+    (6) </LI>
+    <LI class=3D"cat-item cat-item-36"><A=20
+    title=3D"Ver todas las entradas de SQL Server"=20
+    href=3D"http://luauf.com/category/bases-de-datos/sql-server/">SQL =
+Server</A>=20
+    (5) </LI>
+    <LI class=3D"cat-item cat-item-140"><A=20
+    title=3D"Ver todas las entradas de SQLite"=20
+    =
+href=3D"http://luauf.com/category/bases-de-datos/sqlite-bases-de-datos/">=
+SQLite</A>=20
+    (2) </LI></UL></LI>
+  <LI class=3D"cat-item cat-item-9"><A=20
+  title=3D"Ver todas las entradas de Miscelaneas"=20
+  href=3D"http://luauf.com/category/miscelaneas/">Miscelaneas</A> (56)=20
+  <UL class=3Dchildren>
+    <LI class=3D"cat-item cat-item-101"><A=20
+    title=3D"Ver todas las entradas de Actualidad"=20
+    =
+href=3D"http://luauf.com/category/miscelaneas/actualidad/">Actualidad</A>=
+ (1)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-162"><A=20
+    title=3D"Ver todas las entradas de Gesti=C3=B3n"=20
+    =
+href=3D"http://luauf.com/category/miscelaneas/gestion/">Gesti=C3=B3n</A> =
+(5) </LI>
+    <LI class=3D"cat-item cat-item-29"><A title=3D"Ver todas las =
+entradas de Google"=20
+    href=3D"http://luauf.com/category/miscelaneas/google/">Google</A> =
+(7) </LI>
+    <LI class=3D"cat-item cat-item-325"><A title=3D"Ver todas las =
+entradas de Humor"=20
+    =
+href=3D"http://luauf.com/category/miscelaneas/humor-miscelaneas/">Humor</=
+A>=20
+    (6) </LI>
+    <LI class=3D"cat-item cat-item-38"><A=20
+    title=3D"Ver todas las entradas de Internet"=20
+    =
+href=3D"http://luauf.com/category/miscelaneas/internet/">Internet</A> =
+(3)=20
+</LI>
+    <LI class=3D"cat-item cat-item-295"><A=20
+    title=3D"Ver todas las entradas de Libros"=20
+    href=3D"http://luauf.com/category/miscelaneas/libros/">Libros</A> =
+(2) </LI>
+    <LI class=3D"cat-item cat-item-340"><A=20
+    title=3D"Ver todas las entradas de Portatiles"=20
+    =
+href=3D"http://luauf.com/category/miscelaneas/portatiles/">Portatiles</A>=
+ (2)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-30"><A title=3D"Ver todas las =
+entradas de VMWare"=20
+    href=3D"http://luauf.com/category/miscelaneas/vmware/">VMWare</A> =
+(4) </LI>
+    <LI class=3D"cat-item cat-item-67"><A=20
+    title=3D"Ver todas las entradas de Wordpress"=20
+    =
+href=3D"http://luauf.com/category/miscelaneas/wordpress/">Wordpress</A> =
+(8)=20
+    </LI></UL></LI>
+  <LI class=3D"cat-item cat-item-5"><A=20
+  title=3D"Ver todas las entradas de Programaci=C3=B3n"=20
+  href=3D"http://luauf.com/category/programacion/">Programaci=C3=B3n</A> =
+(137)=20
+  <UL class=3Dchildren>
+    <LI class=3D"cat-item cat-item-229"><A title=3D"Ver todas las =
+entradas de .NET"=20
+    =
+href=3D"http://luauf.com/category/programacion/net-programacion/">.NET</A=
+> (1)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-181"><A title=3D"Ver todas las =
+entradas de AJAX"=20
+    href=3D"http://luauf.com/category/programacion/ajax/">AJAX</A> (3) =
+</LI>
+    <LI class=3D"cat-item cat-item-372"><A title=3D"Ver todas las =
+entradas de Bash"=20
+    =
+href=3D"http://luauf.com/category/programacion/bash-programacion/">Bash</=
+A>=20
+    (1) </LI>
+    <LI class=3D"cat-item cat-item-169"><A title=3D"Ver todas las =
+entradas de C"=20
+    =
+href=3D"http://luauf.com/category/programacion/c-programacion-2/">C</A> =
+(8)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-146"><A title=3D"Ver todas las =
+entradas de C#"=20
+    =
+href=3D"http://luauf.com/category/programacion/c-programacion/">C#</A> =
+(13)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-52"><A title=3D"Ver todas las =
+entradas de D"=20
+    href=3D"http://luauf.com/category/programacion/d/">D</A> (1) </LI>
+    <LI class=3D"cat-item cat-item-46"><A=20
+    title=3D"Ver todas las entradas de Editores"=20
+    =
+href=3D"http://luauf.com/category/programacion/editores/">Editores</A> =
+(2)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-24"><A title=3D"Ver todas las =
+entradas de IDEs"=20
+    href=3D"http://luauf.com/category/programacion/ides/">IDEs</A> (19) =
+</LI>
+    <LI class=3D"cat-item cat-item-177"><A title=3D"Ver todas las =
+entradas de J2EE"=20
+    href=3D"http://luauf.com/category/programacion/j2ee/">J2EE</A> (5) =
+</LI>
+    <LI class=3D"cat-item cat-item-6"><A title=3D"Ver todas las entradas =
+de Java"=20
+    href=3D"http://luauf.com/category/programacion/java/">Java</A> (56) =
+</LI>
+    <LI class=3D"cat-item cat-item-134"><A=20
+    title=3D"Ver todas las entradas de JavaFX"=20
+    =
+href=3D"http://luauf.com/category/programacion/javafx-programacion/">Java=
+FX</A>=20
+    (3) </LI>
+    <LI class=3D"cat-item cat-item-221"><A=20
+    title=3D"Ver todas las entradas de Javascript"=20
+    =
+href=3D"http://luauf.com/category/programacion/javascript-programacion/">=
+Javascript</A>=20
+    (4) </LI>
+    <LI class=3D"cat-item cat-item-246"><A title=3D"Ver todas las =
+entradas de Mono"=20
+    =
+href=3D"http://luauf.com/category/programacion/mono-programacion/">Mono</=
+A>=20
+    (1) </LI>
+    <LI class=3D"cat-item cat-item-534"><A title=3D"Ver todas las =
+entradas de Perl"=20
+    =
+href=3D"http://luauf.com/category/programacion/perl-programacion/">Perl</=
+A>=20
+    (1) </LI>
+    <LI class=3D"cat-item cat-item-155"><A title=3D"Ver todas las =
+entradas de PHP"=20
+    =
+href=3D"http://luauf.com/category/programacion/php-programacion/">PHP</A>=
+ (4)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-12"><A title=3D"Ver todas las =
+entradas de Python"=20
+    href=3D"http://luauf.com/category/programacion/python/">Python</A> =
+(15) </LI>
+    <LI class=3D"cat-item cat-item-130"><A title=3D"Ver todas las =
+entradas de RIA"=20
+    =
+href=3D"http://luauf.com/category/programacion/ria-programacion/">RIA</A>=
+ (2)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-238"><A title=3D"Ver todas las =
+entradas de Ruby"=20
+    =
+href=3D"http://luauf.com/category/programacion/ruby-programacion/">Ruby</=
+A>=20
+    (4) </LI>
+    <LI class=3D"cat-item cat-item-306"><A=20
+    title=3D"Ver todas las entradas de Visual Basic"=20
+    =
+href=3D"http://luauf.com/category/programacion/visual-basic-programacion/=
+">Visual=20
+    Basic</A> (1) </LI></UL></LI>
+  <LI class=3D"cat-item cat-item-88"><A title=3D"Ver todas las entradas =
+de Redes"=20
+  href=3D"http://luauf.com/category/redes/">Redes</A> (7)=20
+  <UL class=3Dchildren>
+    <LI class=3D"cat-item cat-item-89"><A title=3D"Ver todas las =
+entradas de TCP/IP"=20
+    href=3D"http://luauf.com/category/redes/tcpip/">TCP/IP</A> (7) =
+</LI></UL></LI>
+  <LI class=3D"cat-item cat-item-7"><A=20
+  title=3D"Ver todas las entradas de Sistemas Operativos"=20
+  href=3D"http://luauf.com/category/sistemas-operativos/">Sistemas =
+Operativos</A>=20
+  (146)=20
+  <UL class=3Dchildren>
+    <LI class=3D"cat-item cat-item-157"><A title=3D"Ver todas las =
+entradas de BSD"=20
+    href=3D"http://luauf.com/category/sistemas-operativos/bsd/">BSD</A> =
+(8) </LI>
+    <LI class=3D"cat-item cat-item-541"><A title=3D"Ver todas las =
+entradas de GNU"=20
+    =
+href=3D"http://luauf.com/category/sistemas-operativos/gnu-sistemas-operat=
+ivos/">GNU</A>=20
+    (1) </LI>
+    <LI class=3D"cat-item cat-item-33"><A title=3D"Ver todas las =
+entradas de Linux"=20
+    =
+href=3D"http://luauf.com/category/sistemas-operativos/linux-sistemas-oper=
+ativos/">Linux</A>=20
+    (110) </LI>
+    <LI class=3D"cat-item cat-item-37"><A title=3D"Ver todas las =
+entradas de UNIX"=20
+    =
+href=3D"http://luauf.com/category/sistemas-operativos/unix/">UNIX</A> =
+(13)=20
+    </LI>
+    <LI class=3D"cat-item cat-item-8"><A title=3D"Ver todas las entradas =
+de Windows"=20
+    =
+href=3D"http://luauf.com/category/sistemas-operativos/windows/">Windows</=
+A>=20
+    (24) </LI></UL></LI></UL></DIV>
+<DIV id=3Dlinkcat-2 class=3D"widget widget_links">
+<DIV class=3DwidgetTop></DIV>
+<H2 class=3Dwidgettitle>Blogroll</H2>
+<UL class=3D"xoxo blogroll">
+  <LI><A=20
+  title=3D"Anotaciones sobre linux, programaci=C3=B3n, dise=C3=B1o =
+gr=C3=A1fico y temas varios. "=20
+  href=3D"http://www.xplorastudios.com/">Blog Xplorastudios</A></LI>
+  <LI><A href=3D"http://daniblog.com/">daniBlog</A></LI>
+  <LI><A title=3D"/* print =E2=80=9Csin comentarios v1.5\n=E2=80=9D */ " =
+
+  href=3D"http://www.elcodigok.com.ar/">El CoDiGo K</A></LI>
+  <LI><A title=3D"El blog de casidiablo" =
+href=3D"http://casidiablo.net/">Gnu/Linux,=20
+  Java y Programaci=C3=B3n</A></LI>
+  <LI><A title=3D"Innovaci=C3=B3n y avances tecnol=C3=B3gicos"=20
+  href=3D"http://www.inventionary.com.ar/">Inventionary</A></LI>
+  <LI><A title=3D"Tonos Movil, Melodias y Juegos Moviles"=20
+  href=3D"http://www.tonosmovil.com.es/">Juegos Moviles</A></LI>
+  <LI><A href=3D"http://maestrodelacomputacion.blogspot.com/">Maestro De =
+La=20
+  Computaci=C3=B3n</A></LI>
+  <LI><A href=3D"http://tecnologia21.com/">Tecnolog=C3=ADa 21</A></LI>
+  <LI><A href=3D"http://b4ckdoor.wordpress.com/">[BACK =
+DOOR]</A></LI></UL></DIV>
+<DIV id=3Dlinkcat-384 class=3D"widget widget_links">
+<DIV class=3DwidgetTop></DIV>
+<H2 class=3Dwidgettitle>Influimos</H2>
+<UL class=3D"xoxo blogroll">
+  <LI><A title=3D"Recopilaci=C3=B3n de las mejores aplicaciones web de =
+escritorio"=20
+  href=3D"http://aplicacionesutiles.com/">Aplicaciones =
+=C3=9Atiles</A></LI>
+  <LI><A title=3D"Informaci=C3=B3n y novedades de autos"=20
+  href=3D"http://autofuror.com/">AutoFuror</A></LI>
+  <LI><A title=3D"Todo sobre el mundo del cine"=20
+  href=3D"http://avancesdecine.com/">Avances de Cine</A></LI>
+  <LI><A title=3D"Blog dedicado al mundo de los juegos"=20
+  href=3D"http://comenzarjuego.com/">Comenzar Juego</A></LI>
+  <LI><A title=3D"Articulos tecnol=C3=B3gicos educativos"=20
+  href=3D"http://culturacion.com/">Culturaci=C3=B3n</A></LI>
+  <LI><A title=3D"Todo lo que un geek debe conocer, est=C3=A1 aqu=C3=AD" =
+
+  href=3D"http://grupogeek.com/">GrupoGeek</A></LI>
+  <LI><A title=3D"Informaci=C3=B3n del deporte m=C3=A1s lindo del mundo" =
+
+  href=3D"http://horadefutbol.com/">Hora de Futbol</A></LI>
+  <LI><A title=3D"Miles de recursos en un =C3=BAnico lugar"=20
+  href=3D"http://milrecursos.com/">Mil Recursos</A></LI>
+  <LI><A title=3D"Informaci=C3=B3n y recursos para celulares"=20
+  href=3D"http://sincelular.com/">SinCelular</A></LI></UL></DIV>
+<DIV id=3Darchives class=3D"widget widget_archive">
+<DIV class=3DwidgetTop></DIV>
+<H2 class=3Dwidgettitle>Archivos</H2>
+<UL>
+  <LI><A title=3D"Junio de 2009" =
+href=3D"http://luauf.com/2009/06/">Junio de=20
+  2009</A></LI>
+  <LI><A title=3D"Mayo de 2009" href=3D"http://luauf.com/2009/05/">Mayo =
+de=20
+  2009</A></LI>
+  <LI><A title=3D"Abril de 2009" =
+href=3D"http://luauf.com/2009/04/">Abril de=20
+  2009</A></LI>
+  <LI><A title=3D"Marzo de 2009" =
+href=3D"http://luauf.com/2009/03/">Marzo de=20
+  2009</A></LI>
+  <LI><A title=3D"Febrero de 2009" =
+href=3D"http://luauf.com/2009/02/">Febrero de=20
+  2009</A></LI>
+  <LI><A title=3D"Enero de 2009" =
+href=3D"http://luauf.com/2009/01/">Enero de=20
+  2009</A></LI>
+  <LI><A title=3D"Diciembre de 2008" =
+href=3D"http://luauf.com/2008/12/">Diciembre de=20
+  2008</A></LI>
+  <LI><A title=3D"Noviembre de 2008" =
+href=3D"http://luauf.com/2008/11/">Noviembre de=20
+  2008</A></LI>
+  <LI><A title=3D"Octubre de 2008" =
+href=3D"http://luauf.com/2008/10/">Octubre de=20
+  2008</A></LI>
+  <LI><A title=3D"Septiembre de 2008" =
+href=3D"http://luauf.com/2008/09/">Septiembre=20
+  de 2008</A></LI>
+  <LI><A title=3D"Agosto de 2008" =
+href=3D"http://luauf.com/2008/08/">Agosto de=20
+  2008</A></LI>
+  <LI><A title=3D"Julio de 2008" =
+href=3D"http://luauf.com/2008/07/">Julio de=20
+  2008</A></LI>
+  <LI><A title=3D"Junio de 2008" =
+href=3D"http://luauf.com/2008/06/">Junio de=20
+  2008</A></LI>
+  <LI><A title=3D"Mayo de 2008" href=3D"http://luauf.com/2008/05/">Mayo =
+de=20
+  2008</A></LI>
+  <LI><A title=3D"Abril de 2008" =
+href=3D"http://luauf.com/2008/04/">Abril de=20
+  2008</A></LI>
+  <LI><A title=3D"Marzo de 2008" =
+href=3D"http://luauf.com/2008/03/">Marzo de=20
+  2008</A></LI></UL></DIV>
+<DIV id=3Dtext-1 class=3D"widget widget_text">
+<DIV class=3DwidgetTop></DIV>
+<DIV class=3Dtextwidget>
+<DIV class=3D"widget widget_archives">
+<H2>Licencia de uso</H2>
+<UL>&nbsp;&nbsp;<A=20
+  =
+href=3D"http://creativecommons.org/licenses/by-sa/2.5/ar/deed.es_AR"><IMG=
+=20
+  =
+src=3D"http://luauf.com/wp-content/themes/illuauf/images/somerights.png">=
+</A>=20
+  <LI><A=20
+  =
+href=3D"http://creativecommons.org/licenses/by-sa/2.5/ar/deed.es_AR">Crea=
+tive=20
+  Commons</A></LI>
+  <LI><A=20
+href=3D"http://luauf.com/privacidad/">Privacidad</A></LI></UL></DIV></DIV=
+></DIV>
+<DIV id=3Dtext-317151131 class=3D"widget widget_text">
+<DIV class=3DwidgetTop></DIV>
+<DIV class=3Dtextwidget>
+<DIV class=3D"widget widget_archives">
+<H2>Usuarios</H2>
+<UL>&nbsp;&nbsp; <A href=3D"http://whos.amung.us/show/ychv68w2"><IMG =
+border=3D0=20
+  alt=3D"web counter" src=3D"http://whos.amung.us/swidget/ychv68w2.gif" =
+width=3D80=20
+  height=3D15> </A></UL></DIV></DIV></DIV></DIV></DIV></DIV><!-- end =
+content left --></DIV>
+<DIV class=3DFooter>
+<DIV class=3DFL></DIV>
+<DIV class=3DFR></DIV><!--=0A=
+<p align=3D"center">=0A=
+<strong>Copyright &copy; 2009 -  <a href=3D"http://luauf.com/">  </a>- =
+Powered by </strong><a href=3D"http://www.wordpress.com/">WordPress</a>=0A=
+</p>=0A=
+--></DIV></DIV>
+<SCRIPT type=3Dtext/javascript>=0A=
+var gaJsHost =3D (("https:" =3D=3D document.location.protocol) ? =
+"https://ssl." : "http://www.");=0A=
+document.write(unescape("%3Cscript src=3D'" + gaJsHost + =
+"google-analytics.com/ga.js' type=3D'text/javascript'%3E%3C/script%3E"));=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>=0A=
+var pageTracker =3D _gat._getTracker("UA-3887270-1");=0A=
+pageTracker._initData();=0A=
+pageTracker._trackPageview();=0A=
+</SCRIPT>
+</BODY></HTML>
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://luauf.com/wp-content/uploads/2008/05/sqjava-300x80.png
+
+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
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.gravatar.com/avatar.php?gravatar_id=8db0951e0b11fae9e69f9ade6db050f1&rating=R&size=25
+
+/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcg
+SlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwK
+DAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAGQAZ
+AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMF
+BQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkq
+NDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqi
+o6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/E
+AB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMR
+BAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVG
+R0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKz
+tLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A
+p/s8/Au6+O/i+50wX40nTbG3NzeXxj8zYucKqrkAkn1IwAx7YPrHwO/Z9+Gev+AfG3ifxjrV3NpW
+i6zLpsWqWjmKIwoI9kwUKx+cyg85AGPeoP2Fdc02XV/HHg28u1sLzxNpghtJzwdyLKGVfVsSlgP9
+g1nj9n/4++FdF1j4fabpsk/hrVLlZbj7NNbm3uCpXD+YxDIDsXI+UnaMiv1vGYipPEVcPKuqSXJa
+7Sut5NPv07aH4rgcNSp4ajiY4d1W+dOycrS2imui699Tlv2i/wBnqP4Pf2TrWhat/b/g7WlzZX+V
+LKdu4KzL8rZXkMMZweBjnxXNfXX7UFpB8LP2cfh58L76+hvvElvcfb5xE24RIBNn3xum2qTjIQ18
+i4r1cqr1K+GU6j5tWk/5knZP5njZxh6eGxThTXLom478rau18joPBul22oalG8+tpoTwyxslyzbT
+H1JcEHOV2j7uTlh6GvedP+Pfj+ysU09fjErWwXaXltraSbHQDzWBYn1O7j1r5m9KK6cRhIYl3qWa
+80nb70cuGxtTCq1K6b3tKSv9zR2PjuBL5W1y68VHxFq93cYnE0nmTAbBlmYsc/NuUYyMKDxkCuOp
+KdXXThyR5b3OOpP2kua1r/11P//Z
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://luauf.com/wp-includes/images/smilies/icon_smile.gif
+
+R0lGODlhDwAPALMOAP/qAEVFRQAAAP/OAP/JAP+0AP6dAP/+k//9E///////xzMzM///6//lAAAA
+AAAAACH5BAEAAA4ALAAAAAAPAA8AAARb0EkZap3YVabOGRcWcAgCnIMRTEEnCCfwpqt2mHEOagoO
+nz+CKnADxoKFyiHHBBCSAdOiCVg8KwPZa7sVrgJZQWI8FhB2msGgwTXTWGqCXP4WBQr4wjDDstQm
+EQA7
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.gravatar.com/avatar.php?gravatar_id=23cf3028e711c2a5e584790e9bfbfb56&rating=R&size=25
+
+/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcg
+SlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwK
+DAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAGQAZ
+AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMF
+BQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkq
+NDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqi
+o6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/E
+AB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMR
+BAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVG
+R0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKz
+tLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A
+p/s8/Au6+O/i+50wX40nTbG3NzeXxj8zYucKqrkAkn1IwAx7YPrHwO/Z9+Gev+AfG3ifxjrV3NpW
+i6zLpsWqWjmKIwoI9kwUKx+cyg85AGPeoP2Fdc02XV/HHg28u1sLzxNpghtJzwdyLKGVfVsSlgP9
+g1nj9n/4++FdF1j4fabpsk/hrVLlZbj7NNbm3uCpXD+YxDIDsXI+UnaMiv1vGYipPEVcPKuqSXJa
+7Sut5NPv07aH4rgcNSp4ajiY4d1W+dOycrS2imui699Tlv2i/wBnqP4Pf2TrWhat/b/g7WlzZX+V
+LKdu4KzL8rZXkMMZweBjnxXNfXX7UFpB8LP2cfh58L76+hvvElvcfb5xE24RIBNn3xum2qTjIQ18
+i4r1cqr1K+GU6j5tWk/5knZP5njZxh6eGxThTXLom478rau18joPBul22oalG8+tpoTwyxslyzbT
+H1JcEHOV2j7uTlh6GvedP+Pfj+ysU09fjErWwXaXltraSbHQDzWBYn1O7j1r5m9KK6cRhIYl3qWa
+80nb70cuGxtTCq1K6b3tKSv9zR2PjuBL5W1y68VHxFq93cYnE0nmTAbBlmYsc/NuUYyMKDxkCuOp
+KdXXThyR5b3OOpP2kua1r/11P//Z
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.gravatar.com/avatar.php?gravatar_id=86770101ad7b66ed46c9e334143f921a&rating=R&size=25
+
+/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcg
+SlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwK
+DAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAGQAZ
+AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMF
+BQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkq
+NDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqi
+o6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/E
+AB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMR
+BAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVG
+R0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKz
+tLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A
+p/s8/Au6+O/i+50wX40nTbG3NzeXxj8zYucKqrkAkn1IwAx7YPrHwO/Z9+Gev+AfG3ifxjrV3NpW
+i6zLpsWqWjmKIwoI9kwUKx+cyg85AGPeoP2Fdc02XV/HHg28u1sLzxNpghtJzwdyLKGVfVsSlgP9
+g1nj9n/4++FdF1j4fabpsk/hrVLlZbj7NNbm3uCpXD+YxDIDsXI+UnaMiv1vGYipPEVcPKuqSXJa
+7Sut5NPv07aH4rgcNSp4ajiY4d1W+dOycrS2imui699Tlv2i/wBnqP4Pf2TrWhat/b/g7WlzZX+V
+LKdu4KzL8rZXkMMZweBjnxXNfXX7UFpB8LP2cfh58L76+hvvElvcfb5xE24RIBNn3xum2qTjIQ18
+i4r1cqr1K+GU6j5tWk/5knZP5njZxh6eGxThTXLom478rau18joPBul22oalG8+tpoTwyxslyzbT
+H1JcEHOV2j7uTlh6GvedP+Pfj+ysU09fjErWwXaXltraSbHQDzWBYn1O7j1r5m9KK6cRhIYl3qWa
+80nb70cuGxtTCq1K6b3tKSv9zR2PjuBL5W1y68VHxFq93cYnE0nmTAbBlmYsc/NuUYyMKDxkCuOp
+KdXXThyR5b3OOpP2kua1r/11P//Z
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.google.com/images/poweredby_transparent/poweredby_000000.gif
+
+R0lGODlhOAAUAPf/AFwuKgsLCzFq5jlcqjNXpTtKbP5NNTlBVgYLFTpeNg4SGD9cnjQ9MysyRENY
+iiYaGE8YETZDZTxPfRYVFj1GYiMsQy4uKjFcvWQ1MSwsMa4/LzNz/y5s8iUxTRUXGyolIxUYGBsq
+RRkdHBEQDjpLdNBIMxEQEAYGBR0dHR0dIhoYFRUQDyYmJQEBASENCiUjIwEDBQQCAjrbQTxoPf9Q
+NwISAjpoy1eB2HVpI/ZPOOlSQFRGHzEpKP/YQWAnID40EDt18FaK/yMiIjs1Ikk6OU95t10wK0de
+lDw+RUNtRIZFPpwzJOZUP/9AJ9ZJNi0qKNxUQTZJczJp4x4kI3U/NjZw7WaV/6OKM60zMTktLD1d
+oUlvwZeAKJGDI/rRM2GU+P/UKzRRNE9708ChHyMtP8I5JiMmJDRq3DBj2HNBOzAvMxgZHf9XQElv
+pjNizxAPEEEoJOc4H0+H/zgxMT82NTveQjtDXD5rPzBUpDE6T6JJPh02bDvhQkB8/ys9ZjUsLC1Z
+vO1qVkJqvzNXrS9x/TZhw2teNTlmysnEOj5pxVY9PbQ4Jos3LpMtIFFzrJk9PTBCbuvELEFRdQkE
+AyFOrvNIMH9JRDdHcB5BjTBHe7ugHlCH/zrIQv06ISUqL3ovL76iKjOANzedPAcMDfrMIqEwIcZD
+MeNlTkFgpjk9NnFiMK+WOaCEHh8gEDp3//ReSW2b+zvoRPbJG5mGIjhFav/YNmGW/f/WIvo3G//i
+PTJZMuhcSUx831FILTrdRCEmNTt4/0ciHUU8HX1qLc02IFApJPY/KEBASERFVGeN3GWU3UNdnlZ+
+1DBZt35EPDncQxUoUhsaG9OtIR0aF+C8LiAeHE1opf/aRWIyLD1sPTZlyQ4XK3g0Lf9MM04tKS8V
+Ekc/LkuE/+44HkFXjnxrHjo2M2NZJTvcQjHUOKIrGyJGkiYjJDdVhzxqPRAZKVeO/66PHDc6SBlC
+G1yN9gQEBKRMOuprWB45dTjgQjlpz0N+/08+OyQ7aBYcFf///wAAACH5BAEAAP8ALAAAAAA4ABQA
+AAj/AP8JHEiwoMGDCBMqXMiwocOG7u5hUgftxEOFNURxkneRoCMbJOxIkALET4yOBk8kicUAZQtl
+1j4EEGhiACoTKA2G4WPhoL+f/v4FJdiG15OTAyewyGkwQZ2lApEKDAqU4IQvDmYidKGhlJMyKwZ2
+gTeGmrCB/PAku0FJQQJfZv5xXcTEx1SheAcesEIhoYtA+xSAiGPszT9EVzwEGHZtx78iR6bRAkaB
+3oxzUybZIzLKGw04CiFtKpCwHhQQAh+w+dQqV7kW/1pEkrXGVjzYUrT9m/FMBAYd0SAsUTIHNsIK
+4QYY/wcjRIcQCE6V0NriFRYctXoKZAUGSZAIAhcI/6LXToYIPZUAYFtHb2EAARtSDNwWhdk7MiU6
+TRi465G5Hr0MRM4tLwDCgQcIJIJMC9mYxw0NHzxUgT5oaBWbJH14Ekw3RkSVgyIjeCHNQJqsYkIA
+BWwBywEj/HMHPiisYAAxyzEUwQYcdBAADAhoUUUG/zCCSzEQmGIJCv8MQQoXP8wCihpINSAHAbCF
+go4uJwDQhDiNpPNNjQhlME4+hQCCBwnHINlCFlRg8McExqFgiCrgpGAROxdksoArF9DTTyoMGMZD
+Gs7Q8QaYCJ0wQTXThIVSEWI8cWIeGzQgUAuIMtVRC/M4sNwhB2gqakGDEPILPQjsscwLo7b6TwAS
+nBXhRjOXCGGRq6PGsKgKAWSK668PBQQAOw==
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://feeds.feedburner.com/~fc/luauf?bg=99CCFF&fg=444444&anim=1
+
+R0lGODlhWAAaAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wAzAAAzMwAzZgAzmQAzzAAz/wBmAABmMwBm
+ZgBmmQBmzABm/wCZAACZMwCZZgCZmQCZzACZ/wDMAADMMwDMZgDMmQDMzADM/wD/AAD/MwD/ZgD/
+mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMzADMzMzMzZjMzmTMzzDMz/zNmADNmMzNmZjNmmTNm
+zDNm/zOZADOZMzOZZjOZmTOZzDOZ/zPMADPMMzPMZjPMmTPMzDPM/zP/ADP/MzP/ZjP/mTP/zDP/
+/2YAAGYAM2YAZmYAmWYAzGYA/2YzAGYzM2YzZmYzmWYzzGYz/2ZmAGZmM2ZmZmZmmWZmzGZm/2aZ
+AGaZM2aZZmaZmWaZzGaZ/2bMAGbMM2bMZmbMmWbMzGbM/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkA
+M5kAZpkAmZkAzJkA/5kzAJkzM5kzZpkzmZkzzJkz/5lmAJlmM5lmZplmmZlmzJlm/5mZAJmZM5mZ
+ZpmZmZmZzJmZ/5nMAJnMM5nMZpnMmZnMzJnM/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswA
+mcwAzMwA/8wzAMwzM8wzZswzmcwzzMwz/8xmAMxmM8xmZsxmmcxmzMxm/8yZAMyZM8yZZsyZmcyZ
+zMyZ/8zMAMzMM8zMZszMmczMzMzM/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A
+//8zAP8zM/8zZv8zmf8zzP8z//9mAP9mM/9mZv9mmf9mzP9m//+ZAP+ZM/+ZZv+Zmf+ZzP+Z///M
+AP/MM//MZv/Mmf/MzP/M////AP//M///Zv//mf//zP///xISEhgYGB4eHiQkJCoqKjAwMDY2Njw8
+PEJCQkhISE5OTlRUVFpaWmBgYGZmZmxsbHJycnh4eH5+foSEhIqKipCQkJaWlpycnKKioqioqK6u
+rrS0tLq6usDAwMbGxszMzNLS0tjY2N7e3uTk5Orq6vDw8Pb29vz8/CH5BAEMALgAIf8LTkVUU0NB
+UEUyLjADAQEAACwAAAAAWAAaAEcI/wBnCeQncBbBgQUPGkzIEKHDhQ8VSmwIseLEiAwTadzIsaPH
+jyBDihxJEuSVWSVTqlzJcuQVXDDNnTMHsyauczZz4qJp0xw5njtn1vQJVCbQmDiHwkx6sybTmeRq
+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
+ylUpy6kYp0L1SRYo2aEBAQA7
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://luauf.com/wp-content/themes/illuauf/images/somerights.png
+
+iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABFUExURSAgILC2r9XX1VZXVpaXlu/v77zA
+vLi9uLK3scDEv8nNyK2yrLW6tMXJxK60rXx8fEBAQM3QzKyyq6uxqv///wAAAAAAACmwp6sAAAAX
+dFJOU/////////////////////////////8A5kDmXgAAAtxJREFUeNq0luuWqyAMhVNAbb0ltmTe
+/1HPDqBiW6c9P4Y1i0qEb203CQz96J+0H1J97O1ubRjmeb5cr+PYdW17u92maer7fikNj/00Idy2
+XTeO1+vlMs/DMKS1K0iVTriXxO0yt8IWdCZ3hTwbOXF3cg2+vxVsXNBGb19IfsxoI2+SN/D9PfiR
+uUMSfC2CzQeggCVhAZttCPBUJGcv5mcvXhTvgsdKsFcK0Rrc80smP0m+fw2uuKzSxNwcKe9mvHjx
+Dvxk8eoEwJPqFNfmMKhc/gK8erxZXBSbYI5N4DY6Zhe9squ9WBPuC8WrxUWwE10i2b6RErlJvSuS
+K5M/bd6wgZPibLFovEF0YH30bYwqlcnjwYstkQ+KE3k+KL4ZuC9gxwo3DHyu+P7ZioNi1yAZVFRE
+G5cUL0+KP+fx/OJxzxpi54Ujiwwx5M17UjyfKz73eFRqtnSD9jF7XNJtrLPi3Ip5TbdxTzfn1W9g
+PC+uFPUh3YZfFb+vvImwYbk8RKl3VU1vTszfl/Rm8uJ6pLEPLeMsksnVp9A3lXc/7t7h1HRM6WYg
+27hfzs3HaR7vx2Yt2doj+PBwSw3uziz+j4PemnPbHfIi+Gixgf+oAYwTnGnBQRujCAoWe89q/aBR
+kGYtoTAiIxDSG7EJ1omNLZ4iDjG/DgwsMXgsU1vqvYHtAkpMdKgzdFiDeWozDQwt6FTLyhy5Nr7J
+UVsJMO4c3GYJ3DLO3A0sCYyzmFawzUwYzuCyMke44RUsCaxmQQYH+1ozQTYr8K0Ax5jA+EpKVjTJ
+irKyfL3ER5OiK5iEgstgdukhK8ZlkcBxt4IkNAaGQUlbWZkjGp0/KJa8NQYWg7xYUXlsv5UVZWWO
+aJOJu2IY4HwTGx+lXWSzIoNDrBSHdJUWMGyxcbbCwLfkVaQ1K3CVoVw9jgEm7wmbxfaPCWJMTMSI
+eUEYf2mmpmcy720s9pDeivVc3vxdgfwTYABlOKHZNVc3hgAAAABJRU5ErkJggg==
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://whos.amung.us/swidget/ychv68w2.gif
+
+iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAOVBMVEXNYk3QbljEODLHRzrfnIf4
+7Ofv0MPrwrPz3tXUemPjqJTbkHrKVUPXhW7AJy0wMC////81NTV/f3/skxKrAAAAv0lEQVQ4ja2T
+2w6EIAxEK3jdSx35/4/dKehqdlVMZIgBfDiZTqmMhSUjTH3XNSihBGxFqarHdFcJ2DrVF7y69jYx
+Ahuv6uuOVI+ZaBvwgw9cl4B1JKFi1Y/EMBRm7hZ40SFJqLkYZLU6/AJDsC8kh/EQf50ACRLiHMHy
+X/JMSrjN7dyhPgGnuw73gOHQ4pKh4j1gzTAHzGRoXaZNlr50OVa7dDnFtwVOGYf2DmlPpNQ75OAN
+NilDsUmhmoKzXFgfi65J0nfFOXkAAAAASUVORK5CYII=
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://luauf.com/wp-content/themes/illuauf/images/ButtonTransparent.png
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAGUExURf///wAAAFXC034AAAABdFJOUwBA
+5thmAAAADElEQVR42mJgAAgwAAACAAFPbVnhAAAAAElFTkSuQmCC
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://luauf.com/wp-content/themes/illuauf/style.css
+
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND: =
+#1a3265; COLOR: #35383d; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+HTML {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+A:link {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; COLOR: #0000ff; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px; TEXT-DECORATION: none; -moz-outline-style: none
+}
+A:active {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; COLOR: #0000ff; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px; TEXT-DECORATION: underline; -moz-outline-style: none
+}
+A:visited {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; COLOR: #0000ff; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px; TEXT-DECORATION: none; -moz-outline-style: none
+}
+A:hover {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; COLOR: #003399; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px; TEXT-DECORATION: underline; -moz-outline-style: none
+}
+A:focus {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; =
+-moz-outline-style: none
+}
+H1 {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+H2 {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+H3 {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+H4 {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+IMG {
+	BORDER-BOTTOM: medium none; TEXT-ALIGN: center; BORDER-LEFT: medium =
+none; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; BORDER-TOP: medium none; BORDER-RIGHT: medium none; =
+PADDING-TOP: 0px
+}
+HR {
+	BORDER-BOTTOM: #abb0b5 0px solid; BORDER-LEFT: #abb0b5 0px solid; =
+HEIGHT: 1px; BORDER-TOP: #abb0b5 1px dotted; BORDER-RIGHT: #abb0b5 0px =
+solid
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+INPUT {
+	FONT-FAMILY: "Verdana"; COLOR: #282b31; FONT-SIZE: 11px
+}
+TEXTAREA {
+	FONT-FAMILY: "Verdana"; COLOR: #282b31; FONT-SIZE: 11px
+}
+SELECT {
+	FONT-FAMILY: "Verdana"; COLOR: #282b31; FONT-SIZE: 11px
+}
+codeline {
+	BORDER-BOTTOM: #eee 1px solid; BORDER-LEFT: #d2d3d3 6px solid; =
+PADDING-BOTTOM: 8px; MARGIN: 4px 0px 12px; PADDING-LEFT: 10px; =
+PADDING-RIGHT: 10px; DISPLAY: block; FONT: 1em/1.6em Tahoma, sans-serif; =
+BACKGROUND: #fff; COLOR: #666; BORDER-TOP: #eee 1px solid; BORDER-RIGHT: =
+#eee 1px solid; PADDING-TOP: 8px
+}
+.BGC {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px auto; =
+PADDING-LEFT: 0px; WIDTH: 1000px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+* HTML .Header {
+	HEIGHT: 98px
+}
+.Header {
+	POSITION: relative; PADDING-BOTTOM: 0px; MIN-HEIGHT: 98px; =
+PADDING-LEFT: 0px; WIDTH: 1000px; PADDING-RIGHT: 0px; BACKGROUND: =
+url(images/HeaderBkg.jpg) repeat-x left top; CLEAR: left; PADDING-TOP: =
+0px
+}
+.Header H1 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; MARGIN: 0px; PADDING-LEFT: =
+20px; PADDING-RIGHT: 5px; LETTER-SPACING: -1px; FONT-SIZE: 42px; =
+FONT-WEIGHT: normal; PADDING-TOP: 47px
+}
+.Header H1 A {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.Header H1 A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.Header H1 A:hover {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.Header .Desc {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 14px; MARGIN: 0px 0px 0px 15px; =
+PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: "Arial"; =
+LETTER-SPACING: -1px; COLOR: #75c0d9; FONT-SIZE: 14px; FONT-WEIGHT: =
+bold; PADDING-TOP: 0px
+}
+.Header .LS {
+	POSITION: absolute; WIDTH: 128px; BACKGROUND: url(images/LuAuF.png) =
+no-repeat left top; HEIGHT: 80px; TOP: 15px; LEFT: 2px
+}
+.Menu {
+	POSITION: relative; WIDTH: 1000px; BACKGROUND: #0097ca; FLOAT: left; =
+HEIGHT: 35px
+}
+.Menu EM {
+	DISPLAY: none
+}
+.Menu UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+15px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 10px
+}
+.Menu UL LI UL {
+	DISPLAY: none
+}
+.Menu LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; DISPLAY: inline; FONT-SIZE: 11px; PADDING-TOP: 0px
+}
+.Menu A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 0px; BACKGROUND: =
+url(images/MLeft.png) no-repeat left top; FLOAT: left; MARGIN-RIGHT: =
+2px; PADDING-TOP: 0px
+}
+.Menu A SPAN {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 6px; PADDING-RIGHT: 9px; DISPLAY: =
+block; BACKGROUND: url(images/MRight.png) no-repeat right top; FLOAT: =
+right; PADDING-TOP: 6px
+}
+.Menu A SPAN {
+	FLOAT: none; COLOR: #fff
+}
+.Menu A:hover SPAN {
+	COLOR: #fff
+}
+.Menu A:hover {
+	BACKGROUND-POSITION: 0% -25px; COLOR: #003399; TEXT-DECORATION: none
+}
+.Menu A:hover SPAN {
+	BACKGROUND-POSITION: 100% -25px; COLOR: #003399
+}
+.Menu .on {
+	BACKGROUND: url(images/MLeft.png) no-repeat left bottom; COLOR: #003399
+}
+.Menu .on SPAN {
+	BACKGROUND: url(images/MRight.png) no-repeat right bottom; COLOR: =
+#003399
+}
+.MTL {
+	POSITION: absolute; WIDTH: 8px; BACKGROUND: url(images/MTL.gif) =
+no-repeat left top; HEIGHT: 8px; TOP: 0px; LEFT: 0px
+}
+.MTR {
+	POSITION: absolute; WIDTH: 8px; BACKGROUND: url(images/MTR.gif) =
+no-repeat left top; HEIGHT: 8px; TOP: 0px; RIGHT: 0px
+}
+.CON {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: =
+1000px; PADDING-RIGHT: 0px; BACKGROUND: url(images/BGC.gif) #fff =
+repeat-y center 50%; FLOAT: left; PADDING-TOP: 0px
+}
+.SCS {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 30px; WIDTH: 670px; PADDING-RIGHT: =
+30px; FLOAT: left; PADDING-TOP: 15px
+}
+.SCS H1 {
+	PADDING-BOTTOM: 10px; BACKGROUND: url(images/PostHead.gif) repeat-x 50% =
+bottom; LETTER-SPACING: -1px; FONT-SIZE: 20px; FONT-WEIGHT: normal
+}
+.SCS H2 {
+	FONT-SIZE: 18px; FONT-WEIGHT: normal
+}
+.SCS H3 {
+	FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.SCS P {
+	LINE-HEIGHT: 17px; FONT-SIZE: 12px
+}
+.SCS P STRONG {
+=09
+}
+.SCS IMG {
+=09
+}
+.SCS UL {
+	PADDING-BOTTOM: 10px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 10px
+}
+.SCS LI {
+	PADDING-BOTTOM: 2px; LINE-HEIGHT: 15px; LIST-STYLE-TYPE: none; =
+PADDING-LEFT: 15px; PADDING-RIGHT: 0px; BACKGROUND: =
+url(images/PostContentLiIco.png) no-repeat left top; COLOR: #4c4c4c; =
+FONT-SIZE: 11px; PADDING-TOP: 2px
+}
+.SCS BLOCKQUOTE {
+	PADDING-BOTTOM: 2px; MARGIN: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: =
+10px; BACKGROUND: #e9f8ff; COLOR: #336699; PADDING-TOP: 2px
+}
+.SCS BLOCKQUOTE P {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 15px; MARGIN: 5px 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; FONT-SIZE: 11px; PADDING-TOP: 5px
+}
+.SCS BLOCKQUOTE LI {
+	PADDING-BOTTOM: 2px; LINE-HEIGHT: 15px; LIST-STYLE-TYPE: none; =
+PADDING-LEFT: 15px; PADDING-RIGHT: 0px; BACKGROUND: =
+url(images/PostContentBlockLiIco.png) no-repeat left top; COLOR: =
+#336699; FONT-SIZE: 11px; PADDING-TOP: 2px
+}
+.SCS BLOCKQUOTE A {
+	COLOR: #0080ca
+}
+.SCS BLOCKQUOTE A:visited {
+	COLOR: #0080ca
+}
+.SCS BLOCKQUOTE A:hover {
+	COLOR: #003399
+}
+.SCS A {
+	TEXT-DECORATION: underline
+}
+.SC {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 30px; WIDTH: 670px; PADDING-RIGHT: =
+30px; FLOAT: left; PADDING-TOP: 15px
+}
+.SC H2 {
+	FONT-WEIGHT: normal
+}
+.pagetitle {
+	BORDER-BOTTOM: #000 1px solid; PADDING-BOTTOM: 15px; LETTER-SPACING: =
+-1px; FONT-SIZE: 20px; FONT-WEIGHT: normal
+}
+.Post {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; CLEAR: left; PADDING-TOP: 0px
+}
+.PostHead {
+	POSITION: relative; PADDING-BOTTOM: 10px; BACKGROUND: =
+url(images/PostHead.gif) repeat-x 50% bottom; CLEAR: left
+}
+.PostHead H1 {
+	PADDING-BOTTOM: 1px; LINE-HEIGHT: 20px; MARGIN: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; LETTER-SPACING: -1px; COLOR: #000000; FONT-SIZE: =
+20px; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+.PostHead H1 A {
+	COLOR: #007ac8; TEXT-DECORATION: none
+}
+.PostHead H1 A:visited {
+	COLOR: #007ac8; TEXT-DECORATION: none
+}
+.PostHead H1 A:hover {
+	COLOR: #cc6600; TEXT-DECORATION: none
+}
+.PostAuthor {
+	PADDING-BOTTOM: 1px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; COLOR: #8a98a2; FONT-SIZE: 10px; FONT-WEIGHT: bold; PADDING-TOP: =
+1px
+}
+.PostDate {
+	POSITION: absolute; TEXT-ALIGN: center; PADDING-BOTTOM: 6px; MARGIN: =
+0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: =
+url(images/PostHead.gif) repeat-x 50% bottom; TOP: 0px; PADDING-TOP: =
+0px; LEFT: -73px
+}
+.PostDate SMALL {
+	COLOR: #8a98a2; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.PostDate .month {
+	TEXT-TRANSFORM: uppercase; DISPLAY: block; FONT-SIZE: 9px
+}
+.PostDate .day {
+	LINE-HEIGHT: 24px; DISPLAY: block; FONT-FAMILY: "Arial"; =
+LETTER-SPACING: -1px; COLOR: #4a5a65; FONT-SIZE: 24px; FONT-WEIGHT: =
+normal
+}
+.PostDate .year {
+	DISPLAY: block
+}
+.PostContent {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 17px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; BACKGROUND: url(images/PostHead.gif) repeat-x 50% =
+bottom; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+.PostContent P {
+	LINE-HEIGHT: 17px; FONT-SIZE: 12px
+}
+.PostContent P STRONG {
+=09
+}
+.PostContent IMG {
+=09
+}
+.PostContent UL {
+	PADDING-BOTTOM: 10px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 10px
+}
+.PostContent LI {
+	PADDING-BOTTOM: 2px; LINE-HEIGHT: 15px; LIST-STYLE-TYPE: none; =
+PADDING-LEFT: 15px; PADDING-RIGHT: 0px; BACKGROUND: =
+url(images/PostContentLiIco.png) no-repeat left top; COLOR: #4c4c4c; =
+FONT-SIZE: 11px; PADDING-TOP: 2px
+}
+.PostContent BLOCKQUOTE {
+	PADDING-BOTTOM: 2px; MARGIN: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: =
+10px; BACKGROUND: #e9f8ff; COLOR: #336699; PADDING-TOP: 2px
+}
+.PostContent BLOCKQUOTE P {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 15px; MARGIN: 5px 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; FONT-SIZE: 11px; PADDING-TOP: 5px
+}
+.PostContent BLOCKQUOTE LI {
+	PADDING-BOTTOM: 2px; LINE-HEIGHT: 15px; LIST-STYLE-TYPE: none; =
+PADDING-LEFT: 15px; PADDING-RIGHT: 0px; BACKGROUND: =
+url(images/PostContentBlockLiIco.png) no-repeat left top; COLOR: =
+#336699; FONT-SIZE: 11px; PADDING-TOP: 2px
+}
+.PostContent BLOCKQUOTE A {
+	COLOR: #0080ca
+}
+.PostContent BLOCKQUOTE A:visited {
+	COLOR: #0080ca
+}
+.PostContent BLOCKQUOTE A:hover {
+	COLOR: #003399
+}
+.PostContent A {
+	TEXT-DECORATION: underline
+}
+.PostDet {
+	PADDING-TOP: 15px
+}
+.PostDet UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.PostDet LI {
+	PADDING-BOTTOM: 5px; LIST-STYLE-TYPE: none; MARGIN: 0px 10px 0px 0px; =
+PADDING-LEFT: 18px; PADDING-RIGHT: 0px; DISPLAY: inline; COLOR: #336699; =
+FONT-SIZE: 10px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.PostDet LI A {
+	TEXT-DECORATION: underline
+}
+.PostCateg {
+	BACKGROUND: url(images/PostCateg.png) no-repeat left center
+}
+.PostCom {
+	BACKGROUND: url(images/PostCom.png) no-repeat left center
+}
+#AdSenseCuadrado {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 10px; FLOAT: right; PADDING-TOP: 5px
+}
+#AdSenseHorizontal {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 15px; MARGIN-TOP: 5px; WIDTH: 100%; =
+MARGIN-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.PostRel {
+=09
+}
+.PostRel H3 {
+	PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; COLOR: #000000; FONT-SIZE: 14px; FONT-WEIGHT: bold; =
+PADDING-TOP: 5px
+}
+.PostRel UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.PostRel LI {
+	PADDING-BOTTOM: 5px; LIST-STYLE-TYPE: none; MARGIN: 0px 10px 0px 0px; =
+PADDING-LEFT: 18px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #336699; =
+FONT-SIZE: 10px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.PostRel LI A {
+	TEXT-DECORATION: underline
+}
+.SuscribeFeed {
+	LINE-HEIGHT: 24px
+}
+.SuscribeFeed P {
+	PADDING-LEFT: 28px; BACKGROUND: url(images/rss.png) no-repeat left =
+center; FONT-SIZE: 11px
+}
+.SuscribeFeed P A {
+	FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.SuscribeMail {
+	LINE-HEIGHT: 24px
+}
+.SuscribeMail P {
+	PADDING-LEFT: 28px; BACKGROUND: url(images/mail.png) no-repeat left =
+center; FONT-SIZE: 11px
+}
+.Note {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.Note LI {
+	PADDING-BOTTOM: 2px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+15px; PADDING-RIGHT: 0px; FONT-SIZE: 11px; PADDING-TOP: 2px
+}
+.NoteRss {
+	BACKGROUND: url(images/NoteRss.png) no-repeat left top
+}
+.NoteTrackBack {
+	BACKGROUND: url(images/NoteTrackBack.png) no-repeat left top
+}
+.Note LI A {
+	COLOR: #cc6600
+}
+.Nav A {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 3px; PADDING-RIGHT: 5px; BACKGROUND: =
+#fff; FONT-SIZE: 11px; BORDER-RIGHT: #ccc 1px solid; PADDING-TOP: 2px
+}
+.Nav A:visited {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 3px; PADDING-RIGHT: 5px; =
+BORDER-RIGHT: #ccc 1px solid; PADDING-TOP: 2px
+}
+.Nav A:hover {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 3px; PADDING-RIGHT: 5px; =
+BORDER-RIGHT: #ccc 1px solid; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.Nav SPAN {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; =
+BORDER-RIGHT: #ccc 1px solid; PADDING-TOP: 2px
+}
+.Nav .on {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 3px; PADDING-RIGHT: 5px; COLOR: =
+#000; FONT-SIZE: 11px; BORDER-RIGHT: #ccc 1px solid; PADDING-TOP: 2px
+}
+.Comments {
+	MARGIN: 20px 0px 0px
+}
+.Comments .List H3 {
+	PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; COLOR: #000; FONT-SIZE: 14px; FONT-WEIGHT: bold; =
+PADDING-TOP: 5px
+}
+.Comments .List OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.Comments .List LI {
+	POSITION: relative; PADDING-BOTTOM: 10px; LIST-STYLE-TYPE: none; =
+MARGIN: 0px 0px 20px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; =
+PADDING-TOP: 15px
+}
+.Comments .List .ComListLi {
+	BACKGROUND: url(images/ComListLiBottom.gif) #f6f1de no-repeat left =
+bottom
+}
+* HTML .Comments .List .ComListLiTop {
+	LEFT: -5px
+}
+.Comments .List .ComListLiTop {
+	POSITION: absolute; WIDTH: 670px; BACKGROUND: =
+url(images/ComListLiTop.gif) no-repeat left top; HEIGHT: 15px; TOP: 0px; =
+LEFT: 0px
+}
+* HTML .Comments .List .ListNr {
+	LEFT: -55px
+}
+.Comments .List .ListNr {
+	POSITION: absolute; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; =
+PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: "Arial"; =
+LETTER-SPACING: -1px; COLOR: #bec9d1; FONT-SIZE: 24px; TOP: 15px; =
+FONT-WEIGHT: normal; PADDING-TOP: 0px; LEFT: -55px
+}
+* HTML .Comments .List .ListGrav {
+	LEFT: 10px
+}
+.Comments .List .ListGrav {
+	POSITION: absolute; TOP: 15px; LEFT: 15px
+}
+.Comments .List .ListGrav IMG {
+	BORDER-BOTTOM: #fff 1px solid; BORDER-LEFT: #fff 1px solid; BORDER-TOP: =
+#fff 1px solid; BORDER-RIGHT: #fff 1px solid
+}
+.Comments .List BIG {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 11px; MARGIN: 0px; PADDING-LEFT: =
+42px; PADDING-RIGHT: 0px; DISPLAY: block; LETTER-SPACING: -1px; COLOR: =
+#333; FONT-SIZE: 11px; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.Comments .List SMALL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 42px; PADDING-RIGHT: =
+0px; COLOR: #a19a80; FONT-SIZE: 10px; PADDING-TOP: 0px
+}
+.Comments .List SMALL A {
+	COLOR: #a19a80; TEXT-DECORATION: none
+}
+.Comments .List SMALL A:visited {
+	TEXT-DECORATION: none
+}
+.Comments .List .ListContent {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 15px; MARGIN: 15px 0px 0px; =
+PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: block; BACKGROUND: =
+url(images/ComListContent.gif) #fff no-repeat left top; FONT-SIZE: 11px; =
+PADDING-TOP: 5px
+}
+.Comments .Form H3 {
+	PADDING-BOTTOM: 10px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; LETTER-SPACING: -1px; COLOR: #333; FONT-SIZE: 14px; FONT-WEIGHT: =
+bold; PADDING-TOP: 5px
+}
+.Comments .Form {
+	POSITION: relative; PADDING-BOTTOM: 20px; PADDING-LEFT: 15px; =
+PADDING-RIGHT: 15px; BACKGROUND: url(images/ComFormBottom.gif) #bbe9ff =
+no-repeat left bottom; PADDING-TOP: 10px
+}
+.Comments .FormTop {
+	POSITION: absolute; WIDTH: 670px; BACKGROUND: =
+url(images/ComFormTop.gif) no-repeat left top; HEIGHT: 7px; TOP: 0px; =
+LEFT: 0px
+}
+.Comments .Form FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.Comments .Form A {
+	TEXT-DECORATION: underline
+}
+.Comments .Form P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; COLOR: #336699; FONT-SIZE: 11px; PADDING-TOP: 0px
+}
+.Comments .Form P SMALL STRONG {
+	COLOR: #ff3300; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.Comments .Form P SMALL {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: =
+block; FONT-SIZE: 11px; PADDING-TOP: 5px
+}
+.Comments .Form .TextField {
+	BORDER-BOTTOM: #9dc0d0 1px solid; BORDER-LEFT: #9dc0d0 1px solid; =
+PADDING-BOTTOM: 5px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; DISPLAY: =
+block; BACKGROUND: #fff; FONT-SIZE: 11px; BORDER-TOP: #9dc0d0 1px solid; =
+BORDER-RIGHT: #9dc0d0 1px solid; PADDING-TOP: 5px
+}
+.Comments .Form .TextArea {
+	BORDER-BOTTOM: #9dc0d0 1px solid; BORDER-LEFT: #9dc0d0 1px solid; =
+PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; BACKGROUND: =
+#fff; FONT-SIZE: 12px; BORDER-TOP: #9dc0d0 1px solid; BORDER-RIGHT: =
+#9dc0d0 1px solid; PADDING-TOP: 4px
+}
+.Comments .Form INPUT.SubmitComment {
+	MARGIN-TOP: 8px; WIDTH: 437px; BACKGROUND: =
+url(images/SubmitComment.png) no-repeat; HEIGHT: 26px
+}
+.Comments .Form INPUT.SubmitComment:hover {
+	MARGIN-TOP: 8px; BACKGROUND: url(images/SubmitComment.png) no-repeat =
+0px -26px
+}
+.Comments .Form INPUT.SubmitCommentIE {
+	MARGIN-TOP: 8px; WIDTH: 437px; BACKGROUND: =
+url(images/SubmitComment.png) no-repeat 0px -26px; HEIGHT: 26px
+}
+.SR {
+	POSITION: relative; WIDTH: 270px; FLOAT: right
+}
+.SR H2 {
+	LETTER-SPACING: normal; COLOR: #fff; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.Syn {
+	POSITION: relative; PADDING-BOTTOM: 10px; PADDING-LEFT: 15px; =
+PADDING-RIGHT: 15px; MARGIN-BOTTOM: 10px; BACKGROUND: =
+url(images/SynBottom.gif) #09182a no-repeat left bottom; PADDING-TOP: =
+10px
+}
+* HTML .SynTop {
+	LEFT: -15px
+}
+.SynTop {
+	POSITION: absolute; WIDTH: 230px; BACKGROUND: url(images/SynTop.gif) =
+no-repeat left top; HEIGHT: 8px; TOP: 0px; LEFT: 0px
+}
+.Syn UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.Syn LI {
+	PADDING-BOTTOM: 3px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+20px; PADDING-RIGHT: 0px; BACKGROUND: url(images/SynIco.gif) no-repeat =
+left center; COLOR: #0097ca; FONT-SIZE: 12px; PADDING-TOP: 3px
+}
+.Syn LI A {
+	COLOR: #fff; FONT-SIZE: 12px
+}
+.Goo {
+	POSITION: relative; PADDING-BOTTOM: 10px; PADDING-LEFT: 15px; =
+PADDING-RIGHT: 15px; MARGIN-BOTTOM: 10px; BACKGROUND: =
+url(images/SynBottom.gif) #09182a no-repeat left bottom; PADDING-TOP: =
+10px
+}
+* HTML .GooTop {
+	LEFT: -15px
+}
+.GooTop {
+	POSITION: absolute; WIDTH: 230px; BACKGROUND: url(images/SynTop.gif) =
+no-repeat left top; HEIGHT: 8px; TOP: 0px; LEFT: 0px
+}
+.Goo UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.Goo LI {
+	PADDING-BOTTOM: 3px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+20px; PADDING-RIGHT: 0px; BACKGROUND: url(images/SynIco.gif) no-repeat =
+left center; COLOR: #0097ca; FONT-SIZE: 12px; PADDING-TOP: 3px
+}
+.Goo LI A {
+	COLOR: #fff; FONT-SIZE: 12px
+}
+.SR .SRL {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 20px; WIDTH: 230px; PADDING-RIGHT: =
+20px; FLOAT: left; COLOR: #abcee1; PADDING-TOP: 15px
+}
+.SR .SRL A {
+	COLOR: #fff; FONT-SIZE: 11px
+}
+.SR .SRL A:visited {
+	COLOR: #fff
+}
+.SR .SRL A:hover {
+	COLOR: #abcee1
+}
+.SR .SRL .widget {
+	MARGIN-BOTTOM: 20px; COLOR: #fff
+}
+.SR .SRL .widget H2 {
+	BORDER-BOTTOM: #7bb9d9 1px dashed; PADDING-BOTTOM: 5px; MARGIN: 0px; =
+PADDING-LEFT: 20px; PADDING-RIGHT: 0px; BACKGROUND: =
+url(images/CategH3.gif) no-repeat left top; PADDING-TOP: 0px
+}
+.SR .SRL .widget UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.SR .SRL .widget LI {
+	BORDER-BOTTOM: #106899 1px solid; PADDING-BOTTOM: 3px; LIST-STYLE-TYPE: =
+none; MARGIN: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; BACKGROUND: =
+url(images/CategLi.png) no-repeat left top; FONT-SIZE: 11px; =
+PADDING-TOP: 2px
+}
+.SR .SRL .widget_categories .children UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 2px 0px 0px; =
+PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.SR .SRL .widget_categories .children LI {
+	BORDER-BOTTOM: medium none; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; =
+MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: none =
+transparent scroll repeat 0% 0%; FONT-SIZE: 10px; PADDING-TOP: 0px
+}
+.SR .SRL .widget_tag_cloud {
+	LINE-HEIGHT: 18px; FONT-FAMILY: verdana, arial, sans-serif
+}
+.SR .SRL .widget_calendar TABLE {
+	WIDTH: 100%
+}
+.SR .SRL .widget_calendar TABLE TD {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; =
+PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+.SR .SRL .widget_calendar CAPTION {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: =
+#006dab; PADDING-TOP: 5px
+}
+.SR .SRL .widget_calendar #today {
+	BACKGROUND: #006dab
+}
+.SR .SRL .widget_search #s {
+	BORDER-BOTTOM: #006dab 1px solid; BORDER-LEFT: #006dab 1px solid; =
+PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; WIDTH: 160px; PADDING-RIGHT: =
+3px; MARGIN-BOTTOM: 5px; BORDER-TOP: #006dab 1px solid; BORDER-RIGHT: =
+#006dab 1px solid; PADDING-TOP: 3px
+}
+.Footer {
+	POSITION: relative; PADDING-BOTTOM: 10px; PADDING-LEFT: 15px; WIDTH: =
+970px; PADDING-RIGHT: 15px; CLEAR: left; PADDING-TOP: 10px
+}
+.FL {
+	POSITION: absolute; WIDTH: 8px; BACKGROUND: url(images/FL.gif) =
+no-repeat left top; HEIGHT: 8px; TOP: -8px; LEFT: 0px
+}
+.FR {
+	POSITION: absolute; WIDTH: 8px; BACKGROUND: url(images/FR.gif) =
+no-repeat left top; HEIGHT: 8px; TOP: -8px; RIGHT: 0px
+}
+.Footer P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; COLOR: #92b8cd; FONT-SIZE: 10px; PADDING-TOP: 0px
+}
+.Footer A {
+	COLOR: #92b8cd; TEXT-DECORATION: underline
+}
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://luauf.com/wp-content/plugins/ig_syntax_hilite/css/syntax_hilite_css.css
+
+.syntax_hilite {
+	BORDER-BOTTOM: #303130 1px solid; BORDER-LEFT: #303130 1px solid; =
+PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #fefefe; PADDING-LEFT: 8px; =
+PADDING-RIGHT: 3px; FONT-FAMILY: "Courier New", Courier, monospace; =
+WHITE-SPACE: nowrap; FONT-SIZE: 13px; OVERFLOW: auto; BORDER-TOP: =
+#303130 1px solid; BORDER-RIGHT: #303130 1px solid; PADDING-TOP: 3px
+}
+LI .syntax_hilite {
+	BORDER-BOTTOM: #303130 1px solid; BORDER-LEFT: #303130 1px solid; =
+PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #fefefe; PADDING-LEFT: 8px; =
+PADDING-RIGHT: 3px; FONT-FAMILY: "Courier New", Courier, monospace; =
+WHITE-SPACE: nowrap; FONT-SIZE: 13px; OVERFLOW: auto; BORDER-TOP: =
+#303130 1px solid; BORDER-RIGHT: #303130 1px solid; PADDING-TOP: 3px
+}
+.syntax_hilite {
+	WIDTH: 655px
+}
+LI .syntax_hilite {
+	WIDTH: 620px
+}
+.igBar {
+	BORDER-LEFT: #eeeeee 1px solid; BACKGROUND-COLOR: #d6d3ce; FONT-FAMILY: =
+courier, arial, verdana; BORDER-TOP: #eeeeee 1px solid; BORDER-RIGHT: =
+#424142 1px solid
+}
+LI .igBar {
+	BORDER-LEFT: #eeeeee 1px solid; BACKGROUND-COLOR: #d6d3ce; FONT-FAMILY: =
+courier, arial, verdana; BORDER-TOP: #eeeeee 1px solid; BORDER-RIGHT: =
+#424142 1px solid
+}
+.igBar {
+	WIDTH: 511px
+}
+LI .igBar {
+	WIDTH: 471px
+}
+.igBar A {
+	MARGIN: 0px 5px 0px 10px; COLOR: #000000; FONT-WEIGHT: bold; =
+TEXT-DECORATION: none
+}
+.igBar A:hover {
+	MARGIN: 0px 5px 0px 10px; COLOR: #000000; FONT-WEIGHT: bold; =
+TEXT-DECORATION: none
+}
+.syntax_hilite .langName {
+	COLOR: #000000; FONT-WEIGHT: bold
+}
+.syntax_hilite TEXTAREA {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 0px -5px =
+-2px 0px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.google.com/cse/api/branding.css
+
+.cse-branding-bottom {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.cse-branding-right {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.cse-branding-bottom {
+	ZOOM: 1
+}
+.cse-branding-right {
+	ZOOM: 1
+}
+.cse-branding-bottom:after {
+	DISPLAY: block; HEIGHT: 0px; VISIBILITY: hidden; CLEAR: both; CONTENT: =
+"."
+}
+.cse-branding-right:after {
+	DISPLAY: block; HEIGHT: 0px; VISIBILITY: hidden; CLEAR: both; CONTENT: =
+"."
+}
+.cse-branding-text {
+	FONT: 10px Arial
+}
+.cse-branding-form FORM {
+	PADDING-BOTTOM: 0px; MARGIN-BOTTOM: 0px
+}
+.cse-branding-bottom .cse-branding-logo {
+	DISPLAY: block; FLOAT: left
+}
+.cse-branding-bottom .cse-branding-text {
+	DISPLAY: block; FLOAT: left
+}
+.cse-branding-bottom .cse-branding-form {
+	MARGIN-BOTTOM: 3px
+}
+.cse-branding-bottom .cse-branding-logo {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0px
+}
+.cse-branding-bottom .cse-branding-text {
+	PADDING-TOP: 4px
+}
+.cse-branding-right .cse-branding-form {
+	FLOAT: left
+}
+.cse-branding-right .cse-branding-logo {
+	MARGIN-LEFT: 4px
+}
+.cse-branding-right .cse-branding-text {
+	MARGIN-LEFT: 4px
+}
+.cse-branding-right .cse-branding-form {
+	FLOAT: left; MARGIN-RIGHT: 4px
+}
+.cse-branding-right .cse-branding-logo {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0px
+}
+.cse-branding-right .cse-branding-text {
+	MARGIN-TOP: -4px
+}
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://pagead2.googlesyndication.com/pagead/show_ads.js
+
+(function(){=0A=
+var h=3Dtrue,l=3Dnull,m=3Dfalse,n=3D(new Date).getTime();function =
+o(a,b){var c=3DparseFloat(a);return isNaN(c)||c>1||c<0?b:c}function =
+p(a,b){var c=3D/^([\w-]+\.)+[\w-]{2,}(\:[0-9]+)?$/;return =
+c.test(a)?a:b};var =
+aa=3D"pagead2.googlesyndication.com",ba=3D"googleads.g.doubleclick.net",c=
+a=3D"pubads.g.doubleclick.net",da=3D"partner.googleadservices.com",q=3Dp(=
+"pagead2.googlesyndication.com",aa),ea=3Dp("googleads.g.doubleclick.net",=
+ba),fa=3Dp("pagead2.googlesyndication.com",aa);p("pubads.g.doubleclick.ne=
+t",ca);var ga=3Dp("partner.googleadservices.com",da);var =
+ha=3D{google_ad_channel:"channel",google_ad_host:"host",google_ad_host_ch=
+annel:"h_ch",google_ad_host_tier_id:"ht_id",google_ad_region:"region",goo=
+gle_ad_section:"region",google_ad_type:"ad_type",google_adtest:"adtest",g=
+oogle_allow_expandable_ads:"ea",google_alternate_ad_url:"alternate_ad_url=
+",google_alternate_color:"alt_color",google_bid:"bid",google_city:"gcs",g=
+oogle_color_bg:"color_bg",google_color_border:"color_border",google_color=
+_line:"color_line",google_color_link:"color_link",google_color_text:"colo=
+r_text",=0A=
+google_color_url:"color_url",google_contents:"contents",google_country:"g=
+l",google_cust_age:"cust_age",google_cust_ch:"cust_ch",google_cust_gender=
+:"cust_gender",google_cust_id:"cust_id",google_cust_interests:"cust_inter=
+ests",google_cust_job:"cust_job",google_cust_l:"cust_l",google_cust_lh:"c=
+ust_lh",google_cust_u_url:"cust_u_url",google_disable_video_autoplay:"dis=
+able_video_autoplay",google_ed:"ed",google_encoding:"oe",google_feedback:=
+"feedback_link",google_flash_version:"flash",google_font_face:"f",=0A=
+google_gl:"gl",google_hints:"hints",google_kw:"kw",google_kw_type:"kw_typ=
+e",google_language:"hl",google_page_url:"url",google_referrer_url:"ref",g=
+oogle_region:"gr",google_reuse_colors:"reuse_colors",google_safe:"adsafe"=
+,google_tag_info:"gut",google_targeting:"targeting",google_ui_features:"u=
+i",google_ui_version:"uiv",google_video_doc_id:"video_doc_id",google_vide=
+o_product_type:"video_product_type"},ia=3D{google_ad_format:"format",goog=
+le_ad_output:"output",google_ad_callback:"callback",google_ad_height:"h",=0A=
+google_ad_override:"google_ad_override",google_ad_slot:"slotname",google_=
+ad_width:"w",google_analytics_uacct:"ga_wpids",google_correlator:"correla=
+tor",google_cpa_choice:"cpa_choice",google_ctr_threshold:"ctr_t",google_i=
+mage_size:"image_size",google_last_modified_time:"lmt",google_max_num_ads=
+:"num_ads",google_max_radlink_len:"max_radlink_len",google_num_radlinks:"=
+num_radlinks",google_num_radlinks_per_unit:"num_radlinks_per_unit",google=
+_only_ads_with_video:"only_ads_with_video",google_page_location:"loc",=0A=
+google_rl_dest_url:"rl_dest_url",google_rl_filtering:"rl_filtering",googl=
+e_rl_mode:"rl_mode",google_rt:"rt",google_skip:"skip"},ja=3D{google_only_=
+pyv_ads:"pyv"};function ka(a){return ha[a]||ia[a]||ja[a]||l};function =
+la(a){return typeof =
+encodeURIComponent=3D=3D"function"?encodeURIComponent(a):escape(a)}functi=
+on ma(a,b,c){var =
+d=3Ddocument.createElement("script");d.type=3D"text/javascript";if(b)d.on=
+load=3Db;if(c)d.id=3Dc;d.src=3Da;var =
+e=3Ddocument.getElementsByTagName("head")[0];if(!e)return =
+m;window.setTimeout(function(){e.appendChild(d)},0);return h}function =
+r(){this.b=3Dthis.C();this.o=3Dm;if(!this.b)this.o=3Dthis.p()}r.prototype=
+.h=3D"__gads=3D";r.prototype.e=3D"GoogleAdServingTest=3D";r.prototype.v=3D=
+function(){return this.b};=0A=
+r.prototype.setCookieInfo=3Dfunction(a){this.a=3Da._cookies_[0];if(this.a=
+!=3Dl){this.b=3Dthis.a._value_;this.I()}};r.prototype.t=3Dfunction(a){var=
+ b=3D(new Date).valueOf(),c=3Dnew Date;c.setTime(b+a);return c};var =
+na=3D"http://"+ga+"/gampad/cookie.js?callback=3D_GA_googleCookieHelper.se=
+tCookieInfo";r.prototype.q=3Dfunction(a){if(!(this.b||!this.o)){var =
+b=3D"script",c=3Ddocument.domain,d=3Dna+"&client=3D"+la(a)+"&domain=3D"+l=
+a(c);document.write("<"+b+' src=3D"'+d+'"></'+b+">")}};=0A=
+r.prototype.p=3Dfunction(){document.cookie=3Dthis.e+"Good";var =
+a=3Dthis.n(this.e),b=3Da=3D=3D"Good";if(b){var =
+c=3Dthis.t(-1);document.cookie=3Dthis.e+"; =
+expires=3D"+c.toGMTString()}return b};r.prototype.C=3Dfunction(){var =
+a=3Dthis.n(this.h);return a};r.prototype.n=3Dfunction(a){var =
+b=3Ddocument.cookie,c=3Db.indexOf(a),d=3D"";if(c!=3D-1){var =
+e=3Dc+a.length,f=3Db.indexOf(";",e);if(f=3D=3D-1)f=3Db.length;d=3Db.subst=
+ring(e,f)}return d};=0A=
+r.prototype.I=3Dfunction(){if(!(this.a=3D=3Dl))if(this.b){var a=3Dnew =
+Date;a.setTime(1000*this.a._expires_);var =
+b=3Dthis.a._domain_,c=3Dthis.h+this.b+"; expires=3D"+a.toGMTString()+"; =
+path=3D"+this.a._path_+"; domain=3D."+b;document.cookie=3Dc}};function =
+oa(a){if(a in pa)return pa[a];return =
+pa[a]=3Dnavigator.userAgent.toLowerCase().indexOf(a)!=3D-1}var pa=3D{};=0A=
+function qa(){if(navigator.plugins&&navigator.mimeTypes.length){var =
+a=3Dnavigator.plugins["Shockwave Flash"];if(a&&a.description)return =
+a.description.replace(/([a-zA-Z]|\s)+/,"").replace(/(\s)+r/,".")}else =
+if(navigator.userAgent&&navigator.userAgent.indexOf("Windows =
+CE")>=3D0){for(var b=3D3,c=3D1;c;)try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash."+(b+1));b++}catch(d){c=3Dl}=
+return b.toString()}else if(oa("msie")&&!window.opera){c=3Dl;try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash.7")}catch(e){b=3D=0A=
+0;try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");b=3D6;c.AllowScriptAcces=
+s=3D"always"}catch(f){if(b=3D=3D6)return b.toString()}try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash")}catch(j){}}if(c){b=3Dc.Get=
+Variable("$version").split(" ")[1];return =
+b.replace(/,/g,".")}}return"0"}function ra(a){var =
+b=3Da.google_ad_format;if(b)return b.indexOf("_0ads")>0;return =
+a.google_ad_output!=3D"html"&&a.google_num_radlinks>0}function =
+s(a){return!!a&&a.indexOf("_sdo")!=3D-1}=0A=
+function sa(a){return ra(a)||s(a.google_ad_format)}function w(a,b){var =
+c=3DMath.random();if(c<b){var d=3DMath.floor(c/b*a.length);return =
+a[d]}return""};var x=3Dthis,ta=3Dfunction(a,b,c){var =
+d=3Da.split("."),e=3Dc||x;!(d[0]in e)&&e.execScript&&e.execScript("var =
+"+d[0]);for(var =
+f;d.length&&(f=3Dd.shift());)if(!d.length&&b!=3D=3Dundefined)e[f]=3Db;els=
+e e=3De[f]?e[f]:(e[f]=3D{})},A=3Dfunction(a){var b=3Dtypeof =
+a;if(b=3D=3D"object")if(a){if(a instanceof Array||!(a instanceof =
+Object)&&Object.prototype.toString.call(a)=3D=3D"[object Array]"||typeof =
+a.length=3D=3D"number"&&typeof a.splice!=3D"undefined"&&typeof =
+a.propertyIsEnumerable!=3D"undefined"&&!a.propertyIsEnumerable("splice"))=
+return"array";=0A=
+if(!(a instanceof =
+Object)&&(Object.prototype.toString.call(a)=3D=3D"[object =
+Function]"||typeof a.call!=3D"undefined"&&typeof =
+a.propertyIsEnumerable!=3D"undefined"&&!a.propertyIsEnumerable("call")))r=
+eturn"function"}else return"null";else if(b=3D=3D"function"&&typeof =
+a.call=3D=3D"undefined")return"object";return b},xa=3Dfunction(a){var =
+b=3DA(a);return b=3D=3D"array"||b=3D=3D"object"&&typeof =
+a.length=3D=3D"number"},B=3Dfunction(a){return typeof =
+a=3D=3D"string"},ya=3Dfunction(a){var b=3DA(a);return =
+b=3D=3D"object"||b=3D=3D"array"||b=3D=3D"function"};=0A=
+Math.floor(Math.random()*2147483648).toString(36);var =
+za=3Dfunction(a){var =
+b=3DA(a);if(b=3D=3D"object"||b=3D=3D"array"){if(a.clone)return =
+a.clone.call(a);var c=3Db=3D=3D"array"?[]:{};for(var d in =
+a)c[d]=3Dza(a[d]);return c}return =
+a},Aa=3DDate.now||function(){return(new =
+Date).getTime()},C=3Dfunction(a,b,c){ta(a,b,c)};var =
+Ba=3Dfunction(a){return =
+a.replace(/^[\s\xa0]+|[\s\xa0]+$/g,"")},Ha=3Dfunction(a,b){if(b)return =
+a.replace(Ca,"&amp;").replace(Da,"&lt;").replace(Ea,"&gt;").replace(Fa,"&=
+quot;");else{if(!Ga.test(a))return =
+a;if(a.indexOf("&")!=3D-1)a=3Da.replace(Ca,"&amp;");if(a.indexOf("<")!=3D=
+-1)a=3Da.replace(Da,"&lt;");if(a.indexOf(">")!=3D-1)a=3Da.replace(Ea,"&gt=
+;");if(a.indexOf('"')!=3D-1)a=3Da.replace(Fa,"&quot;");return =
+a}},Ca=3D/&/g,Da=3D/</g,Ea=3D/>/g,Fa=3D/\"/g,Ga=3D/[&<>\"]/,Ka=3Dfunction=
+(a){if(D(a,"&"))return"document"in x&&!D(a,"<")?=0A=
+Ia(a):Ja(a);return a},Ia=3Dfunction(a){var =
+b=3Dx.document.createElement("a");b.innerHTML=3Da;b.normalize&&b.normaliz=
+e();a=3Db.firstChild.nodeValue;b.innerHTML=3D"";return =
+a},Ja=3Dfunction(a){return =
+a.replace(/&([^;]+);/g,function(b,c){switch(c){case "amp":return"&";case =
+"lt":return"<";case "gt":return">";case =
+"quot":return'"';default:if(c.charAt(0)=3D=3D"#"){var =
+d=3DNumber("0"+c.substr(1));if(!isNaN(d))return =
+String.fromCharCode(d)}return b}})},La=3Dfunction(a,b){for(var =
+c=3Db.length,d=3D0;d<c;d++){var e=3Dc=3D=3D1?b:b.charAt(d);=0A=
+if(a.charAt(0)=3D=3De&&a.charAt(a.length-1)=3D=3De)return =
+a.substring(1,a.length-1)}return a},D=3Dfunction(a,b){return =
+a.indexOf(b)!=3D-1},Na=3Dfunction(a,b){for(var =
+c=3D0,d=3DBa(String(a)).split("."),e=3DBa(String(b)).split("."),f=3DMath.=
+max(d.length,e.length),j=3D0;c=3D=3D0&&j<f;j++){var =
+k=3Dd[j]||"",i=3De[j]||"",g=3Dnew RegExp("(\\d*)(\\D*)","g"),z=3Dnew =
+RegExp("(\\d*)(\\D*)","g");do{var =
+u=3Dg.exec(k)||["","",""],v=3Dz.exec(i)||["","",""];if(u[0].length=3D=3D0=
+&&v[0].length=3D=3D0)break;var =
+t=3Du[1].length=3D=3D0?0:parseInt(u[1],10),K=3Dv[1].length=3D=3D=0A=
+0?0:parseInt(v[1],10);c=3DMa(t,K)||Ma(u[2].length=3D=3D0,v[2].length=3D=3D=
+0)||Ma(u[2],v[2])}while(c=3D=3D0)}return =
+c},Ma=3Dfunction(a,b){if(a<b)return-1;else if(a>b)return 1;return =
+0};Aa();var =
+E=3Dfunction(a){this.H=3Da;this.m=3D[];this.B=3Dthis.l=3D0;this.g=3D[];th=
+is.z=3Dm};E.prototype.G=3Dfunction(a,b){var =
+c=3Dthis.H[b],d=3Dthis.m;this.H[b]=3Dfunction(e){if(e&&e.length>0){var =
+f=3De.length>1?e[1].url:l;d.push([a,Ka(e[0].url),f])}c(e)}};E.prototype.F=
+=3Dfunction(){this.l++};E.prototype.A=3Dfunction(){if(!this.z){ma("http:/=
+/"+q+"/pagead/osd.js");this.z=3Dh}};E.prototype.r=3Dfunction(a){if(this.l=
+>0)for(var =
+b=3Ddocument.getElementsByTagName("iframe"),c=3D0;c<b.length;c++)b.item(c=
+).name=3D=3D"google_ads_frame"&&a(b.item(c),b.item(c).src)};=0A=
+E.prototype.s=3Dfunction(a){var b=3Dthis.m;if(b.length>0)for(var =
+c=3Ddocument.getElementsByTagName("a"),d=3Dfunction(g,z){return =
+g.innerHTML.indexOf(z)>0},e=3D0;e<c.length;e++)for(var =
+f=3D0;f<b.length;f++)if(c.item(e).href=3D=3Db[f][1]){var =
+j=3Dc.item(e).parentNode;if(b[f][2])for(var =
+k=3Dj,i=3D0;i<4;i++){if(d(k,b[f][2])){j=3Dk;break}k=3Dk.parentNode}a(j,b[=
+f][0]);b.splice(f,1);break}};E.prototype.i=3Dfunction(a){this.s(a);this.r=
+(a)};E.prototype.c=3Dfunction(a){this.B=3Da};E.prototype.k=3Dfunction(){r=
+eturn this.B};=0A=
+E.prototype.j=3Dfunction(){return =
+this.m.length+this.l};E.prototype.d=3Dfunction(a){this.g=3Da};E.prototype=
+.D=3Dfunction(a,b){if(this.g.length>0){for(var =
+c=3D0;c<this.g.length;c++)if(this.g[c]=3D=3Da)if(a=3D=3D"js")this.G(b,"go=
+ogle_ad_request_done");else a=3D=3D"html"&&this.F();this.A()}};var =
+Oa=3Dfunction(){window.__google_ad_urls||(window.__google_ad_urls=3Dnew =
+E(window));return =
+window.__google_ad_urls};C("Goog_AdSense_getAdAdapterInstance",Oa);C("Goo=
+g_AdSense_OsdAdapter",E);=0A=
+C("Goog_AdSense_OsdAdapter.prototype.numBlocks",E.prototype.j);C("Goog_Ad=
+Sense_OsdAdapter.prototype.findBlocks",E.prototype.i);C("Goog_AdSense_Osd=
+Adapter.prototype.getOsdMode",E.prototype.k);function Pa(a,b){try{return =
+a.top.document.URL=3D=3Db.URL}catch(c){}return m}function =
+Qa(a,b,c,d){var =
+e=3Dc||a.google_ad_width,f=3Dd||a.google_ad_height;if(Pa(a,b))return =
+m;var j=3Db.documentElement;if(e&&f){var =
+k=3D1,i=3D1;if(a.innerHeight){k=3Da.innerWidth;i=3Da.innerHeight}else =
+if(j&&j.clientHeight){k=3Dj.clientWidth;i=3Dj.clientHeight}else =
+if(b.body){k=3Db.body.clientWidth;i=3Db.body.clientHeight}if(i>2*f||k>2*e=
+)return m}return h}function Ra(a,b){for(var c in b)a["google_"+c]=3Db[c]}=0A=
+function Sa(a,b){if(!b)return a.URL;return a.referrer}function =
+Ta(a,b){if(!b&&a.google_referrer_url=3D=3Dl)return"0";else =
+if(b&&a.google_referrer_url=3D=3Dl)return"1";else =
+if(!b&&a.google_referrer_url!=3Dl)return"2";else =
+if(b&&a.google_referrer_url!=3Dl)return"3";return"4"}function =
+Ua(a,b,c,d){a.page_url=3DSa(c,d);a.page_location=3Dl}function =
+Va(a,b,c,d){a.page_url=3Db.google_page_url;a.page_location=3DSa(c,d)||"EM=
+PTY"}=0A=
+function Wa(a,b){var =
+c=3D{},d=3DQa(a,b,a.google_ad_width,a.google_ad_height);c.iframing=3DTa(a=
+,d);a.google_page_url?Va(c,a,b,d):Ua(c,a,b,d);c.last_modified_time=3Db.UR=
+L=3D=3Dc.page_url?Date.parse(b.lastModified)/1000:l;c.referrer_url=3Dd?a.=
+google_referrer_url:a.google_page_url&&a.google_referrer_url?a.google_ref=
+errer_url:b.referrer;return c}function Xa(a){var =
+b=3D{},c=3Da.URL.substring(a.URL.lastIndexOf("http"));b.iframing=3Dl;b.pa=
+ge_url=3Dc;b.page_location=3Da.URL;b.last_modified_time=3Dl;b.referrer_ur=
+l=3Dc;return b}=0A=
+function Ya(a,b){var c=3DZa(a,b);Ra(a,c)}function Za(a,b){var c;return =
+c=3Da.google_page_url=3D=3Dl&&$a[b.domain]?Xa(b):Wa(a,b)}var =
+$a=3D{};$a["ad.yieldmanager.com"]=3Dh;var =
+ab=3Dfunction(a,b,c){if(a.forEach)a.forEach(b,c);else =
+if(Array.forEach)Array.forEach(a,b,c);else for(var =
+d=3Da.length,e=3DB(a)?a.split(""):a,f=3D0;f<d;f++)f in =
+e&&b.call(c,e[f],f,a)},bb=3Dfunction(a){if(A(a)=3D=3D"array")return =
+a.concat();else{for(var =
+b=3D[],c=3D0,d=3Da.length;c<d;c++)b[c]=3Da[c];return b}};var =
+F=3Dfunction(a,b){this.x=3Da!=3D=3Dundefined?a:0;this.y=3Db!=3D=3Dundefin=
+ed?b:0};F.prototype.clone=3Dfunction(){return new =
+F(this.x,this.y)};F.prototype.toString=3Dfunction(){return"("+this.x+", =
+"+this.y+")"};var =
+G=3Dfunction(a,b){this.width=3Da;this.height=3Db};G.prototype.clone=3Dfun=
+ction(){return new =
+G(this.width,this.height)};G.prototype.toString=3Dfunction(){return"("+th=
+is.width+" x =
+"+this.height+")"};G.prototype.ceil=3Dfunction(){this.width=3DMath.ceil(t=
+his.width);this.height=3DMath.ceil(this.height);return =
+this};G.prototype.floor=3Dfunction(){this.width=3DMath.floor(this.width);=
+this.height=3DMath.floor(this.height);return this};=0A=
+G.prototype.round=3Dfunction(){this.width=3DMath.round(this.width);this.h=
+eight=3DMath.round(this.height);return =
+this};G.prototype.scale=3Dfunction(a){this.width*=3Da;this.height*=3Da;re=
+turn this};var cb=3Dfunction(a,b,c){for(var d in =
+a)b.call(c,a[d],d,a)};var =
+H,db,I,eb,fb,gb,hb,ib,jb,kb,mb=3Dfunction(){return =
+x.navigator?x.navigator.userAgent:l},J=3Dfunction(){return =
+x.navigator},qb=3Dfunction(){gb=3Dfb=3Deb=3DI=3Ddb=3DH=3Dm;var =
+a;if(a=3Dmb()){var =
+b=3DJ();H=3Da.indexOf("Opera")=3D=3D0;db=3D!H&&a.indexOf("MSIE")!=3D-1;eb=
+=3D(I=3D!H&&a.indexOf("WebKit")!=3D-1)&&a.indexOf("Mobile")!=3D-1;gb=3D(f=
+b=3D!H&&!I&&b.product=3D=3D"Gecko")&&b.vendor=3D=3D"Camino"}};qb();=0A=
+var L=3DH,M=3Ddb,rb=3Dfb,N=3DI,sb=3Deb,tb=3Dfunction(){var =
+a=3DJ();return =
+a&&a.platform||""},ub=3Dtb(),vb=3Dfunction(){hb=3DD(ub,"Mac");ib=3DD(ub,"=
+Win");jb=3DD(ub,"Linux");kb=3D!!J()&&D(J().appVersion||"","X11")};vb();=0A=
+var wb=3Dhb,xb=3Dib,yb=3Djb,zb=3Dfunction(){var =
+a=3D"",b;if(L&&x.opera){var c=3Dx.opera.version;a=3Dtypeof =
+c=3D=3D"function"?c():c}else{if(rb)b=3D/rv\:([^\);]+)(\)|;)/;else =
+if(M)b=3D/MSIE\s+([^\);]+)(\)|;)/;else =
+if(N)b=3D/WebKit\/(\S+)/;if(b){var =
+d=3Db.exec(mb());a=3Dd?d[1]:""}}return =
+a},Ab=3Dzb(),Bb=3D{},O=3Dfunction(a){return =
+Bb[a]||(Bb[a]=3DNa(Ab,a)>=3D0)};var Cb;var Db=3Dfunction(a){return =
+B(a)?document.getElementById(a):a},Eb=3DDb,Gb=3Dfunction(a,b){cb(b,functi=
+on(c,d){if(d=3D=3D"style")a.style.cssText=3Dc;else =
+if(d=3D=3D"class")a.className=3Dc;else =
+if(d=3D=3D"for")a.htmlFor=3Dc;else if(d in =
+Fb)a.setAttribute(Fb[d],c);else =
+a[d]=3Dc})},Fb=3D{cellpadding:"cellPadding",cellspacing:"cellSpacing",col=
+span:"colSpan",rowspan:"rowSpan",valign:"vAlign",height:"height",width:"w=
+idth",usemap:"useMap",frameborder:"frameBorder",type:"type"},Hb=3Dfunctio=
+n(a){var b=3Da.document;if(N&&!O("500")&&!sb){if(typeof a.innerHeight=3D=3D=0A=
+"undefined")a=3Dwindow;var =
+c=3Da.innerHeight,d=3Da.document.documentElement.scrollHeight;if(a=3D=3Da=
+.top)if(d<c)c-=3D15;return new G(a.innerWidth,c)}var =
+e=3Db.compatMode=3D=3D"CSS1Compat"&&(!L||L&&O("9.50"))?b.documentElement:=
+b.body;return new G(e.clientWidth,e.clientHeight)},Ib=3Dfunction(a){var =
+b=3D!N&&a.compatMode=3D=3D"CSS1Compat"?a.documentElement:a.body;return =
+new F(b.scrollLeft,b.scrollTop)},Kb=3Dfunction(){return =
+Jb(document,arguments)},Jb=3Dfunction(a,b){var =
+c=3Db[0],d=3Db[1];if(M&&d&&(d.name||d.type)){var e=3D["<",c];d.name&&=0A=
+e.push(' name=3D"',Ha(d.name),'"');if(d.type){e.push(' =
+type=3D"',Ha(d.type),'"');d=3Dza(d);delete =
+d.type}e.push(">");c=3De.join("")}var =
+f=3Da.createElement(c);if(d)if(B(d))f.className=3Dd;else =
+Gb(f,d);if(b.length>2){function =
+j(g){if(g)f.appendChild(B(g)?a.createTextNode(g):g)}for(var =
+k=3D2;k<b.length;k++){var =
+i=3Db[k];xa(i)&&!(ya(i)&&i.nodeType>0)?ab(Lb(i)?bb(i):i,j):j(i)}}return =
+f},Mb=3Dfunction(a,b){a.appendChild(b)},Nb=3Dfunction(a){return =
+a&&a.parentNode?a.parentNode.removeChild(a):l},Ob=3Dfunction(a,b){var =
+c=3Db.parentNode;=0A=
+c&&c.replaceChild(a,b)},Pb=3DN&&Na(Ab,"521")<=3D0,Qb=3Dfunction(a,b){if(t=
+ypeof a.contains!=3D"undefined"&&!Pb&&b.nodeType=3D=3D1)return =
+a=3D=3Db||a.contains(b);if(typeof =
+a.compareDocumentPosition!=3D"undefined")return =
+a=3D=3Db||Boolean(a.compareDocumentPosition(b)&16);for(;b&&a!=3Db;)b=3Db.=
+parentNode;return b=3D=3Da},P=3Dfunction(a){return =
+a.nodeType=3D=3D9?a:a.ownerDocument||a.document},Lb=3Dfunction(a){if(a&&t=
+ypeof a.length=3D=3D"number")if(ya(a))return typeof =
+a.item=3D=3D"function"||typeof a.item=3D=3D"string";else =
+if(A(a)=3D=3D"function")return typeof a.item=3D=3D=0A=
+"function";return =
+m},Q=3Dfunction(a){this.f=3Da||x.document||document};Q.prototype.createEl=
+ement=3Dfunction(a){return =
+this.f.createElement(a)};Q.prototype.createTextNode=3Dfunction(a){return =
+this.f.createTextNode(a)};Q.prototype.w=3Dfunction(){return =
+this.f.compatMode=3D=3D"CSS1Compat"};Q.prototype.u=3Dfunction(){return =
+Ib(this.f)};Q.prototype.appendChild=3DMb;Q.prototype.removeNode=3DNb;Q.pr=
+ototype.replaceNode=3DOb;Q.prototype.contains=3DQb;var =
+Rb,Sb,Tb,Ub,Vb,Wb,Xb=3Dfunction(){Wb=3DVb=3DUb=3DTb=3DSb=3DRb=3Dm;var =
+a=3Dmb();if(a)if(a.indexOf("Firefox")!=3D-1)Rb=3Dh;else =
+if(a.indexOf("Camino")!=3D-1)Sb=3Dh;else =
+if(a.indexOf("iPhone")!=3D-1||a.indexOf("iPod")!=3D-1)Tb=3Dh;else =
+if(a.indexOf("Android")!=3D-1)Ub=3Dh;else =
+if(a.indexOf("Chrome")!=3D-1)Vb=3Dh;else =
+if(a.indexOf("Safari")!=3D-1)Wb=3Dh};Xb();var Yb=3Dfunction(a,b){var =
+c=3DP(a);if(c.defaultView&&c.defaultView.getComputedStyle){var =
+d=3Dc.defaultView.getComputedStyle(a,"");if(d)return d[b]}return =
+l},R=3Dfunction(a,b){return =
+Yb(a,b)||(a.currentStyle?a.currentStyle[b]:l)||a.style[b]},Zb=3Dfunction(=
+a){var b;b=3Da?a.nodeType=3D=3D9?a:P(a):document;if(M&&!(b?new =
+Q(P(b)):Cb||(Cb=3Dnew Q)).w())return b.body;return =
+b.documentElement},$b=3Dfunction(a){var =
+b=3Da.getBoundingClientRect();if(M){var =
+c=3Da.ownerDocument;b.left-=3Dc.documentElement.clientLeft+c.body.clientL=
+eft;=0A=
+b.top-=3Dc.documentElement.clientTop+c.body.clientTop}return =
+b},ac=3Dfunction(a){if(M)return a.offsetParent;for(var =
+b=3DP(a),c=3DR(a,"position"),d=3Dc=3D=3D"fixed"||c=3D=3D"absolute",e=3Da.=
+parentNode;e&&e!=3Db;e=3De.parentNode){c=3DR(e,"position");d=3Dd&&c=3D=3D=
+"static"&&e!=3Db.documentElement&&e!=3Db.body;if(!d&&(e.scrollWidth>e.cli=
+entWidth||e.scrollHeight>e.clientHeight||c=3D=3D"fixed"||c=3D=3D"absolute=
+"))return e}return l},bc=3Dfunction(a){var =
+b,c=3DP(a),d=3DR(a,"position"),e=3Drb&&c.getBoxObjectFor&&!a.getBoundingC=
+lientRect&&d=3D=3D"absolute"&&(b=3D=0A=
+c.getBoxObjectFor(a))&&(b.screenX<0||b.screenY<0),f=3Dnew =
+F(0,0),j=3DZb(c);if(a=3D=3Dj)return =
+f;if(a.getBoundingClientRect){b=3D$b(a);var k=3D(c?new =
+Q(P(c)):Cb||(Cb=3Dnew Q)).u();f.x=3Db.left+k.x;f.y=3Db.top+k.y}else =
+if(c.getBoxObjectFor&&!e){b=3Dc.getBoxObjectFor(a);var =
+i=3Dc.getBoxObjectFor(j);f.x=3Db.screenX-i.screenX;f.y=3Db.screenY-i.scre=
+enY}else{var =
+g=3Da;do{f.x+=3Dg.offsetLeft;f.y+=3Dg.offsetTop;if(g!=3Da){f.x+=3Dg.clien=
+tLeft||0;f.y+=3Dg.clientTop||0}if(N&&R(g,"position")=3D=3D"fixed"){f.x+=3D=
+c.body.scrollLeft;f.y+=3Dc.body.scrollTop;=0A=
+break}g=3Dg.offsetParent}while(g&&g!=3Da);if(L||N&&d=3D=3D"absolute")f.y-=
+=3Dc.body.offsetTop;for(g=3Da;(g=3Dac(g))&&g!=3Dc.body;){f.x-=3Dg.scrollL=
+eft;if(!L||g.tagName!=3D"TR")f.y-=3Dg.scrollTop}}return f};rb&&O("1.9");=0A=
+var cc=3Dfunction(a,b,c,d){if(/^\d+px?$/.test(b))return =
+parseInt(b,10);else{var =
+e=3Da.style[c],f=3Da.runtimeStyle[c];a.runtimeStyle[c]=3Da.currentStyle[c=
+];a.style[c]=3Db;var =
+j=3Da.style[d];a.style[c]=3De;a.runtimeStyle[c]=3Df;return =
+j}},dc=3Dfunction(a){var b=3DP(a),c=3D"";if(b.createTextRange){var =
+d=3Db.body.createTextRange();d.moveToElementText(a);c=3Dd.queryCommandVal=
+ue("FontName")}if(!c){c=3DR(a,"fontFamily");if(L&&yb)c=3Dc.replace(/ =
+\[[^\]]*\]/,"")}var e=3Dc.split(",");if(e.length>1)c=3De[0];return =
+La(c,"\"'")},ec=3Dfunction(a){var b=3D=0A=
+a.match(/[^\d]+$/);return =
+b&&b[0]||l},fc=3D{cm:1,"in":1,mm:1,pc:1,pt:1},gc=3D{em:1,ex:1},hc=3Dfunct=
+ion(a){var b=3DR(a,"fontSize"),c=3Dec(b);if(b&&"px"=3D=3Dc)return =
+parseInt(b,10);if(M)if(c in fc)return cc(a,b,"left","pixelLeft");else =
+if(a.parentNode&&a.parentNode.nodeType=3D=3D1&&c in gc){var =
+d=3Da.parentNode,e=3DR(d,"fontSize");return =
+cc(d,b=3D=3De?"1em":b,"left","pixelLeft")}var =
+f=3DKb("span",{style:"visibility:hidden;position:absolute;line-height:0;p=
+adding:0;margin:0;border:0;height:1em;"});Mb(a,f);b=3Df.offsetHeight;Nb(f=
+);=0A=
+return b};var S=3Ddocument,T=3Dnavigator,U=3Dwindow;=0A=
+function ic(){var a=3DS.cookie,b=3DMath.round((new =
+Date).getTime()/1000),c=3DU.google_analytics_domain_name,d=3Dtypeof =
+c=3D=3D"undefined"?jc("auto"):jc(c),e=3Da.indexOf("__utma=3D"+d+".")>-1,f=
+=3Da.indexOf("__utmb=3D"+d)>-1,j=3Da.indexOf("__utmc=3D"+d)>-1,k,i=3D{},g=
+=3D!!U&&!!U.gaGlobal;if(e){k=3Da.split("__utma=3D"+d+".")[1].split(";")[0=
+].split(".");i.sid=3Df&&j?k[3]+"":g&&U.gaGlobal.sid?U.gaGlobal.sid:b+"";i=
+.vid=3Dk[0]+"."+k[1];i.from_cookie=3Dh}else{i.sid=3Dg&&U.gaGlobal.sid?U.g=
+aGlobal.sid:b+"";i.vid=3Dg&&U.gaGlobal.vid?U.gaGlobal.vid:(Math.round(Mat=
+h.random()*=0A=
+2147483647)^kc()&2147483647)+"."+b;i.from_cookie=3Dm}i.dh=3Dd;i.hid=3Dg&&=
+U.gaGlobal.hid?U.gaGlobal.hid:Math.round(Math.random()*2147483647);return=
+ U.gaGlobal=3Di}=0A=
+function kc(){var =
+a=3DS.cookie?S.cookie:"",b=3DU.history.length,c,d,e=3D[T.appName,T.versio=
+n,T.language?T.language:T.browserLanguage,T.platform,T.userAgent,T.javaEn=
+abled()?1:0].join("");if(U.screen)e+=3DU.screen.width+"x"+U.screen.height=
++U.screen.colorDepth;else =
+if(U.java){d=3Djava.awt.Toolkit.getDefaultToolkit().getScreenSize();e+=3D=
+d.screen.width+"x"+d.screen.height}e+=3Da;e+=3DS.referrer?S.referrer:"";f=
+or(c=3De.length;b>0;)e+=3Db--^c++;return lc(e)}=0A=
+function lc(a){var =
+b=3D1,c=3D0,d,e;if(!(a=3D=3Dundefined||a=3D=3D"")){b=3D0;for(d=3Da.length=
+-1;d>=3D0;d--){e=3Da.charCodeAt(d);b=3D(b<<6&268435455)+e+(e<<14);c=3Db&2=
+66338304;b=3Dc!=3D0?b^c>>21:b}}return b}function =
+jc(a){if(!a||a=3D=3D""||a=3D=3D"none")return =
+1;if("auto"=3D=3Da){a=3DS.domain;if("www."=3D=3Da.substring(0,4))a=3Da.su=
+bstring(4,a.length)}return lc(a.toLowerCase())};var mc=3D"";function =
+nc(a){if(a){if(mc!=3D"")mc+=3D",";mc+=3Da}}function oc(a){if(a&&a =
+instanceof Array)for(var b=3D0;b<a.length;b++)a[b]&&typeof =
+a[b]=3D=3D"string"&&nc(a[b])}var pc=3Dm;=0A=
+function qc(a,b){var =
+c=3D"script";(pc=3Drc(a,b))||(a.google_allow_expandable_ads=3Dm);var =
+d=3D!sc();pc&&d&&b.write("<"+c+' =
+src=3D"http://'+q+'/pagead/expansion_embed.js"></'+c+">");var =
+e=3Dtc(a,b,o("1",0.01)),f=3Dd||e;f&&oa("msie")&&!window.opera?b.write("<"=
++c+' =
+src=3D"http://'+q+'/pagead/render_ads.js"></'+c+">"):b.write("<"+c+">wind=
+ow.google_render_ad();</"+c+">")}function V(a){return =
+a!=3Dl?'"'+a+'"':'""'}function =
+W(a,b){if(a&&b)window.google_ad_url+=3D"&"+a+"=3D"+b}=0A=
+function X(a){var b=3Dwindow,c=3Dka(a),d=3Db[a];W(c,d)}function =
+Y(a,b){b!=3Dl&&W(a,la(b))}function Z(a){var =
+b=3Dwindow,c=3Dka(a),d=3Db[a];Y(c,d)}function $(a,b){var =
+c=3Dwindow,d=3Dka(a),e=3Dc[a];if(d&&e&&typeof =
+e=3D=3D"object")e=3De[b%e.length];W(d,e)}=0A=
+function uc(a){var b=3Da.screen,c=3Dnavigator.javaEnabled(),d=3D-(new =
+Date).getTimezoneOffset();if(b){W("u_h",b.height);W("u_w",b.width);W("u_a=
+h",b.availHeight);W("u_aw",b.availWidth);W("u_cd",b.colorDepth)}W("u_tz",=
+d);W("u_his",history.length);W("u_java",c);navigator.plugins&&W("u_nplug"=
+,navigator.plugins.length);navigator.mimeTypes&&W("u_nmime",navigator.mim=
+eTypes.length)}=0A=
+function =
+vc(a){if(a.google_enable_first_party_cookie){if(a._GA_googleCookieHelper=3D=
+=3Dl)a._GA_googleCookieHelper=3Dnew =
+r;if(!a._google_cookie_fetched){a._google_cookie_fetched=3Dh;a._GA_google=
+CookieHelper.q(wc(a.google_ad_client))}}}function =
+wc(a){if(a){a=3Da.toLowerCase();if(a.substring(0,3)!=3D"ca-")a=3D"ca-"+a}=
+return a}function =
+xc(a){if(a){a=3Da.toLowerCase();if(a.substring(0,9)!=3D"dist-aff-")a=3D"d=
+ist-aff-"+a}return a}function yc(a){var =
+b=3D"google_unique_id";if(a[b])++a[b];else a[b]=3D1;return a[b]}=0A=
+function zc(){var =
+a=3DM&&O("6"),b=3Drb&&O("1.8.1"),c=3DN&&O("525");if(xb&&(a||b||c))return =
+h;else if(wb&&(c||b))return h;else if(yb&&b)return h;return m}function =
+sc(){return(typeof ExpandableAdSlotFactory=3D=3D"function"||typeof =
+ExpandableAdSlotFactory=3D=3D"object")&&typeof =
+ExpandableAdSlotFactory.createIframe=3D=3D"function"}function =
+rc(a,b){if(a.google_allow_expandable_ads=3D=3D=3Dm||!b.body||a.google_ad_=
+output!=3D"html"||Qa(a,b)||sa(a)||isNaN(a.google_ad_height)||isNaN(a.goog=
+le_ad_width)||!zc())return m;return h}=0A=
+function =
+Ac(a,b){if((a.google_unique_id||0)=3D=3D0&&a.google_ad_output=3D=3D"html"=
+&&document.body&&typeof =
+b.body.getBoundingClientRect=3D=3D"function")return =
+w(["36812001","36812002"],o("0.01",0));return""}=0A=
+function Bc(a,b){var =
+c=3D"";if((a.google_unique_id||0)=3D=3D0&&(a.google_ad_output=3D=3D"js"||=
+a.google_ad_output=3D=3D"html")){sa(a)||(c=3Dw(["36813001","36813002","36=
+813003","36813004"],o("0",0)));if(c=3D=3D"")c=3Dw(["36813005","36813006"]=
+,o("0",0));switch(c){case "36813002":b.c(1);b.d(["js"]);break;case =
+"36813003":b.c(1);b.d(["html"]);break;case =
+"36813004":b.c(2);b.d(["html","js"]);break;case =
+"36813006":b.c(0);b.d(["html","js"]);break}}return c}=0A=
+function Cc(a,b,c,d){var =
+e=3Dyc(a);c=3Dc.substring(0,1992);c=3Dc.replace(/%\w?$/,"");var =
+f=3D"script";if((a.google_ad_output=3D=3D"js"||a.google_ad_output=3D=3D"j=
+son_html")&&(a.google_ad_request_done||a.google_radlink_request_done))b.w=
+rite("<"+f+' language=3D"JavaScript1.1" =
+src=3D'+V(Dc(c))+"></"+f+">");else =
+if(a.google_ad_output=3D=3D"html")if(pc&&sc()){var =
+j=3Da.google_container_id||d||l;a["google_expandable_ad_slot"+e]=3DExpand=
+ableAdSlotFactory.createIframe("google_ads_frame"+e,Dc(c),a.google_ad_wid=
+th,a.google_ad_height,=0A=
+j)}else{var k=3D'<iframe name=3D"google_ads_frame" =
+width=3D'+V(a.google_ad_width)+" height=3D"+V(a.google_ad_height)+" =
+frameborder=3D"+V(a.google_ad_frameborder)+" src=3D"+V(Dc(c))+' =
+marginwidth=3D"0" marginheight=3D"0" vspace=3D"0" hspace=3D"0" =
+allowtransparency=3D"true" =
+scrolling=3D"no"></iframe>';a.google_container_id?Ec(a.google_container_i=
+d,b,k):b.write(k)}else =
+a.google_ad_output=3D=3D"textlink"&&b.write("<"+f+' =
+language=3D"JavaScript1.1" src=3D'+V(Dc(c))+"></"+f+">")}=0A=
+function Fc(a,b,c){if(!a)return m;if(!b)return h;return c}function =
+Gc(a){for(var b in ha)a[b]=3Dl;for(b in =
+ia)b=3D=3D"google_correlator"||(a[b]=3Dl);for(b in =
+ja)a[b]=3Dl;a.google_allow_expandable_ads=3Dl;a.google_container_id=3Dl;a=
+.google_tag_info=3Dl;a.google_eids=3Dl}=0A=
+function Hc(a,b){var =
+c=3Dl,d=3Dwindow,e=3Ddocument,f=3Dn,j=3Dd.google_ad_format,k=3DIc(d),i;if=
+(d.google_cpa_choice!=3Dc){d.google_ad_url=3Dk+"/cpa/ads?";i=3Descape(wc(=
+d.google_ad_client));d.google_ad_region=3D"_google_cpa_region_";X("google=
+_cpa_choice");if(typeof =
+e.characterSet!=3D"undefined")Y("oe",e.characterSet);else typeof =
+e.charset!=3D"undefined"&&Y("oe",e.charset)}else =
+if(s(j)){d.google_ad_url=3Dk+"/pagead/sdo?";i=3Descape(xc(d.google_ad_cli=
+ent))}else{d.google_ad_url=3Dk+"/pagead/ads?";i=3Descape(wc(d.google_ad_c=
+lient))}d.google_ad_url+=3D=0A=
+"client=3D"+i;X("google_ad_host");X("google_ad_host_tier_id");var =
+g=3Dd.google_num_slots_by_client,z=3Dd.google_num_slots_by_channel,u=3Dd.=
+google_prev_ad_formats_by_region,v=3Dd.google_prev_ad_slotnames_by_region=
+;if(d.google_ad_region=3D=3Dc&&d.google_ad_section!=3Dc)d.google_ad_regio=
+n=3Dd.google_ad_section;var =
+t=3Dd.google_ad_region=3D=3Dc?"":d.google_ad_region;if(s(j)){d.google_num=
+_sdo_slots=3Dd.google_num_sdo_slots?d.google_num_sdo_slots+1:1;if(d.googl=
+e_num_sdo_slots>4)return m}else =
+if(ra(d)){d.google_num_0ad_slots=3Dd.google_num_0ad_slots?=0A=
+d.google_num_0ad_slots+1:1;if(d.google_num_0ad_slots>3)return m}else =
+if(d.google_cpa_choice=3D=3Dc){d.google_num_ad_slots=3Dd.google_num_ad_sl=
+ots?d.google_num_ad_slots+1:1;if(d.google_num_slots_to_rotate){u[t]=3Dc;v=
+[t]=3Dc;if(d.google_num_slot_to_show=3D=3Dc)d.google_num_slot_to_show=3Df=
+%d.google_num_slots_to_rotate+1;if(d.google_num_slot_to_show!=3Dd.google_=
+num_ad_slots)return m}else if(d.google_num_ad_slots>6&&t=3D=3D"")return =
+m}W("dt",n);X("google_language");d.google_country?X("google_country"):X("=
+google_gl");X("google_region");=0A=
+Z("google_city");Z("google_hints");X("google_safe");X("google_encoding");=
+X("google_last_modified_time");Z("google_alternate_ad_url");X("google_alt=
+ernate_color");X("google_skip");X("google_targeting");var =
+K=3Dd.google_ad_client;if(g[K])g[K]+=3D1;else{g[K]=3D1;g.length+=3D1}if(u=
+[t])if(!s(j)){Y("prev_fmts",u[t].toLowerCase());g.length>1&&W("slot",g[K]=
+)}v[t]&&Y("prev_slotnames",v[t].toLowerCase());if(Fc(j,d.google_ad_slot,d=
+.google_override_format)){Y("format",j.toLowerCase());s(j)||(u[t]=3Du[t]?=
+u[t]+","+j:j)}else if(d.google_ad_slot)v[t]=3D=0A=
+v[t]?v[t]+","+d.google_ad_slot:d.google_ad_slot;X("google_max_num_ads");W=
+("output",d.google_ad_output);X("google_adtest");X("google_ad_callback");=
+X("google_ad_slot");Z("google_correlator");d.google_new_domain_checked=3D=
+=3D1&&d.google_new_domain_enabled=3D=3D0&&W("dblk",1);if(d.google_ad_chan=
+nel){Z("google_ad_channel");for(var =
+lb=3D"",nb=3Dd.google_ad_channel.split(Jc),ua=3D0;ua<nb.length;ua++){var =
+va=3Dnb[ua];if(z[va])lb+=3Dva+"+";else =
+z[va]=3D1}Y("pv_ch",lb)}if(d.google_ad_host_channel){Z("google_ad_host_ch=
+annel");=0A=
+var =
+Qc=3DKc(d.google_ad_host_channel,d.google_viewed_host_channels);Y("pv_h_c=
+h",Qc)}d.google_enable_first_party_cookie&&Y("cookie",d._GA_googleCookieH=
+elper.v());Z("google_page_url");$("google_color_bg",f);$("google_color_te=
+xt",f);$("google_color_link",f);$("google_color_url",f);$("google_color_b=
+order",f);$("google_color_line",f);d.google_reuse_colors?W("reuse_colors"=
+,1):W("reuse_colors",0);X("google_font_face");X("google_kw_type");Z("goog=
+le_kw");Z("google_contents");X("google_num_radlinks");X("google_max_radli=
+nk_len");=0A=
+X("google_rl_filtering");X("google_rl_mode");X("google_rt");Z("google_rl_=
+dest_url");X("google_num_radlinks_per_unit");X("google_ad_type");X("googl=
+e_image_size");X("google_ad_region");oc(d.google_eids);Y("eid",mc);var =
+ob=3Dd.google_allow_expandable_ads;if(ob!=3Dl)ob?W("ea","1"):W("ea","0");=
+X("google_feedback");Z("google_referrer_url");Z("google_page_location");W=
+("frm",d.google_iframing);X("google_bid");X("google_ctr_threshold");X("go=
+ogle_cust_age");X("google_cust_gender");X("google_cust_interests");X("goo=
+gle_cust_id");=0A=
+X("google_cust_job");X("google_cust_u_url");X("google_cust_l");X("google_=
+cust_lh");X("google_cust_ch");X("google_ed");X("google_video_doc_id");X("=
+google_video_product_type");Z("google_ui_features");Z("google_ui_version"=
+);Z("google_tag_info");Z("google_only_ads_with_video");Z("google_only_pyv=
+_ads");Z("google_disable_video_autoplay");if(a){Y("dff",dc(a));Y("dfs",hc=
+(a));var y;if(b)if(typeof a.getBoundingClientRect=3D=3D"function"){var =
+pb=3Da.getBoundingClientRect();y=3D{x:pb.left,y:pb.top}}else{y=3D{};y.x=3D=
+"-252738";=0A=
+y.y=3D"-252738"}else =
+try{y=3Dbc(a)}catch(cd){y=3D{};y.x=3D"-252738";y.y=3D"-252738"}var =
+wa=3DHb(window);if(y&&wa){Y("biw",wa.width);Y("bih",wa.height);Y("adx",y.=
+x);Y("ady",y.y)}}ic();W("ga_vid",d.gaGlobal.vid);W("ga_sid",d.gaGlobal.si=
+d);W("ga_hid",d.gaGlobal.hid);W("ga_fc",d.gaGlobal.from_cookie);Z("google=
+_analytics_uacct");X("google_ad_override");X("google_flash_version");W("w=
+",d.google_ad_width||-1);W("h",d.google_ad_height||-1);uc(d);return h}=0A=
+function Kc(a,b){for(var =
+c=3Da.split("|"),d=3D-1,e=3D[],f=3D0;f<c.length;f++){var =
+j=3Dc[f].split(Jc);b[f]||(b[f]=3D{});for(var =
+k=3D"",i=3D0;i<j.length;i++){var =
+g=3Dj[i];if(!(g=3D=3D""))if(b[f][g])k+=3D"+"+g;else =
+b[f][g]=3D1}k=3Dk.slice(1);e[f]=3Dk;if(k!=3D"")d=3Df}var =
+z=3D"";if(d>-1){for(f=3D0;f<d;f++)z+=3De[f]+"|";z+=3De[d]}return z}=0A=
+function Lc(){var a=3Dwindow,b=3Ddocument;vc(a);var =
+c=3DOa(),d=3Dw(["68120011","68120021","68120031","68120041"],o("0.04",0))=
+;if(d=3D=3D""){d=3DAc(a,b);if(d=3D=3D"")d=3DBc(a,c)}nc(d);var =
+e,f=3Dm,j=3Dm,k=3Dm;switch(d){case "68120031":k=3Dh;case =
+"68120021":j=3Dh;case "68120041":f=3Dh;break;case =
+"36812002":if(!window.google_atf_included){window.google_atf_included=3Dh=
+;ma("http://"+q+"/pagead/atf.js")}break}if(f){var =
+i=3D"google_temp_span";e=3Da.google_container_id&&Eb(a.google_container_i=
+d)||Eb(i);if(!e&&!a.google_container_id){b.write("<span id=3D"+=0A=
+i+"></span>");e=3DEb(i)}}var =
+g=3Dm;g=3Dj?Hc(e,k):Hc();e&&e.id=3D=3Di&&Nb(e);if(g){c.D(a.google_ad_outp=
+ut,a.google_ad_url);Cc(a,b,a.google_ad_url);Gc(a)}}function Dc(a){var =
+b=3D(new Date).getTime()-n,c=3D"&dtd=3D"+(b<1000?b:"M");return =
+a+c}function Mc(){Lc();return h}=0A=
+function Nc(a){var =
+b=3Dwindow,c=3Dl,d=3Db.onerror;b.onerror=3Da;if(b.google_ad_frameborder=3D=
+=3Dc)b.google_ad_frameborder=3D0;if(b.google_ad_output=3D=3Dc)b.google_ad=
+_output=3D"html";if(s(b.google_ad_format)){var =
+e=3Db.google_ad_format.match(/^(\d+)x(\d+)_.*/);if(e){b.google_ad_width=3D=
+parseInt(e[1],10);b.google_ad_height=3DparseInt(e[2],10);b.google_ad_outp=
+ut=3D"html"}}if(b.google_ad_format=3D=3Dc&&b.google_ad_output=3D=3D"html"=
+)b.google_ad_format=3Db.google_ad_width+"x"+b.google_ad_height;Ya(b,docum=
+ent);if(b.google_num_slots_by_channel=3D=3D=0A=
+c)b.google_num_slots_by_channel=3D[];if(b.google_viewed_host_channels=3D=3D=
+c)b.google_viewed_host_channels=3D[];if(b.google_num_slots_by_client=3D=3D=
+c)b.google_num_slots_by_client=3D[];if(b.google_prev_ad_formats_by_region=
+=3D=3Dc)b.google_prev_ad_formats_by_region=3D[];if(b.google_prev_ad_slotn=
+ames_by_region=3D=3Dc)b.google_prev_ad_slotnames_by_region=3D[];if(b.goog=
+le_correlator=3D=3Dc)b.google_correlator=3Dn;if(b.google_adslot_loaded=3D=
+=3Dc)b.google_adslot_loaded=3D{};if(b.google_adContentsBySlot=3D=3Dc)b.go=
+ogle_adContentsBySlot=3D{};if(b.google_flash_version=3D=3D=0A=
+c)b.google_flash_version=3Dqa();if(b.google_new_domain_checked=3D=3Dc)b.g=
+oogle_new_domain_checked=3D0;if(b.google_new_domain_enabled=3D=3Dc)b.goog=
+le_new_domain_enabled=3D0;b.onerror=3Dd}function Oc(a){for(var =
+b=3D{},c=3Da.split("?"),d=3Dc[c.length-1].split("&"),e=3D0;e<d.length;e++=
+){var =
+f=3Dd[e].split("=3D");if(f[0])try{b[f[0].toLowerCase()]=3Df.length>1?wind=
+ow.decodeURIComponent?decodeURIComponent(f[1].replace(/\+/g," =
+")):unescape(f[1]):""}catch(j){}}return b}=0A=
+function Pc(){var =
+a=3Dwindow,b=3DOc(document.URL);if(b.google_ad_override){a.google_ad_over=
+ride=3Db.google_ad_override;a.google_adtest=3D"on"}}function =
+Ec(a,b,c){if(a){var =
+d=3Db.getElementById(a);if(d&&c&&c.length!=3D""){d.style.visibility=3D"vi=
+sible";d.innerHTML=3Dc}}}var Jc=3D/[+, =
+]/;window.google_render_ad=3DLc;var =
+Rc=3D{google:1,googlegroups:1,gmail:1,googlemail:1,googleimages:1,googlep=
+rint:1};function Sc(a){var =
+b=3Da.google_page_location||a.google_page_url;if(!b)return =
+m;b=3Db.toString();if(b.indexOf("http://")=3D=3D0)b=3Db.substring(7,b.len=
+gth);else =
+if(b.indexOf("https://")=3D=3D0)b=3Db.substring(8,b.length);var =
+c=3Db.indexOf("/");if(c=3D=3D-1)c=3Db.length;var =
+d=3Db.substring(0,c),e=3Dd.split("."),f=3Dm;if(e.length>=3D3)f=3De[e.leng=
+th-3]in Rc;if(e.length>=3D2)f=3Df||e[e.length-2]in Rc;return f}=0A=
+function tc(a,b,c){if(Sc(a)){a.google_new_domain_checked=3D1;return =
+m}if(a.google_new_domain_checked=3D=3D0){var =
+d=3DMath.random();if(d<=3Dc){var =
+e=3D"http://"+ea+"/pagead/test_domain.js",f=3D"script";b.write("<"+f+' =
+src=3D"'+e+'"></'+f+">");a.google_new_domain_checked=3D1;return =
+h}}return m}function =
+Ic(a){if(!Sc(a)&&a.google_new_domain_enabled=3D=3D1)return"http://"+ea;re=
+turn"http://"+fa};var =
+Tc=3D["30143070","30143071","30143072","30143073","30143074","30143075"],=
+Uc=3Dtypeof window.postMessage=3D=3D"function"||typeof =
+window.postMessage=3D=3D"object"||typeof =
+document.postMessage=3D=3D"function",Wc=3Dfunction(a,b){typeof =
+A1_googleCreateSlot=3D=3D"function"?A1_googleCreateSlot(a.google_ad_clien=
+t):Vc(a,b)},Xc=3Dfunction(){if(!(Uc||!N))return m;return =
+h},Yc=3Dfunction(a){if(sa(a))return m;var =
+b=3Da.google_ad_output;if(b&&b!=3D"html")return m;var =
+c=3Da.google_ad_client;if(typeof =
+c!=3D"string"||c.substring(0,4)!=3D"pub-"&&=0A=
+c.substring(0,7)!=3D"ca-pub-")return m;return =
+h},$c=3Dfunction(a){if(typeof a.google_a1_eid=3D=3D"string")return =
+a.google_a1_eid;var b=3Do("0.01",0);a.google_a1_eid=3DZc(Tc,b);return =
+a.google_a1_eid},Vc=3Dfunction(a,b){if(!a.google_included_a1_script){var =
+c=3D"script",d=3D"/pagead/show_ads_sra2.js";b.write("<"+c+' =
+src=3D"http://'+q+d+'"></'+c+">");a.google_included_a1_script=3Dh}},Zc=3D=
+function(a,b){var c=3DMath.random();if(c<b){var =
+d=3DMath.floor(c/b*a.length);return a[d]}return""};function =
+ad(){Pc();Nc(Mc);qc(window,document)}if(!Xc(window)||!Yc(window))ad();els=
+e{var =
+bd=3D$c(window);if(bd){nc(bd);window.google_allow_expandable_ads=3Dm}!bd|=
+|bd=3D=3D"30143070"?ad():Wc(window,document)};=0A=
+})()=0A=
+
+------=_NextPart_000_0000_01C9E52C.ADD0BDF0--

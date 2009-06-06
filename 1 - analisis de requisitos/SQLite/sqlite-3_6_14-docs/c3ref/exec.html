@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>One-Step Query Execution Interface</title>
+<style type="text/css">
+body {
+    margin: auto;
+    font-family: "Verdana" "sans-serif";
+    padding: 8px 1%;
+}
+
+a { color: #45735f }
+a:visited { color: #734559 }
+
+.logo { position:absolute; margin:3px; }
+.tagline {
+  float:right;
+  text-align:right;
+  font-style:italic;
+  width:240px;
+  margin:12px;
+  margin-top:58px;
+}
+
+.toolbar {
+  font-variant: small-caps;
+  text-align: center;
+  line-height: 1.6em;
+  margin: 0;
+  padding:1px 8px;
+}
+.toolbar a { color: white; text-decoration: none; padding: 6px 12px; }
+.toolbar a:visited { color: white; }
+.toolbar a:hover { color: #80a796; background: white; }
+
+.content    { margin: 5%; }
+.content dt { font-weight:bold; }
+.content dd { margin-bottom: 25px; margin-left:20%; }
+.content ul { padding:0px; padding-left: 15px; margin:0px; }
+
+/* rounded corners */
+.se  { background: url(../images/se.png) 100% 100% no-repeat #80a796}
+.sw  { background: url(../images/sw.png) 0% 100% no-repeat }
+.ne  { background: url(../images/ne.png) 100% 0% no-repeat }
+.nw  { background: url(../images/nw.png) 0% 0% no-repeat }
+
+</style>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+</head>
+<body>
+<div><!-- container div to satisfy validator -->
+
+<a href="../index.html">
+<img class="logo" src="../images/SQLite.gif" alt="SQLite Logo"
+ border="0"></a>
+<div><!-- IE hack to prevent disappearing logo--></div>
+<div class="tagline">Small. Fast. Reliable.<br>Choose any three.</div>
+
+<table width=100% style="clear:both"><tr><td>
+  <div class="se"><div class="sw"><div class="ne"><div class="nw">
+  <div class="toolbar">
+    <a href="../about.html">About</a>
+    <a href="../sitemap.html">Sitemap</a>
+    <a href="../docs.html">Documentation</a>
+    <a href="../download.html">Download</a>
+    <a href="../copyright.html">License</a>
+    <a href="../news.html">News</a>
+    <a href="http://www.sqlite.org/cvstrac/index">Developers</a>
+    <a href="../support.html">Support</a>
+  </div></div></div></div></div>
+</td></tr></table>
+  
+<a href="intro.html"><h2>SQLite C Interface</h2></a><h2>One-Step Query Execution Interface</h2><blockquote><pre>int sqlite3_exec(
+  sqlite3*,                                  /* An open database */
+  const char *sql,                           /* SQL to be evaluated */
+  int (*callback)(void*,int,char**,char**),  /* Callback function */
+  void *,                                    /* 1st argument to callback */
+  char **errmsg                              /* Error msg written here */
+);
+</pre></blockquote><p>
+The sqlite3_exec() interface is a convenient way of running one or more
+SQL statements without having to write a lot of C code.  The UTF-8 encoded
+SQL statements are passed in as the second parameter to sqlite3_exec().
+The statements are evaluated one by one until either an error or
+an interrupt is encountered, or until they are all done.  The 3rd parameter
+is an optional callback that is invoked once for each row of any query
+results produced by the SQL statements.  The 5th parameter tells where
+to write any error messages.</p>
+
+<p>The error message passed back through the 5th parameter is held
+in memory obtained from <a href="../c3ref/free.html">sqlite3_malloc()</a>.  To avoid a memory leak,
+the calling application should call <a href="../c3ref/free.html">sqlite3_free()</a> on any error
+message returned through the 5th parameter when it has finished using
+the error message.</p>
+
+<p>If the SQL statement in the 2nd parameter is NULL or an empty string
+or a string containing only whitespace and comments, then no SQL
+statements are evaluated and the database is not changed.</p>
+
+<p>The sqlite3_exec() interface is implemented in terms of
+<a href="../c3ref/prepare.html">sqlite3_prepare_v2()</a>, <a href="../c3ref/step.html">sqlite3_step()</a>, and <a href="../c3ref/finalize.html">sqlite3_finalize()</a>.
+The sqlite3_exec() routine does nothing to the database that cannot be done
+by <a href="../c3ref/prepare.html">sqlite3_prepare_v2()</a>, <a href="../c3ref/step.html">sqlite3_step()</a>, and <a href="../c3ref/finalize.html">sqlite3_finalize()</a>.</p>
+
+<p>The first parameter to <a href="../c3ref/exec.html">sqlite3_exec()</a> must be an valid and open
+<a href="../c3ref/sqlite3.html">database connection</a>.</p>
+
+<p>The database connection must not be closed while
+<a href="../c3ref/exec.html">sqlite3_exec()</a> is running.</p>
+
+<p>The calling function should use <a href="../c3ref/free.html">sqlite3_free()</a> to free
+the memory that *errmsg is left pointing at once the error
+message is no longer needed.</p>
+
+<p>The SQL statement text in the 2nd parameter to <a href="../c3ref/exec.html">sqlite3_exec()</a>
+must remain unchanged while <a href="../c3ref/exec.html">sqlite3_exec()</a> is running.</p>
+
+<p>Requirements:
+<a href="../hlr10000.html#H12101">H12101</a> <a href="../hlr10000.html#H12102">H12102</a> <a href="../hlr10000.html#H12104">H12104</a> <a href="../hlr10000.html#H12105">H12105</a> <a href="../hlr10000.html#H12107">H12107</a> <a href="../hlr10000.html#H12110">H12110</a> <a href="../hlr10000.html#H12113">H12113</a> <a href="../hlr10000.html#H12116">H12116</a>
+<a href="../hlr10000.html#H12119">H12119</a> <a href="../hlr10000.html#H12122">H12122</a> <a href="../hlr10000.html#H12125">H12125</a> <a href="../hlr10000.html#H12131">H12131</a> <a href="../hlr10000.html#H12134">H12134</a> <a href="../hlr10000.html#H12137">H12137</a> <a href="../hlr10000.html#H12138">H12138</a>
+</p><p>See also lists of
+  <a href="objlist.html">Objects</a>,
+  <a href="constlist.html">Constants</a>, and
+  <a href="funclist.html">Functions</a>.</p><hr><small><i>
+This page last modified 2009/02/18 18:03:35 UTC
+</i></small></div></body></html>

@@ -1,0 +1,1946 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>SQLite Database File Format Requirements</title>
+<style type="text/css">
+body {
+    margin: auto;
+    font-family: "Verdana" "sans-serif";
+    padding: 8px 1%;
+}
+
+a { color: #45735f }
+a:visited { color: #734559 }
+
+.logo { position:absolute; margin:3px; }
+.tagline {
+  float:right;
+  text-align:right;
+  font-style:italic;
+  width:240px;
+  margin:12px;
+  margin-top:58px;
+}
+
+.toolbar {
+  font-variant: small-caps;
+  text-align: center;
+  line-height: 1.6em;
+  margin: 0;
+  padding:1px 8px;
+}
+.toolbar a { color: white; text-decoration: none; padding: 6px 12px; }
+.toolbar a:visited { color: white; }
+.toolbar a:hover { color: #80a796; background: white; }
+
+.content    { margin: 5%; }
+.content dt { font-weight:bold; }
+.content dd { margin-bottom: 25px; margin-left:20%; }
+.content ul { padding:0px; padding-left: 15px; margin:0px; }
+
+/* rounded corners */
+.se  { background: url(images/se.png) 100% 100% no-repeat #80a796}
+.sw  { background: url(images/sw.png) 0% 100% no-repeat }
+.ne  { background: url(images/ne.png) 100% 0% no-repeat }
+.nw  { background: url(images/nw.png) 0% 0% no-repeat }
+
+</style>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+</head>
+<body>
+<div><!-- container div to satisfy validator -->
+
+<a href="index.html">
+<img class="logo" src="images/SQLite.gif" alt="SQLite Logo"
+ border="0"></a>
+<div><!-- IE hack to prevent disappearing logo--></div>
+<div class="tagline">Small. Fast. Reliable.<br>Choose any three.</div>
+
+<table width=100% style="clear:both"><tr><td>
+  <div class="se"><div class="sw"><div class="ne"><div class="nw">
+  <div class="toolbar">
+    <a href="about.html">About</a>
+    <a href="sitemap.html">Sitemap</a>
+    <a href="docs.html">Documentation</a>
+    <a href="download.html">Download</a>
+    <a href="copyright.html">License</a>
+    <a href="news.html">News</a>
+    <a href="http://www.sqlite.org/cvstrac/index">Developers</a>
+    <a href="support.html">Support</a>
+  </div></div></div></div></div>
+</td></tr></table>
+  
+
+
+<h1 align="center">
+Requirements for the SQLite Database File Format
+</h1>
+
+<p>
+This document contains detailed <a href="requirements.html">requirements</a> for the database
+<a href="fileformat.html">file format</a> and the <a href="fileio.html">file I/O</a> characteristics of SQLite.
+</p>
+
+<hr>
+
+<a name="H30010"></a>
+<p><b>H30010:</b>
+The system shall ensure that at the successful conclusion of a
+database transaction the contents of the database file constitute
+a <i>well-formed SQLite database file</i>.
+
+<a name="H30020"></a>
+<p><b>H30020:</b>
+The system shall ensure that at the successful conclusion of a
+database transaction the contents of the database file are a valid
+serialization of the contents of the logical SQL database produced
+by the transaction.
+
+<a name="H30030"></a>
+<p><b>H30030:</b>
+The first 16 bytes of a well-formed database file contain the UTF-8
+encoding of the string "SQLite format 3" followed by a single
+nul-terminator byte.
+
+<a name="H30040"></a>
+<p><b>H30040:</b>
+The 19th byte (byte offset 18), the <i>file-format write version</i>,
+of a well-formed database file contains the value 0x01.
+
+<a name="H30050"></a>
+<p><b>H30050:</b>
+The 20th byte (byte offset 19), the <i>file-format read version</i>,
+of a well-formed database file contains the value 0x01.
+
+<a name="H30060"></a>
+<p><b>H30060:</b>
+The 21st byte (byte offset 20), the number of unused bytes on each
+page, of a well-formed database file shall contain the value 0x00.
+
+<a name="H30070"></a>
+<p><b>H30070:</b>
+The 22nd byte (byte offset 21), the maximum fraction of an index
+B-Tree page to use for embedded content, of a well-formed database
+file shall contain the value 0x40.
+
+<a name="H30080"></a>
+<p><b>H30080:</b>
+The 23rd byte (byte offset 22), the minimum fraction of an index
+B-Tree page to use for embedded content when using overflow pages,
+of a well-formed database file contains the value 0x20.
+
+<a name="H30090"></a>
+<p><b>H30090:</b>
+The 24th byte (byte offset 23), the minimum fraction of a table
+B-Tree page to use for embedded content when using overflow pages,
+of a well-formed database file contains the value 0x20.
+
+<a name="H30100"></a>
+<p><b>H30100:</b>
+The 4 byte block starting at byte offset 24 of a well-formed
+database file contains the <i>file change counter</i> formatted
+as a 4-byte big-endian integer.
+
+<a name="H30110"></a>
+<p><b>H30110:</b>
+The 4 byte block starting at byte offset 40 of a well-formed
+database file contains the <i>schema version</i> formatted
+as a 4-byte big-endian integer.
+
+<a name="H30120"></a>
+<p><b>H30120:</b>
+The 4 byte block starting at byte offset 44 of a well-formed
+database file, the <i>schema layer file format</i>, contains a
+big-endian integer value between 1 and 4, inclusive.
+
+<a name="H30130"></a>
+<p><b>H30130:</b>
+The 4 byte block starting at byte offset 48 of a well-formed
+database file contains the <i>default pager cache size</i> formatted
+as a 4-byte big-endian integer.
+
+<a name="H30140"></a>
+<p><b>H30140:</b>
+The 4 byte block starting at byte offset 52 of a well-formed
+database file contains the <i>auto-vacuum last root-page</i>
+formatted as a 4-byte big-endian integer. If this value is non-zero,
+the database is said to be an <i>auto-vacuum database</i>.
+
+<a name="H30150"></a>
+<p><b>H30150:</b>
+The 4 byte block starting at byte offset 56 of a well-formed
+database file, the <i>text encoding</i> contains a big-endian integer
+value between 1 and 3, inclusive.
+
+<a name="H30160"></a>
+<p><b>H30160:</b>
+The 4 byte block starting at byte offset 60 of a well-formed
+database file contains the <i>user cookie</i> formatted
+as a 4-byte big-endian integer.
+
+<a name="H30170"></a>
+<p><b>H30170:</b>
+The 4 byte block starting at byte offset 64 of a well-formed
+database file, the <i>incremental vaccum flag</i> contains a big-endian
+integer value between 0 and 1, inclusive.
+
+<a name="H30180"></a>
+<p><b>H30180:</b>
+In a well-formed non-autovacuum database (one with a zero stored
+in the 4-byte big-endian integer value beginning at byte offset
+52 of the database file header, the incremental vacuum flag is
+set to 0.
+
+<a name="H30190"></a>
+<p><b>H30190:</b>
+The <i>database page size</i> of a well-formed database, stored as a
+2-byte big-endian unsigned integer at byte offset 16 of the file,
+shall be an integer power of 2 between 512 and 32768, inclusive.
+
+<a name="H30200"></a>
+<p><b>H30200:</b>
+The size of a <i>well formed database file</i> shall be an integer
+multiple of the <i>database page size</i>.
+
+<a name="H30210"></a>
+<p><b>H30210:</b>
+Each page of a <i>well formed database file</i> is exactly one of a
+<i>B-Tree page</i>, an <i>overflow page</i>, a <i>free page</i>, a
+<i>pointer-map page</i> or the <i>locking page</i>.
+
+<a name="H30220"></a>
+<p><b>H30220:</b>
+The database page that starts at byte offset 2<sup>30</sup>, the
+<i>locking page</i>, is never used for any purpose.
+
+<a name="H30230"></a>
+<p><b>H30230:</b>
+In a <i>well-formed database file</i>, the portion of the first
+database page not consumed by the database file-header (all but the
+first 100 bytes) contains the root node of a table B-Tree,
+the <i>schema table</i>.
+
+<a name="H30240"></a>
+<p><b>H30240:</b>
+All records stored in the <i>schema table</i> contain exactly five
+fields.
+
+<a name="H30250"></a>
+<p><b>H30250:</b>
+For each SQL table in the database apart from itself
+("sqlite_master"), the <i>schema table</i> of a <i>well-formed
+database file</i> contains an associated record.
+
+<a name="H30260"></a>
+<p><b>H30260:</b>
+The first field of each <i>schema table</i> record associated with an
+SQL table shall be the text value "table".
+
+<a name="H30270"></a>
+<p><b>H30270:</b>
+The second field of each <i>schema table</i> record associated with an
+SQL table shall be a text value set to the name of the SQL table.
+
+<a name="H30280"></a>
+<p><b>H30280:</b>
+In a <i>well-formed database file</i>, the third field of all
+<i>schema table</i> records associated with SQL tables shall contain
+the same value as the second field.
+
+<a name="H30290"></a>
+<p><b>H30290:</b>
+In a <i>well-formed database file</i>, the fourth field of all
+<i>schema table</i> records associated with SQL tables that are not
+virtual tables contains the page number (an integer value) of the root
+page of the associated <i>table B-Tree</i> structure within the
+database file.
+
+<a name="H30300"></a>
+<p><b>H30300:</b>
+If the associated database table is a virtual table, the fourth
+field of the <i>schema table</i> record shall contain an SQL NULL
+value.
+
+<a name="H30310"></a>
+<p><b>H30310:</b>
+In a well-formed database, the fifth field of all <i>schema table</i>
+records associated with SQL tables shall contain a "CREATE TABLE"
+or "CREATE VIRTUAL TABLE" statment (a text value).  The details
+of the statement shall be such that executing the statement
+would create a table of precisely the same name and schema as the
+existing database table.
+
+<a name="H30320"></a>
+<p><b>H30320:</b>
+For each PRIMARY KEY or UNIQUE constraint present in the definition
+of each SQL table in the database, the schema table of a well-formed
+database shall contain a record with the first field set to the text
+value "index", and the second field set to a text value containing a
+string of the form "sqlite_autoindex_&lt;name&gt;_&lt;idx&gt;", where
+&lt;name&gt; is the name of the SQL table and &lt;idx&gt; is an
+integer value.
+
+<a name="H30330"></a>
+<p><b>H30330:</b>
+In a well-formed database, the third field of all schema table
+records associated with SQL PRIMARY KEY or UNIQUE constraints shall
+contain the name of the table to which the constraint applies (a
+text value).
+
+<a name="H30340"></a>
+<p><b>H30340:</b>
+In a well-formed database, the fourth field of all schema table
+records associated with SQL PRIMARY KEY or UNIQUE constraints shall
+contain the page number (an integer value) of the root page of the
+associated index B-Tree structure.
+
+<a name="H30350"></a>
+<p><b>H30350:</b>
+In a well-formed database, the fifth field of all schema table
+records associated with SQL PRIMARY KEY or UNIQUE constraints shall
+contain an SQL NULL value.
+
+<a name="H30360"></a>
+<p><b>H30360:</b>
+For each SQL index in the database, the schema table of a well-formed
+database shall contain a record with the first field set to the text
+value "index" and the second field set to a text value containing the
+name of the SQL index.
+
+<a name="H30370"></a>
+<p><b>H30370:</b>
+In a well-formed database, the third field of all schema table
+records associated with SQL indexes shall contain the name of the
+SQL table that the index applies to.
+
+<a name="H30380"></a>
+<p><b>H30380:</b>
+In a well-formed database, the fourth field of all schema table
+records associated with SQL indexes shall contain the page number
+(an integer value) of the root page of the associated index B-Tree
+structure.
+
+<a name="H30390"></a>
+<p><b>H30390:</b>
+In a well-formed database, the fifth field of all schema table
+records associated with SQL indexes shall contain an SQL "CREATE
+INDEX" statement (a text value). The details of the statement shall
+be such that executing the statement would create an index of
+precisely the same name and content as the existing database index.
+
+<a name="H30400"></a>
+<p><b>H30400:</b>
+For each SQL view in the database, the schema table of a well-formed
+database shall contain a record with the first field set to the text
+value "view" and the second field set to a text value containing the
+name of the SQL view.
+
+<a name="H30410"></a>
+<p><b>H30410:</b>
+In a well-formed database, the third field of all schema table
+records associated with SQL views shall contain the same value as
+the second field.
+
+<a name="H30420"></a>
+<p><b>H30420:</b>
+In a well-formed database, the third field of all schema table
+records associated with SQL views shall contain the integer value 0.
+
+<a name="H30430"></a>
+<p><b>H30430:</b>
+In a well-formed database, the fifth field of all schema table
+records associated with SQL indexes shall contain an SQL "CREATE
+VIEW" statement (a text value). The details of the statement shall
+be such that executing the statement would create a view of
+precisely the same name and definition as the existing database view.
+
+<a name="H30440"></a>
+<p><b>H30440:</b>
+For each SQL trigger in the database, the schema table of a well-formed
+database shall contain a record with the first field set to the text
+value "trigger" and the second field set to a text value containing the
+name of the SQL trigger.
+
+<a name="H30450"></a>
+<p><b>H30450:</b>
+In a well-formed database, the third field of all schema table
+records associated with SQL triggers shall contain the name of the
+database table or view to which the trigger applies.
+
+<a name="H30460"></a>
+<p><b>H30460:</b>
+In a well-formed database, the third field of all schema table
+records associated with SQL triggers shall contain the integer value 0.
+
+<a name="H30470"></a>
+<p><b>H30470:</b>
+In a well-formed database, the fifth field of all schema table
+records associated with SQL indexes shall contain an SQL "CREATE
+TRIGGER" statement (a text value). The details of the statement shall
+be such that executing the statement would create a trigger of
+precisely the same name and definition as the existing database trigger.
+
+<a name="H30480"></a>
+<p><b>H30480:</b>
+In an auto-vacuum database, all pages that occur before the page
+number stored in the <i>auto-vacuum last root-page</i> field
+of the database file header (see H30140) must be either B-Tree <i>root
+pages</i>, <i>pointer-map pages</i> or the <i>locking page</i>.
+
+<a name="H30490"></a>
+<p><b>H30490:</b>
+In an auto-vacuum database, no B-Tree <i>root pages</i> may occur
+on or after the page number stored in the <i>auto-vacuum last root-page</i> field
+of the database file header (see H30140) must be either B-Tree <i>root
+pages</i>, <i>pointer-map pages</i> or the <i>locking page</i>.
+
+<a name="H30500"></a>
+<p><b>H30500:</b>
+As well as the <i>schema table</i>, a <i>well-formed database file</i>
+contains <i>N</i> table B-Tree structures, where <i>N</i> is the
+number of non-virtual tables in the logical database, excluding the
+sqlite_master table but including sqlite_sequence and other system
+tables.
+
+<a name="H30510"></a>
+<p><b>H30510:</b>
+A well-formed database file contains <i>N</i> table B-Tree structures,
+where <i>N</i> is the number of indexes in the logical database,
+including indexes created by UNIQUE or PRIMARY KEY clauses in the
+declaration of SQL tables.
+
+<a name="H30520"></a>
+<p><b>H30520:</b>
+A 64-bit signed integer value stored in <i>variable length integer</i>
+format consumes from 1 to 9 bytes of space.
+
+<a name="H30530"></a>
+<p><b>H30530:</b>
+The most significant bit of all bytes except the last in a serialized
+<i>variable length integer</i> is always set. Unless the serialized
+form consumes the maximum 9 bytes available, then the most significant
+bit of the final byte of the representation is always cleared.
+
+<a name="H30540"></a>
+<p><b>H30540:</b>
+The eight least significant bytes of the 64-bit twos-compliment
+representation of a value stored in a 9 byte <i>variable length
+integer</i> are stored in the final byte (byte offset 8) of the
+serialized <i>variable length integer</i>. The other 56 bits are
+stored in the 7 least significant bits of each of the first 8 bytes
+of the serialized <i>variable length integer</i>, in order from
+most significant to least significant.
+
+<a name="H30550"></a>
+<p><b>H30550:</b>
+A <i>variable length integer</i> that consumes less than 9 bytes of
+space contains a value represented as an <i>N</i>-bit unsigned
+integer, where <i>N</i> is equal to the number of bytes consumed by
+the serial representation (between 1 and 8) multiplied by 7. The
+<i>N</i> bits are stored in the 7 least significant bits of each
+byte of the serial representation, from most to least significant.
+
+<a name="H30560"></a>
+<p><b>H30560:</b>
+A <i>database record</i> consists of a <i>database record header</i>,
+followed by <i>database record data</i>. The first part of the
+<i>database record header</i> is a <i>variable length integer</i>
+containing the total size (including itself) of the header in bytes.
+
+<a name="H30570"></a>
+<p><b>H30570:</b>
+Following the length field, the remainder of the <i>database record
+header</i> is populated with <i>N</i> <i>variable length integer</i>
+fields, where <i>N</i> is the number of database values stored in
+the record.
+
+<a name="H30580"></a>
+<p><b>H30580:</b>
+Following the <i>database record header</i>, the <i>database record
+data</i> is made up of <i>N</i> variable length blobs of data, where
+<i>N</i> is again the number of database values stored in the record.
+The <i>n</i> blob contains the data for the <i>n</i>th value in
+the database record. The size and format of each blob of data is
+encoded in the corresponding <i>variable length integer</i> field
+in the <i>database record header</i>.
+
+<a name="H30590"></a>
+<p><b>H30590:</b>
+A value of 0 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL NULL. In this case
+the blob of data in the data area is 0 bytes in size.
+
+<a name="H30600"></a>
+<p><b>H30600:</b>
+A value of 1 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL integer. In this case
+the blob of data contains the integer value, formatted as a 1-byte
+big-endian signed integer.
+
+<a name="H30610"></a>
+<p><b>H30610:</b>
+A value of 2 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL integer. In this case
+the blob of data contains the integer value, formatted as a 2-byte
+big-endian signed integer.
+
+<a name="H30620"></a>
+<p><b>H30620:</b>
+A value of 3 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL integer. In this case
+the blob of data contains the integer value, formatted as a 3-byte
+big-endian signed integer.
+
+<a name="H30630"></a>
+<p><b>H30630:</b>
+A value of 4 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL integer. In this case
+the blob of data contains the integer value, formatted as a 4-byte
+big-endian signed integer.
+
+<a name="H30640"></a>
+<p><b>H30640:</b>
+A value of 5 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL integer. In this case
+the blob of data contains the integer value, formatted as a 6-byte
+big-endian signed integer.
+
+<a name="H30650"></a>
+<p><b>H30650:</b>
+A value of 6 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL integer. In this case
+the blob of data contains the integer value, formatted as a 8-byte
+big-endian signed integer.
+
+<a name="H30660"></a>
+<p><b>H30660:</b>
+A value of 7 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL real (floating
+point number). In this case the blob of data contains an 8-byte
+IEEE floating point number, stored in big-endian byte order.
+
+<a name="H30670"></a>
+<p><b>H30670:</b>
+A value of 8 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL integer, value 0.
+In this case the blob of data in the data area is 0 bytes in size.
+
+<a name="H30680"></a>
+<p><b>H30680:</b>
+A value of 9 stored within the <i>database record header</i> indicates
+that the corresponding database value is an SQL integer, value 1.
+In this case the blob of data in the data area is 0 bytes in size.
+
+<a name="H30690"></a>
+<p><b>H30690:</b>
+An even value greater than or equal to 12 stored within the
+<i>database record header</i> indicates that the corresponding
+database value is an SQL blob field. The blob of data contains the
+value data.  The blob of data is exactly (<i>n</i>-12)/2 bytes
+in size, where <i>n</i> is the integer value stored in the
+<i>database record header</i>.
+
+<a name="H30700"></a>
+<p><b>H30700:</b>
+An odd value greater than or equal to 13 stored within the
+<i>database record header</i> indicates that the corresponding
+database value is an SQL text field. The blob of data contains the
+value text stored using the <i>database encoding</i>, with no
+nul-terminator. The blob of data is exactly (<i>n</i>-12)/2 bytes
+in size, where <i>n</i> is the integer value stored in the
+<i>database record header</i>.
+
+<a name="H30710"></a>
+<p><b>H30710:</b>
+In a well-formed database file, if the values 8 or 9 appear within
+any <i>database record header</i> within the database, then the
+<i>schema-layer file format</i> (stored at byte offset 44 of the
+database file header) must be set to 4.
+
+<a name="H30720"></a>
+<p><b>H30720:</b>
+In a well-formed database file, the values 10 and 11, and all
+negative values may not appear within any <i>database record header</i>
+in the database.
+
+<a name="H30730"></a>
+<p><b>H30730:</b>
+The pages in an index B-Tree structures are arranged into a tree
+structure such that all leaf pages are at the same depth.
+
+<a name="H30740"></a>
+<p><b>H30740:</b>
+Each leaf node page in an index B-Tree contains one or more
+B-Tree cells, where each cell contains a database record.
+
+<a name="H30750"></a>
+<p><b>H30750:</b>
+Each internal node page in an index B-Tree contains one or more
+B-Tree cells, where each cell contains a child page number, <i>C</i>,
+and a database record <i>R</i>. All database records stored within
+the sub-tree headed by page <i>C</i> are smaller than record <i>R</i>,
+according to the index sort order (see below). Additionally, unless
+<i>R</i> is the smallest database record stored on the internal node
+page, all integer keys within the sub-tree headed by <i>C</i> are
+greater than <i>R<sub>-1</sub></i>, where <i>R<sub>-1</sub></i> is the
+largest database record on the internal node page that is smaller
+than <i>R</i>.
+
+<a name="H30760"></a>
+<p><b>H30760:</b>
+As well as child page numbers associated with B-Tree cells, each
+internal node page in an index B-Tree contains the page number
+of an extra child page, the <i>right-child page</i>. All database
+records stored in all B-Tree cells within the sub-tree headed by the
+<i>right-child page</i> are greater than all database records
+stored within B-Tree cells on the internal node page.
+
+<a name="H30770"></a>
+<p><b>H30770:</b>
+In a well-formed database, each index B-Tree contains a single entry
+for each row in the indexed logical database table.
+
+<a name="H30780"></a>
+<p><b>H30780:</b>
+Each <i>database record</i> (key) stored by an index B-Tree in a
+well-formed database contains the same number of values, the number
+of indexed columns plus one.
+
+<a name="H30790"></a>
+<p><b>H30790:</b>
+The final value in each <i>database record</i> (key) stored by an
+index B-Tree in a well-formed database contains the rowid (an integer
+value) of the corresponding logical database row.
+
+<a name="H30800"></a>
+<p><b>H30800:</b>
+The first <i>N</i> values in each <i>database record</i> (key)
+stored in an index B-Tree where <i>N</i> is the number of indexed
+columns, contain the values of the indexed columns from the
+corresponding logical database row, in the order specified for the
+index.
+
+<a name="H30810"></a>
+<p><b>H30810:</b>
+The <i>b-tree page flags</i> field (the first byte) of each database
+page used as an internal node of an index B-Tree structure is set to
+0x02.
+
+<a name="H30820"></a>
+<p><b>H30820:</b>
+The <i>b-tree page flags</i> field (the first byte) of each database
+page used as a leaf node of an index B-Tree structure is set to 0x0A.
+
+<a name="H30830"></a>
+<p><b>H30830:</b>
+The first byte of each database page used as a B-Tree page contains
+the <i>b-tree page flags</i> field. On page 1, the <i>b-tree page
+flags</i> field is stored directly after the 100 byte file header
+at byte offset 100.
+
+<a name="H30840"></a>
+<p><b>H30840:</b>
+The number of B-Tree cells stored on a B-Tree page is stored as a
+2-byte big-endian integer starting at byte offset 3 of the B-Tree
+page. On page 1, this field is stored at byte offset 103.
+
+<a name="H30850"></a>
+<p><b>H30850:</b>
+The 2-byte big-endian integer starting at byte offset 5 of each
+B-Tree page contains the byte-offset from the start of the page
+to the start of the <i>cell content area</i>, which consumes all space
+from this offset to the end of the usable region of the page.
+On page 1, this field is stored at byte offset 105.  All B-Tree
+cells on the page are stored within the cell-content area.
+
+<a name="H30860"></a>
+<p><b>H30860:</b>
+On each page used as an internal node a of B-Tree structures, the
+page number of the rightmost child node in the B-Tree structure is
+stored as a 4-byte big-endian unsigned integer beginning at byte
+offset 8 of the database page, or byte offset 108 on page 1.
+
+<a name="H30870"></a>
+<p><b>H30870:</b>
+Immediately following the <i>page header</i> on each B-Tree page is the
+<i>cell offset array</i>, consisting of <i>N</i> 2-byte big-endian
+unsigned integers, where <i>N</i> is the number of cells stored
+on the B-Tree page (H30840). On an internal node B-Tree page,
+the cell offset array begins at byte offset 12, or on a leaf
+page, byte offset 8. For the B-Tree node on page 1, these
+offsets are 112 and 108, respectively.
+
+<a name="H30880"></a>
+<p><b>H30880:</b>
+The <i>cell offset array</i> and the <i>cell content area</i> (H30850)
+may not overlap.
+
+<a name="H30890"></a>
+<p><b>H30890:</b>
+Each value stored in the <i>cell offset array</i> must be greater
+than or equal to the offset to the <i>cell content area</i> (H30850),
+and less than the database <i>page size</i>.
+
+<a name="H30900"></a>
+<p><b>H30900:</b>
+The <i>N</i> values stored within the <i>cell offset array</i> are the
+byte offsets from the start of the B-Tree page to the beginning of
+each of the <i>N</i> cells stored on the page.
+
+<a name="H30910"></a>
+<p><b>H30910:</b>
+No two B-Tree cells may overlap.
+
+<a name="H30920"></a>
+<p><b>H30920:</b>
+Within the <i>cell content area</i>, all blocks of contiguous
+free-space (space not used by B-Tree cells) greater than 3 bytes in
+size are linked together into a linked list, the <i>free block list</i>.
+Such blocks of free space are known as <i>free blocks</i>.
+
+<a name="H30930"></a>
+<p><b>H30930:</b>
+The first two bytes of each <i>free block</i> contain the offset
+of the next <i>free block</i> in the <i>free block list</i> formatted
+as a 2-byte big-endian integer, relative to the start of the database
+page. If there is no next <i>free block</i>, then the first two
+bytes are set to 0x00.
+
+<a name="H30940"></a>
+<p><b>H30940:</b>
+The second two bytes (byte offsets 2 and 3) of each <i>free block</i>
+contain the total size of the <i>free block</i>, formatted as a 2-byte
+big-endian integer.
+
+<a name="H30950"></a>
+<p><b>H30950:</b>
+On all B-Tree pages, the offset of the first <i>free block</i> in the
+<i>free block list</i>, relative to the start of the database page,
+is stored as a 2-byte big-endian integer starting at byte offset
+1 of the database page. If there is no first <i>free block</i>
+(because the <i>free block list</i> is empty), then the two bytes
+at offsets 1 and 2 of the database page are set to 0x00. On page 1,
+this field is stored at byte offset 101 of the page.
+
+<a name="H30960"></a>
+<p><b>H30960:</b>
+Within the cell-content area, all blocks of contiguous free-space
+(space not used by B-Tree cells) less than or equal to 3 bytes in
+size are known as <i>fragments</i>. The total size of all
+<i>fragments</i> on a B-Tree page is stored as a 1-byte unsigned
+integer at byte offset 7 of the database page. On page 1, this
+field is stored at byte offset 107.
+
+<a name="H30970"></a>
+<p><b>H30970:</b>
+Each B-Tree cell belonging to an internal node page of an index
+B-Tree consists of a 4-byte big-endian unsigned integer, the
+<i>child page number</i>, followed by a <i>variable length integer</i>
+field, followed by a <i>database record</i>. The
+<i>variable length integer</i> field contains the length of the
+database record in bytes.
+
+<a name="H30980"></a>
+<p><b>H30980:</b>
+Each B-Tree cell belonging to an leaf page of an index B-Tree
+consists of a <i>variable length integer</i> field, followed by
+a <i>database record</i>. The <i>variable length integer</i> field
+contains the length of the database record in bytes.
+
+<a name="H30990"></a>
+<p><b>H30990:</b>
+If the database record stored in an index B-Tree page is
+sufficiently small, then the entire cell is stored within the
+index B-Tree page.  Sufficiently small is defined as equal to or
+less than <i>max-local</i>, where:
+<code>
+<i>max-local</i> := (<i>usable-size</i> - 12) * 64 / 255 - 23</code>
+
+<a name="H31000"></a>
+<p><b>H31000:</b>
+If the database record stored as part of an index B-Tree cell is too
+large to be stored entirely within the B-Tree page (as defined by
+H30520), then only a prefix of the <i>database record</i> is stored
+within the B-Tree page and the remainder stored in an <i>overflow
+chain</i>. In this case, the database record prefix is immediately
+followed by the page number of the first page of the
+<i>overflow chain</i>, formatted as a 4-byte big-endian unsigned
+integer.
+
+<a name="H31010"></a>
+<p><b>H31010:</b>
+When a <i>database record</i> belonging to a table B-Tree cell is
+stored partially within an <i>overflow page chain</i>, the size
+of the prefix stored within the index B-Tree page is <i>N</i> bytes,
+where <i>N</i> is calculated using the following algorithm:
+<code>
+<i>min-local</i> := (<i>usable-size</i> - 12) * 32 / 255 - 23
+<i>max-local</i> := (<i>usable-size</i> - 12) * 64 / 255 - 23
+<i>N</i> := <i>min-local</i> + ((<i>record-size</i> - <i>min-local</i>) % (<i>usable-size</i> - 4))
+if( <i>N</i> &gt; <i>max-local</i> ) <i>N</i> := <i>min-local</i></code>
+
+<a name="H31020"></a>
+<p><b>H31020:</b>
+The pages in a table B-Tree structures are arranged into a tree
+structure such that all leaf pages are at the same depth.
+
+<a name="H31030"></a>
+<p><b>H31030:</b>
+Each leaf page in a table B-Tree structure contains one or more
+B-Tree cells, where each cell contains a 64-bit signed integer key
+value and a database record.
+
+<a name="H31040"></a>
+<p><b>H31040:</b>
+Each internal node page in a table B-Tree structure contains one or
+more B-Tree cells, where each cell contains a 64-bit signed integer
+key value, <i>K</i>, and a child page number, <i>C</i>. All integer key
+values in all B-Tree cells within the sub-tree headed by page <i>C</i>
+are less than or equal to <i>K</i>. Additionally, unless <i>K</i>
+is the smallest integer key value stored on the internal node page,
+all integer keys within the sub-tree headed by <i>C</i> are greater
+than <i>K<sub>-1</sub></i>, where <i>K<sub>-1</sub></i> is the largest
+integer key on the internal node page that is smaller than <i>K</i>.
+
+<a name="H31050"></a>
+<p><b>H31050:</b>
+As well as child page numbers associated with B-Tree cells, each
+internal node page in a table B-Tree contains the page number
+of an extra child page, the <i>right-child page</i>. All key values
+in all B-Tree cells within the sub-tree headed by the <i>right-child
+page</i> are greater than all key values stored within B-Tree cells
+on the internal node page.
+
+<a name="H31060"></a>
+<p><b>H31060:</b>
+In a well-formed database, each table B-Tree contains a single entry
+for each row in the corresponding logical database table.
+
+<a name="H31070"></a>
+<p><b>H31070:</b>
+The key value (a 64-bit signed integer) for each B-Tree entry is
+the same as the value of the rowid field of the corresponding
+logical database row.
+
+<a name="H31080"></a>
+<p><b>H31080:</b>
+The SQL values serialized to make up each <i>database record</i>
+stored as ancillary data in a table B-Tree shall be the equal to the
+values taken by the <i>N</i> leftmost columns of the corresponding
+logical database row, where <i>N</i> is the number of values in the
+database record.
+
+<a name="H31090"></a>
+<p><b>H31090:</b>
+If a logical database table column is declared as an "INTEGER
+PRIMARY KEY", then instead of its integer value, an SQL NULL
+shall be stored in its place in any database records used as
+ancillary data in a table B-Tree.
+
+<a name="H31100"></a>
+<p><b>H31100:</b>
+If the database <i>schema layer file-format</i> (the value stored
+as a 4-byte integer at byte offset 44 of the file header) is 1,
+then all database records stored as ancillary data in a table
+B-Tree structure have the same number of fields as there are
+columns in the corresponding logical database table.
+
+<a name="H31110"></a>
+<p><b>H31110:</b>
+If the database <i>schema layer file-format</i> value is two or
+greater and the rightmost <i>M</i> columns of a row contain SQL NULL
+values, then the corresponding record stored as ancillary data in
+the table B-Tree has between <i>N</i>-<i>M</i> and <i>N</i> fields,
+where <i>N</i> is the number of columns in the logical database
+table.
+
+<a name="H31120"></a>
+<p><b>H31120:</b>
+If the database <i>schema layer file-format</i> value is three or
+greater and the rightmost <i>M</i> columns of a row contain their
+default values according to the logical table declaration, then the
+corresponding record stored as ancillary data in the table B-Tree
+may have as few as <i>N</i>-<i>M</i> fields, where <i>N</i> is the
+number of columns in the logical database table.
+
+<a name="H31130"></a>
+<p><b>H31130:</b>
+In a <i>well-formed database file</i>, the first byte of each page used
+as an internal node of a table B-Tree structure is set to 0x05.
+
+<a name="H31140"></a>
+<p><b>H31140:</b>
+In a <i>well-formed database file</i>, the first byte of each page used
+as a leaf node of a table B-Tree structure is set to 0x0D.
+
+<a name="H31150"></a>
+<p><b>H31150:</b>
+B-Tree cells belonging to table B-Tree internal node pages consist
+of exactly two fields, a 4-byte big-endian unsigned integer
+immediately followed by a <i>variable length integer</i>. These
+fields contain the child page number and key value respectively
+(see H31030).
+
+<a name="H31160"></a>
+<p><b>H31160:</b>
+B-Tree cells belonging to table B-Tree leaf node pages consist
+of three fields, two <i>variable length integer</i> values
+followed by a database record. The size of the database record
+in bytes is stored in the first of the two
+<i>variable length integer</i> fields. The second of the two
+<i>variable length integer</i> fields contains the 64-bit signed
+integer key (see H31030).
+
+<a name="H31170"></a>
+<p><b>H31170:</b>
+If the size of the record stored in a table B-Tree leaf page cell
+is less than or equal to (<i>usable page size</i>-35) bytes, then
+the entire cell is stored on the B-Tree leaf page. In a well-formed
+database, <i>usable page size</i> is the same as the database
+<i>page size</i>.
+
+<a name="H31180"></a>
+<p><b>H31180:</b>
+If a table B-Tree cell is too large to be stored entirely on
+a leaf page (as defined by H31170), then a prefix of the cell
+is stored on the leaf page, and the remainder stored in an
+<i>overflow page chain</i>. In this case the cell prefix
+stored on the B-Tree leaf page is immediately followed by a
+4-byte big-endian unsigned integer containing the page number
+of the first overflow page in the chain.
+
+<a name="H31190"></a>
+<p><b>H31190:</b>
+When a table B-Tree cell is stored partially in an
+<i>overflow page chain</i>, the prefix stored on the B-Tree
+leaf page consists of the two <i>variable length integer</i> fields,
+followed by the first <i>N</i> bytes of the database record, where
+<i>N</i> is determined by the following algorithm:
+<code>
+<i>min-local</i> := (<i>usable-size</i> - 12) * 255 / 32 - 23
+<i>max-local</i> := (<i>usable-size</i> - 35)
+<i>N</i> := <i>min-local</i> + (<i>record-size</i> - <i>min-local</i>) % (<i>usable-size</i> - 4)
+if( <i>N</i> &gt; <i>max-local</i> ) N := <i>min-local</i>
+</code>
+
+<a name="H31200"></a>
+<p><b>H31200:</b>
+A single <i>overflow page</i> may store up to <i>available-space</i>
+bytes of database record data, where <i>available-space</i> is equal
+to (<i>usable-size</i> - 4).
+
+<a name="H31210"></a>
+<p><b>H31210:</b>
+When a database record is too large to store within a B-Tree page
+(see H31170 and H31000), a prefix of the record is stored within
+the B-Tree page and the remainder stored across <i>N</i> overflow
+pages. In this case <i>N</i> is the minimum number of pages required
+to store the portion of the record not stored on the B-Tree page,
+given the maximum payload per overflow page defined by H31200.
+
+<a name="H31220"></a>
+<p><b>H31220:</b>
+The list of overflow pages used to store a single database record
+are linked together in a singly linked list known as an
+<i>overflow chain</i>. The first four bytes of each page except the
+last in an <i>overflow chain</i> are used to store the page number
+of the next page in the linked list, formatted as an unsigned
+big-endian integer. The first four bytes of the last page in an
+<i>overflow chain</i> are set to 0x00.
+
+<a name="H31230"></a>
+<p><b>H31230:</b>
+Each overflow page except the last in an <i>overflow chain</i>
+contains <i>N</i> bytes of record data starting at byte offset 4 of
+the page, where <i>N</i> is the maximum payload per overflow page,
+as defined by H31200. The final page in an <i>overflow chain</i>
+contains the remaining data, also starting at byte offset 4.
+
+<a name="H31240"></a>
+<p><b>H31240:</b>
+All <i>free pages</i> in a <i>well-formed database file</i> are part of
+the database <i>free page list</i>.
+
+<a name="H31250"></a>
+<p><b>H31250:</b>
+Each free page is either a <i>free list trunk</i> page or a
+<i>free list leaf</i> page.
+
+<a name="H31260"></a>
+<p><b>H31260:</b>
+All <i>free list trunk</i> pages are linked together into a singly
+linked list. The first 4 bytes of each page in the linked list
+contains the page number of the next page in the list, formatted
+as an unsigned big-endian integer. The first 4 bytes of the last
+page in the linked list are set to 0x00.
+
+<a name="H31270"></a>
+<p><b>H31270:</b>
+The second 4 bytes of each <i>free list trunk</i> page contains
+the number of </i>free list leaf</i> page numbers stored on the free list
+trunk page, formatted as an unsigned big-endian integer.
+
+<a name="H31280"></a>
+<p><b>H31280:</b>
+Beginning at byte offset 8 of each <i>free list trunk</i> page are
+<i>N</i> page numbers, each formatted as a 4-byte unsigned big-endian
+integers, where <i>N</i> is the value described in requirement H31270.
+
+<a name="H31290"></a>
+<p><b>H31290:</b>
+All page numbers stored on all <i>free list trunk</i> pages refer to
+database pages that are <i>free list leaves</i>.
+
+<a name="H31300"></a>
+<p><b>H31300:</b>
+The page number of each <i>free list leaf</i> page in a well-formed
+database file appears exactly once within the set of pages numbers
+stored on <i>free list trunk</i> pages.
+
+<a name="H31310"></a>
+<p><b>H31310:</b>
+The total number of pages in the free list, including all <i>free list
+trunk</i> and <i>free list leaf</i> pages, is stored as a 4-byte unsigned
+big-endian integer at offset 36 of the database file header.
+
+<a name="H31320"></a>
+<p><b>H31320:</b>
+The page number of the first page in the linked list of <i>free list
+trunk</i> pages is stored as a 4-byte big-endian unsigned integer at
+offset 32 of the database file header. If there are no <i>free list
+trunk</i> pages in the database file, then the value stored at
+offset 32 of the database file header is 0.
+
+<a name="H31330"></a>
+<p><b>H31330:</b>
+Non auto-vacuum databases do not contain pointer map pages.
+
+<a name="H31340"></a>
+<p><b>H31340:</b>
+In an auto-vacuum database file, every <i>(num-entries + 1)</i>th
+page beginning with page 2 is designated a pointer-map page, where
+<i>num-entries</i> is calculated as:
+<code>
+<i>num-entries</i> := <i>database-usable-page-size</i> / 5
+</code>
+
+<a name="H31350"></a>
+<p><b>H31350:</b>
+In an auto-vacuum database file, each pointer-map page contains
+a pointer map entry for each of the <i>num-entries</i> (defined by
+H31340) pages that follow it, if they exist.
+
+<a name="H31360"></a>
+<p><b>H31360:</b>
+Each pointer-map page entry consists of a 1-byte page type and a
+4-byte page parent number, 5 bytes in total.
+
+<a name="H31370"></a>
+<p><b>H31370:</b>
+Pointer-map entries are packed into the pointer-map page in order,
+starting at offset 0. The entry associated with the database
+page that immediately follows the pointer-map page is located at
+offset 0. The entry for the following page at offset 5 etc.
+
+<a name="H31380"></a>
+<p><b>H31380:</b>
+For each page except page 1 in an auto-vacuum database file that is
+the root page of a B-Tree structure, the page type of the
+corresponding pointer-map entry is set to the value 0x01 and the
+parent page number is zero.
+
+<a name="H31390"></a>
+<p><b>H31390:</b>
+For each page that is a part of an auto-vacuum database file free-list,
+the page type of the corresponding pointer-map entry is set to the
+value 0x02 and the parent page number is zero.
+
+<a name="H31400"></a>
+<p><b>H31400:</b>
+For each page in a well-formed auto-vacuum database that is the first
+page in an overflow chain, the page type of the corresponding
+pointer-map entry is set to 0x03 and the parent page number field
+is set to the page number of the B-Tree page that contains the start
+of the B-Tree cell stored in the overflow-chain.
+
+<a name="H31410"></a>
+<p><b>H31410:</b>
+For each page that is the second or a subsequent page in an overflow
+chain, the page type of the corresponding pointer-map entry is set to
+0x04 and the parent page number field is set to the page number of the
+preceding page in the overflow chain.
+
+<a name="H31420"></a>
+<p><b>H31420:</b>
+For each page that is not a root page but is a part of a B-Tree tree
+structure (not part of an overflow chain), the page type of the
+corresponding pointer-map entry is set to the value 0x05 and the parent
+page number field is set to the page number of the parent node in the
+B-Tree structure.
+
+<a name="H32000"></a>
+<p><b>H32000:</b>
+If a <i>journal file</i> contains a well-formed <i>master-journal 
+pointer</i>, and the named <i>master-journal file</i> either does
+not exist or does not contain the name of the <i>journal file</i>,
+then the <i>journal file</i> shall be considered invalid.
+
+<a name="H32010"></a>
+<p><b>H32010:</b>
+If the first 28 bytes of a <i>journal file</i> do not contain a well-formed
+<i>journal header</i>, then the <i>journal file</i> shall be considered
+invalid.
+
+<a name="H32020"></a>
+<p><b>H32020:</b>
+If the journal file exists within the file-system and neither H32000 
+, H32010 nor H33080 apply, then the journal file shall be considered valid.
+
+<a name="H32030"></a>
+<p><b>H32030:</b>
+If there exists a valid <i>journal file</i> in the file-system, then the
+database <i>page-size</i> in bytes used to interpret the <i>database image</i>
+shall be the value stored as a 4-byte big-endian unsigned integer at byte
+offset 24 of the <i>journal file</i>.
+
+<a name="H32040"></a>
+<p><b>H32040:</b>
+If there exists a valid <i>journal file</i> in the file-system, then the
+number of pages in the <i>database image</i> shall be the value stored as 
+a 4-byte big-endian unsigned integer at byte offset 24 of the 
+<i>journal file</i>.
+
+<a name="H32050"></a>
+<p><b>H32050:</b>
+If there is no valid <i>journal file</i> in the file-system, then the
+database <i>page-size</i> in bytes used to interpret the <i>database image</i>
+shall be the value stored as a 2-byte big-endian unsigned integer at byte
+offset 16 of the <i>database file</i>.
+
+<a name="H32060"></a>
+<p><b>H32060:</b>
+If there is no valid <i>journal file</i> in the file-system, then the
+number of pages in the <i>database image</i> shall be calculated by dividing
+the size of the <i>database file</i> in bytes by the database <i>page-size</i>.
+
+<a name="H32070"></a>
+<p><b>H32070:</b>
+If there exists a valid <i>journal file</i> in the file-system, then the
+contents of each page of the <i>database image</i> for which there is a valid
+<i>journal record</i> in the <i>journal file</i> shall be read from the
+corresponding journal record.
+
+<a name="H32080"></a>
+<p><b>H32080:</b>
+The contents of all <i>database image</i> pages for which there is no valid
+<i>journal record</i> shall be read from the database file.
+
+<a name="H32090"></a>
+<p><b>H32090:</b>
+A buffer of 28 bytes shall be considered a well-formed journal 
+header if it is not excluded by requirements H32180, H32190 or H32200.
+
+<a name="H32180"></a>
+<p><b>H32180:</b>
+A buffer of 28 bytes shall only be considered a well-formed journal
+header if the first eight bytes of the buffer contain the values 0xd9, 
+0xd5, 0x05, 0xf9, 0x20, 0xa1, 0x63, and 0xd7, respectively.
+
+<a name="H32190"></a>
+<p><b>H32190:</b>
+A buffer of 28 bytes shall only be considered a well-formed journal
+header if the value stored in the sector size field (the 4-byte big-endian 
+unsigned integer at offset 20 of the buffer) contains a value that
+is an integer power of two greater than 512.
+
+<a name="H32200"></a>
+<p><b>H32200:</b>
+A buffer of 28 bytes shall only be considered a well-formed journal
+header if the value stored in the page size field (the 4-byte big-endian 
+unsigned integer at offset 24 of the buffer) contains a value that
+is an integer power of two greater than 512.
+
+<a name="H32100"></a>
+<p><b>H32100:</b>
+A buffer of (8 + page size) bytes shall be considered a well-formed journal 
+record if it is not excluded by requirements H32110 or H32120.
+
+<a name="H32110"></a>
+<p><b>H32110:</b>
+A journal record shall only be considered to be well-formed if the page number
+field contains a value other than zero and the locking-page number, calculated
+using the page size found in the first journal header of the journal file that
+contains the journal record.
+
+<a name="H32120"></a>
+<p><b>H32120:</b>
+A journal record shall only be considered to be well-formed if the checksum 
+field contains a value equal to the sum of the value stored in the 
+checksum-initializer field of the journal header that precedes the record
+and the value stored in every 200th byte of the page data field, interpreted
+as an 8-bit unsigned integer), starting with byte offset (page-size % 200) and
+ending with the byte at byte offset (page-size - 200).
+
+<a name="H32130"></a>
+<p><b>H32130:</b>
+A buffer shall be considered to contain a well-formed master journal pointer 
+record if it is not excluded from this category by requirements H32140,
+H32150, H32160 or H32170.
+
+<a name="H32140"></a>
+<p><b>H32140:</b>
+A buffer shall only be considered to be a well-formed master journal pointer
+if the final eight bytes of the buffer contain the values 0xd9, 0xd5, 0x05, 
+0xf9, 0x20, 0xa1, 0x63, and 0xd7, respectively.
+
+<a name="H32150"></a>
+<p><b>H32150:</b>
+A buffer shall only be considered to be a well-formed master journal pointer
+if the size of the buffer in bytes is equal to the value stored as a 4-byte 
+big-endian unsigned integer starting 16 bytes before the end of the buffer.
+
+<a name="H32160"></a>
+<p><b>H32160:</b>
+A buffer shall only be considered to be a well-formed master journal pointer
+if the first four bytes of the buffer, interpreted as a big-endian unsigned
+integer, contain the page number of the locking page (the value
+(1 + 2<sup>30</sup> / page-size), where page-size is the value stored in
+the page-size field of the first journal header of the journal file).
+
+<a name="H32170"></a>
+<p><b>H32170:</b>
+A buffer shall only be considered to be a well-formed master journal pointer
+if the value stored as a 4-byte big-endian integer starting 12 bytes before
+the end of the buffer is equal to the sum of all bytes, each interpreted
+as an 8-bit unsigned integer, starting at offset 4 of the buffer and continuing
+until offset (buffer-size - 16) (the 17th last byte of the buffer).
+
+<a name="H32210"></a>
+<p><b>H32210:</b>
+A buffer shall be considered to contain a well-formed journal section 
+if it is not excluded from this category by requirements H32220, H32230 or
+H32240.
+
+<a name="H32220"></a>
+<p><b>H32220:</b>
+A buffer shall only be considered to contain a well-formed journal section 
+if the first 28 bytes of it contain a well-formed journal header.
+
+<a name="H32230"></a>
+<p><b>H32230:</b>
+A buffer shall only be considered to contain a well-formed journal section 
+if, beginning at byte offset sector-size, it contains a sequence of 
+record-count well-formed journal records. In this case sector-size and
+record-count are the integer values stored in the sector size and record
+count fields of the journal section's journal header.
+
+<a name="H32240"></a>
+<p><b>H32240:</b>
+A buffer shall only be considered to contain a well-formed journal section 
+if it is an integer multiple of sector-size bytes in size, where sector-size 
+is the value stored in the sector size field of the journal section's journal
+header.
+
+<a name="H32250"></a>
+<p><b>H32250:</b>
+A journal record found within a valid journal file shall be considered a valid
+journal record if it is not excluded from this category by requirement H32260,
+H32270 or H32280.
+
+<a name="H32260"></a>
+<p><b>H32260:</b>
+A journal record shall only be considered a valid journal record if it and any
+other journal records that occur before it within the same journal section are
+well-formed.
+
+<a name="H32270"></a>
+<p><b>H32270:</b>
+A journal record shall only be considered a valid journal record if the journal
+section to which it belongs begins with a well-formed journal header.
+
+<a name="H32280"></a>
+<p><b>H32280:</b>
+A journal record shall only be considered a valid journal record if all journal
+sections that occur before the journal section containing the journal record
+are well-formed journal sections.
+
+<a name="H32290"></a>
+<p><b>H32290:</b>
+Two database images shall be considered to be equivalent if they (a) have the
+same page size, (b) contain the same number of pages and (c) the content of
+each page of the first database image that is not a free-list leaf page is
+the same as the content of the corresponding page in the second database image.
+
+<a name="H32300"></a>
+<p><b>H32300:</b>
+When writing to an SQLite database file-system representation in order to 
+replace database image A with database image B, the file-system representation
+shall at all times contain a database image equivalent to either A or B.
+
+<a name="H32310"></a>
+<p><b>H32310:</b>
+If, while writing to an SQLite database file-system representation in 
+order to replace database image A with database image B, an operating
+system or power failure should occur, then following recovery the database
+file-system representation shall contain a database image equivalent to
+either A or B.
+
+<a name="H32320"></a>
+<p><b>H32320:</b>
+When using the rollback-journal method to modify the file-system representation
+of a database image, the database writer shall ensure that before the size of
+the database file is modified, the first 28 bytes of the journal file contain a
+stable valid journal header with the page-size and page-count fields set to
+values corresponding to the original database image.
+
+<a name="H32330"></a>
+<p><b>H32330:</b>
+When using the rollback-journal method to modify the file-system representation
+of a database image, the database writer shall ensure that the first 28 bytes
+of the journal file does not become unstable at any point after the size of the 
+database file is modified until the journal file is invalidated to commit the
+transaction.
+
+<a name="H32340"></a>
+<p><b>H32340:</b>
+When using the rollback-journal method to modify the file-system representation
+of a database image, the database writer shall ensure that before any part of
+the database file that contained a page of the original database image that was
+not a free-list leaf page is overwritten or made unstable the journal file
+contains a valid and stable journal record containing the original page data.
+
+<a name="H32350"></a>
+<p><b>H32350:</b>
+When using the rollback-journal method to modify the file-system representation
+of a database image, the database writer shall ensure that after any part of
+the database file that contained a page of the original database image that was
+not a free-list leaf page has been overwritten or made unstable the corresponding
+journal record (see H32340) is not modified or made unstable.
+
+<a name="H32360"></a>
+<p><b>H32360:</b>
+When using the rollback-journal method to modify the file-system representation
+of a database image, the database writer shall ensure that before the database
+file is truncated, the journal file contains stable valid journal records 
+corresponding to all pages of the original database image that were part of the
+region being discarded by the truncate operation and were not free-list leaf 
+pages.
+
+<a name="H32370"></a>
+<p><b>H32370:</b>
+When using the rollback-journal method to modify the file-system representation
+of a database image, the database writer shall ensure that after the database
+file has been truncated the journal records corresponding to pages from the
+original database image that were part of the truncated region and were not
+free-list leaf pages are not modified or made unstable.
+
+<a name="H33000"></a>
+<p><b>H33000:</b>
+Before reading from a database file , a database reader shall establish a 
+SHARED or greater lock on the database file-system representation.
+
+<a name="H33010"></a>
+<p><b>H33010:</b>
+Before writing to a database file, a database writer shall establish
+an EXCLUSIVE lock on the database file-system representation.
+
+<a name="H33020"></a>
+<p><b>H33020:</b>
+Before writing to a journal file, a database writer shall establish
+a RESERVED, PENDING or EXCLUSIVE lock on the database file-system
+representation.
+
+<a name="H33030"></a>
+<p><b>H33030:</b>
+Before establishing a RESERVED or PENDING lock on a database file, a 
+database writer shall ensure that the database file contains a valid 
+database image.
+
+<a name="H33060"></a>
+<p><b>H33060:</b>
+Before establishing a RESERVED or PENDING lock on a database file, a 
+database writer shall ensure that any journal file that may be present
+is not a valid journal file.
+
+<a name="H33080"></a>
+<p><b>H33080:</b>
+If another database client holds either a RESERVED or PENDING lock on the
+database file-system representation, then any journal file that exists within
+the file system shall be considered invalid.
+
+<a name="H33040"></a>
+<p><b>H33040:</b>
+A database writer shall increment the value of the database header change
+counter field (H30100) either as part of the first database image modification 
+that it performs after obtaining an EXCLUSIVE lock.
+
+<a name="H33050"></a>
+<p><b>H33050:</b>
+A database writer shall increment the value of the database schema version 
+field (H30110) as part of the first database image modification that includes
+a schema change that it performs after obtaining an EXCLUSIVE lock.
+
+<a name="H33070"></a>
+<p><b>H33070:</b>
+If a database writer is required by either H33050 or H33040 to increment a
+database header field, and that header field already contains the maximum
+value possible (0xFFFFFFFF, or 4294967295 for 32-bit unsigned integer 
+fields), "incrementing" the field shall be interpreted to mean setting it to 
+zero.
+
+<a name="H35010"></a>
+<p><b>H35010:</b>
+Except for the read operation required by H35070 and those reads made
+as part of opening a read-only transaction, SQLite shall ensure that
+a <i>database connection</i> has an open read-only or read/write
+transaction when any data is read from the <i>database file</i>.
+
+<a name="H35020"></a>
+<p><b>H35020:</b>
+Aside from those read operations described by H35070 and H21XXX, SQLite
+shall read data from the database file in aligned blocks of
+<i>page-size</i> bytes, where <i>page-size</i> is the database page size
+used by the database file.
+
+<a name="H35030"></a>
+<p><b>H35030:</b>
+While opening a <i>read-only transaction</i>, after successfully
+obtaining a <i>shared lock</i> on the database file, SQLite shall
+attempt to detect and roll back a <i>hot journal file</i> associated
+with the same database file.
+
+<a name="H35040"></a>
+<p><b>H35040:</b>
+Assuming no errors have occured, then after attempting to detect and
+roll back a <i>hot journal file</i>, if the <i>page cache</i> contains
+any entries associated with the current <i>database connection</i>,
+then SQLite shall validate the contents of the <i>page cache</i> by
+testing the <i>file change counter</i>.  This procedure is known as
+<i>cache validiation</i>.
+
+<a name="H35050"></a>
+<p><b>H35050:</b>
+If the cache validiate procedure prescribed by H35040 is required and
+does not prove that the <i>page cache</i> entries associated with the
+current <i>database connection</i> are valid, then SQLite shall discard
+all entries associated with the current <i>database connection</i> from
+the <i>page cache</i>.
+
+<a name="H35060"></a>
+<p><b>H35060:</b>
+When a new <i>database connection</i> is required, SQLite shall attempt
+to open a file-handle on the database file. If the attempt fails, then
+no new <i>database connection</i> is created and an error returned.
+
+<a name="H35070"></a>
+<p><b>H35070:</b>
+When a new <i>database connection</i> is required, after opening the
+new file-handle, SQLite shall attempt to read the first 100 bytes
+of the database file. If the attempt fails for any other reason than
+that the opened file is less than 100 bytes in size, then
+the file-handle is closed, no new <i>database connection</i> is created
+and an error returned instead.
+
+<a name="H35080"></a>
+<p><b>H35080:</b>
+If the <i>database file header</i> is successfully read from a newly
+opened database file, the connections <i>expected page-size</i> shall
+be set to the value stored in the <i>page-size field</i> of the
+database header.
+
+<a name="H35090"></a>
+<p><b>H35090:</b>
+If the <i>database file header</i> cannot be read from a newly opened
+database file (because the file is less than 100 bytes in size), the
+connections <i>expected page-size</i> shall be set to the compile time
+value of the SQLITE_DEFAULT_PAGESIZE option.
+
+<a name="H35100"></a>
+<p><b>H35100:</b>
+When required to open a <i>read-only transaction</i> using a
+<i>database connection</i>, SQLite shall first attempt to obtain
+a <i>shared-lock</i> on the file-handle open on the database file.
+
+<a name="H35110"></a>
+<p><b>H35110:</b>
+If, while opening a <i>read-only transaction</i>, SQLite fails to obtain
+the <i>shared-lock</i> on the database file, then the process is
+abandoned, no transaction is opened and an error returned to the user.
+
+<a name="H35120"></a>
+<p><b>H35120:</b>
+If, while opening a <i>read-only transaction</i>, SQLite encounters
+an error while attempting to detect or roll back a <i>hot journal
+file</i>, then the <i>shared-lock</i> on the database file is released,
+no transaction is opened and an error returned to the user.
+
+<a name="H35130"></a>
+<p><b>H35130:</b>
+When required to end a <i>read-only transaction</i>, SQLite shall
+relinquish the <i>shared lock</i> held on the database file by
+calling the xUnlock() method of the file-handle.
+
+<a name="H35140"></a>
+<p><b>H35140:</b>
+When required to attempt to detect a <i>hot-journal file</i>, SQLite
+shall first use the xAccess() method of the VFS layer to check if a
+journal file exists in the file-system.
+
+<a name="H35150"></a>
+<p><b>H35150:</b>
+When required to attempt to detect a <i>hot-journal file</i>, if the
+call to xAccess() required by H35140 indicates that a journal file does
+not exist, then SQLite shall conclude that there is no <i>hot-journal
+file</i> in the file system and therefore that no <i>hot journal
+rollback</i> is required.
+
+<a name="H35160"></a>
+<p><b>H35160:</b>
+When required to attempt to detect a <i>hot-journal file</i>, if the
+call to xAccess() required by H35140 indicates that a journal file
+is present, then the xCheckReservedLock() method of the database file
+file-handle is invoked to determine whether or not some other
+process is holding a <i>reserved</i> or greater lock on the database
+file.
+
+<a name="H35170"></a>
+<p><b>H35170:</b>
+If the call to xCheckReservedLock() required by H35160 indicates that
+some other <i>database connection</i> is holding a <i>reserved</i>
+or greater lock on the database file, then SQLite shall conclude that
+there is no <i>hot journal file</i>. In this case the attempt to detect
+a <i>hot journal file</i> is concluded.
+
+<a name="H35180"></a>
+<p><b>H35180:</b>
+When a file-handle open on a database file is unlocked, if the
+<i>page cache</i> contains one or more entries belonging to the
+associated <i>database connection</i>, SQLite shall store the value
+of the <i>file change counter</i> internally.
+
+<a name="H35190"></a>
+<p><b>H35190:</b>
+When required to perform <i>cache validation</i> as part of opening
+a <i>read transaction</i>, SQLite shall read a 16 byte block
+starting at byte offset 24 of the <i>database file</i> using the xRead()
+method of the <i>database connections</i> file handle.
+
+<a name="H35200"></a>
+<p><b>H35200:</b>
+While performing <i>cache validation</i>, after loading the 16 byte
+block as required by H35190, SQLite shall compare the 32-bit big-endian
+integer stored in the first 4 bytes of the block to the most
+recently stored value of the <i>file change counter</i> (see H35180).
+If the values are not the same, then SQLite shall conclude that
+the contents of the cache are invalid.
+
+<a name="H35210"></a>
+<p><b>H35210:</b>
+During the conclusion of a <i>read transaction</i>, before unlocking
+the database file, SQLite shall set the connections
+<i>expected page size</i> to the current database <i>page-size</i>.
+
+<a name="H35220"></a>
+<p><b>H35220:</b>
+As part of opening a new <i>read transaction</i>, immediately after
+performing <i>cache validation</i>, if there is no data for database
+page 1 in the <i>page cache</i>, SQLite shall read <i>N</i> bytes from
+the start of the database file using the xRead() method of the
+connections file handle, where <i>N</i> is the connections current
+<i>expected page size</i> value.
+
+<a name="H35230"></a>
+<p><b>H35230:</b>
+If page 1 data is read as required by H35230, then the value of the
+<i>page-size</i> field that appears in the database file header that
+consumes the first 100 bytes of the read block is not the same as the
+connections current <i>expected page size</i>, then the
+<i>expected page size</i> is set to this value, the database file is
+unlocked and the entire procedure to open a <i>read transaction</i>
+is repeated.
+
+<a name="H35240"></a>
+<p><b>H35240:</b>
+If page 1 data is read as required by H35230, then the value of the
+<i>page-size</i> field that appears in the database file header that
+consumes the first 100 bytes of the read block is the same as the
+connections current <i>expected page size</i>, then the block of data
+read is stored in the <i>page cache</i> as page 1.
+
+<a name="H35270"></a>
+<p><b>H35270:</b>
+When required to <i>journal a database page</i>, SQLite shall first
+append the <i>page number</i> of the page being journalled to the
+<i>journal file</i>, formatted as a 4-byte big-endian unsigned integer,
+using a single call to the xWrite method of the file-handle opened
+on the journal file.
+
+<a name="H35280"></a>
+<p><b>H35280:</b>
+When required to <i>journal a database page</i>, if the attempt to
+append the <i>page number</i> to the journal file is successful,
+then the current page data (<i>page-size</i> bytes) shall be appended
+to the journal file, using a single call to the xWrite method of the
+file-handle opened on the journal file.
+
+<a name="H35290"></a>
+<p><b>H35290:</b>
+When required to <i>journal a database page</i>, if the attempt to
+append the current page data to the journal file is successful,
+then SQLite shall append a 4-byte big-endian integer checksum value
+to the to the journal file, using a single call to the xWrite method
+of the file-handle opened on the journal file.
+
+<a name="H35300"></a>
+<p><b>H35300:</b>
+The checksum value written to the <i>journal file</i> by the write
+required by H35290 shall be equal to the sum of the <i>checksum
+initializer</i> field stored in the <i>journal header</i> (H35700) and
+every 200th byte of the page data, beginning with the
+(<i>page-size</i> % 200)th byte.
+
+<a name="H35350"></a>
+<p><b>H35350:</b>
+When required to open a <i>write transaction</i> on the database,
+SQLite shall first open a <i>read transaction</i>, if the <i>database
+connection</i> in question has not already opened one.
+
+<a name="H35360"></a>
+<p><b>H35360:</b>
+When required to open a <i>write transaction</i> on the database, after
+ensuring a <i>read transaction</i> has already been opened, SQLite
+shall obtain a <i>reserved lock</i> on the database file by calling
+the xLock method of the file-handle open on the database file.
+
+<a name="H35370"></a>
+<p><b>H35370:</b>
+When required to open a <i>write transaction</i> on the database, after
+obtaining a <i>reserved lock</i> on the database file, SQLite shall
+open a read/write file-handle on the corresponding <i>journal file</i>.
+
+<a name="H35380"></a>
+<p><b>H35380:</b>
+When required to open a <i>write transaction</i> on the database, after
+opening a file-handle on the <i>journal file</i>, SQLite shall append
+a <i>journal header</i> to the (currently empty) <i>journal file</i>.
+
+<a name="H35400"></a>
+<p><b>H35400:</b>
+When a <i>database connection</i> is closed, SQLite shall close the
+associated file handle at the VFS level.
+
+<a name="H35420"></a>
+<p><b>H35420:</b>
+SQLite shall ensure that a <i>database connection</i> has an open
+read-only or read/write transaction before using data stored in the <i>page
+cache</i> to satisfy user queries.
+
+<a name="H35430"></a>
+<p><b>H35430:</b>
+When a <i>database connection</i> is closed, all associated <i>page
+cache</i> entries shall be discarded.
+
+<a name="H35440"></a>
+<p><b>H35440:</b>
+If while attempting to detect a <i>hot-journal file</i> the call to
+xCheckReservedLock() indicates that no process holds a <i>reserved</i>
+or greater lock on the <i>database file</i>, then SQLite shall open
+a file handle on the potentially hot journal file using the VFS xOpen()
+method.
+
+<a name="H35450"></a>
+<p><b>H35450:</b>
+After successfully opening a file-handle on a potentially hot journal
+file, SQLite shall query the file for its size in bytes using the
+xFileSize() method of the open file handle.
+
+<a name="H35460"></a>
+<p><b>H35460:</b>
+If the size of a potentially hot journal file is revealed to be zero
+bytes by a query required by H35450, then SQLite shall close the
+file handle opened on the journal file and delete the journal file using
+a call to the VFS xDelete() method. In this case SQLite shall conclude
+that there is no <i>hot journal file</i>.
+
+<a name="H35470"></a>
+<p><b>H35470:</b>
+If the size of a potentially hot journal file is revealed to be greater
+than zero bytes by a query required by H35450, then SQLite shall attempt
+to upgrade the <i>shared lock</i> held by the <i>database connection</i>
+on the <i>database file</i> directly to an <i>exclusive lock</i>.
+
+<a name="H35480"></a>
+<p><b>H35480:</b>
+If an attempt to upgrade to an <i>exclusive lock</i> prescribed by
+H35470 fails for any reason, then SQLite shall release all locks held by
+the <i>database connection</i> and close the file handle opened on the
+<i>journal file</i>. The attempt to open a <i>read-only transaction</i>
+shall be deemed to have failed and an error returned to the user.
+
+<a name="H35490"></a>
+<p><b>H35490:</b>
+If, as part of the <i>hot journal file</i> detection process, the
+attempt to upgrade to an <i>exclusive lock</i> mandated by H35470 is
+successful, then SQLite shall query the file-system using the xAccess()
+method of the VFS implementation to test whether or not the journal
+file is still present in the file-system.
+
+<a name="H35500"></a>
+<p><b>H35500:</b>
+If the xAccess() query required by H35490 reveals that the journal
+file is still present in the file system, then SQLite shall conclude
+that the journal file is a <i>hot journal file</i> that needs to
+be rolled back. SQLite shall immediately begin <i>hot journal
+rollback</i>.
+
+<a name="H35510"></a>
+<p><b>H35510:</b>
+If the call to xAccess() required by H35140 fails (due to an IO error or
+similar), then SQLite shall abandon the attempt to open a <i>read-only
+transaction</i>, relinquish the <i>shared lock</i> held on the database
+file and return an error to the user.
+
+<a name="H35520"></a>
+<p><b>H35520:</b>
+If the call to xCheckReservedLock() required by H35160 fails (due to an
+IO or other internal VFS error), then SQLite shall abandon the attempt
+to open a <i>read-only transaction</i>, relinquish the <i>shared lock</i>
+held on the database file and return an error to the user.
+
+<a name="H35530"></a>
+<p><b>H35530:</b>
+If the call to xOpen() required by H35440 fails (due to an IO or other
+internal VFS error), then SQLite shall abandon the attempt to open a
+<i>read-only transaction</i>, relinquish the <i>shared lock</i> held on
+the database file and return an error to the user.
+
+<a name="H35540"></a>
+<p><b>H35540:</b>
+If the call to xFileSize() required by H35450 fails (due to an IO or
+other internal VFS error), then SQLite shall abandon the attempt to open
+a <i>read-only transaction</i>, relinquish the <i>shared lock</i> held on
+the database file, close the file handle opened on the journal file and
+return an error to the user.
+
+<a name="H35550"></a>
+<p><b>H35550:</b>
+If the call to xDelete() required by H35450 fails (due to an IO or
+other internal VFS error), then SQLite shall abandon the attempt to open
+a <i>read-only transaction</i>, relinquish the <i>shared lock</i> held on
+the database file and return an error to the user.
+
+<a name="H35560"></a>
+<p><b>H35560:</b>
+If the call to xAccess() required by H35490 fails (due to an IO or
+other internal VFS error), then SQLite shall abandon the attempt to open
+a <i>read-only transaction</i>, relinquish the lock held on the
+database file, close the file handle opened on the journal file and
+return an error to the user.
+
+<a name="H35570"></a>
+<p><b>H35570:</b>
+If the call to xAccess() required by H35490 reveals that the journal
+file is no longer present in the file system, then SQLite shall abandon
+the attempt to open a <i>read-only transaction</i>, relinquish the
+lock held on the database file, close the file handle opened on the
+journal file and return an SQLITE_BUSY error to the user.
+
+<a name="H35580"></a>
+<p><b>H35580:</b>
+If an attempt to acquire a <i>reserved lock</i> prescribed by
+requirement H35360 fails, then SQLite shall deem the attempt to
+open a <i>write transaction</i> to have failed and return an error
+to the user.
+
+<a name="H35590"></a>
+<p><b>H35590:</b>
+When required to modify the contents of an existing database page that
+existed and was not a <i>free-list leaf page</i> when the <i>write
+transaction</i> was opened, SQLite shall journal the page if it has not
+already been journalled within the current <i>write transaction</i>.
+
+<a name="H35600"></a>
+<p><b>H35600:</b>
+When required to modify the contents of an existing database page,
+SQLite shall update the cached version of the database page content
+stored as part of the <i>page cache entry</i> associated with the page.
+
+<a name="H35610"></a>
+<p><b>H35610:</b>
+When required to append a new database page to the database file,
+SQLite shall create a new <i>page cache entry</i> corresponding to
+the new page and insert it into the <i>page cache</i>. The <i>dirty
+flag</i> of the new <i>page cache entry</i> shall be set.
+
+<a name="H35620"></a>
+<p><b>H35620:</b>
+When required to truncate (remove) a database page that existed and was
+not a <i>free-list leaf page</i> when the <i>write transaction</i> was
+opened from the end of a database file, SQLite shall journal the page if
+it has not already been journalled within the current <i>write
+transaction</i>.
+
+<a name="H35630"></a>
+<p><b>H35630:</b>
+When required to truncate a database page from the end of the database
+file, SQLite shall discard the associated <i>page cache entry</i>
+from the page cache.
+
+<a name="H35640"></a>
+<p><b>H35640:</b>
+When required to purge a <i>non-writable dirty page</i> from the
+<i>page cache</i>, SQLite shall <i>sync the journal file</i> before
+proceding with the write operation required by H35670.
+
+<a name="H35660"></a>
+<p><b>H35660:</b>
+After <i>syncing the journal file</i> as required by H35640, SQLite
+shall append a new <i>journal header</i> to the <i>journal file</i>
+before proceding with the write operation required by H35670.
+
+<a name="H35670"></a>
+<p><b>H35670:</b>
+When required to purge a <i>page cache entry</i> that is a
+<i>dirty page</i> SQLite shall write the page data into the database
+file, using a single call to the xWrite method of the <i>database
+connection</i> file handle.
+
+<a name="H35680"></a>
+<p><b>H35680:</b>
+When required to append a <i>journal header</i> to the <i>journal
+file</i>, SQLite shall do so by writing a block of <i>sector-size</i>
+bytes using a single call to the xWrite method of the file-handle
+open on the <i>journal file</i>. The block of data written shall begin
+at the smallest sector-size aligned offset at or following the current
+end of the <i>journal file</i>.
+
+<a name="H35690"></a>
+<p><b>H35690:</b>
+The first 8 bytes of the <i>journal header</i> required to be written
+by H35680 shall contain the following values, in order from byte offset 0
+to 7: 0xd9, 0xd5, 0x05, 0xf9, 0x20, 0xa1, 0x63 and 0xd7.
+
+<a name="H35700"></a>
+<p><b>H35700:</b>
+Bytes 8-11 of the <i>journal header</i> required to be written by
+H35680 shall contain 0x00.
+
+<a name="H35710"></a>
+<p><b>H35710:</b>
+Bytes 12-15 of the <i>journal header</i> required to be written by
+H35680 shall contain the number of pages that the database file
+contained when the current <i>write-transaction</i> was started,
+formatted as a 4-byte big-endian unsigned integer.
+
+<a name="H35720"></a>
+<p><b>H35720:</b>
+Bytes 16-19 of the <i>journal header</i> required to be written by
+H35680 shall contain pseudo-randomly generated values.
+
+<a name="H35730"></a>
+<p><b>H35730:</b>
+Bytes 20-23 of the <i>journal header</i> required to be written by
+H35680 shall contain the <i>sector size</i> used by the VFS layer,
+formatted as a 4-byte big-endian unsigned integer.
+
+<a name="H35740"></a>
+<p><b>H35740:</b>
+Bytes 24-27 of the <i>journal header</i> required to be written by
+H35680 shall contain the <i>page size</i> used by the database at
+the start of the <i>write transaction</i>, formatted as a 4-byte
+big-endian unsigned integer.
+
+<a name="H35750"></a>
+<p><b>H35750:</b>
+When required to <i>sync the journal file</i>, SQLite shall invoke the
+xSync method of the file handle open on the <i>journal file</i>.
+
+<a name="H35760"></a>
+<p><b>H35760:</b>
+When required to <i>sync the journal file</i>, after invoking the
+xSync method as required by H35750, SQLite shall update the <i>record
+count</i> of the <i>journal header</i> most recently written to the
+<i>journal file</i>. The 4-byte field shall be updated to contain
+the number of <i>journal records</i> that have been written to the
+<i>journal file</i> since the <i>journal header</i> was written,
+formatted as a 4-byte big-endian unsigned integer.
+
+<a name="H35770"></a>
+<p><b>H35770:</b>
+When required to <i>sync the journal file</i>, after updating the
+<i>record count</i> field of a <i>journal header</i> as required by
+H35760, SQLite shall invoke the xSync method of the file handle open
+on the <i>journal file</i>.
+
+<a name="H35780"></a>
+<p><b>H35780:</b>
+When required to upgrade to an <i>exclusive lock</i> as part of a write
+transaction, SQLite shall first attempt to obtain a <i>pending lock</i>
+on the database file if one is not already held by invoking the xLock
+method of the file handle opened on the <i>database file</i>.
+
+<a name="H35790"></a>
+<p><b>H35790:</b>
+When required to upgrade to an <i>exclusive lock</i> as part of a write
+transaction, after successfully obtaining a <i>pending lock</i> SQLite
+shall attempt to obtain an <i>exclusive lock</i> by invoking the
+xLock method of the file handle opened on the <i>database file</i>.
+
+<a name="H35800"></a>
+<p><b>H35800:</b>
+When required to <i>commit a write-transaction</i>, SQLite shall
+modify page 1 to increment the value stored in the <i>change counter</i>
+field of the <i>database file header</i>.
+
+<a name="H35810"></a>
+<p><b>H35810:</b>
+When required to <i>commit a write-transaction</i>, after incrementing
+the <i>change counter</i> field, SQLite shall <i>sync the journal
+file</i>.
+
+<a name="H35820"></a>
+<p><b>H35820:</b>
+When required to <i>commit a write-transaction</i>, after <i>syncing
+the journal file</i> as required by H35810, if an <i>exclusive lock</i>
+on the database file is not already held, SQLite shall attempt to
+<i>upgrade to an exclusive lock</i>.
+
+<a name="H35830"></a>
+<p><b>H35830:</b>
+When required to <i>commit a write-transaction</i>, after <i>syncing
+the journal file</i> as required by H35810 and ensuring that an
+<i>exclusive lock</i> is held on the database file as required by
+H35830, SQLite shall copy the contents of all <i>dirty page</i>
+stored in the <i>page cache</i> into the <i>database file</i> using
+calls to the xWrite method of the <i>database connection</i> file
+handle. Each call to xWrite shall write the contents of a single
+<i>dirty page</i> (<i>page-size</i> bytes of data) to the database
+file. Dirty pages shall be written in order of <i>page number</i>,
+from lowest to highest.
+
+<a name="H35840"></a>
+<p><b>H35840:</b>
+When required to <i>commit a write-transaction</i>, after copying the
+contents of any <i>dirty pages</i> to the database file as required
+by H35830, SQLite shall sync the database file by invoking the xSync
+method of the <i>database connection</i> file handle.
+
+<a name="H35850"></a>
+<p><b>H35850:</b>
+When required to <i>commit a write-transaction</i>, after syncing
+the database file as required by H35840, SQLite shall close the
+file-handle opened on the <i>journal file</i> and delete the
+<i>journal file</i> from the file system via a call to the VFS
+xDelete method.
+
+<a name="H35860"></a>
+<p><b>H35860:</b>
+When required to <i>commit a write-transaction</i>, after deleting
+the <i>journal file</i> as required by H35850, SQLite shall relinquish
+all locks held on the <i>database file</i> by invoking the xUnlock
+method of the <i>database connection</i> file handle.
+
+
+<hr><small><i>
+This page last modified 2009/02/19 14:35:32 UTC
+</i></small></div></body></html>
