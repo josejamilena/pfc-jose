@@ -1,0 +1,160 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    /*<a name="line.1"></a>
+<FONT color="green">002</FONT>     * cron4j - A pure Java cron-like scheduler<a name="line.2"></a>
+<FONT color="green">003</FONT>     * <a name="line.3"></a>
+<FONT color="green">004</FONT>     * Copyright (C) 2007-2009 Carlo Pelliccia (www.sauronsoftware.it)<a name="line.4"></a>
+<FONT color="green">005</FONT>     * <a name="line.5"></a>
+<FONT color="green">006</FONT>     * This program is free software: you can redistribute it and/or modify<a name="line.6"></a>
+<FONT color="green">007</FONT>     * it under the terms of the GNU Lesser General Public License version<a name="line.7"></a>
+<FONT color="green">008</FONT>     * 2.1, as published by the Free Software Foundation.<a name="line.8"></a>
+<FONT color="green">009</FONT>     *<a name="line.9"></a>
+<FONT color="green">010</FONT>     * This program is distributed in the hope that it will be useful,<a name="line.10"></a>
+<FONT color="green">011</FONT>     * but WITHOUT ANY WARRANTY; without even the implied warranty of<a name="line.11"></a>
+<FONT color="green">012</FONT>     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<a name="line.12"></a>
+<FONT color="green">013</FONT>     * GNU Lesser General Public License 2.1 for more details.<a name="line.13"></a>
+<FONT color="green">014</FONT>     *<a name="line.14"></a>
+<FONT color="green">015</FONT>     * You should have received a copy of the GNU Lesser General Public<a name="line.15"></a>
+<FONT color="green">016</FONT>     * License version 2.1 along with this program.<a name="line.16"></a>
+<FONT color="green">017</FONT>     * If not, see &lt;http://www.gnu.org/licenses/&gt;.<a name="line.17"></a>
+<FONT color="green">018</FONT>     */<a name="line.18"></a>
+<FONT color="green">019</FONT>    package it.sauronsoftware.cron4j;<a name="line.19"></a>
+<FONT color="green">020</FONT>    <a name="line.20"></a>
+<FONT color="green">021</FONT>    /**<a name="line.21"></a>
+<FONT color="green">022</FONT>     * &lt;p&gt;<a name="line.22"></a>
+<FONT color="green">023</FONT>     * A TaskExecutionContext object provides support methods for the execution of a<a name="line.23"></a>
+<FONT color="green">024</FONT>     * task. An instance of this class is always passed to the task when its<a name="line.24"></a>
+<FONT color="green">025</FONT>     * {@link Task#execute(TaskExecutionContext)} method is called. The task, while<a name="line.25"></a>
+<FONT color="green">026</FONT>     * executing, can use the received context to exchange informations with its own<a name="line.26"></a>
+<FONT color="green">027</FONT>     * executor. If the task declares to supports pausing, stopping, completeness<a name="line.27"></a>
+<FONT color="green">028</FONT>     * tracking and/or status tracking, it has to use its context methods to perform<a name="line.28"></a>
+<FONT color="green">029</FONT>     * any declared operation (checks pause and stop requests, sends back tracking<a name="line.29"></a>
+<FONT color="green">030</FONT>     * informations).<a name="line.30"></a>
+<FONT color="green">031</FONT>     * &lt;/p&gt;<a name="line.31"></a>
+<FONT color="green">032</FONT>     * <a name="line.32"></a>
+<FONT color="green">033</FONT>     * @author Carlo Pelliccia<a name="line.33"></a>
+<FONT color="green">034</FONT>     * @since 2.0<a name="line.34"></a>
+<FONT color="green">035</FONT>     */<a name="line.35"></a>
+<FONT color="green">036</FONT>    public interface TaskExecutionContext {<a name="line.36"></a>
+<FONT color="green">037</FONT>    <a name="line.37"></a>
+<FONT color="green">038</FONT>            /**<a name="line.38"></a>
+<FONT color="green">039</FONT>             * Returns the scheduler.<a name="line.39"></a>
+<FONT color="green">040</FONT>             * <a name="line.40"></a>
+<FONT color="green">041</FONT>             * @return The scheduler.<a name="line.41"></a>
+<FONT color="green">042</FONT>             */<a name="line.42"></a>
+<FONT color="green">043</FONT>            public Scheduler getScheduler();<a name="line.43"></a>
+<FONT color="green">044</FONT>    <a name="line.44"></a>
+<FONT color="green">045</FONT>            /**<a name="line.45"></a>
+<FONT color="green">046</FONT>             * Returns the task executor.<a name="line.46"></a>
+<FONT color="green">047</FONT>             * <a name="line.47"></a>
+<FONT color="green">048</FONT>             * @return The task executor.<a name="line.48"></a>
+<FONT color="green">049</FONT>             */<a name="line.49"></a>
+<FONT color="green">050</FONT>            public TaskExecutor getTaskExecutor();<a name="line.50"></a>
+<FONT color="green">051</FONT>    <a name="line.51"></a>
+<FONT color="green">052</FONT>            /**<a name="line.52"></a>
+<FONT color="green">053</FONT>             * Sets the current status tracking message, that has to be something about<a name="line.53"></a>
+<FONT color="green">054</FONT>             * what the task is doing at the moment.<a name="line.54"></a>
+<FONT color="green">055</FONT>             * <a name="line.55"></a>
+<FONT color="green">056</FONT>             * @param message<a name="line.56"></a>
+<FONT color="green">057</FONT>             *            A message representing the current execution status. Null<a name="line.57"></a>
+<FONT color="green">058</FONT>             *            messages will be blanked.<a name="line.58"></a>
+<FONT color="green">059</FONT>             */<a name="line.59"></a>
+<FONT color="green">060</FONT>            public void setStatusMessage(String message);<a name="line.60"></a>
+<FONT color="green">061</FONT>    <a name="line.61"></a>
+<FONT color="green">062</FONT>            /**<a name="line.62"></a>
+<FONT color="green">063</FONT>             * Sets the completeness tracking value, that has to be between 0 and 1.<a name="line.63"></a>
+<FONT color="green">064</FONT>             * <a name="line.64"></a>
+<FONT color="green">065</FONT>             * @param completeness<a name="line.65"></a>
+<FONT color="green">066</FONT>             *            A completeness value, between 0 and 1. Values out of range<a name="line.66"></a>
+<FONT color="green">067</FONT>             *            will be ignored.<a name="line.67"></a>
+<FONT color="green">068</FONT>             */<a name="line.68"></a>
+<FONT color="green">069</FONT>            public void setCompleteness(double completeness);<a name="line.69"></a>
+<FONT color="green">070</FONT>    <a name="line.70"></a>
+<FONT color="green">071</FONT>            /**<a name="line.71"></a>
+<FONT color="green">072</FONT>             * If the task execution has been paused, stops until the operation is<a name="line.72"></a>
+<FONT color="green">073</FONT>             * resumed. It can also returns because of a stop operation without any<a name="line.73"></a>
+<FONT color="green">074</FONT>             * previous resuming. Due to this the task developer should always check the<a name="line.74"></a>
+<FONT color="green">075</FONT>             * {@link TaskExecutionContext#isStopped()} value after any<a name="line.75"></a>
+<FONT color="green">076</FONT>             * &lt;em&gt;pauseIfRequested()&lt;/em&gt; call. Note that a task execution can be<a name="line.76"></a>
+<FONT color="green">077</FONT>             * paused only if the task {@link Task#canBePaused()} method returns<a name="line.77"></a>
+<FONT color="green">078</FONT>             * &lt;em&gt;true&lt;/em&gt;.<a name="line.78"></a>
+<FONT color="green">079</FONT>             */<a name="line.79"></a>
+<FONT color="green">080</FONT>            public void pauseIfRequested();<a name="line.80"></a>
+<FONT color="green">081</FONT>    <a name="line.81"></a>
+<FONT color="green">082</FONT>            /**<a name="line.82"></a>
+<FONT color="green">083</FONT>             * Checks whether the task execution has been demanded to be stopped. If the<a name="line.83"></a>
+<FONT color="green">084</FONT>             * returned value is &lt;em&gt;true&lt;/em&gt;, the task developer must shut down<a name="line.84"></a>
+<FONT color="green">085</FONT>             * gracefully its task execution, as soon as possible. Note that a task<a name="line.85"></a>
+<FONT color="green">086</FONT>             * execution can be stopped only if the task {@link Task#canBePaused()}<a name="line.86"></a>
+<FONT color="green">087</FONT>             * method returns &lt;em&gt;true&lt;/em&gt;.<a name="line.87"></a>
+<FONT color="green">088</FONT>             * <a name="line.88"></a>
+<FONT color="green">089</FONT>             * @return &lt;em&gt;true&lt;/em&gt; if the current task execution has been demanded to<a name="line.89"></a>
+<FONT color="green">090</FONT>             *         be stopped; &lt;em&gt;false&lt;/em&gt; otherwise.<a name="line.90"></a>
+<FONT color="green">091</FONT>             */<a name="line.91"></a>
+<FONT color="green">092</FONT>            public boolean isStopped();<a name="line.92"></a>
+<FONT color="green">093</FONT>    <a name="line.93"></a>
+<FONT color="green">094</FONT>    }<a name="line.94"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>
