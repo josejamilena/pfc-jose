@@ -1,0 +1,18 @@
+RELEASE 2.0.1 - 2009-06-01
+
+- The SchedulingPattern parser has been rewritten to be 100% compliant
+  with the UNIX crontab specification.
+
+(Thanks to Paul Logan)
+
+
+RELEASE 2.0 - 2009-04-25 
+
+The cron4j 2.0 platform includes several new amazing features:
+- New task abstraction layer
+- Task collectors
+- Task executors
+- Scheduling from files
+- Cron parser
+- Support for different Time Zones
+- A new event driven API
