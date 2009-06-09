@@ -1,2 +1,0 @@
-ventanaGrafica
-ventanaGrafica$1
