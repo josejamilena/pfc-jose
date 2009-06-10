@@ -21,8 +21,10 @@ public class Conexion {
      * @throws java.io.IOException excepcion IO.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public Conexion() throws IOException, SQLException {
-        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+    public Conexion() throws IOException, SQLException, ClassNotFoundException {
+        // DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+
+        Class.forName("oracle.jdbc.driver.OracleDriver");
 
         String usuario = Comun.PROPIEDADES_DE_CONFIGURACION.getProperty("USUARIO_ORACLE");
         String password = Comun.PROPIEDADES_DE_CONFIGURACION.getProperty("PASSWORD_USUARIO");
