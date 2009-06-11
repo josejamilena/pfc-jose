@@ -1,0 +1,17 @@
+Tabla de Consultas:
+	- # id_consulta
+	- * consulta
+
+Tabla de Tipos de Consultas:
+	- # id_tipo
+	-   nombre
+
+Tabla de Agrupaciones:
+	- # id_agrupacion
+	- * nombre
+	- * id_consulta
+	- * id_tipo
+
+
+
+ 
