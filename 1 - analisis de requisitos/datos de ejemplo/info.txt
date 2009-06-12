@@ -1,0 +1,6 @@
+http://www.census.gov/popest/cities/files/SUB-EST2003-all.csv
+http://www.census.gov/popest/cities/files/SUB-EST2004-all.csv
+http://www.census.gov/popest/cities/files/SUB-EST2006-all.csv
+http://www.census.gov/popest/cities/files/SUB-EST2005-all.csv
+http://www.census.gov/popest/cities/files/SUB-EST2007-all.csv
+http://www.census.gov/popest/cities/files/SUB-EST2007-IP.csv
