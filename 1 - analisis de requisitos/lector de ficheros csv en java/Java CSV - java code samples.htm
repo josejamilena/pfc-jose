@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0045)http://www.csvreader.com/java_csv_samples.php -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<META name="description" content="See code examples of how to use CsvReader to parse delimited files in Java.">
+		<TITLE>Java CSV - java code samples</TITLE>
+		<META name="keywords" content="java csv">
+		<SCRIPT type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</SCRIPT><SCRIPT src="./Java CSV - java code samples_files/ga.js" type="text/javascript"></SCRIPT>
+		<SCRIPT type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-197836-1");
+		pageTracker._trackPageview();
+		} catch(err) {}</SCRIPT>
+		<LINK href="./Java CSV - java code samples_files/styles.css" rel="stylesheet" media="all">
+	</HEAD><BODY>
+		<DIV align="center">
+			<TABLE border="0" cellpadding="0" cellspacing="0" class="fullpage">
+				<TBODY><TR>
+					<TD colspan="3" align="center" class="header" nowrap="" height="1">
+						<A href="http://www.csvreader.com/"><IMG src="./Java CSV - java code samples_files/title.gif" border="0"></A>
+					</TD>
+				</TR>
+				<TR>
+					<TD class="menu">
+						<TABLE border="0" cellpadding="0" cellspacing="3">
+							<TBODY><TR>
+								<TD><A href="http://www.csvreader.com/">Home</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/features.php">Features</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/csv_samples.php">Code Samples</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://groups.google.com/group/CSVChat/" target="_blank" onclick="javascript:pageTracker._trackPageview(&#39;/outgoing/csvchat&#39;);">Forums</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/csv/docs/" target="_blank" onclick="javascript:pageTracker._trackPageview(&#39;/outgoing/docs&#39;);">Documentation</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/change_log.php">Change Log</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/contact.php">Contact</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/csv_downloads.php">Download</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/purchase.php">Purchase</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/java_csv.php">Java CSV</A></TD>
+							</TR>
+							<TR>
+								<TD><A href="http://www.csvreader.com/csv_format.php">CSV Format</A></TD>
+							</TR>
+						</TBODY></TABLE>
+						<BR>
+						<BR>
+						<BR>
+					</TD>
+					<TD class="spacer">&nbsp;</TD>
+					<TD class="content" height="600">						<B><I><H1>Read CSV from file</H1></I></B>
+						<BR>
+						<BR>
+						<B>File Format</B>
+						<BR>
+<PRE>ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued
+1,Chai,1,1,10 boxes x 20 bags,18,39,0,10,FALSE
+2,Chang,1,1,24 - 12 oz bottles,19,17,40,25,FALSE
+...</PRE>
+						<B>Code</B>
+						<BR>
+<PRE>CsvReader reader = new CsvReader("products.csv");
+
+reader.readHeaders();
+
+while (reader.readRecord())
+{
+	String productID = reader.get("ProductID");
+	String productName = reader.get("ProductName");
+	String supplierID = reader.get("SupplierID");
+	String categoryID = reader.get("CategoryID");
+	String quantityPerUnit = reader.get("QuantityPerUnit");
+	String unitPrice = reader.get("UnitPrice");
+	String unitsInStock = reader.get("UnitsInStock");
+	String unitsOnOrder = reader.get("UnitsOnOrder");
+	String reorderLevel = reader.get("ReorderLevel");
+	String discontinued = reader.get("Discontinued");
+	
+	// perform program logic here
+
+}
+
+reader.close();</PRE>
+					</TD>
+				</TR>
+				<TR>
+					<TD colspan="3" nowrap="" align="center">
+						<TABLE border="0" cellpadding="0" cellspacing="0" class="footer">
+							<TBODY><TR>
+								<TD nowrap="">
+									<A href="http://www.csvreader.com/">Home</A>|<A href="http://www.csvreader.com/contact.php">Contact</A>|<A href="http://www.csvreader.com/csv_downloads.php">Download</A>|<A href="http://www.csvreader.com/purchase.php">Purchase</A>
+								</TD>
+							</TR>
+						</TBODY></TABLE>
+					</TD>
+				</TR>
+			</TBODY></TABLE>
+		</DIV>
+	
+</BODY></HTML>
