@@ -1,5 +1,5 @@
 [NativeJ Project Definition]
-ApplicationType=0
+ApplicationType=1
 AllowAsService=0
 AppIcon=Table 1.ico
 TargetExe=benchmark.exe
@@ -11,13 +11,16 @@ RedirectStdErr=stderr.log
 ProcessPriority=3
 JvmVersion=0
 JvmSearchOrder=012345
-Classpath=cron4j-2.0.1.jar;|ejemplo-servicio-pfc.jar;|log4j-1.2.15.jar;|ojdbc14.jar|
+Classpath=cron4j-2.0.1.jar;|ejemplo-servicio-pfc-2.jar;|log4j-1.2.15.jar;|ojdbc14.jar|
 DeleteJars=0
 ExtractJarsLocal=2
 AllPathsRelative=0
 StayInCurrentDir=0
-ConsoleAppClass=Main
+GraphicalAppClass=Main
 AllowMultipleInstance=0
+SplashScreenTitle=Loading application...
+SplashScreenWatch=0
+SplashScreenTimeout=0
 IncludeVersion=0
 FileVer0=1
 FileVer1=0
