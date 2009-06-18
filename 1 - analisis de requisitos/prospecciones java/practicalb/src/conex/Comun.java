@@ -25,7 +25,7 @@ public class Comun {
     public conex.Conexion conexion;
 
     /** Constructor. */
-    public Comun() {
+    public Comun() throws ClassNotFoundException {
         try {
             conexion = new conex.Conexion();
         } catch (SQLException ex) {
