@@ -1,0 +1,104 @@
+2009-06-05 11:18:04,149 - [SMTP:3] SMTPProcessor - Message smtp6805044323585902030.ser accepted for delivery.
+2009-06-05 11:18:04,150 - [SMTP:3] SMTPProcessor - Disconnecting
+2009-06-05 11:18:28,702 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: gmail.com failed.
+2009-06-05 11:18:28,703 - [SMTPSender] SMTPSender - Delivery failed for message from: test@locahost to: josejamilena@gmail.com - java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 11:18:34,549 - [SMTP:1] SMTPProcessor - 127.0.0.1(127.0.0.1) socket connected via SMTP.
+2009-06-05 11:18:34,556 - [SMTP:1] ConfigurationManager - Tried to load non-existent user: jose_jamilena@hotmail.com
+2009-06-05 11:18:34,559 - [SMTP:1] SMTPProcessor - Message smtp8740778227412259515.ser accepted for delivery.
+2009-06-05 11:18:34,559 - [SMTP:1] SMTPProcessor - Disconnecting
+2009-06-05 11:18:58,714 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: gmail.com failed.
+2009-06-05 11:18:58,715 - [SMTPSender] SMTPSender - Delivery failed for message from: josejamilena@gmail.com to: josejamilena.cv@gmail.com - java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 11:19:33,617 - [main] Mail - Logger using log4j.
+2009-06-05 11:19:33,625 - [main] ConfigurationManager - Loaded 1 local domains.
+2009-06-05 11:19:33,626 - [main] ConfigurationManager - Invalid value for property: smtpdelivery.threshold. Defaulting to 10.
+2009-06-05 11:19:33,631 - [main] ConfigurationManager - Loaded 2 users from user.conf
+2009-06-05 11:19:33,656 - [POP3] ServiceListener - Accepting Connections on port: 110
+2009-06-05 11:19:33,661 - [SMTP] ServiceListener - Accepting Connections on port: 25
+2009-06-05 11:19:42,195 - [SMTP:1] SMTPProcessor - 127.0.0.1(127.0.0.1) socket connected via SMTP.
+2009-06-05 11:19:42,203 - [SMTP:1] ConfigurationManager - Tried to load non-existent user: jose_jamilena@hotmail.com
+2009-06-05 11:19:42,238 - [SMTP:1] SMTPProcessor - Message smtp5701010378228817793.ser accepted for delivery.
+2009-06-05 11:19:42,239 - [SMTP:1] SMTPProcessor - Disconnecting
+2009-06-05 11:19:55,254 - [POP3:4] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:19:55,301 - [POP3:4] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:19:55,338 - [POP3:4] Pop3Processor - Disconnecting
+2009-06-05 11:20:03,719 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: locahost failed.
+2009-06-05 11:20:03,720 - [SMTPSender] SMTPSender - Delivery failed for message from: test@locahost to: test@locahost - java.lang.RuntimeException: Could not connect to any SMTP server for domain: locahost
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: locahost
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 11:20:33,730 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: gmail.com failed.
+2009-06-05 11:20:33,731 - [SMTPSender] SMTPSender - Delivery failed for message from: josejamilena@gmail.com to: josejamilena.cv@gmail.com - java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 11:20:33,772 - [SMTPSender] SMTPSender - Delivery complete for message smtp2363821702146021253.ser to: test@localhost
+2009-06-05 11:21:03,777 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: alu.uma.es failed.
+2009-06-05 11:21:03,779 - [SMTPSender] SMTPSender - Delivery failed for message from: test@locahost to: 0617393471@alu.uma.es - java.lang.RuntimeException: Could not connect to any SMTP server for domain: alu.uma.es
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: alu.uma.es
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 12:14:08,524 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: hotmail.com failed.
+2009-06-05 12:14:08,530 - [SMTPSender] SMTPSender - Delivery failed for message from: josejamilena@gmail.com to: jose_jamilena@hotmail.com - java.lang.RuntimeException: Could not connect to any SMTP server for domain: hotmail.com
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: hotmail.com
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 12:14:12,214 - [POP3:1] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 12:14:12,255 - [POP3:1] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 12:14:16,865 - [POP3:1] Pop3Processor - Disconnecting
+2009-06-05 12:14:38,539 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: gmail.com failed.
+2009-06-05 12:14:38,542 - [SMTPSender] SMTPSender - Delivery failed for message from: test@locahost to: josejamilena@gmail.com - java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 12:15:08,560 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: hotmail.com failed.
+2009-06-05 12:15:08,561 - [SMTPSender] SMTPSender - Delivery failed for message from: josejamilena@gmail.com to: migueleis@hotmail.com - java.lang.RuntimeException: Could not connect to any SMTP server for domain: hotmail.com
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: hotmail.com
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 12:15:38,570 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: alu.uma.es failed.
+2009-06-05 12:15:38,573 - [SMTPSender] SMTPSender - Delivery failed for message from: test@locahost to: 0617393471@alu.uma.es - java.lang.RuntimeException: Could not connect to any SMTP server for domain: alu.uma.es
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: alu.uma.es
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
