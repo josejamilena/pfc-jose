@@ -3,8 +3,6 @@ package conex;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Metodos compartidos.
@@ -12,25 +10,55 @@ import java.util.logging.Logger;
  */
 public class Comun {
 
-    /** properties. */
-    public static Properties PROPIEDADES_DE_CONFIGURACION;
+    /** */
+    static private Comun comun = null;
+
+    /** */
+    static private Estadisticas estadisticas = null;
+
+    /** properties de configuracion. */
+    private Properties configProperties;
 
     /** Constructor. */
-    public Comun() {
+    private Comun() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
+            this.iniciarPropiedades();
+            this.estadisticas = new Estadisticas();
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         }
     }
 
     /** */
-    public static void iniciarPropiedades() {
+    static public Comun getComun() {
+        if (comun == null) {
+            comun = new Comun();
+        }
+        return comun;
+    }
+
+    /** */
+    private void iniciarPropiedades() {
         try {
-            PROPIEDADES_DE_CONFIGURACION = new Properties();
-            PROPIEDADES_DE_CONFIGURACION.load(new FileInputStream("config.properties"));
+            this.configProperties = new Properties();
+            this.configProperties.load(new FileInputStream("config.properties"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    /**
+     * @return the ConfigProperties
+     */
+    public Properties getConfigProperties() {
+        return configProperties;
+    }
+
+    /**
+     * @return the estadisticas
+     */
+    public static Estadisticas getEstadisticas() {
+        return estadisticas;
     }
 }
