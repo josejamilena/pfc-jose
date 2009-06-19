@@ -1,5 +1,7 @@
 package conex;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,6 +10,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
+import java.util.Properties;
 
 /**
  * Estadisticas.
@@ -18,15 +21,19 @@ public class Estadisticas {
     /** conexion. */
     private Connection conexion = null;
 
+    /** properties. */
+    private Properties configProperties;
+
     /** Constructor. */
     public Estadisticas() {
         try {
+            this.iniciarPropiedades();
 
-            String usuario = Comun.PROPIEDADES_DE_CONFIGURACION.getProperty("USUARIO_ESTADISTICAS");
-            String password = Comun.PROPIEDADES_DE_CONFIGURACION.getProperty("PASSWORD_ESTADISTICAS");
-            String dirOracle = Comun.PROPIEDADES_DE_CONFIGURACION.getProperty("SERVIDOR_ESTADISTICAS");
-            String puertoOracle = Comun.PROPIEDADES_DE_CONFIGURACION.getProperty("PUERTO_ESTADISTICAS");
-            String baseDeDatos = Comun.PROPIEDADES_DE_CONFIGURACION.getProperty("BD_ESTADISTICAS");
+            String usuario = this.configProperties.getProperty("USUARIO_ESTADISTICAS");
+            String password = this.configProperties.getProperty("PASSWORD_ESTADISTICAS");
+            String dirOracle = this.configProperties.getProperty("SERVIDOR_ESTADISTICAS");
+            String puertoOracle = this.configProperties.getProperty("PUERTO_ESTADISTICAS");
+            String baseDeDatos = this.configProperties.getProperty("BD_ESTADISTICAS");
             String cadenaDeConexion = new String("jdbc:oracle:thin:@" + dirOracle + ":" + puertoOracle + ":" + baseDeDatos);
 
             this.conexion = DriverManager.getConnection(cadenaDeConexion, usuario, password);
@@ -35,6 +42,16 @@ public class Estadisticas {
             borrarEstructuraTmpEnBD(conexion);
             iniciarEstructuraTmpEnBD(conexion);
         } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /** */
+    private void iniciarPropiedades() {
+        try {
+            this.configProperties = new Properties();
+            this.configProperties.load(new FileInputStream("estadisticas.properties"));
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }

@@ -24,8 +24,6 @@ public class MyTask implements Runnable {
     private Crono crn = new Crono();
     /** tiempo. */
     private long t;
-    private Estadisticas esta;
-    private Comun comun;
 
     private MyTask() {
     }
@@ -33,9 +31,6 @@ public class MyTask implements Runnable {
     public MyTask(String nombre, String ficheroSQL) {
         this.nombreFichero = ficheroSQL;
         this.nombreTarea = nombre;
-        comun = new Comun();
-        comun.iniciarPropiedades();
-        esta = new Estadisticas();
     }
 
     public void run() {
@@ -47,13 +42,13 @@ public class MyTask implements Runnable {
                 true,
                 false);
         sr.setLogWriter(new PrintWriter(System.err));
-        esta.iniciarEstadisticaDeConsultaActual();
+        Comun.getComun().getEstadisticas().iniciarEstadisticaDeConsultaActual();
         try {
             crn.inicializa();
             sr.runScript(new BufferedReader(new FileReader(this.nombreFichero)));
             t = crn.tiempo();
-            esta.insertarEstadistica(t, this.nombreFichero);
-            esta.insertarEstadisticaUltimasConsultas(t, this.nombreFichero);
+            Comun.getComun().getEstadisticas().insertarEstadistica(t, this.nombreFichero);
+            Comun.getComun().getEstadisticas().insertarEstadisticaUltimasConsultas(t, this.nombreFichero);
         } catch (IOException ex) {
             ex.printStackTrace();
         } catch (SQLException ex) {
