@@ -114,7 +114,7 @@ public class Estadisticas {
             stmt = conn.createStatement();
             int retorno = stmt.executeUpdate(query);
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            ;
         }
     }
 

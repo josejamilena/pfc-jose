@@ -30,9 +30,9 @@ public class LeerTareas {
                 scriptOPlsql = st.nextToken();
                 // System.err.println(scriptSQL);
                 // System.err.println(plan);
-                if (scriptOPlsql == "SQL") {
+                if (scriptOPlsql.equalsIgnoreCase("SQL")) {
                     this.tablaScript.put(scriptSQL, plan);
-                } else if (scriptOPlsql == "PLSQL") {
+                } else if (scriptOPlsql.equalsIgnoreCase("PLSQL")) {
                     this.tablaPlsql.put(scriptSQL, plan);
                 } else {
                     throw new RuntimeException("Error: TIPO DE SCRIPT DESCONOCIDO.");
