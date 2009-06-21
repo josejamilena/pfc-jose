@@ -1,12 +1,12 @@
 package josejamilena.pfc.servidor.conexion;
 
-
 /**
  * Crono se encarga de medir el tiempo.
  * 
  * @author Jose Antonio Jamilena Daza, Miguel Angel Moreno Leiva, Pablo Landin.
  */
 public class Crono {
+
     /** tiempo inicial */
     private java.util.Date t0;
     /** tiempo final */
