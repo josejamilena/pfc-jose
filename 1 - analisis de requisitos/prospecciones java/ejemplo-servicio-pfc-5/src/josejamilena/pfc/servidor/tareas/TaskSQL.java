@@ -1,14 +1,14 @@
-package josejamilena.pfc.servidor;
+package josejamilena.pfc.servidor.tareas;
 
-import com.ibatis.common.jdbc.ScriptRunner;
+import josejamilena.pfc.servidor.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Date;
 import josejamilena.pfc.servidor.conexion.Comun;
 import josejamilena.pfc.servidor.conexion.Crono;
+import josejamilena.pfc.servidor.tareas.runner.SqlRunner;
 import org.apache.log4j.Logger;
 
 /**
@@ -36,15 +36,17 @@ public class TaskSQL implements Runnable {
     }
 
     public void run() {
-        ScriptRunner sr = new ScriptRunner("oracle.jdbc.driver.OracleDriver",
-                "jdbc:oracle:thin:@192.168.2.17:1521:XE",
-                "oracle",
-                "oracle",
-                true,
-                false);
-        sr.setLogWriter(null);
-        Comun.getComun().getEstadisticas().iniciarEstadisticaDeConsultaActual();
+//        ScriptRunner sr = new ScriptRunner("oracle.jdbc.driver.OracleDriver",
+//                "jdbc:oracle:thin:@192.168.2.17:1521:XE",
+//                "oracle",
+//                "oracle",
+//                true,
+//                false);
+//        sr.setLogWriter(null);
         try {
+
+            SqlRunner sr = new SqlRunner("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:@192.168.2.17:1521:XE", "oracle", "oracle");
+            Comun.getComun().getEstadisticas().iniciarEstadisticaDeConsultaActual();
             crn.inicializa();
             sr.runScript(new BufferedReader(new FileReader(this.nombreFichero)));
             t = crn.tiempo();
@@ -53,6 +55,8 @@ public class TaskSQL implements Runnable {
         } catch (IOException ex) {
             logger.error(ex);
         } catch (SQLException ex) {
+            logger.error(ex);
+        } catch (ClassNotFoundException ex) {
             logger.error(ex);
         } finally {
             Main.msg.setTextoMsg("Script: " + this.nombreTarea + " lanzado: " + new Date());

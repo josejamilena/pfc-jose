@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
  * Metodos compartidos.
@@ -21,13 +22,11 @@ public class Comun {
 
     /** Constructor. */
     private Comun() {
-        try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            this.iniciarPropiedades();
-            this.estadisticas = new Estadisticas();
-        } catch (ClassNotFoundException ex) {
-            logger.error(ex);
-        }
+        this.iniciarPropiedades();
+        this.estadisticas = new Estadisticas(
+                this.configProperties.getProperty("josejamilena.pfc.servidor.conexion.Estadisticas.driver"),
+                this.configProperties.getProperty("josejamilena.pfc.servidor.conexion.Estadisticas.url"),
+                this.configProperties.getProperty("josejamilena.pfc.servidor.conexion.Estadisticas.estadisticas.properties"));
     }
 
     /** */
@@ -43,6 +42,7 @@ public class Comun {
         try {
             this.configProperties = new Properties();
             this.configProperties.load(new FileInputStream("config.properties"));
+            PropertyConfigurator.configure(this.configProperties.getProperty("josejamilena.pfc.servidor.conexion.Comun.log4j.properties"));
         } catch (IOException ex) {
             logger.error(ex);
         }

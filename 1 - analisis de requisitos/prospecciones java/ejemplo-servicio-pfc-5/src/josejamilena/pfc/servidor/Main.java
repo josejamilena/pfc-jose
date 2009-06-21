@@ -1,28 +1,29 @@
 package josejamilena.pfc.servidor;
 
-
+import josejamilena.pfc.servidor.tareas.CargarTareas;
+import josejamilena.pfc.servidor.tareas.TaskPLSQL;
+import josejamilena.pfc.servidor.tareas.TaskSQL;
 import it.sauronsoftware.cron4j.Scheduler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
+import josejamilena.pfc.servidor.conexion.Comun;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 public class Main {
 
     static Logger logger = Logger.getLogger(Main.class);
-
     public static VisorMsg msg;
 
     public static void main(String[] args) {
         try {
-            PropertyConfigurator.configure("log4j.properties");
-            CargarTareas t = new CargarTareas("tareas.txt");
+            Comun comun = Comun.getComun();
+            CargarTareas t = new CargarTareas(comun.getConfigProperties().getProperty("josejamilena.pfc.servidor.Main.tareas.txt"));
             Map<String, String> msql = t.getTablaScript();
             Map<String, String> mplsql = t.getTablaPlsql();
             msg = new VisorMsg();
             msg.setVisible(true);
-            msg.setTitle("Tiempos de respuesta de Oracle");
+            msg.setTitle(comun.getConfigProperties().getProperty("josejamilena.pfc.servidor.Main.msgTitle"));
             for (String sc : msql.keySet()) {
                 String pr = msql.get(sc);
                 TaskSQL task = new TaskSQL(sc, sc);

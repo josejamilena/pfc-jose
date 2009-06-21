@@ -1,5 +1,7 @@
-package josejamilena.pfc.servidor;
+package josejamilena.pfc.servidor.tareas;
 
+import josejamilena.pfc.servidor.tareas.runner.PlsqlRunner;
+import josejamilena.pfc.servidor.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,7 +18,6 @@ import org.apache.log4j.Logger;
 public class TaskPLSQL implements Runnable {
 
     static Logger logger = Logger.getLogger(TaskPLSQL.class);
-
     private String nombreFichero;
     private String nombreTarea = "";
     /**
