@@ -79,8 +79,8 @@ public class TaskSQL implements Runnable {
         } catch (ClassNotFoundException ex) {
             logger.error(ex);
         } finally {
-            Main.getMsg().setTextoMsg("Script: " + this.nombreTarea + " lanzado: "
-                    + new Date());
+            Main.getMsg().setTextoMsg("Script: " + this.nombreTarea
+                    + " lanzado: " + new Date());
             Main.getMsg().setTextoMsg(Double.toString(t));
         }
     }
