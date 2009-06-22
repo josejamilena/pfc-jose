@@ -10,20 +10,54 @@ import java.util.Map;
 import josejamilena.pfc.servidor.conexion.Comun;
 import org.apache.log4j.Logger;
 
-public class Main {
+/**
+ * Cargador inicial.
+ * @author Jose Antonio Jamilena Daza.
+ */
+public final class Main {
+    /** Logger. */
+    private static Logger logger = Logger.getLogger(Main.class);
+    /** ventana. */
+    private static VisorMsg msg;
 
-    static Logger logger = Logger.getLogger(Main.class);
-    public static VisorMsg msg;
+    /** */
+    private Main() {
+    }
 
-    public static void main(String[] args) {
+    /**
+     * @return the msg
+     */
+    public static VisorMsg getMsg() {
+        return msg;
+    }
+
+    /**
+     * @param visorMsg msg.
+     */
+    private static void setMsg(final VisorMsg visorMsg) {
+        Main.msg = visorMsg;
+    }
+
+    /**
+     * main.
+     * @param args argumentos.
+     */
+    public static void main(final String[] args) {
         try {
             Comun comun = Comun.getComun();
-            CargarTareas t = new CargarTareas(comun.getConfigProperties().getProperty("josejamilena.pfc.servidor.Main.tareas.txt"));
-            Map<String, String> msql = t.getTablaScript();
-            Map<String, String> mplsql = t.getTablaPlsql();
-            msg = new VisorMsg();
-            msg.setVisible(true);
-            msg.setTitle(comun.getConfigProperties().getProperty("josejamilena.pfc.servidor.Main.msgTitle"));
+            CargarTareas t = new CargarTareas(comun.getConfigProperties()
+                    .getProperty("josejamilena.pfc.servidor.Main.tareas.txt"));
+            Map < String, String > msql = t.getTablaScript();
+            Map < String, String > mplsql = t.getTablaPlsql();
+            if (comun.getConfigProperties()
+                    .getProperty("josejamilena.pfc.servidor.Main.msg.activado")
+                    .equalsIgnoreCase("ON")) {
+                setMsg(new VisorMsg());
+                getMsg().setVisible(true);
+                getMsg().setTitle(comun.getConfigProperties()
+                        .getProperty("josejamilena.pfc.servidor.Main.msg.Title")
+                        );
+            }
             for (String sc : msql.keySet()) {
                 String pr = msql.get(sc);
                 TaskSQL task = new TaskSQL(sc, sc);
