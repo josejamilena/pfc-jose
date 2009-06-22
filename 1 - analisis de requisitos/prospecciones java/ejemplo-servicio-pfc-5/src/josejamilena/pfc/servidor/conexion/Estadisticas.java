@@ -6,30 +6,39 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
 import java.util.Properties;
-import java.util.logging.Level;
 import org.apache.log4j.Logger;
 
 /**
  * Estadisticas.
- * @author Jose Antonio Jamilena Daza, Miguel Angel Moreno Leiva, Pablo Landin.
+ * @author Jose Antonio Jamilena Daza.
  */
 public class Estadisticas {
+    /** Logger. */
+    private static Logger logger = Logger.getLogger(Estadisticas.class);
+    /** 1. */
+    private final int uno = 1;
+    /** 2. */
+    private final int dos = 2;
+    /** 3. */
+    private final int tres = 3;
 
-    static Logger logger = Logger.getLogger(Estadisticas.class);
-
-    private Comun comun;
     /** conexion. */
     private Connection conexion = null;
     /** properties. */
     private Properties configProperties;
 
-    /** Constructor. */
-    public Estadisticas(String driver, String url, String properties) {
+    /**
+     * Constructor.
+     * @param driver driver JDBC.
+     * @param url enlace.
+     * @param properties fichero de properties para Estadisticas.
+     */
+    public Estadisticas(final String driver, final String url,
+            final String properties) {
         try {
             this.iniciarPropiedades(properties);
             Class.forName(driver);
@@ -46,8 +55,11 @@ public class Estadisticas {
         }
     }
 
-    /** */
-    private void iniciarPropiedades(String prop) {
+    /**
+     * Iniciar propiedades.
+     * @param prop nombre del fichero.
+     */
+    private void iniciarPropiedades(final String prop) {
         try {
             this.configProperties = new Properties();
             this.configProperties.load(new FileInputStream(prop));
@@ -60,17 +72,18 @@ public class Estadisticas {
      * Insertar estadisticas en la base de datos.
      * @param tiempo tiempo.
      * @param tipoConsultaStr tipo de consulta como cadena de texto.
-     * @throws java.sql.SQLException excepcion de SQL.
      */
-    public void insertarEstadistica(long tiempo, String tipoConsultaStr) {
+    public final void insertarEstadistica(final long tiempo,
+            final String tipoConsultaStr) {
         try {
-            String query;
             PreparedStatement stmt;
-            stmt = conexion.prepareStatement(this.configProperties.getProperty("insertarEstadistica"));
-            stmt.setLong(1, tiempo);
-            stmt.setLong(2, Calendar.getInstance().getTimeInMillis());
-            stmt.setString(3, tipoConsultaStr);
+            stmt = conexion.prepareStatement(this.configProperties
+                    .getProperty("insertarEstadistica"));
+            stmt.setLong(this.uno, tiempo);
+            stmt.setLong(this.dos, Calendar.getInstance().getTimeInMillis());
+            stmt.setString(this.tres, tipoConsultaStr);
             int retorno = stmt.executeUpdate();
+            logger.info(retorno);
         } catch (SQLException ex) {
             logger.warn(ex);
         }
@@ -80,17 +93,18 @@ public class Estadisticas {
      * Insertar estadisticas en la base de datos.
      * @param tiempo tiempo.
      * @param tipoConsultaStr tipo de consulta como cadena de texto.
-     * @throws java.sql.SQLException excepcion de SQL.
      */
-    public void insertarEstadisticaUltimasConsultas(long tiempo, String tipoConsultaStr) {
+    public final void insertarEstadisticaUltimasConsultas(final long tiempo,
+            final String tipoConsultaStr) {
         try {
-            String query;
             PreparedStatement stmt;
-            stmt = conexion.prepareStatement(this.configProperties.getProperty("insertarEstadisticaUltimasConsultas"));
-            stmt.setLong(1, tiempo);
-            stmt.setLong(2, Calendar.getInstance().getTimeInMillis());
-            stmt.setString(3, tipoConsultaStr);
+            stmt = conexion.prepareStatement(this.configProperties
+                    .getProperty("insertarEstadisticaUltimasConsultas"));
+            stmt.setLong(this.uno, tiempo);
+            stmt.setLong(this.dos, Calendar.getInstance().getTimeInMillis());
+            stmt.setString(this.tres, tipoConsultaStr);
             int retorno = stmt.executeUpdate();
+            logger.info(retorno);
         } catch (SQLException ex) {
             logger.warn(ex);
         }
@@ -100,14 +114,14 @@ public class Estadisticas {
      * borra la tabla en la que se guardan las estadisticas por ejecucion.
      * @param conn conexion a la base de datos.
      */
-    private void borrarEstructuraTmpEnBD(Connection conn) {
+    private void borrarEstructuraTmpEnBD(final Connection conn) {
         Statement stmt;
-        ResultSet rs;
         String query;
         query = this.configProperties.getProperty("borrarEstructuraTmpEnBD");
         try {
             stmt = conn.createStatement();
             int retorno = stmt.executeUpdate(query);
+            logger.info(retorno);
         } catch (SQLException ex) {
             logger.error(ex);
         }
@@ -117,16 +131,17 @@ public class Estadisticas {
      * inicializa la tabla en la que se guardan las estadisticas.
      * @param conn conexion a la base de datos.
      */
-    private void iniciarEstructuraEnBD(Connection conn) {
+    private void iniciarEstructuraEnBD(final Connection conn) {
         Statement stmt;
-        ResultSet rs;
         String query;
         query = this.configProperties.getProperty("iniciarEstructuraEnBD");
         try {
             stmt = conn.createStatement();
             int retorno = stmt.executeUpdate(query);
+            logger.info(retorno);
         } catch (SQLException ex) {
-            logger.warn("La tabla donde se guardan las estadisticas, ya existe.");
+            logger.warn("La tabla donde se guardan las estadisticas, ya existe."
+                    );
         }
     }
 
@@ -134,16 +149,17 @@ public class Estadisticas {
      * inicializa la tabla intermedia en la que se guardan las estadisticas.
      * @param conn conexion a la base de datos.
      */
-    private void iniciarEstructuraTmpEnBD(Connection conn) {
+    private void iniciarEstructuraTmpEnBD(final Connection conn) {
         Statement stmt;
-        ResultSet rs;
         String query;
         query = this.configProperties.getProperty("iniciarEstructuraTmpEnBD");
         try {
             stmt = conn.createStatement();
             int retorno = stmt.executeUpdate(query);
+            logger.info(retorno);
         } catch (SQLException ex) {
-            logger.warn("La tabla donde se guardan las estadisticas, ya existe.");
+            logger.warn("La tabla donde se guardan las estadisticas, ya existe."
+                    );
         }
     }
 
@@ -152,12 +168,11 @@ public class Estadisticas {
      * @param s consulta SQL.
      * @return resultado.
      */
-    private String consultaSQL(String s) {
+    private String consultaSQL(final String s) {
         String res = null;
         try {
             Statement stmt = null;
             ResultSet rs = null;
-            ResultSetMetaData rsmd;
             stmt = this.conexion.createStatement();
             rs = stmt.executeQuery(s); //lanzador de consulta
             while (rs.next()) {
@@ -176,8 +191,9 @@ public class Estadisticas {
      * @return tiempo de la media en segundos.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMedia() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMedia"));
+    public final String mostrarMedia() throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMedia"));
     }
 
     /**
@@ -185,8 +201,9 @@ public class Estadisticas {
      * @return tiempo de la media en segundos.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaSeleccion() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaSeleccion"));
+    public final String mostrarMediaSeleccion() throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaSeleccion"));
     }
 
     /**
@@ -194,8 +211,9 @@ public class Estadisticas {
      * @return tiempo de la media en segundos.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaManipulacionDatos() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaManipulacionDatos"));
+    public final String mostrarMediaManipulacionDatos() throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaManipulacionDatos"));
     }
 
     /**
@@ -203,17 +221,19 @@ public class Estadisticas {
      * @return tiempo de la media en segundos.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaManipulacionTablas() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaManipulacionTablas"));
+    public final String mostrarMediaManipulacionTablas() throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaManipulacionTablas"));
     }
 
     /**
-     * Media de tiempos de otras operaciones (?)
-     * @return tiempo de la media en segundos
-     * @throws java.sql.SQLException excepcion SQL
+     * Media de tiempos de otras operaciones (?).
+     * @return tiempo de la media en segundos.
+     * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaOtrasOperaciones() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaOtrasOperaciones"));
+    public final String mostrarMediaOtrasOperaciones() throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaOtrasOperaciones"));
     }
     // de ultima tabla
 
@@ -222,8 +242,9 @@ public class Estadisticas {
      * @return tiempo de la media en segundos.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaUltimaPrueba() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaUltimaPrueba"));
+    public final String mostrarMediaUltimaPrueba() throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaUltimaPrueba"));
     }
 
     /**
@@ -231,41 +252,51 @@ public class Estadisticas {
      * @return tiempo de la media en segundos.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaSeleccionUltimaPrueba() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaSeleccionUltimaPrueba"));
+    public final String mostrarMediaSeleccionUltimaPrueba()
+            throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaSeleccionUltimaPrueba"));
     }
 
     /**
-     * Media de tiempos en manipulacion de datos de la ultima prueba (INSERT / UPDATE /DELETE).
+     * Media de tiempos en manipulacion de datos de la ultima prueba
+     * (INSERT / UPDATE /DELETE).
      * @return tiempo de la media en segundos.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaManipulacionDatosUltimaPrueba() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaManipulacionDatosUltimaPrueba"));
+    public final String mostrarMediaManipulacionDatosUltimaPrueba()
+            throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaManipulacionDatosUltimaPrueba"));
     }
 
     /**
-     * Media de tiempos en manipulacion de tablas  de la ultima prueba (DROP / CREATE).
+     * Media de tiempos en manipulacion de tablas  de la ultima prueba
+     * (DROP / CREATE).
      * @return tiempo de la media en segundos.
      * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaManipulacionTablasUltimaPrueba() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaManipulacionTablasUltimaPrueba"));
+    public final String mostrarMediaManipulacionTablasUltimaPrueba()
+            throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaManipulacionTablasUltimaPrueba"));
     }
 
     /**
-     * Media de tiempos de otras operaciones  de la ultima prueba (?)
-     * @return tiempo de la media en segundos
-     * @throws java.sql.SQLException excepcion SQL
+     * Media de tiempos de otras operaciones  de la ultima prueba (?).
+     * @return tiempo de la media en segundos.
+     * @throws java.sql.SQLException excepcion SQL.
      */
-    public String mostrarMediaOtrasOperacionesPrueba() throws SQLException {
-        return this.consultaSQL(this.configProperties.getProperty("mostrarMediaOtrasOperacionesPrueba"));
+    public final String mostrarMediaOtrasOperacionesPrueba()
+            throws SQLException {
+        return this.consultaSQL(this.configProperties
+                .getProperty("mostrarMediaOtrasOperacionesPrueba"));
     }
 
     /**
-     * 
+     * Inicia la estadisticas de la sentencia actual.
      */
-    public void iniciarEstadisticaDeConsultaActual() {
+    public final void iniciarEstadisticaDeConsultaActual() {
         borrarEstructuraTmpEnBD(conexion);
         iniciarEstructuraTmpEnBD(conexion);
     }

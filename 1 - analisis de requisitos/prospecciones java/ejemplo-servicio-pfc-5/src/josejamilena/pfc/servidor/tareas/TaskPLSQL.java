@@ -1,24 +1,27 @@
 package josejamilena.pfc.servidor.tareas;
 
 import josejamilena.pfc.servidor.tareas.runner.PlsqlRunner;
-import josejamilena.pfc.servidor.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
+import josejamilena.pfc.servidor.Main;
 import josejamilena.pfc.servidor.conexion.Comun;
 import josejamilena.pfc.servidor.conexion.Crono;
 import org.apache.log4j.Logger;
 
 /**
- * This is the simplest task form: a class implementing the {@link Runnable}
- * interface.
+ * Tareas PLSQL.
+ * @link java.lang.Runnable implementa esta interfaz.
+ * @author Jose Antonio Jamilena Daza.
  */
 public class TaskPLSQL implements Runnable {
-
-    static Logger logger = Logger.getLogger(TaskPLSQL.class);
-    private String nombreFichero;
+    /** Logger. */
+    private static Logger logger = Logger.getLogger(TaskPLSQL.class);
+    /** Nombre del fichero. */
+    private String nombreFichero = "";
+    /** Nombre de la tarea. */
     private String nombreTarea = "";
     /**
      * crono.
@@ -27,23 +30,40 @@ public class TaskPLSQL implements Runnable {
     /** tiempo. */
     private long t;
 
+    /**
+     * No se permite el constructor sin parametros.
+     */
     private TaskPLSQL() {
     }
 
-    public TaskPLSQL(String nombre, String ficheroPLSQL) {
+    /**
+     * Constructor.
+     * @param nombre nombre de la tarea.
+     * @param ficheroPLSQL fichero de la tarea.
+     */
+    public TaskPLSQL(final String nombre, final String ficheroPLSQL) {
         this.nombreFichero = ficheroPLSQL;
         this.nombreTarea = nombre;
     }
 
-    public void run() {
+    /**
+     * Sobrecarga el metodo.
+     */
+    public final void run() {
         try {
-            PlsqlRunner sr = new PlsqlRunner("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:@192.168.2.17:1521:XE", "oracle", "oracle");
-            Comun.getComun().getEstadisticas().iniciarEstadisticaDeConsultaActual();
+            PlsqlRunner sr = new PlsqlRunner("oracle.jdbc.driver.OracleDriver",
+                    "jdbc:oracle:thin:@192.168.2.17:1521:XE", "oracle", "oracle"
+                    );
+            Comun.getComun().getEstadisticas()
+                    .iniciarEstadisticaDeConsultaActual();
             crn.inicializa();
-            sr.runScript(new BufferedReader(new FileReader(this.nombreFichero)));
+            sr.runScript(
+                    new BufferedReader(new FileReader(this.nombreFichero)));
             t = crn.tiempo();
-            Comun.getComun().getEstadisticas().insertarEstadistica(t, this.nombreFichero);
-            Comun.getComun().getEstadisticas().insertarEstadisticaUltimasConsultas(t, this.nombreFichero);
+            Comun.getComun().getEstadisticas()
+                    .insertarEstadistica(t, this.nombreFichero);
+            Comun.getComun().getEstadisticas()
+                    .insertarEstadisticaUltimasConsultas(t, this.nombreFichero);
         } catch (IOException ex) {
             logger.error(ex);
         } catch (SQLException ex) {
@@ -51,8 +71,9 @@ public class TaskPLSQL implements Runnable {
         } catch (ClassNotFoundException ex) {
             logger.error(ex);
         } finally {
-            Main.msg.setTextoMsg("Script: " + this.nombreTarea + " lanzado: " + new Date());
-            Main.msg.setTextoMsg(Double.toString(t));
+            Main.getMsg().setTextoMsg("Script: " + this.nombreTarea + " lanzado: "
+                    + new Date());
+            Main.getMsg().setTextoMsg(Double.toString(t));
         }
     }
 
@@ -60,7 +81,7 @@ public class TaskPLSQL implements Runnable {
      * obtiene tiempo.
      * @return tiempo en segundos.
      */
-    public long obtenerTiempo() {
+    public final long obtenerTiempo() {
         return this.t;
     }
 }

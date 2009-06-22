@@ -10,13 +10,13 @@ import org.apache.log4j.PropertyConfigurator;
  * Metodos compartidos.
  * @author Jose Antonio Jamilena Daza, Miguel Angel Moreno Leiva, Pablo Landin.
  */
-public class Comun {
-
-    static Logger logger = Logger.getLogger(Comun.class);
-    /** */
-    static private Comun comun = null;
-    /** */
-    static private Estadisticas estadisticas = null;
+public final class Comun {
+    /** Logger. */
+    private static Logger logger = Logger.getLogger(Comun.class);
+    /** Instancia Singleton. */
+    private static Comun comun = null;
+    /** Instancia de Estadisticas. */
+    private static Estadisticas estadisticas = null;
     /** properties de configuracion. */
     private Properties configProperties;
 
@@ -24,25 +24,37 @@ public class Comun {
     private Comun() {
         this.iniciarPropiedades();
         this.estadisticas = new Estadisticas(
-                this.configProperties.getProperty("josejamilena.pfc.servidor.conexion.Estadisticas.driver"),
-                this.configProperties.getProperty("josejamilena.pfc.servidor.conexion.Estadisticas.url"),
-                this.configProperties.getProperty("josejamilena.pfc.servidor.conexion.Estadisticas.estadisticas.properties"));
+            this.configProperties.getProperty(
+                "josejamilena.pfc.servidor.conexion.Estadisticas.driver"),
+            this.configProperties.getProperty(
+                "josejamilena.pfc.servidor.conexion.Estadisticas.url"),
+            this.configProperties.getProperty(
+                "josejamilena.pfc.servidor.conexion.Estadisticas."
+                + "estadisticas.properties"));
     }
 
-    /** */
-    static public Comun getComun() {
+    /**
+     * Obtiene instancia de Comun.
+     * @return instancia de Comun.
+     */
+    public static Comun getComun() {
         if (comun == null) {
             comun = new Comun();
         }
         return comun;
     }
 
-    /** */
+    /**
+     * Iniciar properties.
+     */
     private void iniciarPropiedades() {
         try {
             this.configProperties = new Properties();
-            this.configProperties.load(new FileInputStream("config.properties"));
-            PropertyConfigurator.configure(this.configProperties.getProperty("josejamilena.pfc.servidor.conexion.Comun.log4j.properties"));
+            this.configProperties.load(new FileInputStream(
+                    "config.properties"));
+            PropertyConfigurator.configure(this.configProperties.getProperty(
+                    "josejamilena.pfc.servidor.conexion.Comun.log4j.properties")
+                    );
         } catch (IOException ex) {
             logger.error(ex);
         }

@@ -1,11 +1,6 @@
 package josejamilena.pfc.servidor;
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * VisorMsg.java
  *
  * Created on 17-jun-2009, 8:28:25
@@ -77,9 +72,9 @@ public class VisorMsg extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     /**
-     * @param textoMsg the textoMsg to set
+     * @param texto the textoMsg to set
      */
-    public void setTextoMsg(String texto) {
+    public final void setTextoMsg(final String texto) {
         this.textoMsg.append(texto);
         this.textoMsg.append("\n");
     }
