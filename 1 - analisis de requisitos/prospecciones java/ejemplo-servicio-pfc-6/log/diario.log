@@ -1,0 +1,234 @@
+[2009-35-24 05:35,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-35-24 05:35,  3736]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-35-24 05:35,  3771]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-35-24 05:35,  3986]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-35-24 05:35,  3996]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-35-24 05:35,  4061]ERROR josejamilena.pfc.servidor.tareas.CargarTareas [main] - Error: TIPO DE SCRIPT DESCONOCIDO. # <fichero script>   <planificacion> 
+ [2009-35-24 05:35,  4062]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación SQL: ejemplo.sql * * * * *
+ [2009-35-24 05:35,  4077]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación PLSQL: ejemplo_1.sql * * * * *
+ [2009-36-24 05:36, 13772]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11016f04720000012212e8c51e06519997]] - 0
+ [2009-36-24 05:36, 13780]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11016f04720000012212e8c51e06519997]] - 0
+ [2009-36-24 05:36, 14064]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11016f04720000012212e8c51e06519997]] - 1
+ [2009-36-24 05:36, 14085]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11016f04720000012212e8c51e06519997]] - 1
+ [2009-36-24 05:36, 14086]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11016f04720000012212e8c51e06519997]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 17:36:03 CEST 2009
+ [2009-36-24 05:36, 14087]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11016f04720000012212e8c51e06519997]] - 202.0
+ [2009-36-24 05:36, 14847]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e110182f0db0000012212e8c52143d0b2ae]] - 1
+ [2009-36-24 05:36, 14856]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e110182f0db0000012212e8c52143d0b2ae]] - 1
+ [2009-36-24 05:36, 25965]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e110182f0db0000012212e8c52143d0b2ae]] - 1
+ [2009-36-24 05:36, 25975]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e110182f0db0000012212e8c52143d0b2ae]] - 1
+ [2009-36-24 05:36, 25975]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e110182f0db0000012212e8c52143d0b2ae]] - Script: ejemplo.sql lanzado: Wed Jun 24 17:36:15 CEST 2009
+ [2009-36-24 05:36, 25975]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e110182f0db0000012212e8c52143d0b2ae]] - 10962.0
+ [2009-37-24 05:37, 72133]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e1100c9d92c0000012212e9ae6b476203e3]] - 1
+ [2009-37-24 05:37, 72367]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e1100c9d92c0000012212e9ae6b476203e3]] - 1
+ [2009-37-24 05:37, 72593]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1101cd08880000012212e9aefb28e5b1cb]] - 1
+ [2009-37-24 05:37, 72730]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e1100c9d92c0000012212e9ae6b476203e3]] - 1
+ [2009-37-24 05:37, 72731]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e1100c9d92c0000012212e9ae6b476203e3]] - java.sql.SQLException: no such table: ESTADISTICAS_TMP
+ [2009-37-24 05:37, 72732]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e1100c9d92c0000012212e9ae6b476203e3]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 17:37:02 CEST 2009
+ [2009-37-24 05:37, 72734]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e1100c9d92c0000012212e9ae6b476203e3]] - 224.0
+ [2009-37-24 05:37, 72774]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1101cd08880000012212e9aefb28e5b1cb]] - 1
+ [2009-37-24 05:37, 77985]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1101cd08880000012212e9aefb28e5b1cb]] - 1
+ [2009-37-24 05:37, 77993]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1101cd08880000012212e9aefb28e5b1cb]] - 1
+ [2009-37-24 05:37, 77993]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1101cd08880000012212e9aefb28e5b1cb]] - Script: ejemplo.sql lanzado: Wed Jun 24 17:37:07 CEST 2009
+ [2009-37-24 05:37, 77994]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1101cd08880000012212e9aefb28e5b1cb]] - 5203.0
+ [2009-38-24 05:38,131278]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1100d507e90000012212ea991043ee9ef1]] - 1
+ [2009-38-24 05:38,131395]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1100d507e90000012212ea991043ee9ef1]] - 1
+ [2009-38-24 05:38,132000]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11009444d10000012212ea991d408f7116]] - 1
+ [2009-38-24 05:38,132149]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11009444d10000012212ea991d408f7116]] - 1
+ [2009-38-24 05:38,132195]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11009444d10000012212ea991d408f7116]] - 1
+ [2009-38-24 05:38,132207]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11009444d10000012212ea991d408f7116]] - 1
+ [2009-38-24 05:38,132211]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11009444d10000012212ea991d408f7116]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 17:38:01 CEST 2009
+ [2009-38-24 05:38,132212]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8ad476f1a9672]::executor[9def6fe300169e11009444d10000012212ea991d408f7116]] - 23.0
+ [2009-38-24 05:38,134134]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1100d507e90000012212ea991043ee9ef1]] - 1
+ [2009-38-24 05:38,134146]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1100d507e90000012212ea991043ee9ef1]] - 1
+ [2009-38-24 05:38,134146]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1100d507e90000012212ea991043ee9ef1]] - Script: ejemplo.sql lanzado: Wed Jun 24 17:38:03 CEST 2009
+ [2009-38-24 05:38,134173]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe300169e1100b4d3d50000012212e8aad1582fb636]::executor[9def6fe300169e1100d507e90000012212ea991043ee9ef1]] - 2724.0
+ [2009-02-24 06:02,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-02-24 06:02,   194]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-02-24 06:02,   207]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-02-24 06:02,   208]ERROR josejamilena.pfc.servidor.conexion.Estadisticas [main] - java.sql.SQLException: no such table: ESTADISTICAS_TMP
+ [2009-02-24 06:02,   209]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-04-24 06:04,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-04-24 06:04,   598]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-04-24 06:04,   610]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-04-24 06:04,   610]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - java.sql.SQLException: no such table: ESTADISTICAS_TMP
+ [2009-04-24 06:04,   612]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-11-24 06:11,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-11-24 06:11,    85]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-11-24 06:11,    92]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-11-24 06:11,   104]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-11-24 06:11,   114]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-15-24 06:15,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-15-24 06:15,  1608]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-15-24 06:15,  1658]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-15-24 06:15,  1698]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-15-24 06:15,  1729]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-18-24 06:18,     1]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-18-24 06:18,  1437]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-18-24 06:18,  1483]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-18-24 06:18,  1530]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-18-24 06:18,  1727]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-21-24 06:21,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-21-24 06:21,   107]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-21-24 06:21,   114]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-21-24 06:21,   125]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-21-24 06:21,   133]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-23-24 06:23,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-23-24 06:23,   421]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-23-24 06:23,   430]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-23-24 06:23,   673]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-23-24 06:23,   761]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-24-24 06:24,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-24-24 06:24,   204]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-24-24 06:24,   215]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-24-24 06:24,   227]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-24-24 06:24,   236]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-24-24 06:24,   239]ERROR josejamilena.pfc.servidor.tareas.CargarTareas [main] - Error: TIPO DE SCRIPT DESCONOCIDO. # <fichero script>   <planificacion> 
+ [2009-24-24 06:24,   240]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación SQL: ejemplo.sql * * * * *
+ [2009-24-24 06:24,   241]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación PLSQL: ejemplo_1.sql * * * * *
+ [2009-25-24 06:25, 16693]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131566472ecc3296]::executor[9def6fe3004b222f00eee36c000001221315a07054a09935]] - 0
+ [2009-25-24 06:25, 16702]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131566472ecc3296]::executor[9def6fe3004b222f00eee36c000001221315a07054a09935]] - 0
+ [2009-25-24 06:25, 16723]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131566472ecc3296]::executor[9def6fe3004b222f00eee36c000001221315a07054a09935]] - 1
+ [2009-25-24 06:25, 16729]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131566472ecc3296]::executor[9def6fe3004b222f00eee36c000001221315a07054a09935]] - 1
+ [2009-25-24 06:25, 16731]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131566472ecc3296]::executor[9def6fe3004b222f00eee36c000001221315a07054a09935]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:25:01 CEST 2009
+ [2009-25-24 06:25, 16732]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131566472ecc3296]::executor[9def6fe3004b222f00eee36c000001221315a07054a09935]] - 10.0
+ [2009-25-24 06:25, 19298]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131564582eb04b8b]::executor[9def6fe3004b222f00a18aa2000001221315a1776e18bdf4]] - 1
+ [2009-25-24 06:25, 19308]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131564582eb04b8b]::executor[9def6fe3004b222f00a18aa2000001221315a1776e18bdf4]] - 1
+ [2009-25-24 06:25, 21852]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131564582eb04b8b]::executor[9def6fe3004b222f00a18aa2000001221315a1776e18bdf4]] - 1
+ [2009-25-24 06:25, 21860]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131564582eb04b8b]::executor[9def6fe3004b222f00a18aa2000001221315a1776e18bdf4]] - 1
+ [2009-25-24 06:25, 21861]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131564582eb04b8b]::executor[9def6fe3004b222f00a18aa2000001221315a1776e18bdf4]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:25:06 CEST 2009
+ [2009-25-24 06:25, 21862]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3004b222f010b9d0400000122131564582eb04b8b]::executor[9def6fe3004b222f00a18aa2000001221315a1776e18bdf4]] - 2538.0
+ [2009-29-24 06:29,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-29-24 06:29,    92]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-29-24 06:29,    99]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-29-24 06:29,   110]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-29-24 06:29,   120]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-29-24 06:29,   123]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación SQL: ejemplo.sql * * * * *
+ [2009-29-24 06:29,   124]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación PLSQL: ejemplo_1.sql * * * * *
+ [2009-30-24 06:30, 48798]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300209f4e01bf52a5000001221319784d0f170565]::executor[9def6fe300209f4e016930e200000122131a347330aa04b3]] - La tabla no existe. No es necesario borrarla.
+ [2009-30-24 06:30, 48798]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300209f4e01bf52a500000122131979ee594522fe]::executor[9def6fe300209f4e010385c100000122131a350866f83e51]] - 0
+ [2009-30-24 06:30, 48807]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300209f4e01bf52a500000122131979ee594522fe]::executor[9def6fe300209f4e010385c100000122131a350866f83e51]] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-30-24 06:30, 48807]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300209f4e01bf52a5000001221319784d0f170565]::executor[9def6fe300209f4e016930e200000122131a347330aa04b3]] - 0
+ [2009-30-24 06:30, 48835]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300209f4e01bf52a500000122131979ee594522fe]::executor[9def6fe300209f4e010385c100000122131a350866f83e51]] - 1
+ [2009-30-24 06:30, 48843]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300209f4e01bf52a500000122131979ee594522fe]::executor[9def6fe300209f4e010385c100000122131a350866f83e51]] - 1
+ [2009-30-24 06:30, 48846]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe300209f4e01bf52a500000122131979ee594522fe]::executor[9def6fe300209f4e010385c100000122131a350866f83e51]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:30:00 CEST 2009
+ [2009-30-24 06:30, 48847]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe300209f4e01bf52a500000122131979ee594522fe]::executor[9def6fe300209f4e010385c100000122131a350866f83e51]] - 14.0
+ [2009-30-24 06:30, 50942]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300209f4e01bf52a5000001221319784d0f170565]::executor[9def6fe300209f4e016930e200000122131a347330aa04b3]] - 1
+ [2009-30-24 06:30, 50952]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe300209f4e01bf52a5000001221319784d0f170565]::executor[9def6fe300209f4e016930e200000122131a347330aa04b3]] - 1
+ [2009-30-24 06:30, 50952]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe300209f4e01bf52a5000001221319784d0f170565]::executor[9def6fe300209f4e016930e200000122131a347330aa04b3]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:30:02 CEST 2009
+ [2009-30-24 06:30, 50953]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe300209f4e01bf52a5000001221319784d0f170565]::executor[9def6fe300209f4e016930e200000122131a347330aa04b3]] - 2126.0
+ [2009-32-24 06:32,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-32-24 06:32,   126]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-32-24 06:32,   133]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-32-24 06:32,   389]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-32-24 06:32,   472]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-32-24 06:32,   475]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación SQL: ejemplo.sql * * * * *
+ [2009-32-24 06:32,   477]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación PLSQL: ejemplo_1.sql * * * * *
+ [2009-32-24 06:32,   478]ERROR josejamilena.pfc.servidor.tareas.CargarTareas [main] - Número de tokens incarrectos en tareas.txt en la linea 1
+ [2009-34-24 06:34, 61442]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea008ed46500000122131dddb80acc5d25]] - La tabla no existe. No es necesario borrarla.
+ [2009-34-24 06:34, 61442]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea006e140800000122131dde3b4a6b42b6]] - 0
+ [2009-34-24 06:34, 61450]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea006e140800000122131dde3b4a6b42b6]] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-34-24 06:34, 61450]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea008ed46500000122131dddb80acc5d25]] - 0
+ [2009-34-24 06:34, 61489]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea008ed46500000122131dddb80acc5d25]] - 1
+ [2009-34-24 06:34, 61498]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea008ed46500000122131dddb80acc5d25]] - 1
+ [2009-34-24 06:34, 61501]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea008ed46500000122131dddb80acc5d25]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:34:00 CEST 2009
+ [2009-34-24 06:34, 61501]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea008ed46500000122131dddb80acc5d25]] - 22.0
+ [2009-34-24 06:34, 63287]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea006e140800000122131dde3b4a6b42b6]] - 1
+ [2009-34-24 06:34, 63296]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea006e140800000122131dde3b4a6b42b6]] - 1
+ [2009-34-24 06:34, 63297]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea006e140800000122131dde3b4a6b42b6]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:34:02 CEST 2009
+ [2009-34-24 06:34, 63297]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea006e140800000122131dde3b4a6b42b6]] - 1828.0
+ [2009-35-24 06:35,121229]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea01542a7500000122131ec8631d06b061]] - 1
+ [2009-35-24 06:35,121238]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea01542a7500000122131ec8631d06b061]] - 1
+ [2009-35-24 06:35,121339]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea0156b6b900000122131ec89d0e214a25]] - 1
+ [2009-35-24 06:35,121493]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea0156b6b900000122131ec89d0e214a25]] - 1
+ [2009-35-24 06:35,121504]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea0156b6b900000122131ec89d0e214a25]] - 1
+ [2009-35-24 06:35,121518]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea0156b6b900000122131ec89d0e214a25]] - 1
+ [2009-35-24 06:35,121519]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea0156b6b900000122131ec89d0e214a25]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:35:00 CEST 2009
+ [2009-35-24 06:35,121519]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea0156b6b900000122131ec89d0e214a25]] - 4.0
+ [2009-35-24 06:35,123421]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea01542a7500000122131ec8631d06b061]] - 1
+ [2009-35-24 06:35,123428]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea01542a7500000122131ec8631d06b061]] - 1
+ [2009-35-24 06:35,123428]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea01542a7500000122131ec8631d06b061]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:35:02 CEST 2009
+ [2009-35-24 06:35,123428]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea01542a7500000122131ec8631d06b061]] - 2176.0
+ [2009-36-24 06:36,181381]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea014df76400000122131fb35f023c7470]] - La tabla no existe. No es necesario borrarla.
+ [2009-36-24 06:36,181381]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea001ae90c00000122131fb364384e5abc]] - 1
+ [2009-36-24 06:36,181391]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea001ae90c00000122131fb364384e5abc]] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-36-24 06:36,181391]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea014df76400000122131fb35f023c7470]] - 1
+ [2009-36-24 06:36,181412]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea001ae90c00000122131fb364384e5abc]] - 1
+ [2009-36-24 06:36,181419]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea001ae90c00000122131fb364384e5abc]] - 1
+ [2009-36-24 06:36,181420]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea001ae90c00000122131fb364384e5abc]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:36:00 CEST 2009
+ [2009-36-24 06:36,181420]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea001ae90c00000122131fb364384e5abc]] - 11.0
+ [2009-36-24 06:36,183330]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea014df76400000122131fb35f023c7470]] - 1
+ [2009-36-24 06:36,183339]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea014df76400000122131fb35f023c7470]] - 1
+ [2009-36-24 06:36,183339]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea014df76400000122131fb35f023c7470]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:36:02 CEST 2009
+ [2009-36-24 06:36,183340]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea014df76400000122131fb35f023c7470]] - 1933.0
+ [2009-37-24 06:37,241327]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea00878c4c0000012213209d8113c40578]] - La tabla no existe. No es necesario borrarla.
+ [2009-37-24 06:37,241327]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea003e97df0000012213209d8167f560d9]] - 1
+ [2009-37-24 06:37,241335]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea00878c4c0000012213209d8113c40578]] - 1
+ [2009-37-24 06:37,241335]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf1ac4e7d5ae5]::executor[9def6fe3017172ea003e97df0000012213209d8167f560d9]] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-37-24 06:37,241351]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea00878c4c0000012213209d8113c40578]] - 1
+ [2009-37-24 06:37,241360]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea00878c4c0000012213209d8113c40578]] - 1
+ [2009-37-24 06:37,241361]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea00878c4c0000012213209d8113c40578]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:37:00 CEST 2009
+ [2009-37-24 06:37,241362]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3017172ea01cafa9e00000122131cf37875ff326c]::executor[9def6fe3017172ea00878c4c0000012213209d8113c40578]] - 7.0
+ [2009-37-24 06:37,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-37-24 06:37,   225]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-37-24 06:37,   232]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-37-24 06:37,   299]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-37-24 06:37,   314]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-37-24 06:37,   317]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación SQL: ejemplo.sql * * * * *
+ [2009-37-24 06:37,   319]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación PLSQL: ejemplo_1.sql * * * * *
+ [2009-37-24 06:37,   319]ERROR josejamilena.pfc.servidor.tareas.CargarTareas [main] - Número de tokens incorrectos en tareas.txt en la linea 4
+ [2009-38-24 06:38, 55436]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f66840119c082000001221321874a7810b14e]] - 0
+ [2009-38-24 06:38, 55446]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f66840119c082000001221321874a7810b14e]] - 0
+ [2009-38-24 06:38, 55795]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f668401415de600000122132189bf5ead2dfe]] - 0
+ [2009-38-24 06:38, 55806]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f668401415de600000122132189bf5ead2dfe]] - 0
+ [2009-38-24 06:38, 55821]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f668401415de600000122132189bf5ead2dfe]] - 1
+ [2009-38-24 06:38, 55829]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f668401415de600000122132189bf5ead2dfe]] - 1
+ [2009-38-24 06:38, 55831]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f668401415de600000122132189bf5ead2dfe]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:38:00 CEST 2009
+ [2009-38-24 06:38, 55836]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f668401415de600000122132189bf5ead2dfe]] - 5.0
+ [2009-38-24 06:38, 57630]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f66840119c082000001221321874a7810b14e]] - 1
+ [2009-38-24 06:38, 57639]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f66840119c082000001221321874a7810b14e]] - 1
+ [2009-38-24 06:38, 57640]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f66840119c082000001221321874a7810b14e]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:38:02 CEST 2009
+ [2009-38-24 06:38, 57640]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f66840119c082000001221321874a7810b14e]] - 2177.0
+ [2009-38-24 06:38,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-38-24 06:38,   106]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-38-24 06:38,   114]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-38-24 06:38,   214]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-38-24 06:38,   223]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-38-24 06:38,   232]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación SQL: ejemplo.sql * * * * *
+ [2009-38-24 06:38,   235]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación PLSQL: ejemplo_1.sql * * * * *
+ [2009-39-24 06:39,120820]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f66840028805100000122132287c302a1e741]] - 1
+ [2009-39-24 06:39,120833]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f66840028805100000122132287c302a1e741]] - 1
+ [2009-39-24 06:39,120852]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f66840028805100000122132287c302a1e741]] - 1
+ [2009-39-24 06:39,120860]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f66840028805100000122132287c302a1e741]] - 1
+ [2009-39-24 06:39,120861]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f66840028805100000122132287c302a1e741]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:39:06 CEST 2009
+ [2009-39-24 06:39,120861]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f66840028805100000122132287c302a1e741]] - 6.0
+ [2009-39-24 06:39, 39953]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321ef1641206360]::executor[9def6fe3009fef6f00defa1a00000122132287d52183ebc6]] - 0
+ [2009-39-24 06:39, 39960]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321ef1641206360]::executor[9def6fe3009fef6f00defa1a00000122132287d52183ebc6]] - 0
+ [2009-39-24 06:39, 42181]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321ef1641206360]::executor[9def6fe3009fef6f00defa1a00000122132287d52183ebc6]] - 1
+ [2009-39-24 06:39, 42188]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321ef1641206360]::executor[9def6fe3009fef6f00defa1a00000122132287d52183ebc6]] - 1
+ [2009-39-24 06:39, 42190]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321ef1641206360]::executor[9def6fe3009fef6f00defa1a00000122132287d52183ebc6]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:39:08 CEST 2009
+ [2009-39-24 06:39, 42191]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321ef1641206360]::executor[9def6fe3009fef6f00defa1a00000122132287d52183ebc6]] - 2210.0
+ [2009-39-24 06:39, 42196]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321f14c49981fab]::executor[9def6fe3009fef6f000d3d6f00000122132291ea1baedea6]] - 1
+ [2009-39-24 06:39, 42216]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321f14c49981fab]::executor[9def6fe3009fef6f000d3d6f00000122132291ea1baedea6]] - 1
+ [2009-39-24 06:39, 42232]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321f14c49981fab]::executor[9def6fe3009fef6f000d3d6f00000122132291ea1baedea6]] - 1
+ [2009-39-24 06:39, 42241]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321f14c49981fab]::executor[9def6fe3009fef6f000d3d6f00000122132291ea1baedea6]] - 1
+ [2009-39-24 06:39, 42244]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321f14c49981fab]::executor[9def6fe3009fef6f000d3d6f00000122132291ea1baedea6]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:39:08 CEST 2009
+ [2009-39-24 06:39, 42245]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3009fef6f00b4d3d5000001221321f14c49981fab]::executor[9def6fe3009fef6f000d3d6f00000122132291ea1baedea6]] - 4.0
+ [2009-39-24 06:39,124409]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f668400ba8602000001221322958e08b2fc9e]] - 1
+ [2009-39-24 06:39,124554]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f668400ba8602000001221322958e08b2fc9e]] - 1
+ [2009-39-24 06:39,127958]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f668400ba8602000001221322958e08b2fc9e]] - 1
+ [2009-39-24 06:39,127968]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f668400ba8602000001221322958e08b2fc9e]] - 1
+ [2009-39-24 06:39,127968]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f668400ba8602000001221322958e08b2fc9e]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:39:13 CEST 2009
+ [2009-39-24 06:39,127968]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f668400ba8602000001221322958e08b2fc9e]] - 3397.0
+ [2009-40-24 06:40,176619]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f6684017f242c0000012213235cc37a265808]] - 1
+ [2009-40-24 06:40,176619]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - La tabla no existe. No es necesario borrarla.
+ [2009-40-24 06:40,176830]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-40-24 06:40,176830]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f6684017f242c0000012213235cc37a265808]] - 1
+ [2009-40-24 06:40,177230]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f6684017f242c0000012213235cc37a265808]] - 1
+ [2009-40-24 06:40,177593]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f6684017f242c0000012213235cc37a265808]] - 1
+ [2009-40-24 06:40,177593]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f6684017f242c0000012213235cc37a265808]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 18:40:02 CEST 2009
+ [2009-40-24 06:40,177594]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b3835dc5d461]::executor[9def6fe3012f6684017f242c0000012213235cc37a265808]] - 16.0
+ [2009-40-24 06:40,181030]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - 1
+ [2009-40-24 06:40,181576]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - 1
+ [2009-40-24 06:40,181577]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:40:06 CEST 2009
+ [2009-40-24 06:40,181577]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - 2482.0
+ 

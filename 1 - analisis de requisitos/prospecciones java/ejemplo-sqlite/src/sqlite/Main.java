@@ -18,30 +18,47 @@ public class Main {
 
             // stat.execute("DELETE FROM autores");
 
-            PreparedStatement prep = conn.prepareStatement("INSERT INTO autores (id_autor,nombre) VALUES (?, ?);");
-            prep.setInt(1, 1);
-            prep.setString(2, "Deitel");
-            prep.addBatch();
-            prep.setInt(1, 2);
-            prep.setString(2, "Ceballos");
-            prep.addBatch();
-            prep.setInt(1, 3);
-            prep.setString(2, "Joyanes Aguilar");
-            prep.addBatch();
+//            PreparedStatement prep = conn.prepareStatement("INSERT INTO autores (id_autor,nombre) VALUES (?, ?);");
+//            prep.setInt(1, 1);
+//            prep.setString(2, "Deitel");
+//            prep.addBatch();
+//            prep.setInt(1, 2);
+//            prep.setString(2, "Ceballos");
+//            prep.addBatch();
+//            prep.setInt(1, 3);
+//            prep.setString(2, "Joyanes Aguilar");
+//            prep.addBatch();
+//
+//            conn.setAutoCommit(false);
+//            prep.executeBatch();
+//            conn.setAutoCommit(true);
 
-            conn.setAutoCommit(false);
-            prep.executeBatch();
-            conn.setAutoCommit(true);
-
-            ResultSet rs = stat.executeQuery("select * from autores;");
-            while (rs.next()) {
-                System.out.println("ID_AUTOR...: " + rs.getString("id_autor"));
-                System.out.println("NOMBRE.....: " + rs.getString("nombre"));
-                System.out.println("-----------------------------------");
+            int i = 100;
+            while (true) {
+                PreparedStatement prep = conn.prepareStatement("INSERT INTO autores (id_autor,nombre) VALUES (?, ?);");
+                prep.setInt(1, i);
+                prep.setString(2, "Deitel");
+                prep.addBatch();
+                prep.setInt(1, ++i);
+                prep.setString(2, "Ceballos");
+                prep.addBatch();
+                prep.setInt(1, ++i);
+                prep.setString(2, "Joyanes Aguilar");
+                prep.addBatch();
+                conn.setAutoCommit(false);
+                prep.executeBatch();
+                conn.setAutoCommit(true);
+//                ResultSet rs = stat.executeQuery("select * from autores;");
+//                while (rs.next()) {
+//                    System.out.println("ID_AUTOR...: " + rs.getString("id_autor"));
+//                    System.out.println("NOMBRE.....: " + rs.getString("nombre"));
+//                    System.out.println("-----------------------------------");
+//                }
+                ++i;
             }
-            rs.close();
-            stat.close();
-            conn.close();
+//            rs.close();
+//            stat.close();
+//            conn.close();
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

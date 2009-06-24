@@ -1,0 +1,43 @@
+1.0
+josejamilena@gmail.com
+jose_jamilena@hotmail.com
+1244192562866
+1244193292071
+2
+X-RecievedDate: Fri Jun 05 11:02:42 CEST 2009
+Received: by EricDaugherty's JES SMTP localhost from client: 127.0.0.1
+Received: from 127.0.0.1 (AVG SMTP 8.5.339 [270.12.53/2155]); Fri, 05 Jun 2009 11:02:42 +0200
+Date: Fri, 5 Jun 2009 11:02:42 +0200 (CEST)
+From: josejamilena@gmail.com
+To: jose_jamilena@hotmail.com
+Message-ID: <25527824.1.1244192562719.JavaMail.Jose@doom>
+Subject: Ya mandao errores mierda es estos...
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_0_17682935.1244192562674"
+
+
+------=_Part_0_17682935.1244192562674
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+[2009-06-05 11:02:42,663] [main] ERROR ejemplolog4j.Main  - Iniciando...
+
+------=_Part_0_17682935.1244192562674
+Content-Type: multipart/alternative; 
+	boundary="=======AVGMAIL-458E20AD======="
+
+--=======AVGMAIL-458E20AD=======
+Content-Type: text/plain; x-avg=cert; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+Content-Description: "AVG certification"
+
+
+Se certific=F3 que el correo saliente no contiene virus.
+Comprobada por AVG - www.avg.es 
+Versi=F3n: 8.5.339 / Base de datos de virus: 270.12.53/2155 - Fecha de la ve=
+rsi=F3n: 06/04/09 17:55:00
+
+--=======AVGMAIL-458E20AD=======--
+------=_Part_0_17682935.1244192562674--
