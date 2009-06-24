@@ -231,4 +231,502 @@
  [2009-40-24 06:40,181576]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - 1
  [2009-40-24 06:40,181577]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - Script: ejemplo.sql lanzado: Wed Jun 24 18:40:06 CEST 2009
  [2009-40-24 06:40,181577]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f668400b4d3d5000001221320b1c30b6f02b0]::executor[9def6fe3012f6684007f55800000012213235cef335e3875]] - 2482.0
+ [2009-39-24 11:39,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-39-24 11:39,  6350]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-39-24 11:39,  6420]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-39-24 11:39,  6640]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-39-24 11:39,  6660]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-39-24 11:39,  6667]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación SQL: ejemplo.sql * * * * *
+ [2009-39-24 11:39,  6670]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación PLSQL: ejemplo_1.sql * * * * *
+ [2009-40-24 11:40, 20507]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe930126b249000001221436051046100bec]] - 0
+ [2009-40-24 11:40, 20637]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe930126b249000001221436051046100bec]] - 0
+ [2009-40-24 11:40, 21407]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe930126b249000001221436051046100bec]] - 1
+ [2009-40-24 11:40, 21589]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe930126b249000001221436051046100bec]] - 1
+ [2009-40-24 11:40, 21591]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe930126b249000001221436051046100bec]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 23:40:12 CEST 2009
+ [2009-40-24 11:40, 21592]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe930126b249000001221436051046100bec]] - 666.0
+ [2009-40-24 11:40, 22289]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - 1
+ [2009-40-24 11:40, 22596]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - 1
+ [2009-41-24 11:41, 70295]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe9301f6f296000001221436ef2479491b9c]] - 1
+ [2009-41-24 11:41, 70415]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe9301f6f296000001221436ef2479491b9c]] - 1
+ [2009-41-24 11:41, 70647]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe9301f6f296000001221436ef2479491b9c]] - 1
+ [2009-41-24 11:41, 70792]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe9301f6f296000001221436ef2479491b9c]] - 1
+ [2009-41-24 11:41, 70792]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe9301f6f296000001221436ef2479491b9c]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 23:41:01 CEST 2009
+ [2009-41-24 11:41, 70795]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fe22046097a9]::executor[9def6fe3009fbe9301f6f296000001221436ef2479491b9c]] - 124.0
+ [2009-41-24 11:41, 72012]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - 1
+ [2009-41-24 11:41, 72284]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - 1
+ [2009-41-24 11:41, 73191]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - java.sql.SQLException: ORA-00942: la tabla o vista no existe
+
+ [2009-41-24 11:41, 73255]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - java.sql.SQLException: ORA-00942: la tabla o vista no existe
+
+ [2009-41-24 11:41, 73258]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - java.sql.SQLException: ORA-00942: la tabla o vista no existe
+
+ [2009-41-24 11:41, 73302]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - java.sql.SQLException: ORA-00942: la tabla o vista no existe
+
+ [2009-41-24 11:41, 84731]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - 1
+ [2009-41-24 11:41, 84740]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - 1
+ [2009-41-24 11:41, 84740]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - Script: ejemplo.sql lanzado: Wed Jun 24 23:41:15 CEST 2009
+ [2009-41-24 11:41, 84755]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe93013f5d0700000122143604da516fb42a]] - 12329.0
+ [2009-41-24 11:41, 90499]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90511]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90522]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90534]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90544]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90556]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90568]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90578]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90590]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90606]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90618]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90685]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90694]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90708]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90728]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90739]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90749]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90761]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90773]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90783]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90796]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90810]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90820]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90832]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90845]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90856]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90866]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90880]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90977]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 90987]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 95901]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 95918]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 95927]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 95938]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 95950]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 95961]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 95982]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 95992]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96003]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96014]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96028]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96038]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96064]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96094]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96103]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96115]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96280]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96293]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96340]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96383]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96393]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96402]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96412]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96423]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96436]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96446]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96510]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96537]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96549]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96585]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96599]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96613]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96624]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96676]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96755]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96796]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 96809]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97086]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97095]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97104]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97114]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97159]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97271]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97313]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97337]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97365]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97376]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97387]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97407]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97651]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97725]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97803]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97812]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97823]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97834]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97861]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 97915]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98292]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98330]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98543]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98586]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98596]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98643]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98686]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98697]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98708]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98719]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98755]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98801]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98811]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98878]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 98919]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99136]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99156]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99167]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99251]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99262]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99271]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99285]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99297]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99307]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99315]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99418]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99432]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99441]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99453]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99481]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99490]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99550]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99577]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99626]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99671]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99681]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99747]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99757]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99770]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99798]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99808]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99820]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99860]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99872]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99884]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99930]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99951]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41, 99962]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100049]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100058]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100105]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100148]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100162]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100173]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100186]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100196]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100206]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100249]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100272]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100280]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100289]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100320]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100328]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100336]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100347]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100355]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100366]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100378]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100386]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100396]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100409]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100421]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100432]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100441]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100449]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100459]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100469]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100488]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100499]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100507]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100569]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100607]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100617]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100625]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100634]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100672]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100711]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100720]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100732]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100744]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100759]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100789]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100845]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100884]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100893]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100902]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,100998]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101110]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101121]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101140]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101149]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101159]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101183]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101192]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101204]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101213]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101230]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101240]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101250]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101261]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101271]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101281]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101432]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101441]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101450]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101459]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101471]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101485]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101495]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101526]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101536]ERROR josejamilena.pfc.servidor.tareas.runner.SqlRunner [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - java.sql.SQLException: ORA-00001: restricción única (ORACLE.SYS_C005177) violada
+
+ [2009-41-24 11:41,101675]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - 1
+ [2009-41-24 11:41,101867]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - 1
+ [2009-41-24 11:41,101867]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - Script: ejemplo.sql lanzado: Wed Jun 24 23:41:32 CEST 2009
+ [2009-41-24 11:41,101868]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3009fbe93001d6096000001221435fc39540d7f0f]::executor[9def6fe3009fbe930196c1b0000001221436ef5c43d3fc0f]] - 29271.0
+ [2009-52-24 11:52,     0]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - org.sqlite.JDBC
+ [2009-52-24 11:52,   186]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - jdbc:sqlite:.\estadisticas.db3
+ [2009-52-24 11:52,   193]WARN  josejamilena.pfc.servidor.conexion.Estadisticas [main] - La tabla donde se guardan las estadisticas, ya existe.
+ [2009-52-24 11:52,   255]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-52-24 11:52,   348]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [main] - 0
+ [2009-52-24 11:52,   353]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación SQL: ejemplo.sql * * * * *
+ [2009-52-24 11:52,   354]INFO  josejamilena.pfc.servidor.tareas.CargarTareas [main] - Programación PLSQL: ejemplo_1.sql * * * * *
+ [2009-53-24 11:53,  7225]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f66840119298d000001221441ec107e81e31e]] - 0
+ [2009-53-24 11:53,  7235]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f66840119298d000001221441ec107e81e31e]] - 0
+ [2009-53-24 11:53, 10356]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f668401add2dd000001221441eb6b21c5011d]] - 0
+ [2009-53-24 11:53, 10458]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f668401add2dd000001221441eb6b21c5011d]] - 0
+ [2009-53-24 11:53, 11421]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f668401add2dd000001221441eb6b21c5011d]] - 1
+ [2009-53-24 11:53, 11591]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f668401add2dd000001221441eb6b21c5011d]] - 1
+ [2009-53-24 11:53, 11593]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f668401add2dd000001221441eb6b21c5011d]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 23:53:05 CEST 2009
+ [2009-53-24 11:53, 11593]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f668401add2dd000001221441eb6b21c5011d]] - 333.0
+ [2009-53-24 11:53, 13602]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f66840119298d000001221441ec107e81e31e]] - 1
+ [2009-53-24 11:53, 13631]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f66840119298d000001221441ec107e81e31e]] - 1
+ [2009-53-24 11:53, 13632]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f66840119298d000001221441ec107e81e31e]] - Script: ejemplo.sql lanzado: Wed Jun 24 23:53:07 CEST 2009
+ [2009-53-24 11:53, 13632]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f66840119298d000001221441ec107e81e31e]] - 6212.0
+ [2009-54-24 11:54, 67110]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684014384c2000001221442d6cd6636caf4]] - 1
+ [2009-54-24 11:54, 67122]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684014384c2000001221442d6cd6636caf4]] - 1
+ [2009-54-24 11:54, 67138]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684014384c2000001221442d6cd6636caf4]] - 1
+ [2009-54-24 11:54, 67256]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684014384c2000001221442d6cd6636caf4]] - 1
+ [2009-54-24 11:54, 67256]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684014384c2000001221442d6cd6636caf4]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 23:54:00 CEST 2009
+ [2009-54-24 11:54, 67257]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684014384c2000001221442d6cd6636caf4]] - 9.0
+ [2009-54-24 11:54, 67349]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f668401315d34000001221442d72a5823fd10]] - 1
+ [2009-54-24 11:54, 67422]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f668401315d34000001221442d72a5823fd10]] - 1
+ [2009-54-24 11:54, 69807]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f668401315d34000001221442d72a5823fd10]] - 1
+ [2009-54-24 11:54, 69922]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f668401315d34000001221442d72a5823fd10]] - 1
+ [2009-54-24 11:54, 69922]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f668401315d34000001221442d72a5823fd10]] - Script: ejemplo.sql lanzado: Wed Jun 24 23:54:03 CEST 2009
+ [2009-54-24 11:54, 69922]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f668401315d34000001221442d72a5823fd10]] - 2078.0
+ [2009-55-24 11:55,126797]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f6684005ddb6e000001221443c0080d286395]] - 1
+ [2009-55-24 11:55,126806]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f6684005ddb6e000001221443c0080d286395]] - 1
+ [2009-55-24 11:55,127145]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684012b6c89000001221443c0dd7d3619c5]] - 1
+ [2009-55-24 11:55,127155]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684012b6c89000001221443c0dd7d3619c5]] - 1
+ [2009-55-24 11:55,127170]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684012b6c89000001221443c0dd7d3619c5]] - 1
+ [2009-55-24 11:55,127178]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684012b6c89000001221443c0dd7d3619c5]] - 1
+ [2009-55-24 11:55,127178]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684012b6c89000001221443c0dd7d3619c5]] - Script: ejemplo_1.sql lanzado: Wed Jun 24 23:55:00 CEST 2009
+ [2009-55-24 11:55,127179]DEBUG josejamilena.pfc.servidor.tareas.TaskPLSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d4ce43f08dd3]::executor[9def6fe3012f6684012b6c89000001221443c0dd7d3619c5]] - 3.0
+ [2009-55-24 11:55,128786]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f6684005ddb6e000001221443c0080d286395]] - 1
+ [2009-55-24 11:55,128794]INFO  josejamilena.pfc.servidor.conexion.Estadisticas [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f6684005ddb6e000001221443c0080d286395]] - 1
+ [2009-55-24 11:55,128794]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f6684005ddb6e000001221443c0080d286395]] - Script: ejemplo.sql lanzado: Wed Jun 24 23:55:02 CEST 2009
+ [2009-55-24 11:55,128794]DEBUG josejamilena.pfc.servidor.tareas.TaskSQL [cron4j::scheduler[9def6fe3012f66840171732b000001221441d31e64da611b]::executor[9def6fe3012f6684005ddb6e000001221443c0080d286395]] - 1970.0
  
