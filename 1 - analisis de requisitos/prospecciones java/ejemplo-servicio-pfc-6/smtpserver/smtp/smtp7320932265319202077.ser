@@ -1,0 +1,75 @@
+1.0
+test@locahost
+josejamilena@gmail.com
+1244193111209
+1244193111209
+0
+X-RecievedDate: Fri Jun 05 11:11:51 CEST 2009
+Received: by EricDaugherty's JES SMTP localhost from client: 127.0.0.1
+Received: from 127.0.0.1 (AVG SMTP 8.5.339 [270.12.53/2155]); Fri, 05 Jun 2009 11:11:51 +0200
+Date: Fri, 5 Jun 2009 11:11:50 +0200 (CEST)
+From: test@locahost
+To: josejamilena@gmail.com
+Message-ID: <12700959.1.1244193111027.JavaMail.Jose@doom>
+Subject: Ya mandao errores mierda es estos...
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_0_33513127.1244193110981"
+
+
+------=_Part_0_33513127.1244193110981
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Fri Jun 05 11:11:50 CEST 2009<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="ejemplolog4j.Main category">ejemplolog4j.Main</td>
+<td title="Message">Iniciando...</td>
+</tr>
+</table>
+<br>
+</body></html>
+------=_Part_0_33513127.1244193110981
+Content-Type: multipart/alternative; 
+	boundary="=======AVGMAIL-18E425A1======="
+
+--=======AVGMAIL-18E425A1=======
+Content-Type: text/plain; x-avg=cert; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+Content-Description: "AVG certification"
+
+
+Se certific=F3 que el correo saliente no contiene virus.
+Comprobada por AVG - www.avg.es 
+Versi=F3n: 8.5.339 / Base de datos de virus: 270.12.53/2155 - Fecha de la ve=
+rsi=F3n: 06/04/09 17:55:00
+
+--=======AVGMAIL-18E425A1=======--
+------=_Part_0_33513127.1244193110981--

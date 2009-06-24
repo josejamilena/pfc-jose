@@ -1,0 +1,43 @@
+1.0
+test@locahost
+josejamilena@gmail.com
+1244192780709
+1244196998551
+2
+X-RecievedDate: Fri Jun 05 11:06:20 CEST 2009
+Received: by EricDaugherty's JES SMTP localhost from client: 127.0.0.1
+Received: from 127.0.0.1 (AVG SMTP 8.5.339 [270.12.53/2155]); Fri, 05 Jun 2009 11:06:20 +0200
+Date: Fri, 5 Jun 2009 11:06:20 +0200 (CEST)
+From: test@locahost
+To: josejamilena@gmail.com
+Message-ID: <26795951.1.1244192780559.JavaMail.Jose@doom>
+Subject: Ya mandao errores mierda es estos...
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_0_32425490.1244192780514"
+
+
+------=_Part_0_32425490.1244192780514
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+[2009-06-05 11:06:20,502] [main] ERROR ejemplolog4j.Main  - Iniciando...
+
+------=_Part_0_32425490.1244192780514
+Content-Type: multipart/alternative; 
+	boundary="=======AVGMAIL-7AD77A6D======="
+
+--=======AVGMAIL-7AD77A6D=======
+Content-Type: text/plain; x-avg=cert; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+Content-Description: "AVG certification"
+
+
+Se certific=F3 que el correo saliente no contiene virus.
+Comprobada por AVG - www.avg.es 
+Versi=F3n: 8.5.339 / Base de datos de virus: 270.12.53/2155 - Fecha de la ve=
+rsi=F3n: 06/04/09 17:55:00
+
+--=======AVGMAIL-7AD77A6D=======--
+------=_Part_0_32425490.1244192780514--
