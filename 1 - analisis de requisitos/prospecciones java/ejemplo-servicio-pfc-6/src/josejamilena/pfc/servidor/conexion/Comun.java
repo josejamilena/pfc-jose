@@ -5,13 +5,12 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Properties;
-import java.util.logging.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 /**
  * Metodos compartidos.
- * @author Jose Antonio Jamilena Daza, Miguel Angel Moreno Leiva, Pablo Landin.
+ * @author Jose Antonio Jamilena Daza.
  */
 public final class Comun {
 
