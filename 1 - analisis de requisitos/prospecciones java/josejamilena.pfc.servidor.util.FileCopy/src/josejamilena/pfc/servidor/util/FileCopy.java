@@ -22,7 +22,7 @@ public class FileCopy {
             logger.error(e);
         }
     }
-    
+
     public static void copy(String fromFileName, String toFileName)
             throws IOException {
         File fromFile = new File(fromFileName);

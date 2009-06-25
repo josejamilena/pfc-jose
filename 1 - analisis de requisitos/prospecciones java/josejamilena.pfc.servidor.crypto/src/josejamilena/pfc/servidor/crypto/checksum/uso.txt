@@ -1,0 +1,5 @@
+MD5 checksum can be used to validate a password without passing the actual password.
+The server sends a random string to the client.
+The client appends his password to the random string, and returns an MD5 sum of the result to the server.
+On the server, do the same and compare the MD5 sums.
+If both MD5 are identicals then the password is good.
