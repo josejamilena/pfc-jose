@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Map;
 import josejamilena.pfc.servidor.conexion.Comun;
 import josejamilena.pfc.servidor.tareas.autenticacion.TokenConexion;
+import josejamilena.pfc.servidor.tcp.FileSender;
 import org.apache.log4j.Logger;
 
 /**
@@ -50,6 +51,13 @@ public final class Main {
                 scheduler.schedule(pr, task);
                 scheduler.start();
             }
+            // Servidor de fichero de estadisticas     
+            new FileSender(
+                Comun.getComun().getConfigProperties().getProperty(
+                "josejamilena.pfc.servidor.tcp.ServidorTCP.ficherosqlite"),
+                Integer.parseInt(Comun.getComun().getConfigProperties().getProperty(
+                "josejamilena.pfc.servidor.tcp.ServidorTCP.TCPPort"))
+                ).runServer();
             while (true) {
                 ;
             }

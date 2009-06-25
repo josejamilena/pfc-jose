@@ -63,20 +63,20 @@ public class FileSender {
                 PrintStream os = new PrintStream(sock.getOutputStream(), true);
                 String line;
                 line = is.readLine();
-                System.err.println(line);
+                // System.err.println(line);
                 if (line.equalsIgnoreCase("HELLO")) {
                     os.println(file); // respondo el nombre del archivo
                     os.flush();
-                    System.err.println(file);
+                    // System.err.println(file);
                     line = is.readLine();
-                    System.err.println(line);
+                    // System.err.println(line);
                     if (line.equalsIgnoreCase("NEXT")) {
                         // checksum del fichero
                         os.println(Checksum.Checksum(file));
                         os.flush();
-                        System.err.println(Checksum.Checksum(file));
+                        // System.err.println(Checksum.Checksum(file));
                         line = is.readLine();
-                        System.err.println(line);
+                        // System.err.println(line);
                         if (line.equalsIgnoreCase("NEXT")) {
                             final ReadableByteChannel inputChannel =
                                 Channels.newChannel(new FileInputStream(file));
