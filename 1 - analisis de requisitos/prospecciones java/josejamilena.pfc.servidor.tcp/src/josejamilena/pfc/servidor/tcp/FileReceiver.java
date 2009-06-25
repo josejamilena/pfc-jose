@@ -41,13 +41,15 @@ public class FileReceiver {
             final ReadableByteChannel inputChannel =
                  Channels.newChannel(sock.getInputStream());
             final WritableByteChannel outputChannel =
-                 Channels.newChannel(new FileOutputStream(filename));
+                 Channels.newChannel(new FileOutputStream(hostname + "."
+                 + filename));
             ChannelTools.fastChannelCopy(inputChannel, outputChannel);
             outputChannel.close();
             inputChannel.close();
             is.close();
             os.close();
-            if (Checksum.Checksum(filename) != Long.parseLong(checksum)) {
+            if (Checksum.Checksum(hostname + "." + filename)
+                    != Long.parseLong(checksum)) {
                 throw new RuntimeException("Error en Checksum");
             }
         } catch (IOException e) {	// handles all input/output errors
