@@ -1,0 +1,107 @@
+2009-06-05 11:15:20,560 - [POP3:5] Pop3Processor - Disconnecting
+2009-06-05 11:15:32,124 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: gmail.com failed.
+2009-06-05 11:15:32,126 - [SMTPSender] SMTPSender - Delivery failed for message from: test@locahost to: josejamilena@gmail.com - java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 11:15:47,580 - [POP3:1] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:15:47,614 - [POP3:1] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:15:47,646 - [POP3:1] Pop3Processor - Disconnecting
+2009-06-05 11:16:04,898 - [main] Mail - Logger using log4j.
+2009-06-05 11:16:04,906 - [main] ConfigurationManager - Loaded 1 local domains.
+2009-06-05 11:16:04,907 - [main] ConfigurationManager - Invalid value for property: smtpdelivery.threshold. Defaulting to 10.
+2009-06-05 11:16:04,912 - [main] ConfigurationManager - Loaded 2 users from user.conf
+2009-06-05 11:16:04,939 - [SMTP] ServiceListener - Accepting Connections on port: 25
+2009-06-05 11:16:04,949 - [POP3] ServiceListener - Accepting Connections on port: 110
+2009-06-05 11:16:10,970 - [POP3:3] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:16:11,019 - [POP3:3] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:16:11,047 - [POP3:3] Pop3Processor - Disconnecting
+2009-06-05 11:16:12,060 - [POP3:4] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:16:12,106 - [POP3:4] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:16:12,137 - [POP3:4] Pop3Processor - Disconnecting
+2009-06-05 11:16:18,065 - [SMTP:2] SMTPProcessor - 127.0.0.1(127.0.0.1) socket connected via SMTP.
+2009-06-05 11:16:18,072 - [SMTP:2] ConfigurationManager - Tried to load non-existent user: test@locahost
+2009-06-05 11:16:18,146 - [SMTP:2] SMTPProcessor - Message smtp6618369119098766072.ser accepted for delivery.
+2009-06-05 11:16:18,147 - [SMTP:2] SMTPProcessor - Disconnecting
+2009-06-05 11:16:26,516 - [POP3:5] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:16:26,519 - [POP3:5] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:16:26,523 - [POP3:5] Pop3Processor - Disconnecting
+2009-06-05 11:16:30,348 - [POP3:4] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:16:30,356 - [POP3:4] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:16:30,360 - [POP3:4] Pop3Processor - Disconnecting
+2009-06-05 11:16:31,549 - [POP3:1] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:16:31,592 - [POP3:1] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:16:31,625 - [POP3:1] Pop3Processor - Disconnecting
+2009-06-05 11:16:32,739 - [POP3:4] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:16:32,773 - [POP3:4] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:16:32,810 - [POP3:4] Pop3Processor - Disconnecting
+2009-06-05 11:16:35,006 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: locahost failed.
+2009-06-05 11:16:35,007 - [SMTPSender] SMTPSender - Delivery failed for message from: test@locahost to: test@locahost - java.lang.RuntimeException: Could not connect to any SMTP server for domain: locahost
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: locahost
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 11:17:03,251 - [SMTP:3] SMTPProcessor - 127.0.0.1(127.0.0.1) socket connected via SMTP.
+2009-06-05 11:17:03,288 - [SMTP:3] SMTPProcessor - Message smtp1113961795508207629.ser accepted for delivery.
+2009-06-05 11:17:03,289 - [SMTP:3] SMTPProcessor - Disconnecting
+2009-06-05 11:17:05,023 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: gmail.com failed.
+2009-06-05 11:17:05,024 - [SMTPSender] SMTPSender - Delivery failed for message from: josejamilena@gmail.com to: josejamilena@gmail.com - java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: gmail.com
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 11:17:07,733 - [POP3:2] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:17:07,779 - [POP3:2] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:17:07,814 - [POP3:2] Pop3Processor - Disconnecting
+2009-06-05 11:17:08,809 - [POP3:2] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:17:08,856 - [POP3:2] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:17:08,892 - [POP3:2] Pop3Processor - Disconnecting
+2009-06-05 11:17:10,044 - [POP3:4] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:17:10,094 - [POP3:4] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:17:10,123 - [POP3:4] Pop3Processor - Disconnecting
+2009-06-05 11:17:10,233 - [POP3:5] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:17:10,283 - [POP3:5] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:17:10,310 - [POP3:5] Pop3Processor - Disconnecting
+2009-06-05 11:17:10,932 - [POP3:3] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:17:10,976 - [POP3:3] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:17:11,011 - [POP3:3] Pop3Processor - Disconnecting
+2009-06-05 11:17:11,823 - [POP3:5] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:17:11,869 - [POP3:5] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:17:11,899 - [POP3:5] Pop3Processor - Disconnecting
+2009-06-05 11:17:12,270 - [POP3:4] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:17:12,327 - [POP3:4] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:17:12,350 - [POP3:4] Pop3Processor - Disconnecting
+2009-06-05 11:17:28,531 - [main] Mail - Logger using log4j.
+2009-06-05 11:17:28,538 - [main] ConfigurationManager - Loaded 1 local domains.
+2009-06-05 11:17:28,539 - [main] ConfigurationManager - Invalid value for property: smtpdelivery.threshold. Defaulting to 10.
+2009-06-05 11:17:28,544 - [main] ConfigurationManager - Loaded 2 users from user.conf
+2009-06-05 11:17:28,568 - [SMTP] ServiceListener - Accepting Connections on port: 25
+2009-06-05 11:17:28,573 - [POP3] ServiceListener - Accepting Connections on port: 110
+2009-06-05 11:17:28,628 - [SMTPSender] SMTPSender - Delivery complete for message smtp1113961795508207629.ser to: test@localhost
+2009-06-05 11:17:32,973 - [SMTP:1] SMTPProcessor - 127.0.0.1(127.0.0.1) socket connected via SMTP.
+2009-06-05 11:17:32,984 - [SMTP:1] SMTPProcessor - Message smtp2363821702146021253.ser accepted for delivery.
+2009-06-05 11:17:32,988 - [SMTP:1] SMTPProcessor - Disconnecting
+2009-06-05 11:17:37,373 - [POP3:5] Pop3Processor - 0:0:0:0:0:0:0:1(0:0:0:0:0:0:0:1) socket connected via POP3.
+2009-06-05 11:17:37,421 - [POP3:5] Pop3Processor - User: test@localhost logged in successfully.
+2009-06-05 11:17:37,539 - [POP3:5] Pop3Processor - Disconnecting
+2009-06-05 11:17:58,692 - [SMTPSender] SMTPRemoteSender - DNS Lookup for domain: alu.uma.es failed.
+2009-06-05 11:17:58,693 - [SMTPSender] SMTPSender - Delivery failed for message from: test@locahost to: 0617393471@alu.uma.es - java.lang.RuntimeException: Could not connect to any SMTP server for domain: alu.uma.es
+java.lang.RuntimeException: Could not connect to any SMTP server for domain: alu.uma.es
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.connect(SMTPRemoteSender.java:221)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPRemoteSender.sendMessage(SMTPRemoteSender.java:103)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliverRemoteMessage(SMTPSender.java:361)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.deliver(SMTPSender.java:184)
+	at com.ericdaugherty.mail.server.services.smtp.SMTPSender.run(SMTPSender.java:100)
+	at java.lang.Thread.run(Unknown Source)
+2009-06-05 11:18:04,134 - [SMTP:3] SMTPProcessor - 127.0.0.1(127.0.0.1) socket connected via SMTP.
+2009-06-05 11:18:04,142 - [SMTP:3] ConfigurationManager - Tried to load non-existent user: miguelis@hotmail.com

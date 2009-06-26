@@ -1,0 +1,4 @@
+# <fichero script> ; <planificacion> ; <[SQL|PLSQL]> ; <driver JDBC> ; <hostname> ; <cadena de conexión> ; <usuario> ; <contraseña>
+ejemplo.sql;* * * * *;SQL;oracle.jdbc.driver.OracleDriver;vmware;jdbc:oracle:thin:@192.168.2.17:1521:XE;oracle;oracle
+ejemplo_1.sql;* * * * *;PLSQL;oracle.jdbc.driver.OracleDriver;vmware;jdbc:oracle:thin:@192.168.2.17:1521:XE;oracle;oracle
+
