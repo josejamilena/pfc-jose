@@ -56,7 +56,7 @@ class ClientHandler extends Thread {
                     for (String i : g.getLista()) {
                         media1 = media1 + "," + Math.round(mediad);
                     }
-                    String leyendaDatos1 = tmp.substring(tmp.indexOf("'")+1, tmp.lastIndexOf("'"));
+                    String leyendaDatos1 = tmp.substring(tmp.indexOf("'") + 1, tmp.lastIndexOf("'"));
                     String tituloGrafico1 = "Servidor de bases de datos " + leyendaDatos1;
                     String leyendaMedia1 = "media";
                     String graficaActual = "<img src=\"http://chart.apis.google.com/chart?chs=600x400&chd=t:" + datos1 + "|" + media1 + "&cht=lc&chtt=" + tituloGrafico1 + "&chts=FF0000,20&chdl=" + leyendaDatos1 + "|" + leyendaMedia1 + "&chco=ff0000,0000ff&chxt=y&chxl=1:|0|10000&chds=10,30000\"" + "  alt=\"" + textoAlternativo1 + "\">";
@@ -84,7 +84,7 @@ class ClientHandler extends Thread {
                     for (String i : g.getLista()) {
                         media2 = media2 + "," + Math.round(mediad);
                     }
-                    String leyendaDatos2 = tmp.substring(tmp.indexOf("'")+1, tmp.lastIndexOf("'"));
+                    String leyendaDatos2 = tmp.substring(tmp.indexOf("'") + 1, tmp.lastIndexOf("'"));
                     String tituloGrafico2 = "Cliente de bases de datos " + leyendaDatos2;
                     String leyendaMedia2 = "media";
                     String graficaActual = "<img src=\"http://chart.apis.google.com/chart?chs=600x400&chd=t:" + datos2 + "|" + media2 + "&cht=lc&chtt=" + tituloGrafico2 + "&chts=FF0000,20&chdl=" + leyendaDatos2 + "|" + leyendaMedia2 + "&chco=00FF00,0000ff&chxt=y&chxl=1:|0|10000&chds=10,30000\"" + "  alt=\"" + textoAlternativo2 + "\">";
@@ -112,7 +112,7 @@ class ClientHandler extends Thread {
                     for (String i : g.getLista()) {
                         media3 = media3 + "," + Math.round(mediad);
                     }
-                    String leyendaDatos3 = tmp.substring(tmp.indexOf("'")+1, tmp.lastIndexOf("'"));
+                    String leyendaDatos3 = tmp.substring(tmp.indexOf("'") + 1, tmp.lastIndexOf("'"));
                     String tituloGrafico3 = "Script " + leyendaDatos3;
                     String leyendaMedia3 = "media";
                     String graficaActual = "<img src=\"http://chart.apis.google.com/chart?chs=600x400&chd=t:" + datos3 + "|" + media3 + "&cht=lc&chtt=" + tituloGrafico3 + "&chts=FF0000,20&chdl=" + leyendaDatos3 + "|" + leyendaMedia3 + "&chco=000000,0000ff&chxt=y&chxl=1:|0|10000&chds=10,30000\"" + "  alt=\"" + textoAlternativo3 + "\">";
@@ -124,7 +124,8 @@ class ClientHandler extends Thread {
             }
             // g = SQLUtils.consultaSQL2Grafico(conn, "select tiempo, fecha from estadisticas where tipo='ejemplo.sql'");
             pw = new PrintWriter(nombreFichero);
-            String titulo = "Estadisticas online";;
+            String titulo = "Estadisticas online";
+            ;
             String encabezado = "<html><head><meta content=\"text/html; " + "charset=ISO-8859-1\" http-equiv=\"content-type\"><title>" + titulo + "</title> </head> <body> <h1>" + titulo + "</h1><br><br><br> ";
             String graficas = "";
             for (String i : googleCharts) {
@@ -208,11 +209,6 @@ class ClientHandler extends Thread {
                 }
                 f.close();
                 out.close();
-                File aborrar = new File(nombreFichero);
-                boolean success = aborrar.delete();
-                if (!success) {
-                    throw new IllegalArgumentException("Delete: deletion failed");
-                }
             } catch (FileNotFoundException x) {
                 out.println("HTTP/1.0 404 No encontrado.\r\n" +
                         "Content-type: text/html\r\n\r\n" +
@@ -222,6 +218,9 @@ class ClientHandler extends Thread {
             }
         } catch (IOException x) {
             System.out.println(x);
+        } finally {
+            File aborrar = new File(nombreFichero);
+            org.apache.commons.io.FileUtils.deleteQuietly(aborrar);
         }
     }
 }
