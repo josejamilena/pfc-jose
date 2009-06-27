@@ -25,7 +25,7 @@ class ClientHandler extends Thread {
     public ClientHandler(Socket s) {
         try {
             nombreFichero = org.apache.commons.lang.RandomStringUtils.randomAlphabetic(8);
-            nombreFichero = ".//cache//" + nombreFichero + ".html";
+            nombreFichero = nombreFichero + ".html";
             miSocketServidor = s;
             PrintWriter pw;
             Grafico g = null;
@@ -199,8 +199,9 @@ class ClientHandler extends Thread {
                 } else if (filename.endsWith(".jnlp")) {
                     mimeType = "application/x-java-jnlp-file";
                 }
-                out.print("HTTP/1.0 200 OK\r\n" +
-                        "Content-type: " + mimeType + "\r\n\r\n");
+                out.print("HTTP/1.0 200 OK\r\n" 
+                        + "Server: josejamilena_Torito-Chart-Server\r\n"
+                        + "Content-type: " + mimeType + "\r\n\r\n");
                 // Envia el fichero ala cliente, y cierra la conexión
                 byte[] a = new byte[4096];
                 int n;
@@ -211,6 +212,7 @@ class ClientHandler extends Thread {
                 out.close();
             } catch (FileNotFoundException x) {
                 out.println("HTTP/1.0 404 No encontrado.\r\n" +
+                        "Server: josejamilena_Torito-Chart-Server\r\n" +
                         "Content-type: text/html\r\n\r\n" +
                         "<html><head></head><body>" + "El fichero " +
                         filename + " no ha sido encontrado.</body></html>\n");
