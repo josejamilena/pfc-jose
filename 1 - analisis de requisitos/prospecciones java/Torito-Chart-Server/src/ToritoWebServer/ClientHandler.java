@@ -13,6 +13,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 class ClientHandler extends Thread {
@@ -23,44 +25,113 @@ class ClientHandler extends Thread {
     public ClientHandler(Socket s) {
         try {
             nombreFichero = org.apache.commons.lang.RandomStringUtils.randomAlphabetic(8);
-            nombreFichero = nombreFichero + ".html";
+            nombreFichero = ".//cache//" + nombreFichero + ".html";
             miSocketServidor = s;
             PrintWriter pw;
             Grafico g = null;
             Class.forName("org.sqlite.JDBC");
             Connection conn = DriverManager.getConnection("jdbc:sqlite:.\\estadisticas.db3");
-            g = SQLtoGrafico.consultaSQL(conn, "select tiempo, fecha from estadisticas where tipo='ejemplo.sql'");
+            List<GrupoConsulta> lgc = SQLUtils.ListaGruposConsultas(conn);
+            List<String> googleCharts = new LinkedList<String>();
+            //System.err.println(lgc.size());
+            if (lgc.size() == 3) {
+                GrupoConsulta gcHostSgbd = lgc.get(0);
+                GrupoConsulta gcHostClientes = lgc.get(1);
+                GrupoConsulta gcHostTipo = lgc.get(2);
+                String plantilla1 = "";
+                for (String tmp : gcHostSgbd.getLista()) {
+                    g = SQLUtils.consultaSQL2Grafico(conn, tmp);
+                    String textoAlternativo1 = "dibujo";
+                    String datos1 = "";
+                    for (String i : g.getLista()) {
+                        datos1 = datos1 + "," + i;
+                    }
+                    String media1 = "";
+                    int cantidad = g.getLista().size();
+                    double mediad = 0.0;
+                    for (String i : g.getLista()) {
+                        mediad = mediad + Double.parseDouble(i);
+                    }
+                    mediad = mediad / cantidad;
+                    for (String i : g.getLista()) {
+                        media1 = media1 + "," + Math.round(mediad);
+                    }
+                    String leyendaDatos1 = tmp.substring(tmp.indexOf("'")+1, tmp.lastIndexOf("'"));
+                    String tituloGrafico1 = "Servidor de bases de datos " + leyendaDatos1;
+                    String leyendaMedia1 = "media";
+                    String graficaActual = "<img src=\"http://chart.apis.google.com/chart?chs=600x400&chd=t:" + datos1 + "|" + media1 + "&cht=lc&chtt=" + tituloGrafico1 + "&chts=FF0000,20&chdl=" + leyendaDatos1 + "|" + leyendaMedia1 + "&chco=ff0000,0000ff&chxt=y&chxl=1:|0|10000&chds=10,30000\"" + "  alt=\"" + textoAlternativo1 + "\">";
+                    graficaActual = graficaActual.replace("chd=t:,", "chd=t:");
+                    graficaActual = graficaActual.replace("|,", "|");
+                    plantilla1 = plantilla1 + "<p>" + graficaActual;
+                }
+                googleCharts.add(plantilla1);
+                String plantilla2 = "";
+                for (String tmp : gcHostClientes.getLista()) {
+                    g = SQLUtils.consultaSQL2Grafico(conn, tmp);
+                    // System.err.println(tmp);
+                    String textoAlternativo2 = "dibujo";
+                    String datos2 = "";
+                    for (String i : g.getLista()) {
+                        datos2 = datos2 + "," + i;
+                    }
+                    String media2 = "";
+                    int cantidad = g.getLista().size();
+                    double mediad = 0.0;
+                    for (String i : g.getLista()) {
+                        mediad = mediad + Double.parseDouble(i);
+                    }
+                    mediad = mediad / cantidad;
+                    for (String i : g.getLista()) {
+                        media2 = media2 + "," + Math.round(mediad);
+                    }
+                    String leyendaDatos2 = tmp.substring(tmp.indexOf("'")+1, tmp.lastIndexOf("'"));
+                    String tituloGrafico2 = "Cliente de bases de datos " + leyendaDatos2;
+                    String leyendaMedia2 = "media";
+                    String graficaActual = "<img src=\"http://chart.apis.google.com/chart?chs=600x400&chd=t:" + datos2 + "|" + media2 + "&cht=lc&chtt=" + tituloGrafico2 + "&chts=FF0000,20&chdl=" + leyendaDatos2 + "|" + leyendaMedia2 + "&chco=00FF00,0000ff&chxt=y&chxl=1:|0|10000&chds=10,30000\"" + "  alt=\"" + textoAlternativo2 + "\">";
+                    graficaActual = graficaActual.replace("chd=t:,", "chd=t:");
+                    graficaActual = graficaActual.replace("|,", "|");
+                    plantilla2 = plantilla2 + "<p>" + graficaActual;
+                }
+                googleCharts.add(plantilla2);
+                String plantilla3 = "";
+                for (String tmp : gcHostTipo.getLista()) {
+                    g = SQLUtils.consultaSQL2Grafico(conn, tmp);
+                    // System.err.println(tmp);
+                    String textoAlternativo3 = "dibujo";
+                    String datos3 = "";
+                    for (String i : g.getLista()) {
+                        datos3 = datos3 + "," + i;
+                    }
+                    String media3 = "";
+                    int cantidad = g.getLista().size();
+                    double mediad = 0.0;
+                    for (String i : g.getLista()) {
+                        mediad = mediad + Double.parseDouble(i);
+                    }
+                    mediad = mediad / cantidad;
+                    for (String i : g.getLista()) {
+                        media3 = media3 + "," + Math.round(mediad);
+                    }
+                    String leyendaDatos3 = tmp.substring(tmp.indexOf("'")+1, tmp.lastIndexOf("'"));
+                    String tituloGrafico3 = "Script " + leyendaDatos3;
+                    String leyendaMedia3 = "media";
+                    String graficaActual = "<img src=\"http://chart.apis.google.com/chart?chs=600x400&chd=t:" + datos3 + "|" + media3 + "&cht=lc&chtt=" + tituloGrafico3 + "&chts=FF0000,20&chdl=" + leyendaDatos3 + "|" + leyendaMedia3 + "&chco=000000,0000ff&chxt=y&chxl=1:|0|10000&chds=10,30000\"" + "  alt=\"" + textoAlternativo3 + "\">";
+                    graficaActual = graficaActual.replace("chd=t:,", "chd=t:");
+                    graficaActual = graficaActual.replace("|,", "|");
+                    plantilla3 = plantilla3 + "<p>" + graficaActual;
+                }
+                googleCharts.add(plantilla3);
+            }
+            // g = SQLUtils.consultaSQL2Grafico(conn, "select tiempo, fecha from estadisticas where tipo='ejemplo.sql'");
             pw = new PrintWriter(nombreFichero);
-            String titulo = "Titulo";
-            String tituloGrafico = "Titulo Grafico";
-            String textoAlternativo = "dibujo";
-            String datos = "";
-            for (String tmp : g.getLista()) {
-                datos = datos + "," + tmp;
+            String titulo = "Estadisticas online";;
+            String encabezado = "<html><head><meta content=\"text/html; " + "charset=ISO-8859-1\" http-equiv=\"content-type\"><title>" + titulo + "</title> </head> <body> <h1>" + titulo + "</h1><br><br><br> ";
+            String graficas = "";
+            for (String i : googleCharts) {
+                graficas = graficas + "<br><br><br>" + i;
             }
-            String media = "";
-            int cantidad = g.getLista().size();
-            double mediad = 0.0;
-            for (String tmp : g.getLista()) {
-                mediad = mediad + Double.parseDouble(tmp);
-            }
-            mediad = mediad / cantidad;
-            for (String tmp : g.getLista()) {
-                media = media + "," + Math.round(mediad);
-            }
-            String leyendaDatos = g.getTituloEjeX();
-            String leyendaMedia = "media";
-            String plantilla = "<html><head><meta content=\"text/html; "
-                    + "charset=ISO-8859-1\" http-equiv=\"content-type\"><title>"
-                    + titulo + "</title> </head> <body> <h1>" + titulo + "</h1>"
-                    + "<img src=\"http://chart.apis.google.com/chart?chs=600x400&chd=t:"
-                    + datos + "|" + media + "&cht=lc&chtt=" + tituloGrafico
-                    + "&chts=FF0000,20&chdl=" + leyendaDatos  + "|" + leyendaMedia
-                    + "&chco=ff0000,0000ff&chxt=y&chxl=1:|0|10000&chds=10,30000\""
-                    + "  alt=\"" + textoAlternativo + "\"> </body> </html>";
-            plantilla = plantilla.replace("chd=t:,", "chd=t:");
-            plantilla = plantilla.replace("|,", "|");
-            pw.println(plantilla);
+            String pie = "<br><br><br>  Powered by <A HREF=\"http://www.google.com/\"><IMG SRC=\"http://www.google.com/logos/Logo_40wht.gif\" border=\"0\" ALT=\"Google\" align=\"absmiddle\"></A></body> </html>";
+            pw.println(encabezado + graficas + pie);
             pw.flush();
             pw.close();
             start();
@@ -75,7 +146,7 @@ class ClientHandler extends Thread {
             PrintStream out = new PrintStream(new BufferedOutputStream(miSocketServidor.getOutputStream()));
 
             String s = in.readLine();
-            System.out.println(s);  // Salida para el Log
+            // System.out.println(s);  // Salida para el Log
 
             // Atiende a servir archivos.
             String filename = "";
@@ -139,8 +210,9 @@ class ClientHandler extends Thread {
                 out.close();
                 File aborrar = new File(nombreFichero);
                 boolean success = aborrar.delete();
-                if (!success)
+                if (!success) {
                     throw new IllegalArgumentException("Delete: deletion failed");
+                }
             } catch (FileNotFoundException x) {
                 out.println("HTTP/1.0 404 No encontrado.\r\n" +
                         "Content-type: text/html\r\n\r\n" +
