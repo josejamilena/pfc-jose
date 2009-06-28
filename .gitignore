@@ -29,6 +29,9 @@
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/ejemplo-sqlite/dist
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.VisorMsg/build
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.VisorMsg/dist
+1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.chartserver/build
+1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.chartserver/cache
+1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.chartserver/dist
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.crypto/build
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.crypto/dist
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.tcp/build
@@ -37,6 +40,7 @@
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/josejamilena.pfc.servidor.util.FileCopy/dist
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/practicalb/build
 1[!!-~]-[!!-~]analisis[!!-~]de[!!-~]requisitos/prospecciones[!!-~]java/practicalb/dist
+4[!!-~]-[!!-~]implementacion,[!!-~]pruebas[!!-~]y[!!-~]documentacion/4.1[!!-~]-[!!-~]implementacion/josejamilena.pfc.servidor.chartserver/cache
 4[!!-~]-[!!-~]implementacion,[!!-~]pruebas[!!-~]y[!!-~]documentacion/4.1[!!-~]-[!!-~]implementacion/josejamilena.pfc.servidor.tcp/test
 4[!!-~]-[!!-~]implementacion,[!!-~]pruebas[!!-~]y[!!-~]documentacion/4.1[!!-~]-[!!-~]implementacion/servicio/build
 4[!!-~]-[!!-~]implementacion,[!!-~]pruebas[!!-~]y[!!-~]documentacion/4.1[!!-~]-[!!-~]implementacion/servicio/dist
