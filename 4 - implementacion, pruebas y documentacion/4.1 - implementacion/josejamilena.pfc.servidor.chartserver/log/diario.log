@@ -1,0 +1,17 @@
+[2009-06-28 11:06,     0]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - josejamilena.pfc.servidor.chartserver
+ [2009-06-28 11:06,     4]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - Iniciado en puerto: 80
+ [2009-07-28 11:07,     0]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - josejamilena.pfc.servidor.chartserver
+ [2009-07-28 11:07,     3]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - Iniciado en puerto: 80
+ [2009-09-28 11:09,     0]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - josejamilena.pfc.servidor.chartserver
+ [2009-09-28 11:09,  5402]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - Iniciado en puerto: 80
+ [2009-12-28 11:12,     0]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - josejamilena.pfc.servidor.chartserver
+ [2009-12-28 11:12,     4]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - Iniciado en puerto: 80
+ [2009-12-28 11:12,  5615]INFO  josejamilena.pfc.servidor.chartserver.ClientHandler [main] - Conexion desde: /0:0:0:0:0:0:0:1
+ [2009-12-28 11:12,  5616]INFO  josejamilena.pfc.servidor.chartserver.ClientHandler [main] - Fichero index creado: ywKJZCaR.html
+ [2009-14-28 11:14,     0]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - josejamilena.pfc.servidor.chartserver
+ [2009-14-28 11:14,     5]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - Iniciado en puerto: 80
+ [2009-14-28 11:14,  6553]INFO  josejamilena.pfc.servidor.chartserver.ClientHandler [main] - Conexion desde: 0.0.0.0/0.0.0.0
+ [2009-14-28 11:14,  6553]INFO  josejamilena.pfc.servidor.chartserver.ClientHandler [main] - Fichero index creado: ghMwenJa.html
+ [2009-15-28 11:15,     0]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - josejamilena.pfc.servidor.chartserver
+ [2009-15-28 11:15,     5]INFO  josejamilena.pfc.servidor.chartserver.Webserver [main] - Iniciado en puerto: 80
+ 
