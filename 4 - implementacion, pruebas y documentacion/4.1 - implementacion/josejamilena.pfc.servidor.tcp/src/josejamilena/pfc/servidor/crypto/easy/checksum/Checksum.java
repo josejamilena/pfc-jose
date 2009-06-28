@@ -6,9 +6,23 @@ import java.io.IOException;
 import java.util.zip.CheckedInputStream;
 import java.util.zip.CRC32;
 
-public class Checksum {
+/**
+ * Comprobador de suma.
+ * @author Jose Antonio Jamilena Daza
+ */
+public final class Checksum {
 
-    public static long Checksum(String fichero)
+    /** no se podrá instanciar. */
+    private Checksum() {
+    }
+
+    /**
+     * Obtiene la suma de comprobación del fichero dado.
+     * @param fichero fichero
+     * @return suma
+     * @throws java.io.IOException error
+     */
+    public static long checksum(final String fichero)
             throws IOException {
         FileInputStream file = new FileInputStream(fichero);
         CheckedInputStream check =
@@ -16,7 +30,6 @@ public class Checksum {
         BufferedInputStream in =
                 new BufferedInputStream(check);
         while (in.read() != -1) {
-            // Read file in completely
         }
         return check.getChecksum().getValue();
     }

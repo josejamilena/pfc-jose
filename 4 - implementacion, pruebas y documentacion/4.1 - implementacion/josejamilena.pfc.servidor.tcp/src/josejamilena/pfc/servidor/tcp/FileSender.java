@@ -14,86 +14,172 @@ import josejamilena.pfc.servidor.crypto.easy.checksum.Checksum;
 import josejamilena.pfc.servidor.util.ChannelTools;
 
 /**
- *
+ * Servicio que envia los ficheros de BBDD de estadisticas por TCP.
  * @author Jose Antonio Jamilena Daza.
  */
 public class FileSender {
 
-    public static int port;
+    /** Puerto TCP. */
+    private static int port;
+
+    /** Nombre del fichero. */
     private static String file = "";
 
-    public FileSender(String fileToSend, int tcpPort) {
+    /**
+     * @return the port
+     */
+    public static int getPort() {
+        return port;
+    }
+
+    /**
+     * @param aPort the port to set
+     */
+    public static void setPort(final int aPort) {
+        port = aPort;
+    }
+
+    /**
+     * @return the file
+     */
+    public static String getFile() {
+        return file;
+    }
+
+    /**
+     * @param aFile the file to set
+     */
+    public static void setFile(final String aFile) {
+        file = aFile;
+    }
+
+    /**
+     * Constructor.
+     * @param fileToSend fichero
+     * @param tcpPort puerto
+     */
+    public FileSender(final String fileToSend, final int tcpPort) {
         this.file = fileToSend;
         this.port = tcpPort;
     }
 
-    public static void main(String[] av) {
-        new FileSender("build.xml", 3185).runServer();
-    }
+//    public static void main(String[] av) {
+//        new FileSender("build.xml", 3185).runServer();
+//    }
 
-    public void runServer() {
+    /**
+     * Ejecutor.
+     */
+    public final void runServer() {
         ServerSocket sock;
         Socket clientSocket;
         try {
-            sock = new ServerSocket(port);
+            sock = new ServerSocket(getPort());
             while (true) {
                 clientSocket = sock.accept();
-                new Handler(clientSocket, file).start();
+                new Handler(clientSocket, getFile()).start();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Hilo de ejecución.
+     */
     class Handler extends Thread {
 
-        Socket sock;
-        String file;
+        /** socket. */
+        private Socket sock;
 
-        Handler(Socket s, String fileToSend) {
+        /** fichero.*/
+        private String file;
+
+        /**
+         * Constructor.
+         * @param s socket
+         * @param fileToSend fichero
+         */
+        Handler(final Socket s, final String fileToSend) {
             sock = s;
             file = fileToSend;
         }
 
+        /**
+         * metodo que ejecuta.
+         */
+        @Override
         public void run() {
             try {
                 BufferedReader is =
                         new BufferedReader(
-                        new InputStreamReader(sock.getInputStream()));
-                PrintStream os = new PrintStream(sock.getOutputStream(), true);
+                        new InputStreamReader(getSock().getInputStream()));
+                PrintStream os = new PrintStream(getSock().getOutputStream(),
+                        true);
                 String line;
                 line = is.readLine();
                 // System.err.println(line);
                 if (line.equalsIgnoreCase("HELLO")) {
-                    os.println(file); // respondo el nombre del archivo
+                    os.println(getFile()); // respondo el nombre del archivo
                     os.flush();
                     // System.err.println(file);
                     line = is.readLine();
                     // System.err.println(line);
                     if (line.equalsIgnoreCase("NEXT")) {
                         // checksum del fichero
-                        os.println(Checksum.Checksum(file));
+                        os.println(Checksum.checksum(getFile()));
                         os.flush();
                         // System.err.println(Checksum.Checksum(file));
                         line = is.readLine();
                         // System.err.println(line);
                         if (line.equalsIgnoreCase("NEXT")) {
                             final ReadableByteChannel inputChannel =
-                                Channels.newChannel(new FileInputStream(file));
+                                Channels.newChannel(
+                                new FileInputStream(getFile()));
                             final WritableByteChannel outputChannel =
                                 Channels.newChannel(os);
                             ChannelTools.fastChannelCopy(inputChannel,
                                     outputChannel);
-                        } else {}
-                    } else {}
+                        } else {
+                        }
+                    } else {
+                    }
                     os.flush();
                     os.close();
                     is.close();
                 }
-                sock.close();
+                getSock().close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        /**
+         * @return the sock
+         */
+        public Socket getSock() {
+            return sock;
+        }
+
+        /**
+         * @param aSock the sock to set
+         */
+        public void setSock(final Socket aSock) {
+            this.sock = aSock;
+        }
+
+        /**
+         * @return the file
+         */
+        public String getFile() {
+            return file;
+        }
+
+        /**
+         * @param aFile the file to set
+         */
+        public void setFile(final String aFile) {
+            this.file = aFile;
         }
     }
 }
