@@ -17,6 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
 import org.apache.commons.lang.RandomStringUtils;
+import org.apache.log4j.Logger;
 
 /**
  * Hilo de ejecución del servidor.
@@ -24,6 +25,8 @@ import org.apache.commons.lang.RandomStringUtils;
  */
 class ClientHandler extends Thread {
 
+    /** Logger. */
+    private static Logger logger = Logger.getLogger(ClientHandler.class);
     /** Socket. */
     private Socket miSocketServidor;
     /** Nombre de fichero index para este hilo. */
@@ -44,15 +47,16 @@ class ClientHandler extends Thread {
         try {
             nombreFichero = RandomStringUtils.randomAlphabetic(longitudNombre);
             nombreFichero = nombreFichero + ".html";
+            logger.info("Conexion desde: " + s.getInetAddress().toString());
+            logger.info("Fichero index creado: " + nombreFichero);
             miSocketServidor = s;
             PrintWriter pw;
             Grafico g = null;
-            Class.forName("org.sqlite.JDBC");
             Connection conn = DriverManager.getConnection(
-                    "jdbc:sqlite:.\\estadisticas.db3");
+                    Webserver.getConfigProperties().getProperty(
+                    "josejamilena.pfc.servidor.chartserver.url"));
             List < GrupoConsulta > lgc = SQLUtils.listaGruposConsultas(conn);
             List < String > googleCharts = new LinkedList < String > ();
-            //System.err.println(lgc.size());
             if (lgc.size() == numGrupos) {
                 GrupoConsulta gcHostSgbd = lgc.get(0);
                 GrupoConsulta gcHostClientes = lgc.get(1);
@@ -95,7 +99,6 @@ class ClientHandler extends Thread {
                 String plantilla2 = "";
                 for (String tmp : gcHostClientes.getLista()) {
                     g = SQLUtils.consultaSQL2Grafico(conn, tmp);
-                    // System.err.println(tmp);
                     String textoAlternativo2 = "dibujo";
                     String datos2 = "";
                     for (String i : g.getLista()) {
@@ -131,7 +134,6 @@ class ClientHandler extends Thread {
                 String plantilla3 = "";
                 for (String tmp : gcHostTipo.getLista()) {
                     g = SQLUtils.consultaSQL2Grafico(conn, tmp);
-                    // System.err.println(tmp);
                     String textoAlternativo3 = "dibujo";
                     String datos3 = "";
                     for (String i : g.getLista()) {
@@ -164,33 +166,25 @@ class ClientHandler extends Thread {
                 }
                 googleCharts.add(plantilla3);
             }
-            /* g = SQLUtils.consultaSQL2Grafico(conn,
-            "select tiempo, fecha from estadisticas where tipo='ejemplo.sql'");
-            */
-            pw = new PrintWriter(nombreFichero);
             String titulo = "Estadisticas online";
             String script = "<script type=\"text/JavaScript\">"
-                    + "<!-- "
-                    + "function timedRefresh(timeoutPeriod) {"
+                    + "<!-- function timedRefresh(timeoutPeriod) {"
                     + "setTimeout(\"location.reload(true);\",timeoutPeriod);"
-                    + "}"
-                    + "//   -->"
-                    + " </script> ";
+                    + "} //   -->  </script> ";
             String encabezado = "<html><head><meta content=\"text/html; "
                     + "charset=ISO-8859-1\" http-equiv=\"content-type\"><title>"
                     + titulo + "</title>" + script
                     + "</head> <body onload=\"JavaScript:timedRefresh(5000);\">"
-                    + " <h1>" + titulo
-                    + "</h1><br><br><br> ";
+                    + " <h1>" + titulo + "</h1><br><br><br> ";
             String graficas = "";
             for (String i : googleCharts) {
                 graficas = graficas + "<br><br><br>" + i;
             }
-            String pie = "<br><br><br>  Powered by "
-                    + "<A HREF=\"http://www.google.com/\">"
+            String pie = "<br>Powered by: <A HREF=\"http://www.google.com/\">"
                     + "<IMG SRC=\"http://www.google.com/logos/Logo_40wht.gif\" "
                     + "border=\"0\" ALT=\"Google\" align=\"absmiddle\">"
                     + "</A></body> </html>";
+            pw = new PrintWriter(nombreFichero);
             pw.println(encabezado + graficas + pie);
             pw.flush();
             pw.close();
