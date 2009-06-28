@@ -169,9 +169,18 @@ class ClientHandler extends Thread {
             */
             pw = new PrintWriter(nombreFichero);
             String titulo = "Estadisticas online";
+            String script = "<script type=\"text/JavaScript\">"
+                    + "<!-- "
+                    + "function timedRefresh(timeoutPeriod) {"
+                    + "setTimeout(\"location.reload(true);\",timeoutPeriod);"
+                    + "}"
+                    + "//   -->"
+                    + " </script> ";
             String encabezado = "<html><head><meta content=\"text/html; "
                     + "charset=ISO-8859-1\" http-equiv=\"content-type\"><title>"
-                    + titulo + "</title> </head> <body> <h1>" + titulo
+                    + titulo + "</title>" + script
+                    + "</head> <body onload=\"JavaScript:timedRefresh(5000);\">"
+                    + " <h1>" + titulo
                     + "</h1><br><br><br> ";
             String graficas = "";
             for (String i : googleCharts) {
