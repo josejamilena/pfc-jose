@@ -12,14 +12,18 @@ import java.nio.channels.WritableByteChannel;
 import josejamilena.pfc.servidor.util.ChannelTools;
 import josejamilena.pfc.servidor.crypto.easy.checksum.Checksum;
 
+/**
+ * Receptor de ficheros.
+ * @author Jose Antonio Jamilena Daza
+ */
 public class FileReceiver {
 
-    public static void main(String[] argv) {
-        FileReceiver c = new FileReceiver();
-        c.converse("localhost", 3185);
-    }
-
-    protected void converse(String hostname, int port) {
+    /**
+     * recibir.
+     * @param hostname host
+     * @param port puerto
+     */
+    public final void receive(final String hostname, final int port) {
         Socket sock = null;
         try {
             sock = new Socket(hostname, port);
@@ -48,19 +52,18 @@ public class FileReceiver {
             inputChannel.close();
             is.close();
             os.close();
-            if (Checksum.Checksum(hostname + "." + filename)
+            if (Checksum.checksum(hostname + "." + filename)
                     != Long.parseLong(checksum)) {
                 throw new RuntimeException("Error en Checksum");
             }
-        } catch (IOException e) {	// handles all input/output errors
+        } catch (IOException e) {
             System.err.println(e);
-        } finally {					// cleanup
+        } finally {
             try {
                 if (sock != null) {
                     sock.close();
                 }
-            } catch (IOException ignoreMe) {
-                // nothing
+            } catch (IOException ex) {
             }
         }
     }
