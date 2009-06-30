@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
 
 /**
  * Clase conexion.
- * @author Jose Antonio Jamilena Daza, Miguel Angel Moreno Leiva, Pablo Landin.
+ * @author Jose Antonio Jamilena Daza.
  */
 public class SqlRunner {
 
