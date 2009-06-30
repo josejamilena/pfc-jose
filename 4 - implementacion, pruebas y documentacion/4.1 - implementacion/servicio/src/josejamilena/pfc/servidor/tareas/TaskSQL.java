@@ -67,8 +67,8 @@ public class TaskSQL implements Runnable {
             SqlRunner sr = new SqlRunner(this.token.getDriver(),
                     this.token.getCadenaConexion(), this.token.getUsuario(),
                     this.token.getPassword());
-            Comun.getComun().getEstadisticas()
-                    .iniciarEstadisticaDeConsultaActual();
+            // Comun.getComun().getEstadisticas()
+            //         .iniciarEstadisticaDeConsultaActual();
             crn.inicializa();
             sr.runScript(
                     new BufferedReader(new FileReader(this.nombreFichero)));
@@ -76,9 +76,9 @@ public class TaskSQL implements Runnable {
             Comun.getComun().getEstadisticas()
                     .insertarEstadistica(t, this.nombreFichero,
                     this.token.getHostname(), Comun.getComun().getHostname());
-            Comun.getComun().getEstadisticas()
-                    .insertarEstadisticaUltimasConsultas(t, this.nombreFichero,
-                    this.token.getHostname(), Comun.getComun().getHostname());
+            // Comun.getComun().getEstadisticas()
+            //         .insertarEstadisticaUltimasConsultas(t, this.nombreFichero,
+            //         this.token.getHostname(), Comun.getComun().getHostname());
         } catch (IOException ex) {
             logger.error(ex);
         } catch (SQLException ex) {
