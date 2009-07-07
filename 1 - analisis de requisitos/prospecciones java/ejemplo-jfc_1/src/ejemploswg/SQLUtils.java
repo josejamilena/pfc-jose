@@ -1,16 +1,12 @@
-package org.jfree.chart.demo;
+package ejemploswg;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
 
 /**
  * Utilidades SQL.
@@ -21,7 +17,7 @@ final class SQLUtils {
     /** No se permiten instancias. */
     private SQLUtils() {
     }
-    
+
     public static List<String> listaScript(final Connection conn) {
         List<String> res = new LinkedList<String>();
         try {

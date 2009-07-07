@@ -4,6 +4,9 @@
 
 package ejemploswg;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
 
@@ -11,6 +14,8 @@ import org.jdesktop.application.SingleFrameApplication;
  * The main class of the application.
  */
 public class EjemploswgApp extends SingleFrameApplication {
+
+    public static Connection conn;
 
     /**
      * At startup create and show the main frame of the application.
@@ -61,7 +66,9 @@ public class EjemploswgApp extends SingleFrameApplication {
     /**
      * Main method launching the application.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        Class.forName("org.sqlite.JDBC");
+        conn = DriverManager.getConnection("jdbc:sqlite:.\\estadisticas.db3");
         launch(EjemploswgApp.class, args);
     }
 }

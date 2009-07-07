@@ -1,7 +1,6 @@
-package org.jfree.chart.demo;
+package ejemploswg;
 
 import java.awt.Color;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,11 +8,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
+import javax.swing.JDialog;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.LogarithmicAxis;
-import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.xy.XYSeries;
@@ -21,26 +19,22 @@ import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
-public class GraficoPorScript extends ApplicationFrame {
+public class GraficoPorScript extends JDialog {
 
-    public GraficoPorScript(final String script) throws ClassNotFoundException, SQLException {
-        super(script);
+    public GraficoPorScript(final String script) throws ClassNotFoundException, SQLException {        
         int max = 0;
         double media = 0.0;
 
         XYSeriesCollection dataset = new XYSeriesCollection();
 
-        Class.forName("org.sqlite.JDBC");
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:.\\estadisticas.db3");
-
-        List<String> listaSgbd = SQLUtils.listaHostSgbd(conn);
+        List<String> listaSgbd = SQLUtils.listaHostSgbd(EjemploswgApp.conn);
 
         for (String hostSgbd : listaSgbd) {
             List<String> res = new LinkedList<String>();
             Statement stmt = null;
             ResultSet rs = null;
             String consulta = "select tiempo from estadisticas where tipo=\'" + script + "\' and host_sgbd=\'" + hostSgbd + "\'";
-            stmt = conn.createStatement();
+            stmt = EjemploswgApp.conn.createStatement();
             rs = stmt.executeQuery(consulta);
             while (rs.next()) {
                 res.add(rs.getString(1));
@@ -93,14 +87,14 @@ public class GraficoPorScript extends ApplicationFrame {
         setContentPane(chartPanel);
     }
 
-    public static void main(final String[] args) throws SQLException, ClassNotFoundException {
-
-        final GraficoPorScript demo = new GraficoPorScript("ejemplo.sql");
-        demo.pack();
-        RefineryUtilities.centerFrameOnScreen(demo);
-        demo.setVisible(true);
-        demo.setDefaultCloseOperation(EXIT_ON_CLOSE);
-    }
+//    public static void main(final String[] args) throws SQLException, ClassNotFoundException {
+//
+//        final GraficoPorScript demo = new GraficoPorScript("ejemplo.sql");
+//        demo.pack();
+//        RefineryUtilities.centerFrameOnScreen(demo);
+//        demo.setVisible(true);
+//        demo.setDefaultCloseOperation(EXIT_ON_CLOSE);
+//    }
 }
 
 
