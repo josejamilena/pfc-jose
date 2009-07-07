@@ -131,6 +131,7 @@ public class EjemploswgView extends FrameView {
         statusMessageLabel = new javax.swing.JLabel();
         statusAnimationLabel = new javax.swing.JLabel();
         progressBar = new javax.swing.JProgressBar();
+        jComboBox1 = new javax.swing.JComboBox();
 
         mainPanel.setName("mainPanel"); // NOI18N
 
@@ -172,7 +173,7 @@ public class EjemploswgView extends FrameView {
         jMenuItem1.setName("jMenuItem1"); // NOI18N
         Gráficas.add(jMenuItem1);
 
-        jMenuItem2.setAction(actionMap.get("testJFreeChart2")); // NOI18N
+        jMenuItem2.setAction(actionMap.get("graficosPorScript")); // NOI18N
         jMenuItem2.setText(resourceMap.getString("jMenuItem2.text")); // NOI18N
         jMenuItem2.setName("jMenuItem2"); // NOI18N
         Gráficas.add(jMenuItem2);
@@ -230,35 +231,27 @@ public class EjemploswgView extends FrameView {
                 .addGap(3, 3, 3))
         );
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setName("jComboBox1"); // NOI18N
+
         setComponent(mainPanel);
         setMenuBar(menuBar);
         setStatusBar(statusPanel);
     }// </editor-fold>//GEN-END:initComponents
 
     @Action
-    public void testJFreeChart1() {
-        final XYSeriesDemo3 demo = new XYSeriesDemo3("XY Series Demo 3");
-        demo.pack();
-        RefineryUtilities.centerFrameOnScreen(demo);
-        demo.setVisible(true);
-        demo.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    }
-
-    @Action
-    public void testJFreeChart2() {
-//        try {
-//            GraficaPorScript demo = new GraficaPorScript("CombinedDomainXYPlot Demo");
-//            demo.pack();
-//            RefineryUtilities.centerFrameOnScreen(demo);
-//            demo.setVisible(true);
-//            demo.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
+    public void graficosPorScript() {
+        if (selectBox == null) {
+            JFrame mainFrame = EjemploswgApp.getApplication().getMainFrame();
+            selectBox = new EjemploswgSelecionarScript(mainFrame);
+            selectBox.setLocationRelativeTo(mainFrame);
+        }
+        EjemploswgApp.getApplication().show(selectBox);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Gráficas;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
@@ -277,4 +270,5 @@ public class EjemploswgView extends FrameView {
     private int busyIconIndex = 0;
     private JDialog aboutBox;
     private JDialog openBox;
+    private JDialog selectBox;
 }
