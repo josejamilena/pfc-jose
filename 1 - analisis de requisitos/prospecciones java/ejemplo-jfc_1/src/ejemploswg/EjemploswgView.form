@@ -75,6 +75,7 @@
                 <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                   <action class="ejemploswg.EjemploswgView" id="graficosPorSGBD" methodName="graficosPorSGBD"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="StatusBar.busyIcons[3]"/>
                 <Property name="text" type="java.lang.String" resourceKey="graficoPorSGBD.text"/>
                 <Property name="name" type="java.lang.String" value="graficoPorSGBD" noResource="true"/>
               </Properties>
@@ -84,6 +85,7 @@
                 <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                   <action class="ejemploswg.EjemploswgView" id="graficosPorScript" methodName="graficosPorScript"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="StatusBar.busyIcons[2]"/>
                 <Property name="text" type="java.lang.String" resourceKey="graficoPorScript.text"/>
                 <Property name="name" type="java.lang.String" value="graficoPorScript" noResource="true"/>
               </Properties>
@@ -93,6 +95,7 @@
                 <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                   <action class="ejemploswg.EjemploswgView" id="graficosPorCliente" methodName="graficosPorCliente"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="StatusBar.busyIcons[4]"/>
                 <Property name="text" type="java.lang.String" resourceKey="graficoPorCliente.text"/>
                 <Property name="name" type="java.lang.String" value="graficoPorCliente" noResource="true"/>
               </Properties>
