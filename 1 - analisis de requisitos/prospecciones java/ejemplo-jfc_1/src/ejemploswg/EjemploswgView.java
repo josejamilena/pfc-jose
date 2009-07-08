@@ -170,16 +170,19 @@ public class EjemploswgView extends FrameView {
         Gráficas.setName("Gráficas"); // NOI18N
 
         graficoPorSGBD.setAction(actionMap.get("graficosPorSGBD")); // NOI18N
+        graficoPorSGBD.setIcon(resourceMap.getIcon("StatusBar.busyIcons[3]")); // NOI18N
         graficoPorSGBD.setText(resourceMap.getString("graficoPorSGBD.text")); // NOI18N
         graficoPorSGBD.setName("graficoPorSGBD"); // NOI18N
         Gráficas.add(graficoPorSGBD);
 
         graficoPorScript.setAction(actionMap.get("graficosPorScript")); // NOI18N
+        graficoPorScript.setIcon(resourceMap.getIcon("StatusBar.busyIcons[2]")); // NOI18N
         graficoPorScript.setText(resourceMap.getString("graficoPorScript.text")); // NOI18N
         graficoPorScript.setName("graficoPorScript"); // NOI18N
         Gráficas.add(graficoPorScript);
 
         graficoPorCliente.setAction(actionMap.get("graficosPorCliente")); // NOI18N
+        graficoPorCliente.setIcon(resourceMap.getIcon("StatusBar.busyIcons[4]")); // NOI18N
         graficoPorCliente.setText(resourceMap.getString("graficoPorCliente.text")); // NOI18N
         graficoPorCliente.setName("graficoPorCliente"); // NOI18N
         Gráficas.add(graficoPorCliente);
@@ -288,7 +291,7 @@ public class EjemploswgView extends FrameView {
     private final Timer messageTimer;
     private final Timer busyIconTimer;
     private final Icon idleIcon;
-    private final Icon[] busyIcons = new Icon[15];
+    private final Icon[] busyIcons = new Icon[5];
     private int busyIconIndex = 0;
     private JDialog aboutBox;
     private JDialog openBox;
