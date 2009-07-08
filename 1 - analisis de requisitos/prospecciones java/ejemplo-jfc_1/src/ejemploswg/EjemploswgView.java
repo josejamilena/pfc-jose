@@ -121,9 +121,9 @@ public class EjemploswgView extends FrameView {
         openMenuItem = new javax.swing.JMenuItem();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         Gráficas = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        graficoPorSGBD = new javax.swing.JMenuItem();
+        graficoPorScript = new javax.swing.JMenuItem();
+        graficoPorCliente = new javax.swing.JMenuItem();
         javax.swing.JMenu helpMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
         statusPanel = new javax.swing.JPanel();
@@ -169,18 +169,20 @@ public class EjemploswgView extends FrameView {
         Gráficas.setText(resourceMap.getString("Gráficas.text")); // NOI18N
         Gráficas.setName("Gráficas"); // NOI18N
 
-        jMenuItem1.setAction(actionMap.get("testJFreeChart1")); // NOI18N
-        jMenuItem1.setName("jMenuItem1"); // NOI18N
-        Gráficas.add(jMenuItem1);
+        graficoPorSGBD.setAction(actionMap.get("graficosPorSGBD")); // NOI18N
+        graficoPorSGBD.setText(resourceMap.getString("graficoPorSGBD.text")); // NOI18N
+        graficoPorSGBD.setName("graficoPorSGBD"); // NOI18N
+        Gráficas.add(graficoPorSGBD);
 
-        jMenuItem2.setAction(actionMap.get("graficosPorScript")); // NOI18N
-        jMenuItem2.setText(resourceMap.getString("jMenuItem2.text")); // NOI18N
-        jMenuItem2.setName("jMenuItem2"); // NOI18N
-        Gráficas.add(jMenuItem2);
+        graficoPorScript.setAction(actionMap.get("graficosPorScript")); // NOI18N
+        graficoPorScript.setText(resourceMap.getString("graficoPorScript.text")); // NOI18N
+        graficoPorScript.setName("graficoPorScript"); // NOI18N
+        Gráficas.add(graficoPorScript);
 
-        jMenuItem3.setText(resourceMap.getString("jMenuItem3.text")); // NOI18N
-        jMenuItem3.setName("jMenuItem3"); // NOI18N
-        Gráficas.add(jMenuItem3);
+        graficoPorCliente.setAction(actionMap.get("graficosPorCliente")); // NOI18N
+        graficoPorCliente.setText(resourceMap.getString("graficoPorCliente.text")); // NOI18N
+        graficoPorCliente.setName("graficoPorCliente"); // NOI18N
+        Gráficas.add(graficoPorCliente);
 
         menuBar.add(Gráficas);
 
@@ -243,18 +245,38 @@ public class EjemploswgView extends FrameView {
     public void graficosPorScript() {
         if (selectBox == null) {
             JFrame mainFrame = EjemploswgApp.getApplication().getMainFrame();
-            selectBox = new EjemploswgSelecionarScript(mainFrame);
+            selectBox = new EjemploswgSeleccionarScript(mainFrame, SQLUtils.listaScript(EjemploswgApp.conn));
             selectBox.setLocationRelativeTo(mainFrame);
         }
         EjemploswgApp.getApplication().show(selectBox);
     }
 
+    @Action
+    public void graficosPorSGBD() {
+        if (sgbdBox == null) {
+            JFrame mainFrame = EjemploswgApp.getApplication().getMainFrame();
+            sgbdBox = new EjemploswgSeleccionarSGBD(mainFrame, SQLUtils.listaHostSgbd(EjemploswgApp.conn));
+            sgbdBox.setLocationRelativeTo(mainFrame);
+        }
+        EjemploswgApp.getApplication().show(sgbdBox);
+    }
+
+    @Action
+    public void graficosPorCliente() {
+        if (clienteBox == null) {
+            JFrame mainFrame = EjemploswgApp.getApplication().getMainFrame();
+            clienteBox = new EjemploswgSeleccionarCliente(mainFrame, SQLUtils.listaHostCliente(EjemploswgApp.conn));
+            clienteBox.setLocationRelativeTo(mainFrame);
+        }
+        EjemploswgApp.getApplication().show(clienteBox);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Gráficas;
+    private javax.swing.JMenuItem graficoPorCliente;
+    private javax.swing.JMenuItem graficoPorSGBD;
+    private javax.swing.JMenuItem graficoPorScript;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
@@ -271,4 +293,6 @@ public class EjemploswgView extends FrameView {
     private JDialog aboutBox;
     private JDialog openBox;
     private JDialog selectBox;
+    private JDialog sgbdBox;
+    private JDialog clienteBox;
 }
