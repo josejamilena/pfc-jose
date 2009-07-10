@@ -1,7 +1,6 @@
 /*
  * App.java
  */
-
 package josejamilena.pfc.analizador;
 
 import java.sql.Connection;
@@ -15,12 +14,20 @@ import org.jdesktop.application.SingleFrameApplication;
  */
 public class App extends SingleFrameApplication {
 
-    public static Connection conn;
+    /**
+     * Conexión JDBC.
+     */
+    public static Connection conn = null;
+    /**
+     * Fichero de BD de estadisticas.
+     */
+    private static String ficheroEstadisticas = "";
 
     /**
      * At startup create and show the main frame of the application.
      */
-    @Override protected void startup() {
+    @Override
+    protected void startup() {
         show(new View(this));
     }
 
@@ -29,7 +36,8 @@ public class App extends SingleFrameApplication {
      * Windows shown in our application come fully initialized from the GUI
      * builder, so this additional configuration is not needed.
      */
-    @Override protected void configureWindow(java.awt.Window root) {
+    @Override
+    protected void configureWindow(java.awt.Window root) {
     }
 
     /**
@@ -41,17 +49,12 @@ public class App extends SingleFrameApplication {
     }
 
     /**
-     * Fichero de BD de estadisticas.
-     */
-    private String ficheroEstadisticas = "";
-
-    /**
      * Get the value of ficheroEstadisticas
      *
      * @return the value of ficheroEstadisticas
      */
     public String getFicheroEstadisticas() {
-        return this.ficheroEstadisticas;
+        return ficheroEstadisticas;
     }
 
     /**
@@ -59,8 +62,28 @@ public class App extends SingleFrameApplication {
      *
      * @param ficheroEstadisticas new value of ficheroEstadisticas
      */
-    public void setFicheroEstadisticas(String ficheroEstadisticas) {
-        this.ficheroEstadisticas = ficheroEstadisticas;
+    public void setFicheroEstadisticas(String ficheroEsta) {
+        ficheroEstadisticas = ficheroEsta;
+    }
+
+    /**
+     * Iniciar conexión.
+     * @return devuelve si se ha podido realizar la conexión
+     */
+    public static boolean iniciarConexion() {
+        if (ficheroEstadisticas.isEmpty()) {
+            return false;
+        } else {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+                conn = DriverManager.getConnection("jdbc:sqlite:" + ficheroEstadisticas);
+                return true;
+            } catch (SQLException ex) {
+                return false;
+            }
+        }
     }
 
     /**
@@ -68,7 +91,7 @@ public class App extends SingleFrameApplication {
      */
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
-        conn = DriverManager.getConnection("jdbc:sqlite:.\\estadisticas.db3");
+        //conn = DriverManager.getConnection("jdbc:sqlite:.\\estadisticas.db3");
         launch(App.class, args);
     }
 }

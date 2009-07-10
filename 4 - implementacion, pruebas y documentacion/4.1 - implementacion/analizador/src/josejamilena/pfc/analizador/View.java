@@ -3,6 +3,7 @@
  */
 package josejamilena.pfc.analizador;
 
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import josejamilena.pfc.analizador.sql.SQLUtils;
@@ -10,7 +11,6 @@ import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
 import org.jdesktop.application.FrameView;
-import org.jdesktop.application.Task;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +18,7 @@ import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  * The application's main frame.
@@ -95,6 +96,10 @@ public class View extends FrameView {
             openBox.setLocationRelativeTo(mainFrame);
         }
         App.getApplication().show(openBox);
+        // reinicia las cajas
+        this.clienteBox = null;
+        this.sgbdBox = null;
+        this.selectBox = null;
     }
 
     @Action
@@ -265,32 +270,61 @@ public class View extends FrameView {
 
     @Action
     public void graficosPorScript() {
-        if (selectBox == null) {
-            JFrame mainFrame = App.getApplication().getMainFrame();
-            selectBox = new SeleccionarScript(mainFrame, SQLUtils.listaScript(App.conn));
-            selectBox.setLocationRelativeTo(mainFrame);
+        if (App.iniciarConexion()) {
+            if (selectBox == null) {
+                try {
+                    JFrame mainFrame = App.getApplication().getMainFrame();
+                    selectBox = new SeleccionarScript(mainFrame, SQLUtils.listaScript(App.conn));
+                    selectBox.setLocationRelativeTo(mainFrame);
+                    App.getApplication().show(selectBox);
+                } catch (SQLException ex) {
+                    new MsgBox("Mensaje de Error",
+                            "Formato de fichero erroneo", "ERROR");
+                }
+            }
+        } else {
+            new MsgBox("Mensaje de Error",
+                    "Fichero de estadisticas no seleccionado", "ERROR");
         }
-        App.getApplication().show(selectBox);
     }
 
     @Action
     public void graficosPorSGBD() {
-        if (sgbdBox == null) {
-            JFrame mainFrame = App.getApplication().getMainFrame();
-            sgbdBox = new SeleccionarSGBD(mainFrame, SQLUtils.listaHostSgbd(App.conn));
-            sgbdBox.setLocationRelativeTo(mainFrame);
+        if (App.iniciarConexion()) {
+            if (sgbdBox == null) {
+                try {
+                    JFrame mainFrame = App.getApplication().getMainFrame();
+                    sgbdBox = new SeleccionarSGBD(mainFrame, SQLUtils.listaHostSgbd(App.conn));
+                    sgbdBox.setLocationRelativeTo(mainFrame);
+                    App.getApplication().show(sgbdBox);
+                } catch (SQLException ex) {
+                    new MsgBox("Mensaje de Error",
+                            "Formato de fichero erroneo", "ERROR");
+                }
+            }
+        } else {
+            new MsgBox("Mensaje de Error",
+                    "Fichero de estadisticas no seleccionado", "ERROR");
         }
-        App.getApplication().show(sgbdBox);
     }
 
     @Action
     public void graficosPorCliente() {
-        if (clienteBox == null) {
-            JFrame mainFrame = App.getApplication().getMainFrame();
-            clienteBox = new SeleccionarCliente(mainFrame, SQLUtils.listaHostCliente(App.conn));
-            clienteBox.setLocationRelativeTo(mainFrame);
+        if (App.iniciarConexion()) {
+            if (clienteBox == null) {
+                try {
+                    JFrame mainFrame = App.getApplication().getMainFrame();
+                    clienteBox = new SeleccionarCliente(mainFrame, SQLUtils.listaHostCliente(App.conn));
+                    App.getApplication().show(clienteBox);
+                } catch (SQLException ex) {
+                    new MsgBox("Mensaje de Error",
+                            "Formato de fichero erroneo", "ERROR");
+                }
+            }
+        } else {
+            new MsgBox("Mensaje de Error",
+                    "Fichero de estadisticas no seleccionado", "ERROR");
         }
-        App.getApplication().show(clienteBox);
     }
 
     @Action
@@ -300,7 +334,7 @@ public class View extends FrameView {
         this.progressBar.setVisible(true);
 
         this.progressBar.setValue(50);
-        
+
         this.progressBar.setVisible(false);
     }
 
