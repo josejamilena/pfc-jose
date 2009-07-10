@@ -3,6 +3,7 @@
  */
 package josejamilena.pfc.analizador;
 
+import josejamilena.pfc.analizador.sql.SQLUtils;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
@@ -113,11 +114,12 @@ public class View extends FrameView {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
-        Gráficas = new javax.swing.JMenu();
+        graficasMenu = new javax.swing.JMenu();
         graficoPorSGBD = new javax.swing.JMenuItem();
         graficoPorScript = new javax.swing.JMenuItem();
         graficoPorCliente = new javax.swing.JMenuItem();
@@ -128,30 +130,48 @@ public class View extends FrameView {
         statusMessageLabel = new javax.swing.JLabel();
         statusAnimationLabel = new javax.swing.JLabel();
         progressBar = new javax.swing.JProgressBar();
-        jComboBox1 = new javax.swing.JComboBox();
 
         mainPanel.setName("mainPanel"); // NOI18N
+
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(josejamilena.pfc.analizador.App.class).getContext().getResourceMap(View.class);
+        jButton1.setIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        jButton1.setAutoscrolls(true);
+        jButton1.setBorder(null);
+        jButton1.setDisabledIcon(resourceMap.getIcon("petButton.disabledIcon")); // NOI18N
+        jButton1.setDisabledSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        jButton1.setName("petButton"); // NOI18N
+        jButton1.setPressedIcon(resourceMap.getIcon("Pets.pressedIcon")); // NOI18N
+        jButton1.setRequestFocusEnabled(false);
+        jButton1.setRolloverEnabled(false);
+        jButton1.setRolloverIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        jButton1.setRolloverSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        jButton1.setSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        jButton1.setVerifyInputWhenFocusTarget(false);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap(462, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 325, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap(207, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         menuBar.setName("menuBar"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(josejamilena.pfc.analizador.App.class).getContext().getResourceMap(View.class);
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(josejamilena.pfc.analizador.App.class).getContext().getActionMap(View.class, this);
         openMenuItem.setAction(actionMap.get("openFile")); // NOI18N
-        openMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         openMenuItem.setIcon(resourceMap.getIcon("StatusBar.icons[0]")); // NOI18N
         openMenuItem.setText(resourceMap.getString("openMenuItem.text")); // NOI18N
         openMenuItem.setName("openMenuItem"); // NOI18N
@@ -164,37 +184,33 @@ public class View extends FrameView {
 
         menuBar.add(fileMenu);
 
-        Gráficas.setText(resourceMap.getString("Gráficas.text")); // NOI18N
-        Gráficas.setName("Gráficas"); // NOI18N
+        graficasMenu.setText(resourceMap.getString("graficasMenu.text")); // NOI18N
+        graficasMenu.setName("graficasMenu"); // NOI18N
 
         graficoPorSGBD.setAction(actionMap.get("graficosPorSGBD")); // NOI18N
-        graficoPorSGBD.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         graficoPorSGBD.setIcon(resourceMap.getIcon("StatusBar.icons[3]")); // NOI18N
         graficoPorSGBD.setText(resourceMap.getString("graficoPorSGBD.text")); // NOI18N
         graficoPorSGBD.setName("graficoPorSGBD"); // NOI18N
-        Gráficas.add(graficoPorSGBD);
+        graficasMenu.add(graficoPorSGBD);
 
         graficoPorScript.setAction(actionMap.get("graficosPorScript")); // NOI18N
-        graficoPorScript.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         graficoPorScript.setIcon(resourceMap.getIcon("StatusBar.icons[2]")); // NOI18N
         graficoPorScript.setText(resourceMap.getString("graficoPorScript.text")); // NOI18N
         graficoPorScript.setName("graficoPorScript"); // NOI18N
-        Gráficas.add(graficoPorScript);
+        graficasMenu.add(graficoPorScript);
 
         graficoPorCliente.setAction(actionMap.get("graficosPorCliente")); // NOI18N
-        graficoPorCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         graficoPorCliente.setIcon(resourceMap.getIcon("StatusBar.icons[4]")); // NOI18N
         graficoPorCliente.setText(resourceMap.getString("graficoPorCliente.text")); // NOI18N
         graficoPorCliente.setName("graficoPorCliente"); // NOI18N
-        Gráficas.add(graficoPorCliente);
+        graficasMenu.add(graficoPorCliente);
 
-        menuBar.add(Gráficas);
+        menuBar.add(graficasMenu);
 
         helpMenu.setText(resourceMap.getString("helpMenu.text")); // NOI18N
         helpMenu.setName("helpMenu"); // NOI18N
 
         aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
-        aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         aboutMenuItem.setIcon(resourceMap.getIcon("StatusBar.icons[5]")); // NOI18N
         aboutMenuItem.setText(resourceMap.getString("aboutMenuItem.text")); // NOI18N
         aboutMenuItem.setName("aboutMenuItem"); // NOI18N
@@ -239,9 +255,6 @@ public class View extends FrameView {
                 .addGap(3, 3, 3))
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setName("jComboBox1"); // NOI18N
-
         setComponent(mainPanel);
         setMenuBar(menuBar);
         setStatusBar(statusPanel);
@@ -278,11 +291,11 @@ public class View extends FrameView {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Gráficas;
+    private javax.swing.JMenu graficasMenu;
     private javax.swing.JMenuItem graficoPorCliente;
     private javax.swing.JMenuItem graficoPorSGBD;
     private javax.swing.JMenuItem graficoPorScript;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;

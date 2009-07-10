@@ -1,5 +1,6 @@
 package josejamilena.pfc.analizador;
 
+import josejamilena.pfc.analizador.sql.SQLUtils;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
