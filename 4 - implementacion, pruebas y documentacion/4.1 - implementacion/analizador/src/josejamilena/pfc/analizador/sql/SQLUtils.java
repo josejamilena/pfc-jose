@@ -1,4 +1,4 @@
-package josejamilena.pfc.analizador;
+package josejamilena.pfc.analizador.sql;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -52,7 +52,7 @@ public final class SQLUtils {
         try {
             Statement stmt = null;
             ResultSet rs = null;
-            String consulta = "select host_sgbd from estadisticas group by"
+            String consulta = "select host_sgbd from estadisticas group by "
                     + "host_sgbd";
             stmt = conn.createStatement();
             rs = stmt.executeQuery(consulta);
