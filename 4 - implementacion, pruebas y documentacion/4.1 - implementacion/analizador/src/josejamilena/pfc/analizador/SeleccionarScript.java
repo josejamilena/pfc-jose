@@ -12,6 +12,7 @@ public class SeleccionarScript extends javax.swing.JDialog {
 
     public SeleccionarScript(java.awt.Frame parent, List<String> lst) {
         super(parent);
+        this.setTitle("Seleccione...");
         lista = lst;
         initComponents();
         getRootPane().setDefaultButton(closeButton);

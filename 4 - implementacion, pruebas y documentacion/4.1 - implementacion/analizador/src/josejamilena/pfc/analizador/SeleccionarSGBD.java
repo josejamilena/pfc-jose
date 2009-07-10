@@ -12,6 +12,7 @@ public class SeleccionarSGBD extends javax.swing.JDialog {
 
     public SeleccionarSGBD(java.awt.Frame parent, List<String> lst) {
         super(parent);
+        this.setTitle("Seleccione...");
         lista = lst;
         initComponents();
         getRootPane().setDefaultButton(closeButton);
