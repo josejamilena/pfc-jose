@@ -2,8 +2,6 @@ package josejamilena.pfc.analizador;
 
 import josejamilena.pfc.analizador.sql.SQLUtils;
 import java.awt.Color;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,8 +15,6 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
 
 public class GraficoPorCliente extends JDialog {
 
@@ -81,6 +77,7 @@ public class GraficoPorCliente extends JDialog {
                 true, // include legend
                 true,
                 false);
+
 
         XYPlot plot = chart.getXYPlot();
         chart.setBackgroundPaint(Color.white);

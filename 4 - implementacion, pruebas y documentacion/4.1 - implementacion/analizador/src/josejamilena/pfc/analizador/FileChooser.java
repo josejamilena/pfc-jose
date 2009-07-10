@@ -59,7 +59,7 @@ public class FileChooser extends javax.swing.JDialog {
 
     private void fileChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileChooserActionPerformed
         if (evt.getActionCommand().equalsIgnoreCase("ApproveSelection")) {
-            System.err.println(fileChooser.getSelectedFile().getAbsolutePath());
+            // System.err.println(fileChooser.getSelectedFile().getAbsolutePath());
             App.getApplication().setFicheroEstadisticas(
                      fileChooser.getSelectedFile().getAbsolutePath());
         }

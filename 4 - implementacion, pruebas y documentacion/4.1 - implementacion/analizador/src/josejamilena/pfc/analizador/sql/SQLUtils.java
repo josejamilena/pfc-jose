@@ -22,24 +22,20 @@ public final class SQLUtils {
      * @param conn Conexión JDBC
      * @return lista
      */
-    public static List < String > listaScript(final Connection conn) {
-        List < String > res = new LinkedList < String >();
-        try {
-            Statement stmt = null;
-            ResultSet rs = null;
-            String consulta = "select tipo from estadisticas group by tipo";
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(consulta);
-            while (rs.next()) {
-                res.add(rs.getString(1));
-            }
-            rs.close();
-            stmt.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } finally {
-            return res;
+    public static List<String> listaScript(final Connection conn)
+            throws SQLException {
+        List<String> res = new LinkedList<String>();
+        Statement stmt = null;
+        ResultSet rs = null;
+        String consulta = "select tipo from estadisticas group by tipo";
+        stmt = conn.createStatement();
+        rs = stmt.executeQuery(consulta);
+        while (rs.next()) {
+            res.add(rs.getString(1));
         }
+        rs.close();
+        stmt.close();
+        return res;
     }
 
     /**
@@ -47,25 +43,21 @@ public final class SQLUtils {
      * @param conn Conexión JDBC
      * @return lista
      */
-    public static List < String > listaHostSgbd(final Connection conn) {
-        List < String > res = new LinkedList < String >();
-        try {
-            Statement stmt = null;
-            ResultSet rs = null;
-            String consulta = "select host_sgbd from estadisticas group by "
-                    + "host_sgbd";
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(consulta);
-            while (rs.next()) {
-                res.add(rs.getString(1));
-            }
-            rs.close();
-            stmt.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } finally {
-            return res;
+    public static List<String> listaHostSgbd(final Connection conn)
+            throws SQLException {
+        List<String> res = new LinkedList<String>();
+        Statement stmt = null;
+        ResultSet rs = null;
+        String consulta = "select host_sgbd from estadisticas group by "
+                + "host_sgbd";
+        stmt = conn.createStatement();
+        rs = stmt.executeQuery(consulta);
+        while (rs.next()) {
+            res.add(rs.getString(1));
         }
+        rs.close();
+        stmt.close();
+        return res;
     }
 
     /**
@@ -73,27 +65,23 @@ public final class SQLUtils {
      * @param conn Conexión JDBC
      * @return lista
      */
-    public static List<String> listaHostCliente(final Connection conn) {
-        List < String > res = new LinkedList < String >();
-        try {
-            Statement stmt = null;
-            ResultSet rs = null;
-            String consulta = "select host_cliente from estadisticas group by "
-                    + "host_cliente";
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(consulta);
-            while (rs.next()) {
-                res.add(rs.getString(1));
-            }
-            rs.close();
-            stmt.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } finally {
-            return res;
-        }
-    }
+    public static List<String> listaHostCliente(final Connection conn) 
+            throws SQLException {
+        List<String> res = new LinkedList<String>();
 
+        Statement stmt = null;
+        ResultSet rs = null;
+        String consulta = "select host_cliente from estadisticas group by "
+                + "host_cliente";
+        stmt = conn.createStatement();
+        rs = stmt.executeQuery(consulta);
+        while (rs.next()) {
+            res.add(rs.getString(1));
+        }
+        rs.close();
+        stmt.close();
+        return res;
+    }
 }
 
 
