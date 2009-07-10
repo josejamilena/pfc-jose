@@ -3,11 +3,14 @@
  */
 package josejamilena.pfc.analizador;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import josejamilena.pfc.analizador.sql.SQLUtils;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
 import org.jdesktop.application.FrameView;
+import org.jdesktop.application.Task;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -114,7 +117,7 @@ public class View extends FrameView {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        generarInforme = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -133,20 +136,21 @@ public class View extends FrameView {
 
         mainPanel.setName("mainPanel"); // NOI18N
 
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(josejamilena.pfc.analizador.App.class).getContext().getActionMap(View.class, this);
+        generarInforme.setAction(actionMap.get("generarInforme")); // NOI18N
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(josejamilena.pfc.analizador.App.class).getContext().getResourceMap(View.class);
-        jButton1.setIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
-        jButton1.setAutoscrolls(true);
-        jButton1.setBorder(null);
-        jButton1.setDisabledIcon(resourceMap.getIcon("petButton.disabledIcon")); // NOI18N
-        jButton1.setDisabledSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
-        jButton1.setName("petButton"); // NOI18N
-        jButton1.setPressedIcon(resourceMap.getIcon("Pets.pressedIcon")); // NOI18N
-        jButton1.setRequestFocusEnabled(false);
-        jButton1.setRolloverEnabled(false);
-        jButton1.setRolloverIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
-        jButton1.setRolloverSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
-        jButton1.setSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
-        jButton1.setVerifyInputWhenFocusTarget(false);
+        generarInforme.setIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        generarInforme.setAutoscrolls(true);
+        generarInforme.setBorder(null);
+        generarInforme.setDisabledIcon(resourceMap.getIcon("petButton.disabledIcon")); // NOI18N
+        generarInforme.setDisabledSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        generarInforme.setName("petButton"); // NOI18N
+        generarInforme.setPressedIcon(resourceMap.getIcon("Pets.pressedIcon")); // NOI18N
+        generarInforme.setRequestFocusEnabled(false);
+        generarInforme.setRolloverIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        generarInforme.setRolloverSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        generarInforme.setSelectedIcon(resourceMap.getIcon("Pets.icon[0]")); // NOI18N
+        generarInforme.setVerifyInputWhenFocusTarget(false);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -154,14 +158,14 @@ public class View extends FrameView {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addContainerGap(462, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(generarInforme)
                 .addContainerGap())
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addContainerGap(207, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(generarInforme)
                 .addContainerGap())
         );
 
@@ -170,7 +174,6 @@ public class View extends FrameView {
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(josejamilena.pfc.analizador.App.class).getContext().getActionMap(View.class, this);
         openMenuItem.setAction(actionMap.get("openFile")); // NOI18N
         openMenuItem.setIcon(resourceMap.getIcon("StatusBar.icons[0]")); // NOI18N
         openMenuItem.setText(resourceMap.getString("openMenuItem.text")); // NOI18N
@@ -290,12 +293,23 @@ public class View extends FrameView {
         App.getApplication().show(clienteBox);
     }
 
+    @Action
+    public void generarInforme() {
+        this.progressBar.setMaximum(0);
+        this.progressBar.setMaximum(100);
+        this.progressBar.setVisible(true);
+
+        this.progressBar.setValue(50);
+        
+        this.progressBar.setVisible(false);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton generarInforme;
     private javax.swing.JMenu graficasMenu;
     private javax.swing.JMenuItem graficoPorCliente;
     private javax.swing.JMenuItem graficoPorSGBD;
     private javax.swing.JMenuItem graficoPorScript;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;

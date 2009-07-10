@@ -12,7 +12,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="462" max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="generarInforme" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -21,15 +21,18 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="207" max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="generarInforme" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="generarInforme">
           <Properties>
+            <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+              <action class="josejamilena.pfc.analizador.View" id="generarInforme" methodName="generarInforme"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" resourceKey="Pets.icon[0]"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -40,7 +43,6 @@
             <Property name="name" type="java.lang.String" value="petButton" noResource="true"/>
             <Property name="pressedIcon" type="javax.swing.Icon" resourceKey="Pets.pressedIcon"/>
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
-            <Property name="rolloverEnabled" type="boolean" value="false"/>
             <Property name="rolloverIcon" type="javax.swing.Icon" resourceKey="Pets.icon[0]"/>
             <Property name="rolloverSelectedIcon" type="javax.swing.Icon" resourceKey="Pets.icon[0]"/>
             <Property name="selectedIcon" type="javax.swing.Icon" resourceKey="Pets.icon[0]"/>
