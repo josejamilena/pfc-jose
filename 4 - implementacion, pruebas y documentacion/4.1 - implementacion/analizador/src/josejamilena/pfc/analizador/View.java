@@ -359,6 +359,10 @@ public class View extends FrameView {
             JFrame mainFrame = App.getApplication().getMainFrame();
             netBox = new NetBox(mainFrame);
             netBox.setLocationRelativeTo(mainFrame);
+            netBox.setSize(600, 600);
+            netBox.pack();
+            netBox.setModal(true);
+            netBox.setResizable(false);
         }
         App.getApplication().show(netBox);
         netBox = null;
