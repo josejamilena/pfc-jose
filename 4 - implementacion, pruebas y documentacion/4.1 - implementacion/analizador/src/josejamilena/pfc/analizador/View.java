@@ -160,16 +160,14 @@ public class View extends FrameView {
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addContainerGap(462, Short.MAX_VALUE)
-                .addComponent(generarInforme)
-                .addContainerGap())
+                .addContainerGap(344, Short.MAX_VALUE)
+                .addComponent(generarInforme))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addContainerGap(207, Short.MAX_VALUE)
-                .addComponent(generarInforme)
-                .addContainerGap())
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addComponent(generarInforme))
         );
 
         menuBar.setName("menuBar"); // NOI18N
@@ -280,6 +278,9 @@ public class View extends FrameView {
                     JFrame mainFrame = App.getApplication().getMainFrame();
                     selectBox = new SeleccionarScript(mainFrame, SQLUtils.listaScript(App.conn));
                     selectBox.setLocationRelativeTo(mainFrame);
+                    selectBox.setSize(300, 600);
+                    selectBox.pack();
+                    selectBox.setResizable(false);
                     App.getApplication().show(selectBox);
                 } catch (SQLException ex) {
                     new MsgBox("Mensaje de Error",
@@ -290,6 +291,7 @@ public class View extends FrameView {
             new MsgBox("Mensaje de Error",
                     "Fichero de estadisticas no seleccionado", "ERROR");
         }
+        selectBox = null;
     }
 
     @Action
@@ -300,6 +302,9 @@ public class View extends FrameView {
                     JFrame mainFrame = App.getApplication().getMainFrame();
                     sgbdBox = new SeleccionarSGBD(mainFrame, SQLUtils.listaHostSgbd(App.conn));
                     sgbdBox.setLocationRelativeTo(mainFrame);
+                    sgbdBox.setSize(300, 600);
+                    sgbdBox.pack();
+                    sgbdBox.setResizable(false);
                     App.getApplication().show(sgbdBox);
                 } catch (SQLException ex) {
                     new MsgBox("Mensaje de Error",
@@ -310,6 +315,7 @@ public class View extends FrameView {
             new MsgBox("Mensaje de Error",
                     "Fichero de estadisticas no seleccionado", "ERROR");
         }
+        sgbdBox = null;
     }
 
     @Action
@@ -319,6 +325,10 @@ public class View extends FrameView {
                 try {
                     JFrame mainFrame = App.getApplication().getMainFrame();
                     clienteBox = new SeleccionarCliente(mainFrame, SQLUtils.listaHostCliente(App.conn));
+                    clienteBox.setLocationRelativeTo(mainFrame);
+                    clienteBox.setSize(300, 600);
+                    clienteBox.pack();
+                    clienteBox.setResizable(false);
                     App.getApplication().show(clienteBox);
                 } catch (SQLException ex) {
                     new MsgBox("Mensaje de Error",
@@ -329,6 +339,7 @@ public class View extends FrameView {
             new MsgBox("Mensaje de Error",
                     "Fichero de estadisticas no seleccionado", "ERROR");
         }
+        clienteBox = null;
     }
 
     @Action
