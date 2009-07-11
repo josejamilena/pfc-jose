@@ -43,17 +43,15 @@ public class FileReceiver {
             os.println("NEXT");
             os.flush();
             final ReadableByteChannel inputChannel =
-                 Channels.newChannel(sock.getInputStream());
+                    Channels.newChannel(sock.getInputStream());
             final WritableByteChannel outputChannel =
-                 Channels.newChannel(new FileOutputStream(hostname + "."
-                 + filename));
+                    Channels.newChannel(new FileOutputStream(hostname + "." + filename));
             ChannelTools.fastChannelCopy(inputChannel, outputChannel);
             outputChannel.close();
             inputChannel.close();
             is.close();
             os.close();
-            if (Checksum.checksum(hostname + "." + filename)
-                    != Long.parseLong(checksum)) {
+            if (Checksum.checksum(hostname + "." + filename) != Long.parseLong(checksum)) {
                 throw new RuntimeException("Error en Checksum");
             }
         } catch (IOException e) {
@@ -67,5 +65,62 @@ public class FileReceiver {
             }
         }
     }
-}
 
+    /**
+     * recibir.
+     * @param hostname host
+     * @param port puerto
+     * @return nombre fichero
+     * @throws TCPException error
+     */
+    public final String receive2(final String hostname, final int port)
+            throws TCPException {
+        Socket sock = null;
+        String res = "";
+        try {
+            sock = new Socket(hostname, port);
+            BufferedReader is = new BufferedReader(
+                    new InputStreamReader(sock.getInputStream()));
+            PrintStream os = new PrintStream(
+                    sock.getOutputStream(), true);
+            String filename, checksum;
+            os.println("HELLO");
+            os.flush();
+            filename = is.readLine();
+            res = System.getProperty("java.io.tmpdir")
+                    + hostname + "." + filename;
+            // System.err.println(res);
+            os.println("NEXT");
+            os.flush();
+            checksum = is.readLine();
+            // System.err.println(checksum);
+            os.println("NEXT");
+            os.flush();
+            final ReadableByteChannel inputChannel =
+                    Channels.newChannel(sock.getInputStream());
+            final WritableByteChannel outputChannel =
+                    Channels.newChannel(new FileOutputStream(res));
+            ChannelTools.fastChannelCopy(inputChannel, outputChannel);
+            outputChannel.close();
+            inputChannel.close();
+            is.close();
+            os.close();
+            if (Checksum.checksum(res) != Long.parseLong(checksum)) {
+                // System.err.println("Error en Checksum");
+                throw new TCPException("Error en Checksum");
+            }
+        } catch (IOException e) {
+            // e.printStackTrace();
+            throw new TCPException("Error en comunicación.");
+        } finally {
+            try {
+                if (sock != null) {
+                    sock.close();
+                }
+            } catch (IOException ex) {
+            }
+            // System.err.println(res);
+            return res;
+        }
+    }
+}
