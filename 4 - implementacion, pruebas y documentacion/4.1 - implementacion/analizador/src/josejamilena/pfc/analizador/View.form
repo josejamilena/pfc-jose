@@ -80,6 +80,16 @@
                 <Property name="name" type="java.lang.String" value="openMenuItem" noResource="true"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="receiveMenuItem">
+              <Properties>
+                <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+                  <action class="josejamilena.pfc.analizador.View" id="recibirPorRed" methodName="recibirPorRed"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="StatusBar.icons[6]"/>
+                <Property name="text" type="java.lang.String" resourceKey="receiveMenuItem.text"/>
+                <Property name="name" type="java.lang.String" value="receiveMenuItem" noResource="true"/>
+              </Properties>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="exitMenuItem">
               <Properties>
                 <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">

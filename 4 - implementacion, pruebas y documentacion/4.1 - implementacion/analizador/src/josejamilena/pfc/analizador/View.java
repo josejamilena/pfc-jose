@@ -4,8 +4,6 @@
 package josejamilena.pfc.analizador;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import josejamilena.pfc.analizador.sql.SQLUtils;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
@@ -18,7 +16,6 @@ import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  * The application's main frame.
@@ -126,6 +123,7 @@ public class View extends FrameView {
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
+        receiveMenuItem = new javax.swing.JMenuItem();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         graficasMenu = new javax.swing.JMenu();
         graficoPorSGBD = new javax.swing.JMenuItem();
@@ -184,6 +182,12 @@ public class View extends FrameView {
         openMenuItem.setText(resourceMap.getString("openMenuItem.text")); // NOI18N
         openMenuItem.setName("openMenuItem"); // NOI18N
         fileMenu.add(openMenuItem);
+
+        receiveMenuItem.setAction(actionMap.get("recibirPorRed")); // NOI18N
+        receiveMenuItem.setIcon(resourceMap.getIcon("StatusBar.icons[6]")); // NOI18N
+        receiveMenuItem.setText(resourceMap.getString("receiveMenuItem.text")); // NOI18N
+        receiveMenuItem.setName("receiveMenuItem"); // NOI18N
+        fileMenu.add(receiveMenuItem);
 
         exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
         exitMenuItem.setIcon(resourceMap.getIcon("StatusBar.icons[1]")); // NOI18N
@@ -338,6 +342,17 @@ public class View extends FrameView {
         this.progressBar.setVisible(false);
     }
 
+    @Action
+    public void recibirPorRed() {
+        if (netBox == null) {
+            JFrame mainFrame = App.getApplication().getMainFrame();
+            netBox = new NetBox(mainFrame);
+            netBox.setLocationRelativeTo(mainFrame);
+        }
+        App.getApplication().show(netBox);
+        netBox = null;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton generarInforme;
     private javax.swing.JMenu graficasMenu;
@@ -348,6 +363,7 @@ public class View extends FrameView {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JProgressBar progressBar;
+    private javax.swing.JMenuItem receiveMenuItem;
     private javax.swing.JLabel statusAnimationLabel;
     private javax.swing.JLabel statusMessageLabel;
     private javax.swing.JPanel statusPanel;
@@ -355,11 +371,12 @@ public class View extends FrameView {
     private final Timer messageTimer;
     private final Timer busyIconTimer;
     private final Icon idleIcon;
-    private final Icon[] busyIcons = new Icon[6];
+    private final Icon[] busyIcons = new Icon[7];
     private int busyIconIndex = 0;
     private JDialog aboutBox;
     private JDialog openBox;
     private JDialog selectBox;
     private JDialog sgbdBox;
     private JDialog clienteBox;
+    private JDialog netBox;
 }
