@@ -6,7 +6,7 @@ import org.jdesktop.application.Action;
 
 /**
  *
- * @author Jose
+ * @author Jose Antonio Jamilena Daza
  */
 public class NetBox extends javax.swing.JDialog {
 
@@ -15,8 +15,6 @@ public class NetBox extends javax.swing.JDialog {
         super(parent);
         initComponents();
         getRootPane().setDefaultButton(closeButton);
-        this.pack();
-        this.setModal(true);
     }
 
     /** This method is called from within the constructor to
