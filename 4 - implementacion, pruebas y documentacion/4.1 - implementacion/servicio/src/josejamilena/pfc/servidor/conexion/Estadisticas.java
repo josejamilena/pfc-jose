@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Properties;
 import org.apache.log4j.Logger;
 
@@ -83,7 +84,7 @@ public class Estadisticas {
             stmt = conexion.prepareStatement(this.configProperties
                     .getProperty("insertarEstadistica"));
             stmt.setLong(this.uno, tiempo);
-            stmt.setLong(this.dos, Calendar.getInstance().getTimeInMillis());
+            stmt.setString(this.dos, (new Date()).toString());
             stmt.setString(this.tres, tipoConsultaStr);
             stmt.setString(this.cuatro, sgbd);
             stmt.setString(this.cinco, host);

@@ -60,7 +60,7 @@
     <Component class="javax.swing.JButton" name="closeButton">
       <Properties>
         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
-          <action class="josejamilena.pfc.analizador.EjemploswgSeleccionarSGBD" id="closeSelecionarScriptBox" methodName="closeSelecionarScriptBox"/>
+          <action class="josejamilena.pfc.analizador.SeleccionarSGBDScript" id="closeSelecionarScriptBox" methodName="closeSelecionarScriptBox"/>
         </Property>
         <Property name="text" type="java.lang.String" resourceKey="closeButton.text"/>
         <Property name="name" type="java.lang.String" value="closeButton" noResource="true"/>
@@ -77,7 +77,7 @@
     <Component class="javax.swing.JButton" name="cargarGrafica">
       <Properties>
         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
-          <action class="josejamilena.pfc.analizador.EjemploswgSeleccionarSGBD" id="cargarGrafica" methodName="cargarGrafica"/>
+          <action class="josejamilena.pfc.analizador.SeleccionarSGBDScript" id="cargarGrafica" methodName="cargarGrafica"/>
         </Property>
         <Property name="text" type="java.lang.String" resourceKey="cargarGrafica.text"/>
         <Property name="name" type="java.lang.String" value="cargarGrafica" noResource="true"/>
