@@ -47,9 +47,10 @@ public final class Webserver {
         serverSocket = new ServerSocket(httpPort);
         logger.info("josejamilena.pfc.servidor.chartserver");
         logger.info("Iniciado en puerto: " + httpPort);
-        Class.forName(Webserver.getConfigProperties().getProperty(
-                    "josejamilena.pfc.servidor.chartserver.driver")
-                    );
+        logger.info(getConfigProperties().getProperty(
+                    "josejamilena.pfc.servidor.chartserver.driver"));
+        Class.forName(getConfigProperties().getProperty(
+                    "josejamilena.pfc.servidor.chartserver.driver"));
         while (true) {
             try {
                 Socket s = serverSocket.accept();

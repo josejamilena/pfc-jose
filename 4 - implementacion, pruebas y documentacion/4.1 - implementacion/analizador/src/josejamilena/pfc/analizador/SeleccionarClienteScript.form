@@ -78,7 +78,7 @@
     <Component class="javax.swing.JButton" name="cargarGrafica">
       <Properties>
         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
-          <action class="josejamilena.pfc.analizador.EjemploswgSeleccionarCliente" id="cargarGrafica" methodName="cargarGrafica"/>
+          <action class="josejamilena.pfc.analizador.SeleccionarClienteScript" id="cargarGrafica" methodName="cargarGrafica"/>
         </Property>
         <Property name="text" type="java.lang.String" resourceKey="cargarGrafica.text"/>
         <Property name="name" type="java.lang.String" value="cargarGrafica" noResource="true"/>
