@@ -124,6 +124,7 @@ public class View extends FrameView {
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
         receiveMenuItem = new javax.swing.JMenuItem();
+        exportarCSV = new javax.swing.JMenuItem();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         graficasMenu = new javax.swing.JMenu();
         graficoPorSGBD = new javax.swing.JMenuItem();
@@ -182,10 +183,17 @@ public class View extends FrameView {
         fileMenu.add(openMenuItem);
 
         receiveMenuItem.setAction(actionMap.get("recibirPorRed")); // NOI18N
+        receiveMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         receiveMenuItem.setIcon(resourceMap.getIcon("StatusBar.icons[6]")); // NOI18N
         receiveMenuItem.setText(resourceMap.getString("receiveMenuItem.text")); // NOI18N
         receiveMenuItem.setName("receiveMenuItem"); // NOI18N
         fileMenu.add(receiveMenuItem);
+
+        exportarCSV.setAction(actionMap.get("exportarCSV")); // NOI18N
+        exportarCSV.setIcon(resourceMap.getIcon("exportarCSV.icon")); // NOI18N
+        exportarCSV.setText(resourceMap.getString("exportarCSV.text")); // NOI18N
+        exportarCSV.setName("exportarCSV"); // NOI18N
+        fileMenu.add(exportarCSV);
 
         exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
         exitMenuItem.setIcon(resourceMap.getIcon("StatusBar.icons[1]")); // NOI18N
@@ -368,7 +376,23 @@ public class View extends FrameView {
         netBox = null;
     }
 
+    @Action
+    public void exportarCSV() {
+        if (App.iniciarConexion()) {
+            if (csvBox == null) {
+                JFrame mainFrame = App.getApplication().getMainFrame();
+                csvBox = new FileChooserCSV(mainFrame, true);
+                csvBox.setLocationRelativeTo(mainFrame);
+            }
+            App.getApplication().show(csvBox);
+        } else {
+            new MsgBox("Mensaje de Error",
+                    "Fichero de estadisticas no seleccionado", "ERROR");
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem exportarCSV;
     private javax.swing.JButton generarInforme;
     private javax.swing.JMenu graficasMenu;
     private javax.swing.JMenuItem graficoPorCliente;
@@ -394,4 +418,5 @@ public class View extends FrameView {
     private JDialog sgbdBox;
     private JDialog clienteBox;
     private JDialog netBox;
+    private JDialog csvBox;
 }

@@ -88,6 +88,16 @@
                 <Property name="name" type="java.lang.String" value="receiveMenuItem" noResource="true"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="exportarCSV">
+              <Properties>
+                <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+                  <action class="josejamilena.pfc.analizador.View" id="exportarCSV" methodName="exportarCSV"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="exportarCSV.icon"/>
+                <Property name="text" type="java.lang.String" resourceKey="exportarCSV.text"/>
+                <Property name="name" type="java.lang.String" value="exportarCSV" noResource="true"/>
+              </Properties>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="exitMenuItem">
               <Properties>
                 <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
