@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+SplashScreen-Image: josejamilena/pfc/analizador/resources/splash.png
+X-COMMENT: PFC Jose Antonio Jamilena Daza

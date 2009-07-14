@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="icono" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="129" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="hostLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="portLabel" alignment="1" min="-2" pref="126" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButton1" alignment="0" pref="131" max="32767" attributes="1"/>
+                  <Component id="hostText" alignment="0" max="32767" attributes="1"/>
+                  <Component id="portText" alignment="0" min="-2" pref="59" max="-2" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="312" max="32767" attributes="0"/>
+              <Component id="closeButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="icono" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="hostText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="hostLabel" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="33" pref="33" max="33" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="portText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="portLabel" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <Component id="closeButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="closeButton">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="josejamilena.pfc.analizador.NetBox" id="closeNetBox" methodName="closeNetBox"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="closeButton.text"/>
+        <Property name="name" type="java.lang.String" value="closeButton" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="hostText">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="hostText.text"/>
+        <Property name="name" type="java.lang.String" value="hostText" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="portText">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="portText.text"/>
+        <Property name="name" type="java.lang.String" value="portText" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="josejamilena.pfc.analizador.NetBox" id="obtenerEstadisticas" methodName="obtenerEstadisticas"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="hostLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="hostLabel.text"/>
+        <Property name="name" type="java.lang.String" value="hostLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="portLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="portLabel.text"/>
+        <Property name="name" type="java.lang.String" value="portLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="icono">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="icono.icon"/>
+        <Property name="text" type="java.lang.String" resourceKey="icono.text"/>
+        <Property name="name" type="java.lang.String" value="icono" noResource="true"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
