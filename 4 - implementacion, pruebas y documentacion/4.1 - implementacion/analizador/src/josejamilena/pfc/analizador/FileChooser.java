@@ -7,7 +7,7 @@ package josejamilena.pfc.analizador;
 
 /**
  *
- * @author Jose
+ * @author Jose Antonio Jamilena Daza
  */
 public class FileChooser extends javax.swing.JDialog {
 
