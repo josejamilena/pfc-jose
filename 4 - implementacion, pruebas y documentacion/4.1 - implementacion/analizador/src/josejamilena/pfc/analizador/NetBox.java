@@ -43,7 +43,7 @@ public class NetBox extends javax.swing.JDialog {
         closeButton = new javax.swing.JButton();
         hostText = new javax.swing.JTextField();
         portText = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        obtenerEstadisticasButton = new javax.swing.JButton();
         hostLabel = new javax.swing.JLabel();
         portLabel = new javax.swing.JLabel();
         icono = new javax.swing.JLabel();
@@ -63,8 +63,8 @@ public class NetBox extends javax.swing.JDialog {
         portText.setText(resourceMap.getString("portText.text")); // NOI18N
         portText.setName("portText"); // NOI18N
 
-        jButton1.setAction(actionMap.get("obtenerEstadisticas")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
+        obtenerEstadisticasButton.setAction(actionMap.get("obtenerEstadisticas")); // NOI18N
+        obtenerEstadisticasButton.setName("obtenerEstadisticasButton"); // NOI18N
 
         hostLabel.setText(resourceMap.getString("hostLabel.text")); // NOI18N
         hostLabel.setName("hostLabel"); // NOI18N
@@ -90,7 +90,7 @@ public class NetBox extends javax.swing.JDialog {
                     .addComponent(portLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addComponent(obtenerEstadisticasButton, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                     .addComponent(hostText)
                     .addComponent(portText, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -116,7 +116,7 @@ public class NetBox extends javax.swing.JDialog {
                             .addComponent(portText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(portLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(obtenerEstadisticasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(closeButton)
                 .addContainerGap())
@@ -191,7 +191,7 @@ public class NetBox extends javax.swing.JDialog {
     private javax.swing.JLabel hostLabel;
     private javax.swing.JTextField hostText;
     private javax.swing.JLabel icono;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton obtenerEstadisticasButton;
     private javax.swing.JLabel portLabel;
     private javax.swing.JTextField portText;
     // End of variables declaration//GEN-END:variables
