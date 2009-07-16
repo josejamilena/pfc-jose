@@ -27,7 +27,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 /**
- * Clase conexion.
+ * Lanzador de script con procesos SQL.
  * @author Jose Antonio Jamilena Daza.
  */
 public class SqlRunner {
