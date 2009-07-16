@@ -101,8 +101,11 @@ public class FileReceiver {
             os.println("HELLO");
             os.flush();
             filename = is.readLine();
-            res = System.getProperty("java.io.tmpdir")
-                    + hostname + "." + filename;
+            String tmpPath = System.getProperty("java.io.tmpdir");
+            if (!tmpPath.endsWith(System.getProperty("file.separator"))) {
+                tmpPath = tmpPath + System.getProperty("file.separator");
+            }
+            res = tmpPath + hostname + "." + filename;
             // System.err.println(res);
             os.println("NEXT");
             os.flush();
