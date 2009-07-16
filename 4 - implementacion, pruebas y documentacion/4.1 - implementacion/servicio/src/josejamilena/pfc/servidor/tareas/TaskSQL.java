@@ -17,7 +17,6 @@ package josejamilena.pfc.servidor.tareas;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.sql.SQLException;
 import java.util.Date;
 import josejamilena.pfc.servidor.conexion.Comun;
@@ -27,7 +26,7 @@ import josejamilena.pfc.servidor.tareas.runner.SqlRunner;
 import org.apache.log4j.Logger;
 
 /**
- * Tareas SQL.
+ * Define una tareas SQL.
  * @link java.lang.Runnable implementa esta interfaz.
  * @author Jose Antonio Jamilena Daza.
  */
