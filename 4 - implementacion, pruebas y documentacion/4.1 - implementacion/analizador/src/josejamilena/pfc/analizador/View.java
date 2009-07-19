@@ -295,7 +295,7 @@ public class View extends FrameView {
             if (selectBox == null) {
                 try {
                     JFrame mainFrame = App.getApplication().getMainFrame();
-                    selectBox = new SeleccionarScript(mainFrame, SQLUtils.listaScript(App.conn));
+                    selectBox = new SeleccionarScript(mainFrame, SQLUtils.listaHostCliente(App.conn));
                     selectBox.setLocationRelativeTo(mainFrame);
                     selectBox.setSize(300, 600);
                     selectBox.pack();
