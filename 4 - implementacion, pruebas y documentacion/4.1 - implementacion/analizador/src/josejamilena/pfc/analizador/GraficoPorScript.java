@@ -33,14 +33,14 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 public class GraficoPorScript extends JDialog {
 
-    public GraficoPorScript(final String script, final String hostSgbd) throws ClassNotFoundException, SQLException {
+    public GraficoPorScript(final String hostCliente, final String hostSgbd) throws ClassNotFoundException, SQLException {
 
         Map<String, String> res = new TreeMap<String, String>();
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         Statement stmt = null;
         ResultSet rs = null;
-        String consulta = "select tiempo, fecha from estadisticas where tipo=\'" + script + "\' and host_sgbd=\'" + hostSgbd + "\'";
+        String consulta = "select tiempo, fecha from estadisticas where host_cliente=\'" + hostCliente + "\' and host_sgbd=\'" + hostSgbd + "\'";
         stmt = App.conn.createStatement();
         rs = stmt.executeQuery(consulta);
         while (rs.next()) {
@@ -53,12 +53,12 @@ public class GraficoPorScript extends JDialog {
         while (it.hasNext()) {
             Map.Entry pairs = (Map.Entry) it.next();
             dataset.setValue(Double.parseDouble(pairs.getValue().toString()),
-                    script, pairs.getKey().toString());
+                    hostCliente, pairs.getKey().toString());
         }
 
 
         JFreeChart chart = ChartFactory.createBarChart(
-                script, // chart title
+                hostCliente + " / " + hostSgbd, // chart title
                 "Hora", // domain axis label
                 "Duración (milisegundos)", // range axis label
                 dataset, // data
