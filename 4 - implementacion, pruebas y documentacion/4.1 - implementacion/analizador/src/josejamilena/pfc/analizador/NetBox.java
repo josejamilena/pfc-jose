@@ -61,6 +61,7 @@ public class NetBox extends javax.swing.JDialog {
         hostText.setName("hostText"); // NOI18N
 
         portText.setText(resourceMap.getString("portText.text")); // NOI18N
+        portText.setToolTipText(resourceMap.getString("portText.toolTipText")); // NOI18N
         portText.setName("portText"); // NOI18N
 
         obtenerEstadisticasButton.setAction(actionMap.get("obtenerEstadisticas")); // NOI18N
@@ -70,6 +71,7 @@ public class NetBox extends javax.swing.JDialog {
         hostLabel.setName("hostLabel"); // NOI18N
 
         portLabel.setText(resourceMap.getString("portLabel.text")); // NOI18N
+        portLabel.setToolTipText(resourceMap.getString("portLabel.toolTipText")); // NOI18N
         portLabel.setName("portLabel"); // NOI18N
 
         icono.setIcon(resourceMap.getIcon("icono.icon")); // NOI18N
@@ -87,7 +89,7 @@ public class NetBox extends javax.swing.JDialog {
                 .addGap(100, 100, 100)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(hostLabel)
-                    .addComponent(portLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(portLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(obtenerEstadisticasButton, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
@@ -121,6 +123,8 @@ public class NetBox extends javax.swing.JDialog {
                 .addComponent(closeButton)
                 .addContainerGap())
         );
+
+        portLabel.getAccessibleContext().setAccessibleDescription(resourceMap.getString("portLabel.AccessibleContext.accessibleDescription")); // NOI18N
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

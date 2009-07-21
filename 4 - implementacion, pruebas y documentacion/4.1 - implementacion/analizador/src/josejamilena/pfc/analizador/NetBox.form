@@ -31,7 +31,7 @@
               <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="hostLabel" min="-2" max="-2" attributes="0"/>
-                  <Component id="portLabel" alignment="1" min="-2" pref="126" max="-2" attributes="0"/>
+                  <Component id="portLabel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -97,6 +97,7 @@
     <Component class="javax.swing.JTextField" name="portText">
       <Properties>
         <Property name="text" type="java.lang.String" resourceKey="portText.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="portText.toolTipText"/>
         <Property name="name" type="java.lang.String" value="portText" noResource="true"/>
       </Properties>
     </Component>
@@ -117,8 +118,12 @@
     <Component class="javax.swing.JLabel" name="portLabel">
       <Properties>
         <Property name="text" type="java.lang.String" resourceKey="portLabel.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="portLabel.toolTipText"/>
         <Property name="name" type="java.lang.String" value="portLabel" noResource="true"/>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" resourceKey="portLabel.AccessibleContext.accessibleDescription"/>
+      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JLabel" name="icono">
       <Properties>
