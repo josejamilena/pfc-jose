@@ -65,6 +65,7 @@ public class NetBox extends javax.swing.JDialog {
         portText.setName("portText"); // NOI18N
 
         obtenerEstadisticasButton.setAction(actionMap.get("obtenerEstadisticas")); // NOI18N
+        obtenerEstadisticasButton.setToolTipText(resourceMap.getString("obtenerEstadisticasButton.toolTipText")); // NOI18N
         obtenerEstadisticasButton.setName("obtenerEstadisticasButton"); // NOI18N
 
         hostLabel.setText(resourceMap.getString("hostLabel.text")); // NOI18N

@@ -58,12 +58,14 @@
           <action class="josejamilena.pfc.analizador.SeleccionarCliente" id="siguienteSelecionarScriptBox" methodName="siguienteSelecionarScriptBox"/>
         </Property>
         <Property name="text" type="java.lang.String" resourceKey="siguienteButton.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="siguienteButton.toolTipText"/>
         <Property name="actionCommand" type="java.lang.String" resourceKey="siguienteButton.actionCommand"/>
         <Property name="name" type="java.lang.String" value="siguienteButton" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="listaScript">
       <Properties>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="listaScript.toolTipText"/>
         <Property name="name" type="java.lang.String" value="listaScript" noResource="true"/>
       </Properties>
       <AuxValues>
