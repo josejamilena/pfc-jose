@@ -194,15 +194,16 @@ public class View extends FrameView {
         fileMenu.add(openMenuItem);
 
         receiveMenuItem.setAction(actionMap.get("recibirPorRed")); // NOI18N
-        receiveMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         receiveMenuItem.setIcon(resourceMap.getIcon("StatusBar.icons[6]")); // NOI18N
         receiveMenuItem.setText(resourceMap.getString("receiveMenuItem.text")); // NOI18N
+        receiveMenuItem.setToolTipText(resourceMap.getString("receiveMenuItem.toolTipText")); // NOI18N
         receiveMenuItem.setName("receiveMenuItem"); // NOI18N
         fileMenu.add(receiveMenuItem);
 
         exportarCSV.setAction(actionMap.get("exportarCSV")); // NOI18N
         exportarCSV.setIcon(resourceMap.getIcon("exportarCSV.icon")); // NOI18N
         exportarCSV.setText(resourceMap.getString("exportarCSV.text")); // NOI18N
+        exportarCSV.setToolTipText(resourceMap.getString("exportarCSV.toolTipText")); // NOI18N
         exportarCSV.setName("exportarCSV"); // NOI18N
         fileMenu.add(exportarCSV);
 

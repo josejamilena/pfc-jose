@@ -68,6 +68,7 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="listaScript">
       <Properties>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="listaScript.toolTipText"/>
         <Property name="name" type="java.lang.String" value="listaScript" noResource="true"/>
       </Properties>
       <AuxValues>
@@ -80,6 +81,7 @@
           <action class="josejamilena.pfc.analizador.SeleccionarSGBDScript" id="cargarGrafica" methodName="cargarGrafica"/>
         </Property>
         <Property name="text" type="java.lang.String" resourceKey="cargarGrafica.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="cargarGrafica.toolTipText"/>
         <Property name="name" type="java.lang.String" value="cargarGrafica" noResource="true"/>
       </Properties>
     </Component>

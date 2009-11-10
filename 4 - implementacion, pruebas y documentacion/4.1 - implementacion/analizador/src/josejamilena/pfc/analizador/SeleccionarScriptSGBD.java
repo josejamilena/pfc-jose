@@ -57,6 +57,7 @@ public class SeleccionarScriptSGBD extends javax.swing.JDialog {
         closeButton.setText(resourceMap.getString("closeButton.text")); // NOI18N
         closeButton.setName("closeButton"); // NOI18N
 
+        listaScript.setToolTipText(resourceMap.getString("listaScript.toolTipText")); // NOI18N
         listaScript.setName("listaScript"); // NOI18N
         for (String i : lista) {
             this.listaScript.addItem(i);
@@ -64,6 +65,7 @@ public class SeleccionarScriptSGBD extends javax.swing.JDialog {
 
         cargarGrafica.setAction(actionMap.get("cargarGrafica")); // NOI18N
         cargarGrafica.setText(resourceMap.getString("cargarGrafica.text")); // NOI18N
+        cargarGrafica.setToolTipText(resourceMap.getString("cargarGrafica.toolTipText")); // NOI18N
         cargarGrafica.setName("cargarGrafica"); // NOI18N
 
         icono.setIcon(resourceMap.getIcon("icono.icon")); // NOI18N

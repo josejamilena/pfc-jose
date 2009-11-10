@@ -66,8 +66,10 @@ public class SeleccionarScript extends javax.swing.JDialog {
         siguienteButton.setAction(actionMap.get("siguienteSelecionarScriptBox")); // NOI18N
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(josejamilena.pfc.analizador.App.class).getContext().getResourceMap(SeleccionarScript.class);
         siguienteButton.setText(resourceMap.getString("siguienteButton.text")); // NOI18N
+        siguienteButton.setToolTipText(resourceMap.getString("siguienteButton.toolTipText")); // NOI18N
         siguienteButton.setName("siguienteButton"); // NOI18N
 
+        listaScript.setToolTipText(resourceMap.getString("listaScript.toolTipText")); // NOI18N
         listaScript.setName("listaScript"); // NOI18N
         for (String i : lista) {
             this.listaScript.addItem(i);

@@ -106,6 +106,7 @@
         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
           <action class="josejamilena.pfc.analizador.NetBox" id="obtenerEstadisticas" methodName="obtenerEstadisticas"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="obtenerEstadisticasButton.toolTipText"/>
         <Property name="name" type="java.lang.String" value="obtenerEstadisticasButton" noResource="true"/>
       </Properties>
     </Component>
