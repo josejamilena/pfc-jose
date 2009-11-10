@@ -85,6 +85,7 @@
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" resourceKey="StatusBar.icons[6]"/>
                 <Property name="text" type="java.lang.String" resourceKey="receiveMenuItem.text"/>
+                <Property name="toolTipText" type="java.lang.String" resourceKey="receiveMenuItem.toolTipText"/>
                 <Property name="name" type="java.lang.String" value="receiveMenuItem" noResource="true"/>
               </Properties>
             </MenuItem>
@@ -95,6 +96,7 @@
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" resourceKey="exportarCSV.icon"/>
                 <Property name="text" type="java.lang.String" resourceKey="exportarCSV.text"/>
+                <Property name="toolTipText" type="java.lang.String" resourceKey="exportarCSV.toolTipText"/>
                 <Property name="name" type="java.lang.String" value="exportarCSV" noResource="true"/>
               </Properties>
             </MenuItem>
