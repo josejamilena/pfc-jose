@@ -75,6 +75,7 @@ public class PlsqlRunner {
             ResultSet rs = null;
             stmt = conexion.createStatement();
             rs = stmt.executeQuery(s); //lanzador de consulta
+            rs.close();
             stmt.close();
         } catch (SQLException ex) {
             logger.error(ex);

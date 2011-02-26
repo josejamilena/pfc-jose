@@ -93,7 +93,7 @@ public final class Comun {
     /**
      * @return the estadisticas
      */
-    public static Estadisticas getEstadisticas() {
+    public /*static*/ Estadisticas getEstadisticas() {
         return estadisticas;
     }
 

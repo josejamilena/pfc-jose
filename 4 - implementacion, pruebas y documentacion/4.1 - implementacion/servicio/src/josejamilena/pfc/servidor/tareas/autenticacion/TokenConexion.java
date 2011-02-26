@@ -114,6 +114,6 @@ public class TokenConexion {
      * @param hostname the hostname to set
      */
     public final void setHostname(final String host) {
-        this.hostname = hostname;
+        this.hostname = host;
     }
 }
