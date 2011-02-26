@@ -78,6 +78,7 @@ public class SqlRunner {
         } catch (SQLException ex) {
             logger.error(ex);
         }
+        rs.close();
         stmt.close();
     }
 
