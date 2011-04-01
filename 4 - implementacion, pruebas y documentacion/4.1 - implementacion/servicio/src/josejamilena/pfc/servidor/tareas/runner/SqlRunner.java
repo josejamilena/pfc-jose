@@ -126,4 +126,43 @@ public class SqlRunner {
 //             ).runScript(new BufferedReader(new FileReader("ejemplo.sql")));
 //        System.err.println((new java.util.Date()));
 //    }
+
+
+    public SqlRunner(final String driver, final String url,
+            final String username, final String password)
+            throws IOException, SQLException, ClassNotFoundException {
+        Class.forName(driver);
+        this.conexion = DriverManager.getConnection(url, username, password);
+    }
+
+    public void runQuery(final String s) throws SQLException {
+        Statement stmt = null;
+        ResultSet rs = null;
+        stmt = conexion.createStatement();
+        rs = stmt.executeQuery(s); //lanzador de consulta
+        rs.close();
+        stmt.close();
+    }
+
+    public List<String[]> runQueryResult(final String s) throws SQLException {
+        Statement stmt = null;
+        ResultSet rs = null;
+        List<String[]> res = new LinkedList<String[]>();
+        stmt = conexion.createStatement();
+        rs = stmt.executeQuery(s); //lanzador de consulta
+        ResultSetMetaData rsmt = rs.getMetaData();
+        int numColumn = rsmt.getColumnCount();
+        //while (rs.next()) {
+        if (rs.next()) {
+            String[] resLine = new String[numColumn];
+            for (int i = 0; i <= numColumn; i++) {
+                resLine[i] = rs.getString(i);
+            }
+            res.add(resLine);
+        }
+        rs.close();
+        stmt.close();
+        return res;
+    }
+
 }
