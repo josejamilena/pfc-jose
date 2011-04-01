@@ -152,8 +152,8 @@ public class SqlRunner {
         rs = stmt.executeQuery(s); //lanzador de consulta
         ResultSetMetaData rsmt = rs.getMetaData();
         int numColumn = rsmt.getColumnCount();
-        //while (rs.next()) {
-        if (rs.next()) {
+        while (rs.next()) {
+        //if (rs.next()) {
             String[] resLine = new String[numColumn];
             for (int i = 0; i <= numColumn; i++) {
                 resLine[i] = rs.getString(i);
