@@ -74,8 +74,9 @@ public class SqlRunner {
         Statement stmt = null;
         ResultSet rs = null;
         stmt = conexion.createStatement();
+        String sinEscapeS=s.replace("'", "''");
         try {
-            rs = stmt.executeQuery(s); //lanzador de consulta
+            rs = stmt.executeQuery(sinEscapeS); //lanzador de consulta
         } catch (SQLException ex) {
             logger.error(ex);
         }
@@ -132,7 +133,8 @@ public class SqlRunner {
         Statement stmt = null;
         ResultSet rs = null;
         stmt = conexion.createStatement();
-        rs = stmt.executeQuery(s); //lanzador de consulta
+        String sinEscapeS=s.replace("'", "''");
+        rs = stmt.executeQuery(sinEscapeS); //lanzador de consulta
         rs.close();
         stmt.close();
     }
@@ -142,7 +144,8 @@ public class SqlRunner {
         ResultSet rs = null;
         List<String[]> res = new LinkedList<String[]>();
         stmt = conexion.createStatement();
-        rs = stmt.executeQuery(s); //lanzador de consulta
+        String sinEscapeS=s.replace("'", "''");
+        rs = stmt.executeQuery(sinEscapeS); //lanzador de consulta
         ResultSetMetaData rsmt = rs.getMetaData();
         int numColumn = rsmt.getColumnCount();
         while (rs.next()) {
