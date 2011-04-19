@@ -20,6 +20,7 @@ import java.io.Reader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
@@ -126,14 +127,6 @@ public class SqlRunner {
 //             ).runScript(new BufferedReader(new FileReader("ejemplo.sql")));
 //        System.err.println((new java.util.Date()));
 //    }
-
-
-    public SqlRunner(final String driver, final String url,
-            final String username, final String password)
-            throws IOException, SQLException, ClassNotFoundException {
-        Class.forName(driver);
-        this.conexion = DriverManager.getConnection(url, username, password);
-    }
 
     public void runQuery(final String s) throws SQLException {
         Statement stmt = null;
