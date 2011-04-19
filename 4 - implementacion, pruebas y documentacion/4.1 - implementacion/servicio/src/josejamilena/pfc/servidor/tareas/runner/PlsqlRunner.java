@@ -70,16 +70,17 @@ public class PlsqlRunner {
      * @throws java.sql.SQLException fallo.
      */
     private void consultaSQL(final String s) throws SQLException {
+        Statement stmt = null;
+        ResultSet rs = null;
+        stmt = conexion.createStatement();
+        String sinEscapeS=s.replace("'", "''");
         try {
-            Statement stmt = null;
-            ResultSet rs = null;
-            stmt = conexion.createStatement();
-            rs = stmt.executeQuery(s); //lanzador de consulta
-            rs.close();
-            stmt.close();
+            rs = stmt.executeQuery(sinEscapeS); //lanzador de consulta
         } catch (SQLException ex) {
             logger.error(ex);
         }
+        rs.close();
+        stmt.close();
     }
 
     /**
